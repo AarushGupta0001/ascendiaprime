@@ -1,0 +1,45 @@
+/* Live site design tokens — match ascendiaprime.com */
+:root {
+  /* Typography */
+  --font-family: var(--font-poppins), "Poppins", sans-serif;
+  --font-family-header: var(--font-outfit), "Outfit", sans-serif;
+  --font-weight-body: 400;
+  --font-weight-nav: 500;
+  --font-weight-heading: 700;
+  --font-weight-heading-bold: 800;
+
+  /* Surfaces (live site) */
+  --color-bg-primary: #020617;
+  --color-bg-section: #050b21;
+  --color-bg-section-alt: #050a18;
+  --color-bg-card: #0b111d;
+  --color-bg-header: #020617;
+  --color-bg-header-scrolled: #050a18;
+  --color-bg-footer: #020612;
+
+  /* Brand gradient (hero/footer) */
+  --color-brand-blue: #3f8bf9;
+  --color-brand-indigo: #7469f8;
+  --color-brand-purple: #ab57f3;
+  --color-brand-pink: #e057d8;
+  --gradient-hero-primary: linear-gradient(to right, #3f8bf9, #7469f8, #ab57f3);
+  --gradient-hero-secondary: linear-gradient(to right, #7469f8, #ab57f3, #e057d8);
+  --gradient-brand: linear-gradient(to right, #3f8bf9, #ab57f3);
+
+  /* Header accents (live site — distinct from hero) */
+  --color-header-cyan: #06b6d4;
+  --color-header-violet: #8b5cf6;
+  --gradient-header-cta: linear-gradient(45deg, #06b6d4, #8b5cf6);
+
+  /* Radius (live site) */
+  --radius-header-cta: 50px;
+  --radius-hero-cta: 9999px;
+  --radius-card: 16px;
+  --radius-card-lg: 24px;
+  --radius-mega-menu: 16px;
+
+  /* Text */
+  --color-text: #e2e8f0;
+  --color-text-muted: #94a3b8;
+  --color-text-subtle: #64748b;
+}

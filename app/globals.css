@@ -1,0 +1,102 @@
+@import "../styles/tokens.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  background-color: #020617;
+  scroll-behavior: smooth;
+  max-width: 100vw;
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-body);
+  color: var(--color-text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--font-weight-heading);
+}
+
+h1,
+h2 {
+  font-weight: var(--font-weight-heading-bold);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Visible by default for SSR; hidden state only after hydration scripts run */
+.fade-in-up,
+.fade-in-left,
+.fade-in-right,
+.scale-in,
+.feature-row,
+.fade-up-element,
+.reveal-up,
+.smm-reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+html.js-hydrated .fade-in-up:not(.is-visible),
+html.js-hydrated .fade-in-left:not(.is-visible),
+html.js-hydrated .fade-in-right:not(.is-visible),
+html.js-hydrated .scale-in:not(.is-visible),
+html.js-hydrated .feature-row:not(.is-visible),
+html.js-hydrated .fade-up-element:not(.in-view),
+html.js-hydrated .reveal-up:not(.active),
+html.js-hydrated .smm-reveal:not(.active) {
+  opacity: 0 !important;
+}
+
+html.js-hydrated .fade-in-up:not(.is-visible) {
+  transform: translateY(40px) !important;
+  filter: blur(8px) !important;
+}
+
+html.js-hydrated .fade-in-left:not(.is-visible) {
+  transform: translateX(-40px) !important;
+  filter: blur(8px) !important;
+}
+
+html.js-hydrated .fade-in-right:not(.is-visible) {
+  transform: translateX(40px) !important;
+  filter: blur(8px) !important;
+}
+
+html.js-hydrated .scale-in:not(.is-visible) {
+  transform: scale(0.9) !important;
+  filter: blur(8px) !important;
+}
+
+html.js-hydrated .fade-up-element:not(.in-view) {
+  transform: translateY(50px) !important;
+}
+
+html.js-hydrated .reveal-up:not(.active),
+html.js-hydrated .smm-reveal:not(.active) {
+  transform: translateY(40px) !important;
+}

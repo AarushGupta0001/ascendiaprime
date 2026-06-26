@@ -1,0 +1,789 @@
+
+
+    /* Force the entire page and all  wrappers to respect the dark cosmic theme */
+    html, body {
+        background-color: #020617 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow-x: hidden !important;
+        font-family: 'Poppins', sans-serif !important;
+    }
+    .-page, .-section-wrap, .-widget-wrap, .-widget-container, .-section {
+        background-color: transparent !important;
+    }
+    body.modal-open {
+        overflow: hidden !important;
+    }
+    
+    /* FIX: Contact Select2 Dropdown Z-Index in Modal */
+    .select2-container {
+        z-index: 9999999 !important;
+    }
+    .select2-container--open .select2-dropdown {
+        background-color: rgba(15, 23, 42, 0.95) !important;
+        border: 1px solid rgba(116, 105, 248, 0.4) !important;
+        z-index: 9999999 !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.8) !important;
+    }
+    .select2-results__option {
+        color: #ffffff !important;
+        background-color: rgba(15, 23, 42, 0.95) !important;
+        transition: all 0.2s ease;
+    }
+    .select2-results__option--highlighted,
+    .select2-results__option:hover {
+        background-color: rgba(63, 139, 249, 0.2) !important;
+        color: #3F8BF9 !important;
+    }
+
+#partners-master * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        /* ==========================================================================
+           PPC BACKGROUND BASE
+           ========================================================================== */
+        #partners-master {
+            background-color: #020617;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(63, 139, 249, 0.12) 0%, transparent 35%),
+                radial-gradient(circle at 85% 50%, rgba(224, 87, 216, 0.10) 0%, transparent 35%),
+                linear-gradient(#020617, #020617);
+            background-attachment: fixed;
+        }
+
+        /* --- BACKGROUND CANVAS --- */
+        #warp-canvas {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0; pointer-events: none; opacity: 0.4;
+        }
+
+        /* --- SCROLL REVEAL --- */
+        .smm-reveal {
+            opacity: 0; transform: translateY(40px); filter: blur(8px);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .smm-reveal.active { opacity: 1; transform: translateY(0); filter: blur(0); }
+
+        /* --- HERO REVEAL --- */
+        .hero-animate {
+            animation: heroFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0; transform: translateY(30px);
+        }
+        @keyframes heroFadeUp {
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- TEXT GRADIENTS --- */
+        .text-gradient-smm {
+            background: linear-gradient(to right, #4c94f6, #cf60c8);
+            background-clip: text; -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; 
+        }
+        .text-gradient-dark {
+            background: linear-gradient(to right, #7d73f3, #a663e4);
+            background-clip: text; -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; 
+        }
+        
+        .magnetic-btn { transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); display: inline-block; }
+
+        /* ==========================================================================
+           GLASSMORPHISM BASE
+           ========================================================================== */
+        .glass-base {
+            background: rgba(12, 18, 35, 0.6) !important;
+            backdrop-filter: blur(16px) !important;
+            -webkit-backdrop-filter: blur(16px) !important;
+            border: 1px solid rgba(63, 139, 249, 0.15) !important;
+            border-top: 1px solid rgba(63, 139, 249, 0.25) !important;
+            border-left: 1px solid rgba(63, 139, 249, 0.25) !important;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5) !important;
+        }
+
+        /* ==========================================================================
+           ANIMATIONS & CLASSES FOR INLINE VECTOR GRAPHICS
+           ========================================================================== */
+        .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+        @keyframes float-slow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+        
+        .animate-float-delayed { animation: float-delayed 6s ease-in-out infinite; }
+        @keyframes float-delayed { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(12px); } }
+
+        .node-interactive-group {
+            cursor: default;
+        }
+        .node-interactive-group circle.base-node-circle {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .node-interactive-group:hover circle.base-node-circle {
+            stroke: #7469F8;
+            fill: #142442;
+            filter: drop-shadow(0px 0px 10px rgba(116, 105, 248, 0.4));
+        }
+
+        .svg-pulse-core {
+            animation: svg-pulse-glow 3s infinite alternate;
+        }
+        @keyframes svg-pulse-glow {
+            0% { filter: drop-shadow(0px 0px 8px rgba(116, 105, 248, 0.3)); stroke: #7469F8; }
+            100% { filter: drop-shadow(0px 0px 18px rgba(63, 139, 249, 0.5)); stroke: #3F8BF9; }
+        }
+
+        .data-stream {
+            stroke-dasharray: 6 10;
+            animation: stream-flow 1.5s linear infinite;
+        }
+        @keyframes stream-flow {
+            from { stroke-dashoffset: 16; }
+            to { stroke-dashoffset: 0; }
+        }
+
+        .svg-results-card-container {
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            width: 100%;
+            height: 100%;
+        }
+        .svg-results-card-inner {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(63, 139, 249, 0.3);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+            border-radius: 1rem;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1.5rem;
+            transition: all 0.4s ease;
+        }
+        .svg-results-card-inner:hover {
+            border-color: #7469F8;
+            box-shadow: 0 0 30px rgba(116, 105, 248, 0.3);
+        }
+
+        /* ==========================================================================
+           MODERN CONTACT FORM OVERRIDES & POPUPS
+           ========================================================================= */
+        .modern-form-wrapper { 
+            position: relative; border-radius: 2rem; background: rgba(10, 10, 15, 0.85); 
+            border: 1px solid rgba(63, 139, 249, 0.15); backdrop-filter: blur(20px);
+            padding: 3rem; z-index: 1; box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+        }
+
+        /* Force Contact Headings/Labels to White */
+        #partners-master .contact-label,
+        #partners-master .contact-title,
+        #partners-master .contact-subtitle,
+        #partners-master .contact-field label {
+            color: #ffffff !important;
+        }
+
+        /* FIX: Render the Partnership Type selection box background and texts visibly */
+        #partners-master .contact-select-container,
+        #partners-master .contact-select,
+        #partners-master select.contact-select2,
+        #partners-master .select2-container--default .select2-selection--single,
+        #partners-master .select2-container--default .select2-selection--single .select2-selection__rendered,
+        #partners-master .contact-custom-form .contact-field select {
+            color: #ffffff !important;
+            background: rgba(15, 23, 42, 0.85) !important;
+            background-color: rgba(15, 23, 42, 0.85) !important;
+            border: 1px solid rgba(116, 105, 248, 0.4) !important;
+            border-radius: 8px !important;
+            height: auto !important;
+            min-height: 40px !important;
+            display: block !important; /* Failsafe if Select2 breaks */
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        #partners-master .select2-container--default .select2-selection--single .select2-selection__placeholder {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+
+        #partners-master .select2-container--default .select2-selection--single .select2-selection__arrow b {
+            border-color: #ffffff transparent transparent transparent !important;
+        }
+
+        /* FIX: Robust fix to stop Contact popups rendering out-of-screen bounds */
+        .partner-popup-overlay {
+            position: fixed !important; top: 0 !important; left: 0 !important; 
+            width: 100vw !important; height: 100vh !important;
+            background: rgba(4, 13, 33, 0.85) !important; backdrop-filter: blur(10px) !important;
+            z-index: 999999 !important; display: flex !important; align-items: center !important; 
+            justify-content: center !important; opacity: 0; pointer-events: none; 
+            transition: opacity 0.4s ease;
+        }
+        .partner-popup-overlay.active {
+            opacity: 1 !important; pointer-events: auto !important;
+        }
+        .partner-popup-content {
+            background: rgba(10, 15, 25, 0.95) !important; border: 1px solid rgba(116, 105, 248, 0.3) !important;
+            border-radius: 2rem; padding: 3rem; max-width: 650px; width: 90%; margin: 0 auto;
+            position: relative !important; transform: translateY(30px); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.9), 0 0 30px rgba(116, 105, 248, 0.15);
+            max-height: 85vh; overflow-y: auto !important;
+        }
+        .partner-popup-overlay.active .partner-popup-content {
+            transform: translateY(0) !important;
+        }
+        .popup-close-btn {
+            position: absolute; top: 1.5rem; right: 1.5rem; color: #fff;
+            background: transparent; border: none; font-size: 2.5rem; line-height: 1;
+            cursor: pointer; transition: color 0.3s ease; z-index: 99999; outline: none;
+        }
+        .popup-close-btn:hover { color: #E057D8; }
+
+        /* Lock the Dropdown visually without making it invisible */
+        .contact-readonly-field {
+            pointer-events: none !important;
+        }
+        .contact-readonly-field .select2-selection,
+        .contact-readonly-field select {
+            background-color: rgba(30, 35, 50, 0.9) !important;
+            color: #888 !important;
+        }
+
+        /* PPC theme pass */
+        html,
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow-x: hidden !important;
+            background-color: #020617 !important;
+        }
+        body,
+        #partners-master {
+            background: #020617 !important;
+            color: #cbd5e1 !important;
+            font-family: 'Poppins', sans-serif !important;
+        }
+        #partners-master *,
+        #partners-master *::before,
+        #partners-master *::after,
+        button,
+        input,
+        textarea,
+        select,
+        .contact-custom-form,
+        .contact-custom-form * {
+            font-family: 'Poppins', sans-serif !important;
+        }
+        .-page,
+        .-section-wrap,
+        .-widget-wrap,
+        .-widget-container,
+        .-section {
+            background-color: transparent !important;
+        }
+        #partners-master::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(63, 139, 249, 0.12) 0%, transparent 35%),
+                radial-gradient(circle at 85% 50%, rgba(224, 87, 216, 0.10) 0%, transparent 35%),
+                #020617;
+        }
+        #partners-master section {
+            background: transparent !important;
+        }
+        #warp-canvas {
+            opacity: 0.16 !important;
+        }
+        .text-gradient-smm,
+        .text-gradient-dark,
+        #partners-master .text-\[\#3F8BF9\],
+        #partners-master .text-\[\#AB57F3\],
+        #partners-master .text-\[\#E057D8\],
+        #partners-master .text-\[\#4c94f6\] {
+            background: linear-gradient(135deg, #3F8BF9, #7469F8, #AB57F3, #E057D8) !important;
+            -webkit-background-clip: text !important;
+            background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-size: 300% auto !important;
+            animation: ppcTextShine 6s linear infinite;
+        }
+        @keyframes ppcTextShine { to { background-position: 300% center; } }
+        .glass-base,
+        .modern-form-wrapper,
+        .partner-popup-content,
+        .svg-results-card-inner {
+            background: rgba(30, 41, 59, 0.8) !important;
+            border: 1px solid rgba(63, 139, 249, 0.3) !important;
+            border-radius: 1.5rem !important;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25) !important;
+            backdrop-filter: blur(24px) !important;
+            -webkit-backdrop-filter: blur(24px) !important;
+            transition: box-shadow 0.5s ease, background 0.4s ease, border-color 0.4s ease, transform 0.3s ease !important;
+        }
+        .glass-base:hover,
+        .modern-form-wrapper:hover,
+        .partner-popup-content:hover,
+        .svg-results-card-inner:hover {
+            background: rgba(51, 65, 85, 0.95) !important;
+            border-color: rgba(116, 105, 248, 0.6) !important;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5) !important;
+        }
+        .glow-btn,
+        .partner-popup-trigger,
+        #partners-master button[type="submit"],
+        #partners-master .contact-button-submit {
+            display: inline-block !important;
+            text-align: center !important;
+            background: linear-gradient(to right, #3F8BF9, #7469F8, #AB57F3) !important;
+            color: #ffffff !important;
+            border: 1px solid rgba(63, 139, 249, 0.3) !important;
+            border-radius: 16px !important;
+            box-shadow: 0 0 20px rgba(63, 139, 249, 0.4) !important;
+            font-weight: 500 !important;
+            text-decoration: none !important;
+            transition: all 0.3s ease !important;
+        }
+        .glow-btn:hover,
+        .partner-popup-trigger:hover,
+        #partners-master button[type="submit"]:hover,
+        #partners-master .contact-button-submit:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 0 30px rgba(63, 139, 249, 0.6) !important;
+        }
+        .partner-popup-overlay {
+            background: rgba(2, 6, 23, 0.78) !important;
+            backdrop-filter: blur(12px) !important;
+        }
+        #partners-master p,
+        #partners-master .text-slate-300,
+        #partners-master .text-slate-400,
+        #partners-master .text-slate-500 {
+            color: #94a3b8 !important;
+        }
+        #partners-master .text-white,
+        #partners-master h1,
+        #partners-master h2,
+        #partners-master h3,
+        #partners-master h4,
+        #partners-master li {
+            color: #f8fafc !important;
+        }
+        #partners-master h1 {
+            font-size: clamp(2.25rem, 5vw, 3.75rem) !important;
+            font-weight: 800 !important;
+            line-height: 1.12 !important;
+            letter-spacing: -0.04em !important;
+        }
+        #partners-master .contact-input,
+        #partners-master .contact-textarea,
+        #partners-master .contact-select2 + .select2-container .select2-selection,
+        #partners-master input,
+        #partners-master textarea,
+        #partners-master select,
+        .select2-container--open .select2-dropdown,
+        .select2-results__option {
+            background: rgba(15, 23, 42, 0.85) !important;
+            border: 1px solid rgba(63, 139, 249, 0.3) !important;
+            color: #ffffff !important;
+            border-radius: 0.75rem !important;
+        }
+        #partners-master input::placeholder,
+        #partners-master textarea::placeholder {
+            color: #94a3b8 !important;
+        }
+
+
+
+    /* Force the entire page and all  wrappers to respect the dark cosmic theme */
+    html, body {
+        background-color: #020617 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow-x: hidden !important;
+        font-family: 'Poppins', sans-serif !important;
+    }
+    .-page, .-section-wrap, .-widget-wrap, .-widget-container, .-section {
+        background-color: transparent !important;
+    }
+    body.modal-open {
+        overflow: hidden !important;
+    }
+    
+    /* FIX: Contact Select2 Dropdown Z-Index in Modal */
+    .select2-container {
+        z-index: 9999999 !important;
+    }
+    .select2-container--open .select2-dropdown {
+        background-color: rgba(15, 23, 42, 0.95) !important;
+        border: 1px solid rgba(116, 105, 248, 0.4) !important;
+        z-index: 9999999 !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.8) !important;
+    }
+    .select2-results__option {
+        color: #ffffff !important;
+        background-color: rgba(15, 23, 42, 0.95) !important;
+        transition: all 0.2s ease;
+    }
+    .select2-results__option--highlighted,
+    .select2-results__option:hover {
+        background-color: rgba(63, 139, 249, 0.2) !important;
+        color: #3F8BF9 !important;
+    }
+
+#partners-master * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        /* ==========================================================================
+           PPC BACKGROUND BASE
+           ========================================================================== */
+        #partners-master {
+            background-color: #020617;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(63, 139, 249, 0.12) 0%, transparent 35%),
+                radial-gradient(circle at 85% 50%, rgba(224, 87, 216, 0.10) 0%, transparent 35%),
+                linear-gradient(#020617, #020617);
+            background-attachment: fixed;
+        }
+
+        /* --- BACKGROUND CANVAS --- */
+        #warp-canvas {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0; pointer-events: none; opacity: 0.4;
+        }
+
+        /* --- SCROLL REVEAL --- */
+        .smm-reveal {
+            opacity: 0; transform: translateY(40px); filter: blur(8px);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .smm-reveal.active { opacity: 1; transform: translateY(0); filter: blur(0); }
+
+        /* --- HERO REVEAL --- */
+        .hero-animate {
+            animation: heroFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0; transform: translateY(30px);
+        }
+        @keyframes heroFadeUp {
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- TEXT GRADIENTS --- */
+        .text-gradient-smm {
+            background: linear-gradient(to right, #4c94f6, #cf60c8);
+            background-clip: text; -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; 
+        }
+        .text-gradient-dark {
+            background: linear-gradient(to right, #7d73f3, #a663e4);
+            background-clip: text; -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; 
+        }
+        
+        .magnetic-btn { transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); display: inline-block; }
+
+        /* ==========================================================================
+           GLASSMORPHISM BASE
+           ========================================================================== */
+        .glass-base {
+            background: rgba(12, 18, 35, 0.6) !important;
+            backdrop-filter: blur(16px) !important;
+            -webkit-backdrop-filter: blur(16px) !important;
+            border: 1px solid rgba(63, 139, 249, 0.15) !important;
+            border-top: 1px solid rgba(63, 139, 249, 0.25) !important;
+            border-left: 1px solid rgba(63, 139, 249, 0.25) !important;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5) !important;
+        }
+
+        /* ==========================================================================
+           ANIMATIONS & CLASSES FOR INLINE VECTOR GRAPHICS
+           ========================================================================== */
+        .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+        @keyframes float-slow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+        
+        .animate-float-delayed { animation: float-delayed 6s ease-in-out infinite; }
+        @keyframes float-delayed { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(12px); } }
+
+        .node-interactive-group {
+            cursor: default;
+        }
+        .node-interactive-group circle.base-node-circle {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .node-interactive-group:hover circle.base-node-circle {
+            stroke: #7469F8;
+            fill: #142442;
+            filter: drop-shadow(0px 0px 10px rgba(116, 105, 248, 0.4));
+        }
+
+        .svg-pulse-core {
+            animation: svg-pulse-glow 3s infinite alternate;
+        }
+        @keyframes svg-pulse-glow {
+            0% { filter: drop-shadow(0px 0px 8px rgba(116, 105, 248, 0.3)); stroke: #7469F8; }
+            100% { filter: drop-shadow(0px 0px 18px rgba(63, 139, 249, 0.5)); stroke: #3F8BF9; }
+        }
+
+        .data-stream {
+            stroke-dasharray: 6 10;
+            animation: stream-flow 1.5s linear infinite;
+        }
+        @keyframes stream-flow {
+            from { stroke-dashoffset: 16; }
+            to { stroke-dashoffset: 0; }
+        }
+
+        .svg-results-card-container {
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            width: 100%;
+            height: 100%;
+        }
+        .svg-results-card-inner {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(63, 139, 249, 0.3);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+            border-radius: 1rem;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1.5rem;
+            transition: all 0.4s ease;
+        }
+        .svg-results-card-inner:hover {
+            border-color: #7469F8;
+            box-shadow: 0 0 30px rgba(116, 105, 248, 0.3);
+        }
+
+        /* ==========================================================================
+           MODERN CONTACT FORM OVERRIDES & POPUPS
+           ========================================================================= */
+        .modern-form-wrapper { 
+            position: relative; border-radius: 2rem; background: rgba(10, 10, 15, 0.85); 
+            border: 1px solid rgba(63, 139, 249, 0.15); backdrop-filter: blur(20px);
+            padding: 3rem; z-index: 1; box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+        }
+
+        /* Force Contact Headings/Labels to White */
+        #partners-master .contact-label,
+        #partners-master .contact-title,
+        #partners-master .contact-subtitle,
+        #partners-master .contact-field label {
+            color: #ffffff !important;
+        }
+
+        /* FIX: Render the Partnership Type selection box background and texts visibly */
+        #partners-master .contact-select-container,
+        #partners-master .contact-select,
+        #partners-master select.contact-select2,
+        #partners-master .select2-container--default .select2-selection--single,
+        #partners-master .select2-container--default .select2-selection--single .select2-selection__rendered,
+        #partners-master .contact-custom-form .contact-field select {
+            color: #ffffff !important;
+            background: rgba(15, 23, 42, 0.85) !important;
+            background-color: rgba(15, 23, 42, 0.85) !important;
+            border: 1px solid rgba(116, 105, 248, 0.4) !important;
+            border-radius: 8px !important;
+            height: auto !important;
+            min-height: 40px !important;
+            display: block !important; /* Failsafe if Select2 breaks */
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        #partners-master .select2-container--default .select2-selection--single .select2-selection__placeholder {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+
+        #partners-master .select2-container--default .select2-selection--single .select2-selection__arrow b {
+            border-color: #ffffff transparent transparent transparent !important;
+        }
+
+        /* FIX: Robust fix to stop Contact popups rendering out-of-screen bounds */
+        .partner-popup-overlay {
+            position: fixed !important; top: 0 !important; left: 0 !important; 
+            width: 100vw !important; height: 100vh !important;
+            background: rgba(4, 13, 33, 0.85) !important; backdrop-filter: blur(10px) !important;
+            z-index: 999999 !important; display: flex !important; align-items: center !important; 
+            justify-content: center !important; opacity: 0; pointer-events: none; 
+            transition: opacity 0.4s ease;
+        }
+        .partner-popup-overlay.active {
+            opacity: 1 !important; pointer-events: auto !important;
+        }
+        .partner-popup-content {
+            background: rgba(10, 15, 25, 0.95) !important; border: 1px solid rgba(116, 105, 248, 0.3) !important;
+            border-radius: 2rem; padding: 3rem; max-width: 650px; width: 90%; margin: 0 auto;
+            position: relative !important; transform: translateY(30px); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.9), 0 0 30px rgba(116, 105, 248, 0.15);
+            max-height: 85vh; overflow-y: auto !important;
+        }
+        .partner-popup-overlay.active .partner-popup-content {
+            transform: translateY(0) !important;
+        }
+        .popup-close-btn {
+            position: absolute; top: 1.5rem; right: 1.5rem; color: #fff;
+            background: transparent; border: none; font-size: 2.5rem; line-height: 1;
+            cursor: pointer; transition: color 0.3s ease; z-index: 99999; outline: none;
+        }
+        .popup-close-btn:hover { color: #E057D8; }
+
+        /* Lock the Dropdown visually without making it invisible */
+        .contact-readonly-field {
+            pointer-events: none !important;
+        }
+        .contact-readonly-field .select2-selection,
+        .contact-readonly-field select {
+            background-color: rgba(30, 35, 50, 0.9) !important;
+            color: #888 !important;
+        }
+
+        /* PPC theme pass */
+        html,
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow-x: hidden !important;
+            background-color: #020617 !important;
+        }
+        body,
+        #partners-master {
+            background: #020617 !important;
+            color: #cbd5e1 !important;
+            font-family: 'Poppins', sans-serif !important;
+        }
+        #partners-master *,
+        #partners-master *::before,
+        #partners-master *::after,
+        button,
+        input,
+        textarea,
+        select,
+        .contact-custom-form,
+        .contact-custom-form * {
+            font-family: 'Poppins', sans-serif !important;
+        }
+        .-page,
+        .-section-wrap,
+        .-widget-wrap,
+        .-widget-container,
+        .-section {
+            background-color: transparent !important;
+        }
+        #partners-master::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(63, 139, 249, 0.12) 0%, transparent 35%),
+                radial-gradient(circle at 85% 50%, rgba(224, 87, 216, 0.10) 0%, transparent 35%),
+                #020617;
+        }
+        #partners-master section {
+            background: transparent !important;
+        }
+        #warp-canvas {
+            opacity: 0.16 !important;
+        }
+        .text-gradient-smm,
+        .text-gradient-dark,
+        #partners-master .text-\[\#3F8BF9\],
+        #partners-master .text-\[\#AB57F3\],
+        #partners-master .text-\[\#E057D8\],
+        #partners-master .text-\[\#4c94f6\] {
+            background: linear-gradient(135deg, #3F8BF9, #7469F8, #AB57F3, #E057D8) !important;
+            -webkit-background-clip: text !important;
+            background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-size: 300% auto !important;
+            animation: ppcTextShine 6s linear infinite;
+        }
+        @keyframes ppcTextShine { to { background-position: 300% center; } }
+        .glass-base,
+        .modern-form-wrapper,
+        .partner-popup-content,
+        .svg-results-card-inner {
+            background: rgba(30, 41, 59, 0.8) !important;
+            border: 1px solid rgba(63, 139, 249, 0.3) !important;
+            border-radius: 1.5rem !important;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25) !important;
+            backdrop-filter: blur(24px) !important;
+            -webkit-backdrop-filter: blur(24px) !important;
+            transition: box-shadow 0.5s ease, background 0.4s ease, border-color 0.4s ease, transform 0.3s ease !important;
+        }
+        .glass-base:hover,
+        .modern-form-wrapper:hover,
+        .partner-popup-content:hover,
+        .svg-results-card-inner:hover {
+            background: rgba(51, 65, 85, 0.95) !important;
+            border-color: rgba(116, 105, 248, 0.6) !important;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5) !important;
+        }
+        .glow-btn,
+        .partner-popup-trigger,
+        #partners-master button[type="submit"],
+        #partners-master .contact-button-submit {
+            display: inline-block !important;
+            text-align: center !important;
+            background: linear-gradient(to right, #3F8BF9, #7469F8, #AB57F3) !important;
+            color: #ffffff !important;
+            border: 1px solid rgba(63, 139, 249, 0.3) !important;
+            border-radius: 16px !important;
+            box-shadow: 0 0 20px rgba(63, 139, 249, 0.4) !important;
+            font-weight: 500 !important;
+            text-decoration: none !important;
+            transition: all 0.3s ease !important;
+        }
+        .glow-btn:hover,
+        .partner-popup-trigger:hover,
+        #partners-master button[type="submit"]:hover,
+        #partners-master .contact-button-submit:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 0 30px rgba(63, 139, 249, 0.6) !important;
+        }
+        .partner-popup-overlay {
+            background: rgba(2, 6, 23, 0.78) !important;
+            backdrop-filter: blur(12px) !important;
+        }
+        #partners-master p,
+        #partners-master .text-slate-300,
+        #partners-master .text-slate-400,
+        #partners-master .text-slate-500 {
+            color: #94a3b8 !important;
+        }
+        #partners-master .text-white,
+        #partners-master h1,
+        #partners-master h2,
+        #partners-master h3,
+        #partners-master h4,
+        #partners-master li {
+            color: #f8fafc !important;
+        }
+        #partners-master h1 {
+            font-size: clamp(2.25rem, 5vw, 3.75rem) !important;
+            font-weight: 800 !important;
+            line-height: 1.12 !important;
+            letter-spacing: -0.04em !important;
+        }
+        #partners-master .contact-input,
+        #partners-master .contact-textarea,
+        #partners-master .contact-select2 + .select2-container .select2-selection,
+        #partners-master input,
+        #partners-master textarea,
+        #partners-master select,
+        .select2-container--open .select2-dropdown,
+        .select2-results__option {
+            background: rgba(15, 23, 42, 0.85) !important;
+            border: 1px solid rgba(63, 139, 249, 0.3) !important;
+            color: #ffffff !important;
+            border-radius: 0.75rem !important;
+        }
+        #partners-master input::placeholder,
+        #partners-master textarea::placeholder {
+            color: #94a3b8 !important;
+        }

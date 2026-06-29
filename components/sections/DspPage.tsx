@@ -5,12 +5,13 @@ import "@/styles/dsp.css";
 import ContactForm from "@/components/forms/ContactForm";
 
 import PageRevealEffects from "@/components/effects/PageRevealEffects";
+import FaqSection from "@/components/sections/FaqSection";
 
 export default function DspPage() {
   return (
     <PageRevealEffects>
       <div style={{ position: "fixed", top: "0", left: "0", width: "100vw", height: "100vh", backgroundColor: "#020617", zIndex: "-9999", pointerEvents: "none" }}></div>
-<div id="dsp-master">
+<div id="dsp-master" className="page-master antialiased text-white bg-[#020617] font-sans selection:bg-[#3F8BF9] selection:text-white">
   <div id="contact-modal" className="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6 opacity-0 transition-opacity duration-300">
     <div className="absolute inset-0 bg-[#020617]/80 backdrop-blur-md modal-close-overlay cursor-pointer"></div>
     <div className="relative w-full max-w-2xl bg-[#101930] border border-[#7469F8]/30 rounded-3xl p-8 sm:p-12 shadow-[0_0_50px_rgba(116,105,248,0.2)] transform scale-95 transition-transform duration-300 popup-content overflow-y-auto max-h-[90vh]">
@@ -21,8 +22,8 @@ export default function DspPage() {
         <h3 className="text-3xl font-bold text-white mb-3">Lets talk growth</h3>
         <p className="text-slate-400 text-sm">Fill out the form below and our team will get back to you shortly.</p>
       </div>
-      <div className="w-full text-left">
-        <ContactForm />
+      <div className="w-full text-left contact-form-shell relative p-6 md:p-10 rounded-[1.75rem] backdrop-blur-xl">
+        <ContactForm variant="homepage" />
       </div>
     </div>
   </div>
@@ -230,20 +231,45 @@ export default function DspPage() {
       </div>
     </section>
 
-    <section className="relative z-10 py-24 px-6 lg:px-12" style={{ background: "linear-gradient(to bottom, rgba(2, 6, 23, 0.2), rgba(15, 23, 42, 0.78))" }}>
-      <div className="max-w-4xl mx-auto reveal-up">
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-12">FAQ Section</h2>
-        <div className="space-y-4">
-          <div className="faq-item glass-card theme-blue rounded-3xl px-6 py-2 md:px-8 md:py-3 text-left"><button className="faq-button" type="button"><span>What is DSP-led media buying?</span><svg className="w-6 h-6 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg></button><div className="faq-answer">DSP-led media buying uses demand-side platforms or DSP-led buying routes to purchase digital advertising inventory programmatically across environments such as display, video, native, mobile, and CTV where available.</div></div>
-          <div className="faq-item glass-card theme-indigo rounded-3xl px-6 py-2 md:px-8 md:py-3 text-left"><button className="faq-button" type="button"><span>Does AscendiaPrime own a DSP platform?</span><svg className="w-6 h-6 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg></button><div className="faq-answer">AscendiaPrime does not position itself as a DSP platform owner. We support advertisers with planning, campaign structuring, partner coordination, buying route alignment, reporting visibility, and optimization guidance.</div></div>
-          <div className="faq-item glass-card theme-purple rounded-3xl px-6 py-2 md:px-8 md:py-3 text-left"><button className="faq-button" type="button"><span>Why should brands use DSP-led buying?</span><svg className="w-6 h-6 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg></button><div className="faq-answer">DSP-led buying can help advertisers access programmatic inventory, apply audience targeting, manage bids, control frequency, and review delivery across multiple media environments.</div></div>
-          <div className="faq-item glass-card theme-pink rounded-3xl px-6 py-2 md:px-8 md:py-3 text-left"><button className="faq-button" type="button"><span>What campaign types can DSP-led buying support?</span><svg className="w-6 h-6 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg></button><div className="faq-answer">It can support awareness, prospecting, display, video, native, mobile, CTV opportunities where available, and cross-channel media delivery depending on campaign goals and inventory access.</div></div>
-          <div className="faq-item glass-card theme-blue rounded-3xl px-6 py-2 md:px-8 md:py-3 text-left"><button className="faq-button" type="button"><span>How does AscendiaPrime support transparency in DSP-led campaigns?</span><svg className="w-6 h-6 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg></button><div className="faq-answer">We support advertisers with setup review, audience and inventory alignment, placement quality checks, pacing guidance, frequency management, campaign reporting, and optimization insights.</div></div>
-          <div className="faq-item glass-card theme-indigo rounded-3xl px-6 py-2 md:px-8 md:py-3 text-left"><button className="faq-button" type="button"><span>Can advertisers control where media appears?</span><svg className="w-6 h-6 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg></button><div className="faq-answer">Campaigns can be structured with placement guidance, inclusion or exclusion requirements, brand-safety considerations, and inventory review depending on the buying route and available setup.</div></div>
-          <div className="faq-item glass-card theme-purple rounded-3xl px-6 py-2 md:px-8 md:py-3 text-left"><button className="faq-button" type="button"><span>Is DSP-led buying only for large budgets?</span><svg className="w-6 h-6 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg></button><div className="faq-answer">Not always. DSP-led buying can be planned based on campaign goals, market size, audience strategy, media access, and budget. The key is to structure the campaign around clear objectives and control.</div></div>
-        </div>
-      </div>
-    </section>
+    <FaqSection
+      items={[
+        {
+          question: "What is DSP-led media buying?",
+          answer:
+            "DSP-led media buying uses demand-side platforms or DSP-led buying routes to purchase digital advertising inventory programmatically across environments such as display, video, native, mobile, and CTV where available.",
+        },
+        {
+          question: "Does AscendiaPrime own a DSP platform?",
+          answer:
+            "AscendiaPrime does not position itself as a DSP platform owner. We support advertisers with planning, campaign structuring, partner coordination, buying route alignment, reporting visibility, and optimization guidance.",
+        },
+        {
+          question: "Why should brands use DSP-led buying?",
+          answer:
+            "DSP-led buying can help advertisers access programmatic inventory, apply audience targeting, manage bids, control frequency, and review delivery across multiple media environments.",
+        },
+        {
+          question: "What campaign types can DSP-led buying support?",
+          answer:
+            "It can support awareness, prospecting, display, video, native, mobile, CTV opportunities where available, and cross-channel media delivery depending on campaign goals and inventory access.",
+        },
+        {
+          question: "How does AscendiaPrime support transparency in DSP-led campaigns?",
+          answer:
+            "We support advertisers with setup review, audience and inventory alignment, placement quality checks, pacing guidance, frequency management, campaign reporting, and optimization insights.",
+        },
+        {
+          question: "Can advertisers control where media appears?",
+          answer:
+            "Campaigns can be structured with placement guidance, inclusion or exclusion requirements, brand-safety considerations, and inventory review depending on the buying route and available setup.",
+        },
+        {
+          question: "Is DSP-led buying only for large budgets?",
+          answer:
+            "Not always. DSP-led buying can be planned based on campaign goals, market size, audience strategy, media access, and budget. The key is to structure the campaign around clear objectives and control.",
+        },
+      ]}
+    />
 
     <section className="relative z-10 py-32 px-6 lg:px-12" style={{ background: "linear-gradient(to bottom, rgba(15, 23, 42, 0.85), rgba(0, 0, 0, 1))" }}>
       <div className="max-w-4xl mx-auto text-center reveal-up">

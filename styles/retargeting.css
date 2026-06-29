@@ -13,69 +13,35 @@
   --on-dark-dim:    rgba(255, 255, 255, 0.85);
   --on-dark-mute:   rgba(255, 255, 255, 0.6);
 
-  --fd: 'Poppins', sans-serif;
-  --fb: 'Poppins', sans-serif;
-  --fm: 'Poppins', sans-serif;
+  --fd: var(--font-family);
+  --fb: var(--font-family);
+  --fm: var(--font-family);
   --ease: cubic-bezier(0.16,1,0.3,1);
 }
 
 /* ════════════════════════════════════════════════
    RESET & SEAMLESS DARK GRADIENT BACKGROUND
 ═══════════════════════════════════════════════════ */
-*, *::before, *::after { 
-  box-sizing: border-box; 
-  margin: 0; 
-  padding: 0; 
-  font-family: 'Poppins', sans-serif !important; 
+#retargeting-master *,
+#retargeting-master *::before,
+#retargeting-master *::after {
+  box-sizing: border-box;
 }
 
-html { 
-  scroll-behavior: smooth; 
-  background: #001233 !important; /* Dark Blue Fallback */
-}
-
-body {
-  margin: 0;
-  position: relative;
-  background: transparent !important;
+#retargeting-master {
   font-family: var(--fb);
   color: var(--on-dark-dim);
   font-weight: 400;
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
-}
-
-/* Fixed Seamless Background Covering the Whole Screen */
-body::before {
-  content: '' !important;
-  position: fixed !important;
-  inset: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-  background: linear-gradient(145deg, #001233 0%, #061026 40%, #0f1b38 100%) !important;
-  z-index: -9999 !important;
-  pointer-events: none !important;
-}
-
-/* Optional glowing orbs for texture */
-body::after {
-  content: '' !important;
-  position: fixed !important;
-  inset: 0 !important;
   background:
     radial-gradient(circle at -10% 14%, rgba(63, 139, 249, 0.12), transparent 32%),
-    radial-gradient(circle at 110% 42%, rgba(224, 87, 216, 0.10), transparent 30%) !important;
-  z-index: -9998 !important;
-  pointer-events: none !important;
+    radial-gradient(circle at 110% 42%, rgba(224, 87, 216, 0.10), transparent 30%),
+    linear-gradient(145deg, #020617 0%, #061026 40%, #0f1b38 100%);
+  min-height: 100vh;
 }
 
-a { text-decoration: none; color: inherit; }
-button { cursor: pointer; font-family: inherit; border: none; background: none; }
-
-body > * {
-  position: relative;
-  z-index: 1;
-}
+#retargeting-master a { text-decoration: none; color: inherit; }
+#retargeting-master button { cursor: pointer; font-family: inherit; border: none; background: none; }
 
 .wrap { max-width: 1280px; margin: 0 auto; padding: 0 2.5rem; position: relative; }
 @media (max-width: 640px) { .wrap { padding: 0 1.25rem; } }

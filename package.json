@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "perf:optimize": "node scripts/optimize-perf.mjs",
+    "perf:optimize:build": "node scripts/optimize-perf.mjs --build"
   },
   "dependencies": {
     "next": "^15.3.3",

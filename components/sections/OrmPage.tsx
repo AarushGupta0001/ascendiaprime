@@ -5,10 +5,12 @@ import "@/styles/orm.css";
 import ContactForm from "@/components/forms/ContactForm";
 
 import PageRevealEffects from "@/components/effects/PageRevealEffects";
+import FaqSection from "@/components/sections/FaqSection";
 
 export default function OrmPage() {
   return (
     <PageRevealEffects>
+      <div id="orm-master" className="page-master">
       <div className="hero">
   <div className="wrap">
     <div className="hero-grid">
@@ -162,41 +164,47 @@ export default function OrmPage() {
   </div>
 </section>
 
-<section className="faq-section">
-  <div className="wrap">
-    <div className="section-header rv">
-      <span className="t-eyebrow">Enquiries</span>
-      <h2 className="t-section">ORM & Creative <br /><em>FAQ.</em></h2>
+<FaqSection
+  header={
+    <div className="mb-12 text-center">
+      <span className="t-eyebrow block mb-4">Enquiries</span>
+      <h2 className="text-4xl md:text-5xl font-bold text-white">
+        ORM & Creative <br />
+        <em>FAQ.</em>
+      </h2>
     </div>
-    
-    <div className="faq-container rv" data-d="2">
-      <div className="fq">
-        <button className="fq-btn">How long does it take to suppress a negative search result? <div className="fq-icon"></div></button>
-        <div className="fq-body">Online Reputation Management (ORM) suppression is an iterative process. Depending on the authority of the host domain hosting the content, typical mitigation windows range between 3 to 6 months as our positive asset structures gain index authority.</div>
-      </div>
-      <div className="fq">
-        <button className="fq-btn">Do you use ethical, legal methods for ORM? <div className="fq-icon"></div></button>
-        <div className="fq-body">Absolutely. We operate strictly within search engine optimization compliance rules. We focus entirely on creating high-value first-party properties, content PR campaigns, and genuine search authority to naturally outrank negative variables.</div>
-      </div>
-      <div className="fq">
-        <button className="fq-btn">What kind of creative solutions do you output? <div className="fq-icon"></div></button>
-        <div className="fq-body">Our creative team develops comprehensive corporate storytelling collateral—from professional interview broadcasts and visual brand portfolios to targeted media case studies that control your public value index smoothly.</div>
-      </div>
-    </div>
-  </div>
-</section>
+  }
+  items={[
+    {
+      question: "How long does it take to suppress a negative search result?",
+      answer:
+        "Online Reputation Management (ORM) suppression is an iterative process. Depending on the authority of the host domain hosting the content, typical mitigation windows range between 3 to 6 months as our positive asset structures gain index authority.",
+    },
+    {
+      question: "Do you use ethical, legal methods for ORM?",
+      answer:
+        "Absolutely. We operate strictly within search engine optimization compliance rules. We focus entirely on creating high-value first-party properties, content PR campaigns, and genuine search authority to naturally outrank negative variables.",
+    },
+    {
+      question: "What kind of creative solutions do you output?",
+      answer:
+        "Our creative team develops comprehensive corporate storytelling collateral—from professional interview broadcasts and visual brand portfolios to targeted media case studies that control your public value index smoothly.",
+    },
+  ]}
+/>
 
 <section className="closing" id="enquire-form">
   <div className="wrap">
     <h2 className="t-mega">Command Your <br /><span className="grad-text">Digital Narrative.</span></h2>
     <p className="t-body">Neutralize reputational exposure. Establish absolute creative dominance today.</p>
     
-    <div className="form-container-panel rv" data-d="2">
-      <ContactForm />
+    <div className="form-container-panel rv contact-form-shell relative p-6 md:p-10 rounded-[1.75rem]" data-d="2">
+      <ContactForm variant="homepage" />
     </div>
 
   </div>
 </section>
+    </div>
     </PageRevealEffects>
   );
 }

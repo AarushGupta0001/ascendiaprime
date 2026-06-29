@@ -5,12 +5,13 @@ import "@/styles/video-native-ads.css";
 import ContactForm from "@/components/forms/ContactForm";
 
 import PageRevealEffects from "@/components/effects/PageRevealEffects";
+import FaqSection from "@/components/sections/FaqSection";
 
 export default function VideoNativeAdsPage() {
   return (
     <PageRevealEffects>
       <div style={{ position: "fixed", top: "0", left: "0", width: "100vw", height: "100vh", backgroundColor: "#020617", zIndex: "-9999", pointerEvents: "none" }}></div>
-<div id="vn-master">
+<div id="vn-master" className="page-master antialiased text-white bg-[#020617] font-sans selection:bg-[#3F8BF9] selection:text-white">
   <div id="contact-modal" className="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6 opacity-0 transition-opacity duration-300">
     <div className="absolute inset-0 bg-[#020617]/80 backdrop-blur-md modal-close-overlay cursor-pointer"></div>
     <div className="relative w-full max-w-2xl bg-[#101930] border border-[#7469F8]/30 rounded-3xl p-8 sm:p-12 shadow-[0_0_50px_rgba(116,105,248,0.2)] transform scale-95 transition-transform duration-300 popup-content overflow-y-auto max-h-[90vh]">
@@ -21,8 +22,8 @@ export default function VideoNativeAdsPage() {
         <h3 className="text-3xl font-bold text-white mb-3">Lets talk growth</h3>
         <p className="text-slate-400 text-sm">Fill out the form below and our team will get back to you shortly.</p>
       </div>
-      <div className="w-full text-left">
-        <ContactForm />
+      <div className="w-full text-left contact-form-shell relative p-6 md:p-10 rounded-[1.75rem] backdrop-blur-xl">
+        <ContactForm variant="homepage" />
       </div>
     </div>
   </div>
@@ -232,19 +233,39 @@ export default function VideoNativeAdsPage() {
       </div>
     </section>
 
-    <section className="relative z-10 py-24 px-6 lg:px-12" style={{ background: "linear-gradient(to bottom, rgba(2, 6, 23, 0.2), rgba(15, 23, 42, 0.78))" }}>
-      <div className="max-w-4xl mx-auto reveal-up">
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-12">FAQ Section</h2>
-        <div className="space-y-4">
-          <div className="faq-item glass-card theme-blue rounded-3xl px-6 py-2 md:px-8 md:py-3 text-left"><button className="faq-button" type="button"><span>What are video and native ads?</span><svg className="w-6 h-6 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg></button><div className="faq-answer">Video ads use motion-led creative formats, while native ads are designed to appear naturally within content environments such as feeds, articles, or recommendation placements.</div></div>
-          <div className="faq-item glass-card theme-indigo rounded-3xl px-6 py-2 md:px-8 md:py-3 text-left"><button className="faq-button" type="button"><span>How do video and native ads support brand awareness?</span><svg className="w-6 h-6 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg></button><div className="faq-answer">They help brands communicate with more context, story, and attention than standard display formats, supporting awareness, engagement, and consideration.</div></div>
-          <div className="faq-item glass-card theme-purple rounded-3xl px-6 py-2 md:px-8 md:py-3 text-left"><button className="faq-button" type="button"><span>What is the difference between native ads and display ads?</span><svg className="w-6 h-6 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg></button><div className="faq-answer">Display ads are visual units placed across websites and apps, while native ads are designed to match the content environment more naturally, such as in-feed or sponsored content placements.</div></div>
-          <div className="faq-item glass-card theme-pink rounded-3xl px-6 py-2 md:px-8 md:py-3 text-left"><button className="faq-button" type="button"><span>Can video and native ads support performance goals?</span><svg className="w-6 h-6 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg></button><div className="faq-answer">Yes. While they are often used for awareness and engagement, they can also support traffic, consideration, retargeting, and lead generation depending on campaign strategy.</div></div>
-          <div className="faq-item glass-card theme-blue rounded-3xl px-6 py-2 md:px-8 md:py-3 text-left"><button className="faq-button" type="button"><span>How are video and native campaigns measured?</span><svg className="w-6 h-6 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg></button><div className="faq-answer">Measurement can include impressions, clicks, viewability, completion rate, engagement, placement quality, audience response, and downstream campaign impact.</div></div>
-          <div className="faq-item glass-card theme-indigo rounded-3xl px-6 py-2 md:px-8 md:py-3 text-left"><button className="faq-button" type="button"><span>Are native ads clearly marked as sponsored?</span><svg className="w-6 h-6 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg></button><div className="faq-answer">Native placements should follow platform and publisher guidelines, including proper disclosure where required.</div></div>
-        </div>
-      </div>
-    </section>
+    <FaqSection
+      items={[
+        {
+          question: "What are video and native ads?",
+          answer:
+            "Video ads use motion-led creative formats, while native ads are designed to appear naturally within content environments such as feeds, articles, or recommendation placements.",
+        },
+        {
+          question: "How do video and native ads support brand awareness?",
+          answer:
+            "They help brands communicate with more context, story, and attention than standard display formats, supporting awareness, engagement, and consideration.",
+        },
+        {
+          question: "What is the difference between native ads and display ads?",
+          answer:
+            "Display ads are visual units placed across websites and apps, while native ads are designed to match the content environment more naturally, such as in-feed or sponsored content placements.",
+        },
+        {
+          question: "Can video and native ads support performance goals?",
+          answer:
+            "Yes. While they are often used for awareness and engagement, they can also support traffic, consideration, retargeting, and lead generation depending on campaign strategy.",
+        },
+        {
+          question: "How are video and native campaigns measured?",
+          answer:
+            "Measurement can include impressions, clicks, viewability, completion rate, engagement, placement quality, audience response, and downstream campaign impact.",
+        },
+        {
+          question: "Are native ads clearly marked as sponsored?",
+          answer: "Native placements should follow platform and publisher guidelines, including proper disclosure where required.",
+        },
+      ]}
+    />
 
     <section className="relative z-10 py-32 px-6 lg:px-12" style={{ background: "linear-gradient(to bottom, rgba(15, 23, 42, 0.85), rgba(0, 0, 0, 1))" }}>
       <div className="max-w-4xl mx-auto text-center reveal-up">

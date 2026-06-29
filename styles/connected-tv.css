@@ -693,31 +693,6 @@ html, body {
   line-height: 1.7;
   margin: 0;
 }
-.faq-button {
-  width: 100%;
-  text-align: left;
-  padding: 1.5rem 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  background: transparent !important;
-  border: none;
-  color: #f8fafc !important;
-  font-size: 1.125rem;
-  font-weight: 700;
-  outline: none !important;
-}
-.faq-icon { transition: transform 0.3s ease; color: #3F8BF9; flex-shrink: 0; }
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease;
-  line-height: 1.6;
-  color: #cbd5e1;
-}
-.faq-item.active .faq-icon { transform: rotate(45deg); color: #E057D8; }
-.faq-item.active .faq-answer { padding-bottom: 1.5rem; }
 #contact-modal label,
 #contact-modal .contact-label,
 #contact-modal .contact-title,

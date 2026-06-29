@@ -7,10 +7,12 @@ import "@/styles/retargeting.css";
 import ContactForm from "@/components/forms/ContactForm";
 
 import PageRevealEffects from "@/components/effects/PageRevealEffects";
+import FaqSection from "@/components/sections/FaqSection";
 
 export default function RetargetingPage() {
   return (
     <PageRevealEffects>
+      <div id="retargeting-master" className="page-master">
       <div className="hero">
   <div className="wrap">
     <div className="hero-grid">
@@ -308,41 +310,46 @@ export default function RetargetingPage() {
   </div>
 </section>
 
-<section className="faq-section">
-  <div className="wrap">
-    <div className="section-header">
-      <span className="t-eyebrow">Enquiries</span>
-      <h2 className="t-section">Common Questions</h2>
+<FaqSection
+  header={
+    <div className="mb-12 text-center">
+      <span className="t-eyebrow block mb-4">Enquiries</span>
+      <h2 className="text-4xl md:text-5xl font-bold text-white">Common Questions</h2>
     </div>
-      
-    <div className="faq-container">
-      <div className="fq">
-        <button className="fq-btn" aria-expanded="false" aria-controls="faq-1">What is a retargeting campaign? <span className="fq-icon">+</span></button>
-        <div className="fq-body" id="faq-1">A retargeting campaign is a digital advertising strategy used to re-engage users who have previously visited a website, viewed a product, started a form, added items to cart, or shown interest without completing the desired action.</div>
-      </div>
-      <div className="fq">
-        <button className="fq-btn" aria-expanded="false" aria-controls="faq-2">How does AscendiaPrime build retargeting audiences? <span className="fq-icon">+</span></button>
-        <div className="fq-body" id="faq-2">We build audiences based on user behaviour, engagement depth, funnel stage, page activity, cart activity, form activity, and available first-party signals, depending on the advertiser's setup and campaign goals.</div>
-      </div>
-      <div className="fq">
-        <button className="fq-btn" aria-expanded="false" aria-controls="faq-3">How do you avoid showing ads too often? <span className="fq-icon">+</span></button>
-        <div className="fq-body" id="faq-3">We use frequency controls, audience exclusions, pacing, converted-user suppression, and segment-based messaging to reduce overexposure and keep retargeting activity more relevant.</div>
-      </div>
-      <div className="fq">
-        <button className="fq-btn" aria-expanded="false" aria-controls="faq-4">Can retargeting support both e-commerce and lead generation? <span className="fq-icon">+</span></button>
-        <div className="fq-body" id="faq-4">Yes. Retargeting can be used for cart recovery, product reminders, lead form recovery, offer reminders, sign-up completion, and other conversion-focused objectives.</div>
-      </div>
-      <div className="fq">
-        <button className="fq-btn" aria-expanded="false" aria-controls="faq-5">Do advertisers get visibility into retargeting performance? <span className="fq-icon">+</span></button>
-        <div className="fq-body" id="faq-5">Yes. Advertisers can receive reporting visibility across audience activity, placements, traffic movement, conversions, and optimization insights based on the campaign setup.</div>
-      </div>
-      <div className="fq">
-        <button className="fq-btn" aria-expanded="false" aria-controls="faq-6">Is retargeting compliant with privacy expectations? <span className="fq-icon">+</span></button>
-        <div className="fq-body" id="faq-6">Retargeting should be implemented with proper tracking alignment, platform policies, consent requirements where applicable, and agreed campaign guidelines. AscendiaPrime works with advertisers to align setup and execution responsibly.</div>
-      </div>
-    </div>
-  </div>
-</section>
+  }
+  items={[
+    {
+      question: "What is a retargeting campaign?",
+      answer:
+        "A retargeting campaign is a digital advertising strategy used to re-engage users who have previously visited a website, viewed a product, started a form, added items to cart, or shown interest without completing the desired action.",
+    },
+    {
+      question: "How does AscendiaPrime build retargeting audiences?",
+      answer:
+        "We build audiences based on user behaviour, engagement depth, funnel stage, page activity, cart activity, form activity, and available first-party signals, depending on the advertiser's setup and campaign goals.",
+    },
+    {
+      question: "How do you avoid showing ads too often?",
+      answer:
+        "We use frequency controls, audience exclusions, pacing, converted-user suppression, and segment-based messaging to reduce overexposure and keep retargeting activity more relevant.",
+    },
+    {
+      question: "Can retargeting support both e-commerce and lead generation?",
+      answer:
+        "Yes. Retargeting can be used for cart recovery, product reminders, lead form recovery, offer reminders, sign-up completion, and other conversion-focused objectives.",
+    },
+    {
+      question: "Do advertisers get visibility into retargeting performance?",
+      answer:
+        "Yes. Advertisers can receive reporting visibility across audience activity, placements, traffic movement, conversions, and optimization insights based on the campaign setup.",
+    },
+    {
+      question: "Is retargeting compliant with privacy expectations?",
+      answer:
+        "Retargeting should be implemented with proper tracking alignment, platform policies, consent requirements where applicable, and agreed campaign guidelines. AscendiaPrime works with advertisers to align setup and execution responsibly.",
+    },
+  ]}
+/>
 
 <section className="contact-section" id="contact">
   <div className="wrap">
@@ -356,11 +363,12 @@ export default function RetargetingPage() {
       </div>
     </div>
       
-    <div className="contact-container">
-      <ContactForm />
+    <div className="contact-container contact-form-shell relative p-6 md:p-10 rounded-[1.75rem]">
+      <ContactForm variant="homepage" />
     </div>
   </div>
 </section>
+    </div>
     </PageRevealEffects>
   );
 }

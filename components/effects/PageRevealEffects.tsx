@@ -6,30 +6,12 @@ type PageRevealEffectsProps = {
   children: ReactNode;
 };
 
-const REVEAL_CONFIGS = [
-  { classes: ["fade-in-up", "fade-in-left", "fade-in-right", "scale-in", "feature-row"], activeClass: "is-visible", rootMargin: "0px 0px -50px 0px" },
-  { classes: ["fade-up-element"], activeClass: "in-view", rootMargin: "0px 0px -40px 0px" },
-  { classes: ["reveal-up", "smm-reveal", "seo-reveal", "inf-reveal", "hero-animate"], activeClass: "active", rootMargin: "0px 0px -50px 0px" },
-  { classes: ["rv"], activeClass: "in-view", rootMargin: "0px 0px -40px 0px" },
+const REVEAL_SELECTORS = [
+  { selector: ".fade-in-up, .fade-in-left, .fade-in-right, .scale-in, .feature-row", activeClass: "is-visible", rootMargin: "0px 0px -50px 0px" },
+  { selector: ".fade-up-element", activeClass: "in-view", rootMargin: "0px 0px -40px 0px" },
+  { selector: ".reveal-up, .smm-reveal, .seo-reveal, .inf-reveal, .hero-animate", activeClass: "active", rootMargin: "0px 0px -50px 0px" },
+  { selector: ".rv", activeClass: "in-view", rootMargin: "0px 0px -40px 0px" },
 ] as const;
-
-function collectElements(container: HTMLElement, classNames: readonly string[]): Element[] {
-  const elements: Element[] = [];
-  const seen = new Set<Element>();
-
-  for (const className of classNames) {
-    const matches = container.getElementsByClassName(className);
-    for (let i = 0; i < matches.length; i++) {
-      const element = matches[i];
-      if (!seen.has(element)) {
-        seen.add(element);
-        elements.push(element);
-      }
-    }
-  }
-
-  return elements;
-}
 
 /**
  * Activates scroll-reveal animations scoped to page content.
@@ -38,33 +20,34 @@ export default function PageRevealEffects({ children }: PageRevealEffectsProps) 
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    document.documentElement.classList.add("js-hydrated");
-
     const container = containerRef.current;
     if (!container) return;
 
-    const observers: IntersectionObserver[] = [];
+    const activeClassByElement = new WeakMap<Element, string>();
 
-    REVEAL_CONFIGS.forEach(({ classes, activeClass, rootMargin }) => {
-      const elements = collectElements(container, classes);
-      if (elements.length === 0) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
 
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add(activeClass);
-            }
-          });
-        },
-        { threshold: 0.1, rootMargin },
-      );
+          const activeClass = activeClassByElement.get(entry.target);
+          if (activeClass) {
+            entry.target.classList.add(activeClass);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" },
+    );
 
-      elements.forEach((el) => observer.observe(el));
-      observers.push(observer);
-    });
+    for (const { selector, activeClass } of REVEAL_SELECTORS) {
+      container.querySelectorAll(selector).forEach((el) => {
+        activeClassByElement.set(el, activeClass);
+        observer.observe(el);
+      });
+    }
 
-    return () => observers.forEach((observer) => observer.disconnect());
+    return () => observer.disconnect();
   }, []);
 
   return <div ref={containerRef}>{children}</div>;

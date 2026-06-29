@@ -4,9 +4,10 @@ import "@/styles/seo.css";
 
 import ContactForm from "@/components/forms/ContactForm";
 
-import ParticleCanvas from "@/components/effects/ParticleCanvas";
+import LazyParticleCanvas from "@/components/effects/LazyParticleCanvas";
 
 import PageRevealEffects from "@/components/effects/PageRevealEffects";
+import FaqSection from "@/components/sections/FaqSection";
 
 import SplineScript from "@/components/SplineScript";
 
@@ -18,7 +19,7 @@ export default function SeoPage() {
       <SplineScript />
       <div style={{ position: "fixed", top: "0", left: "0", width: "100vw", height: "100vh", backgroundColor: "#020617", zIndex: "-9999", pointerEvents: "none" }}></div>
   
-  <div id="ascendia-seo-master" style={{ width: "100%", position: "relative", color: "#cbd5e1", overflowX: "hidden", fontFamily: "'Poppins', sans-serif" }}>
+  <div id="ascendia-seo-master" className="page-master antialiased text-white bg-[#020617] font-sans selection:bg-[#3F8BF9] selection:text-white" style={{ width: "100%", position: "relative", overflowX: "hidden" }}>
   
     
     
@@ -35,7 +36,7 @@ export default function SeoPage() {
      </filter>
     </svg>
   
-    <ParticleCanvas id="space-canvas" className="fixed top-0 left-0 w-screen h-screen z-0 pointer-events-none opacity-80" />
+    <LazyParticleCanvas id="space-canvas" className="fixed top-0 left-0 w-screen h-screen z-0 pointer-events-none opacity-80" />
   
     <div className="seo-bg-glow w-[800px] h-[800px] bg-[#3F8BF9] top-[10%] left-[-200px]"></div>
     <div className="seo-bg-glow w-[600px] h-[600px] bg-[#AB57F3] top-[40%] right-[-150px]"></div>
@@ -420,9 +421,8 @@ export default function SeoPage() {
         </div>
       </section>
   
-      <section className="py-24 relative z-10" style={{ background: "linear-gradient(to bottom, rgba(45, 27, 84, 0.95) 0%, rgba(20, 18, 54, 0.9) 100%)" }}>
-        <div className="px-6 lg:px-12 max-w-[1400px] mx-auto w-full">
-  
+      <FaqSection
+        header={
           <div className="mb-16 text-center max-w-3xl mx-auto seo-reveal">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full glass-card theme-navy px-5 py-2.5 text-sm font-medium text-white border border-[#3F8BF9]">
               FAQ
@@ -431,32 +431,35 @@ export default function SeoPage() {
               FAQ About Our <span className="text-gradient-growth">SEO Services</span>
             </h2>
           </div>
-           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            <div className="seo-reveal glass-card theme-navy glass-hover p-8 hover-target">
-              <h3 className="text-lg font-bold text-white mb-3">What is SEO, and why is it important for my business in Delhi?</h3>
-              <p className="text-[#dbeafe] text-sm leading-relaxed">SEO helps your business appear in search results when potential customers look for your services. For Delhi-based businesses, SEO improves local visibility, footfall, and online leads.</p>
-            </div>
-            <div className="seo-reveal glass-card theme-navy glass-hover p-8 hover-target">
-              <h3 className="text-lg font-bold text-white mb-3">How long does it take to see results from SEO services?</h3>
-              <p className="text-[#dbeafe] text-sm leading-relaxed">SEO is a long-term strategy. Most businesses start seeing noticeable improvements within 3–6 months, depending on competition and website condition.</p>
-            </div>
-            <div className="seo-reveal glass-card theme-navy glass-hover p-8 hover-target">
-              <h3 className="text-lg font-bold text-white mb-3">What makes Ascendia Prime the best SEO company?</h3>
-              <p className="text-[#dbeafe] text-sm leading-relaxed">Our data-driven approach, transparent processes, and consistent results make Ascendia Prime a trusted SEO services company for businesses across industries.</p>
-            </div>
-            <div className="seo-reveal glass-card theme-navy glass-hover p-8 hover-target">
-              <h3 className="text-lg font-bold text-white mb-3">Do you offer local SEO services?</h3>
-              <p className="text-[#dbeafe] text-sm leading-relaxed">Yes. We provide location-based SEO services including Google Business Profile optimization, local citations, and geo-targeted keywords.</p>
-            </div>
-            <div className="seo-reveal glass-card theme-navy glass-hover p-8 hover-target md:col-span-2 text-center" style={{ borderColor: "#3F8BF9", boxShadow: "0 0 20px rgba(63,139,249,0.2)" }}>
-              <h3 className="text-lg font-bold text-[#3F8BF9] mb-3 drop-shadow-md">How much do your SEO services cost?</h3>
-              <p className="text-[#E0E7FF] text-sm leading-relaxed max-w-2xl mx-auto font-medium">Our pricing is flexible and customized based on business size, goals, and competition. We are known as an affordable SEO services company without compromising quality.</p>
-            </div>
-          </div>
-  
-        </div>
-      </section>
+        }
+        items={[
+          {
+            question: "What is SEO, and why is it important for my business in Delhi?",
+            answer:
+              "SEO helps your business appear in search results when potential customers look for your services. For Delhi-based businesses, SEO improves local visibility, footfall, and online leads.",
+          },
+          {
+            question: "How long does it take to see results from SEO services?",
+            answer:
+              "SEO is a long-term strategy. Most businesses start seeing noticeable improvements within 3–6 months, depending on competition and website condition.",
+          },
+          {
+            question: "What makes Ascendia Prime the best SEO company?",
+            answer:
+              "Our data-driven approach, transparent processes, and consistent results make Ascendia Prime a trusted SEO services company for businesses across industries.",
+          },
+          {
+            question: "Do you offer local SEO services?",
+            answer:
+              "Yes. We provide location-based SEO services including Google Business Profile optimization, local citations, and geo-targeted keywords.",
+          },
+          {
+            question: "How much do your SEO services cost?",
+            answer:
+              "Our pricing is flexible and customized based on business size, goals, and competition. We are known as an affordable SEO services company without compromising quality.",
+          },
+        ]}
+      />
   
       
       <section id="lead-form-section" className="py-24 relative z-10 overflow-hidden" style={{ background: "linear-gradient(to bottom, rgba(20, 18, 54, 0.9) 0%, rgba(2, 16, 36, 1) 100%)" }}>
@@ -474,8 +477,8 @@ export default function SeoPage() {
             </div>
   
             <div className="seo-reveal relative w-full h-full min-h-[500px]">
-              <div id="contact-form-container" className="relative z-10 p-8 md:p-12 h-full flex flex-col justify-center bg-[rgba(2,16,36,0.85)] backdrop-blur-xl border border-[rgba(63,139,249,0.3)] border-t-[rgba(63,139,249,0.5)] border-l-[rgba(63,139,249,0.5)] rounded-[1.5rem] shadow-[0_10px_40px_rgba(0,0,0,0.5)]">
-                <ContactForm />
+              <div id="contact-form-container" className="relative z-10 p-8 md:p-12 h-full flex flex-col justify-center backdrop-blur-xl rounded-[1.5rem]">
+                <ContactForm variant="homepage" />
               </div>
             </div>
           </div>

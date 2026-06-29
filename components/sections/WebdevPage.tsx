@@ -7,10 +7,12 @@ import "@/styles/webdev.css";
 import ContactForm from "@/components/forms/ContactForm";
 
 import PageRevealEffects from "@/components/effects/PageRevealEffects";
+import FaqSection from "@/components/sections/FaqSection";
 
 export default function WebdevPage() {
   return (
     <PageRevealEffects>
+      <div id="webdev-master" className="page-master">
       <section className="zone-ink">
   <div className="hero">
     <div className="wrap">
@@ -137,10 +139,10 @@ export default function WebdevPage() {
         <div className="sv-item">
           <div className="sv-idx">01</div>
           <div>
-            <div className="sv-name">CMS Development</div>
+            <div className="sv-name">WordPress Development</div>
             <div className="sv-desc">Architected, not assembled. CMS platforms engineered for speed, SEO, and complete mobile responsiveness.</div>
           </div>
-          <div className="sv-tags"><span className="sv-tag">Laravel</span><span className="sv-tag">Gutenberg</span><span className="sv-tag">REST API</span></div>
+          <div className="sv-tags"><span className="sv-tag">PHP</span><span className="sv-tag">Gutenberg</span><span className="sv-tag">REST API</span></div>
           <div className="sv-arrow"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></div>
         </div>
         <div className="sv-item">
@@ -164,7 +166,7 @@ export default function WebdevPage() {
         <div className="sv-item">
           <div className="sv-idx">04</div>
           <div>
-            <div className="sv-name">Laravel & Backend</div>
+            <div className="sv-name">PHP & Laravel</div>
             <div className="sv-desc">Bespoke web applications engineered around your unique business logic, with layered security and clean MVC patterns.</div>
           </div>
           <div className="sv-tags"><span className="sv-tag">Laravel</span><span className="sv-tag">Eloquent</span><span className="sv-tag">Queues</span></div>
@@ -194,7 +196,7 @@ export default function WebdevPage() {
             <div className="sv-name">CodeIgniter</div>
             <div className="sv-desc">Lightweight, exceptionally fast applications maintaining stringent performance and security under sustained load.</div>
           </div>
-          <div className="sv-tags"><span className="sv-tag">CodeIgniter 4</span><span className="sv-tag">Laravel 11</span><span className="sv-tag">MySQL</span></div>
+          <div className="sv-tags"><span className="sv-tag">CodeIgniter 4</span><span className="sv-tag">PHP 8</span><span className="sv-tag">MySQL</span></div>
           <div className="sv-arrow"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></div>
         </div>
         <div className="sv-item">
@@ -357,57 +359,48 @@ export default function WebdevPage() {
   </div>
 </section>
 
-<section className="zone-bone">
-  <div className="faq">
-    <div className="wrap">
-      <div className="faq-grid">
-        <div className="faq-side rv">
-          <span className="ghost-num">04</span>
-          <span className="t-eyebrow" style={{ display: "block", marginBottom: "1rem" }}>Common Enquiries</span>
-          <h2 className="t-section">Development<br /><em>questions.</em></h2>
-          <p className="t-body">The questions most organisations ask before committing to a development engagement.</p>
-        </div>
-        <div className="faq-list rv" data-d="1">
-          <div className="fq">
-            <button className="fq-btn">
-              <span className="fq-q">What is included in web development services?</span>
-              <span className="fq-icon-wrap"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4"/></svg></span>
-            </button>
-            <div className="fq-body"><p className="fq-a">Our services encompass website design, web application development, e-commerce solutions, CMS development, UI/UX design, rigorous QA testing, and structured ongoing maintenance — delivered as a cohesive, accountable programme.</p></div>
-          </div>
-          <div className="fq">
-            <button className="fq-btn">
-              <span className="fq-q">Do you offer custom web development?</span>
-              <span className="fq-icon-wrap"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4"/></svg></span>
-            </button>
-            <div className="fq-body"><p className="fq-a">Yes. We specialise exclusively in bespoke development — every engagement is architected from the ground up to your unique requirements. We have no interest in repurposing generic templates.</p></div>
-          </div>
-          <div className="fq">
-            <button className="fq-btn">
-              <span className="fq-q">What's the difference between web development and web application development?</span>
-              <span className="fq-icon-wrap"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4"/></svg></span>
-            </button>
-            <div className="fq-body"><p className="fq-a">Web development typically produces informational or marketing-focused websites. Web application development creates interactive, software-grade platforms with sophisticated backend logic, user state management, and database-driven functionality.</p></div>
-          </div>
-          <div className="fq">
-            <button className="fq-btn">
-              <span className="fq-q">Are your solutions mobile-responsive?</span>
-              <span className="fq-icon-wrap"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4"/></svg></span>
-            </button>
-            <div className="fq-body"><p className="fq-a">Every deliverable is fully responsive and performance-tested across all device classes. Mobile-first design is a fundamental architectural constraint of our process, not an optional feature.</p></div>
-          </div>
-          <div className="fq">
-            <button className="fq-btn">
-              <span className="fq-q">How long does a typical project take?</span>
-              <span className="fq-icon-wrap"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4"/></svg></span>
-            </button>
-            <div className="fq-body"><p className="fq-a">Timeline varies with complexity and scope. A precise project schedule with defined milestones is produced during the planning phase — we do not make commitments we cannot meet.</p></div>
-          </div>
-        </div>
-      </div>
+<FaqSection
+  header={
+    <div className="mb-12 text-center max-w-2xl mx-auto">
+      <span className="t-eyebrow block mb-4">Common Enquiries</span>
+      <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        Development
+        <br />
+        <em>questions.</em>
+      </h2>
+      <p className="text-slate-300">
+        The questions most organisations ask before committing to a development engagement.
+      </p>
     </div>
-  </div>
-</section>
+  }
+  items={[
+    {
+      question: "What is included in web development services?",
+      answer:
+        "Our services encompass website design, web application development, e-commerce solutions, CMS development, UI/UX design, rigorous QA testing, and structured ongoing maintenance — delivered as a cohesive, accountable programme.",
+    },
+    {
+      question: "Do you offer custom web development?",
+      answer:
+        "Yes. We specialise exclusively in bespoke development — every engagement is architected from the ground up to your unique requirements. We have no interest in repurposing generic templates.",
+    },
+    {
+      question: "What's the difference between web development and web application development?",
+      answer:
+        "Web development typically produces informational or marketing-focused websites. Web application development creates interactive, software-grade platforms with sophisticated backend logic, user state management, and database-driven functionality.",
+    },
+    {
+      question: "Are your solutions mobile-responsive?",
+      answer:
+        "Every deliverable is fully responsive and performance-tested across all device classes. Mobile-first design is a fundamental architectural constraint of our process, not an optional feature.",
+    },
+    {
+      question: "How long does a typical project take?",
+      answer:
+        "Timeline varies with complexity and scope. A precise project schedule with defined milestones is produced during the planning phase — we do not make commitments we cannot meet.",
+    },
+  ]}
+/>
 
 <section className="zone-ink" id="contact">
   <div className="closing">
@@ -421,13 +414,14 @@ export default function WebdevPage() {
         <h2 className="t-mega" style={{ fontSize: "clamp(2.6rem,6vw,5.6rem)" }}>Build something<br /><em>that lasts.</em></h2>
         <p className="t-body">Let us understand your objectives and demonstrate how a properly engineered web platform becomes a durable, compounding strategic advantage.</p>
          
-        <div className="contact-form-wrap rv" data-d="2">
-          <ContactForm />
+        <div className="contact-form-wrap rv contact-form-shell relative p-6 md:p-10 rounded-[1.75rem]" data-d="2">
+          <ContactForm variant="homepage" />
         </div>
       </div>
     </div>
   </div>
 </section>
+    </div>
     </PageRevealEffects>
   );
 }

@@ -6,7 +6,7 @@ import "@/styles/home.css";
 
 import ContactForm from "@/components/forms/ContactForm";
 
-import ParticleCanvas from "@/components/effects/ParticleCanvas";
+import LazyParticleCanvas from "@/components/effects/LazyParticleCanvas";
 
 import PageRevealEffects from "@/components/effects/PageRevealEffects";
 
@@ -31,7 +31,7 @@ export default function HomePage() {
 
 
 
-<ParticleCanvas id="cosmic-canvas" className="fixed inset-0 pointer-events-none z-0 w-full h-full opacity-80" />
+<LazyParticleCanvas id="cosmic-canvas" className="fixed inset-0 pointer-events-none z-0 w-full h-full opacity-80" />
 <div id="ambient-glow" className="ambient-glow"></div>
 
 <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative w-full pt-12 pb-24 md:pt-16 md:pb-32 z-10">

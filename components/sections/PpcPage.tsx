@@ -3,6 +3,7 @@
 import "@/styles/ppc.css";
 
 import PageRevealEffects from "@/components/effects/PageRevealEffects";
+import FaqSection from "@/components/sections/FaqSection";
 
 export default function PpcPage() {
   return (
@@ -10,7 +11,7 @@ export default function PpcPage() {
       <div style={{ position: "fixed", top: "0", left: "0", width: "100vw", height: "100vh", backgroundColor: "#020617", zIndex: "-9999", pointerEvents: "none" }}></div>
 
 
-<div id="ppc-master" style={{ width: "100%", position: "relative", color: "#cbd5e1", overflowX: "hidden", fontFamily: "'Poppins', sans-serif" }}>
+<div id="ppc-master" className="page-master antialiased text-white bg-[#020617] font-sans selection:bg-[#3F8BF9] selection:text-white" style={{ width: "100%", position: "relative", overflowX: "hidden" }}>
 
     
     
@@ -439,66 +440,35 @@ export default function PpcPage() {
         </div>
     </section>
 
-    
-    <section className="relative z-10 py-24" style={{ background: "linear-gradient(to bottom, rgba(2, 6, 23, 1) 0%, rgba(15, 23, 42, 0.95) 100%)" }}>
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 reveal-up">
-            <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-12">FAQ Section</h2>
-            
-            <div className="space-y-4" id="faq-container">
-                
-                <div className="faq-item trace-card relative theme-blue px-6 py-2 md:px-8 md:py-3 text-left">
-                    <button className="faq-button text-white w-full select-none outline-none focus:outline-none -webkit-tap-highlight-color-transparent">
-                        <span>What are Google, Meta and PPC ads?</span>
-                        <svg className="w-6 h-6 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg>
-                    </button>
-                    <div className="faq-answer text-[#cbd5e1]">
-                        Google, Meta and PPC ads are paid media campaigns that help advertisers reach relevant audiences across search, social, display, shopping, video, and retargeting placements.
-                    </div>
-                </div>
-
-                <div className="faq-item trace-card relative theme-indigo px-6 py-2 md:px-8 md:py-3 text-left">
-                    <button className="faq-button text-white w-full select-none outline-none focus:outline-none -webkit-tap-highlight-color-transparent">
-                        <span>How do you plan paid media campaigns?</span>
-                        <svg className="w-6 h-6 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg>
-                    </button>
-                    <div className="faq-answer text-[#cbd5e1]">
-                        We begin with the advertiser’s objectives, audience profile, target market, budget, campaign model, conversion goals, and tracking requirements before building the campaign structure.
-                    </div>
-                </div>
-
-                <div className="faq-item trace-card relative theme-purple px-6 py-2 md:px-8 md:py-3 text-left">
-                    <button className="faq-button text-white w-full select-none outline-none focus:outline-none -webkit-tap-highlight-color-transparent">
-                        <span>Can paid media campaigns support both leads and sales?</span>
-                        <svg className="w-6 h-6 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg>
-                    </button>
-                    <div className="faq-answer text-[#cbd5e1]">
-                        Yes. Paid media campaigns can be structured for lead generation, e-commerce sales, product promotion, sign-ups, retargeting, or other measurable actions depending on the campaign objective.
-                    </div>
-                </div>
-
-                <div className="faq-item trace-card relative theme-pink px-6 py-2 md:px-8 md:py-3 text-left">
-                    <button className="faq-button text-white w-full select-none outline-none focus:outline-none -webkit-tap-highlight-color-transparent">
-                        <span>Do advertisers get visibility into campaign performance?</span>
-                        <svg className="w-6 h-6 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg>
-                    </button>
-                    <div className="faq-answer text-[#cbd5e1]">
-                        Yes. Advertisers can get reporting visibility across spend, clicks, conversions, CPA, ROAS, audience response, and optimization insights.
-                    </div>
-                </div>
-
-                <div className="faq-item trace-card relative theme-blue px-6 py-2 md:px-8 md:py-3 text-left">
-                    <button className="faq-button text-white w-full select-none outline-none focus:outline-none -webkit-tap-highlight-color-transparent">
-                        <span>How do you reduce wasted spend in PPC campaigns?</span>
-                        <svg className="w-6 h-6 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg>
-                    </button>
-                    <div className="faq-answer text-[#cbd5e1]">
-                        We focus on audience relevance, keyword quality, negative targeting, creative testing, landing page alignment, budget monitoring, and continuous optimization.
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
+    <FaqSection
+      items={[
+        {
+          question: "What are Google, Meta and PPC ads?",
+          answer:
+            "Google, Meta and PPC ads are paid media campaigns that help advertisers reach relevant audiences across search, social, display, shopping, video, and retargeting placements.",
+        },
+        {
+          question: "How do you plan paid media campaigns?",
+          answer:
+            "We begin with the advertiser’s objectives, audience profile, target market, budget, campaign model, conversion goals, and tracking requirements before building the campaign structure.",
+        },
+        {
+          question: "Can paid media campaigns support both leads and sales?",
+          answer:
+            "Yes. Paid media campaigns can be structured for lead generation, e-commerce sales, product promotion, sign-ups, retargeting, or other measurable actions depending on the campaign objective.",
+        },
+        {
+          question: "Do advertisers get visibility into campaign performance?",
+          answer:
+            "Yes. Advertisers can get reporting visibility across spend, clicks, conversions, CPA, ROAS, audience response, and optimization insights.",
+        },
+        {
+          question: "How do you reduce wasted spend in PPC campaigns?",
+          answer:
+            "We focus on audience relevance, keyword quality, negative targeting, creative testing, landing page alignment, budget monitoring, and continuous optimization.",
+        },
+      ]}
+    />
 
     
     <section className="relative z-10 py-32" style={{ background: "linear-gradient(to bottom, rgba(15, 23, 42, 0.95) 0%, rgba(0, 0, 0, 1) 100%)" }}>

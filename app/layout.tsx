@@ -4,18 +4,20 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { ContactModalProvider } from "@/components/forms/ContactModalProvider";
 import "@/styles/layout.css";
+import "@/styles/contact-form.css";
+import "@/styles/faq.css";
 import "./globals.css";
 
 const outfit = Outfit({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["400", "600", "700", "800"],
   variable: "--font-outfit",
   display: "swap",
 });
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-poppins",
   display: "swap",
 });

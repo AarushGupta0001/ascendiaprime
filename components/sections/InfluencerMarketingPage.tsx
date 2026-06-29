@@ -5,6 +5,7 @@ import "@/styles/influencer-marketing.css";
 import ContactForm from "@/components/forms/ContactForm";
 
 import PageRevealEffects from "@/components/effects/PageRevealEffects";
+import FaqSection from "@/components/sections/FaqSection";
 
 import type { CSSProperties } from "react";
 
@@ -13,7 +14,7 @@ export default function InfluencerMarketingPage() {
     <PageRevealEffects>
       <div style={{ position: "fixed", top: "0", left: "0", width: "100vw", height: "100vh", backgroundColor: "#020617", zIndex: "-9999", pointerEvents: "none" }}></div>
 
-<div id="ascendia-influencer-master" style={{ width: "100%", position: "relative", color: "#cbd5e1", overflowX: "hidden", fontFamily: "'Poppins', sans-serif" }}>
+<div id="ascendia-influencer-master" className="page-master antialiased text-white bg-[#020617] font-sans selection:bg-[#3F8BF9] selection:text-white" style={{ width: "100%", position: "relative", overflowX: "hidden" }}>
 
     
     
@@ -431,61 +432,40 @@ export default function InfluencerMarketingPage() {
         </div>
     </section>
 
-    <section className="py-24 px-6 relative z-10 w-full pb-20" style={{ background: "rgba(3, 3, 8, 1)" }}>
-        <div className="max-w-4xl mx-auto inf-reveal">
-            
-            <div className="mb-16 text-center">
-                <div className="mb-4 inline-flex items-center gap-2 rounded-full glass-card theme-cosmic px-5 py-2.5 text-sm font-medium text-white border border-[#7469F8]">
-                    FAQ
-                </div>
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Influencer Marketing <span className="text-gradient-social">Agency</span></h2>
-            </div>
-
-            <div className="space-y-4">
-                
-                <div className="faq-box faq-item glass-card theme-cosmic px-6 py-2 md:px-8 md:py-3 interactive-el text-left">
-                    <button className="faq-head faq-button text-white w-full select-none outline-none focus:outline-none -webkit-tap-highlight-color-transparent bg-transparent">
-                        <span>What does an influencer marketing agency do?</span>
-                        <svg className="w-6 h-6 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div className="faq-body">
-                        <p className="text-base leading-relaxed text-[#e9d5ff]">An influencer marketing agency identifies the right influencers, manages collaborations, creates strategies, executes campaigns, and measures performance to drive results.</p>
-                    </div>
-                </div>
-
-                <div className="faq-box faq-item glass-card theme-cosmic px-6 py-2 md:px-8 md:py-3 interactive-el text-left">
-                    <button className="faq-head faq-button text-white w-full select-none outline-none focus:outline-none -webkit-tap-highlight-color-transparent bg-transparent">
-                        <span>How much does influencer marketing cost?</span>
-                        <svg className="w-6 h-6 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div className="faq-body">
-                        <p className="text-base leading-relaxed text-[#e9d5ff]">Costs vary depending on influencer reach, platform, content type, and campaign length. We offer packages tailored to different budgets.</p>
-                    </div>
-                </div>
-
-                <div className="faq-box faq-item glass-card theme-cosmic px-6 py-2 md:px-8 md:py-3 interactive-el text-left">
-                    <button className="faq-head faq-button text-white w-full select-none outline-none focus:outline-none -webkit-tap-highlight-color-transparent bg-transparent">
-                        <span>How do you choose the right influencers?</span>
-                        <svg className="w-6 h-6 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div className="faq-body">
-                        <p className="text-base leading-relaxed text-[#e9d5ff]">We analyze audience demographics, engagement rates, content quality, brand alignment, and past performance to select influencers who will drive results.</p>
-                    </div>
-                </div>
-
-                <div className="faq-box faq-item glass-card theme-cosmic px-6 py-2 md:px-8 md:py-3 interactive-el text-left">
-                    <button className="faq-head faq-button text-white w-full select-none outline-none focus:outline-none -webkit-tap-highlight-color-transparent bg-transparent">
-                        <span>Is influencer marketing suitable for small businesses?</span>
-                        <svg className="w-6 h-6 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div className="faq-body">
-                        <p className="text-base leading-relaxed text-[#e9d5ff]">Yes! Even small brands can benefit from nano and micro influencers who offer high engagement at a cost-effective rate.</p>
-                    </div>
-                </div>
-
-            </div>
+    <FaqSection
+      header={
+        <div className="mb-16 text-center max-w-3xl mx-auto">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full glass-card theme-cosmic px-5 py-2.5 text-sm font-medium text-white border border-[#7469F8]">
+            FAQ
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Influencer Marketing <span className="text-gradient-social">Agency</span>
+          </h2>
         </div>
-    </section>
+      }
+      items={[
+        {
+          question: "What does an influencer marketing agency do?",
+          answer:
+            "An influencer marketing agency identifies the right influencers, manages collaborations, creates strategies, executes campaigns, and measures performance to drive results.",
+        },
+        {
+          question: "How much does influencer marketing cost?",
+          answer:
+            "Costs vary depending on influencer reach, platform, content type, and campaign length. We offer packages tailored to different budgets.",
+        },
+        {
+          question: "How do you choose the right influencers?",
+          answer:
+            "We analyze audience demographics, engagement rates, content quality, brand alignment, and past performance to select influencers who will drive results.",
+        },
+        {
+          question: "Is influencer marketing suitable for small businesses?",
+          answer:
+            "Yes! Even small brands can benefit from nano and micro influencers who offer high engagement at a cost-effective rate.",
+        },
+      ]}
+    />
 
     
     <section id="campaign-form-section" className="py-24 px-6 relative z-10 w-full pb-36" style={{ background: "linear-gradient(to bottom, rgba(3, 3, 8, 1) 0%, rgba(13, 4, 30, 1) 100%)" }}>
@@ -499,9 +479,9 @@ export default function InfluencerMarketingPage() {
                 </p>
             </div>
 
-            <div className="glass-card theme-creator p-8 md:p-12 shadow-2xl relative">
+            <div className="glass-card theme-creator p-8 md:p-12 shadow-2xl relative contact-form-shell">
                 
-                <ContactForm />
+                <ContactForm variant="homepage" />
             </div>
         </div>
     </section>

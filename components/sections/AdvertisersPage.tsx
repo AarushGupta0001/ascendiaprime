@@ -4,14 +4,14 @@ import "@/styles/advertisers.css";
 
 import ContactForm from "@/components/forms/ContactForm";
 
-import ParticleCanvas from "@/components/effects/ParticleCanvas";
+import LazyParticleCanvas from "@/components/effects/LazyParticleCanvas";
 
 import PageRevealEffects from "@/components/effects/PageRevealEffects";
 
 export default function AdvertisersPage() {
   return (
     <PageRevealEffects>
-      <div id="partners-master" style={{ width: "100%", position: "relative", color: "#cbd5e1", overflowX: "hidden", fontFamily: "'Poppins', sans-serif" }}>
+      <div id="partners-master" className="page-master antialiased text-white bg-[#020617] font-sans selection:bg-[#3F8BF9] selection:text-white" style={{ width: "100%", position: "relative", overflowX: "hidden" }}>
 
     
     
@@ -20,7 +20,7 @@ export default function AdvertisersPage() {
 
     
 
-    <ParticleCanvas id="warp-canvas" className="fixed top-0 left-0 w-screen h-screen z-0 pointer-events-none opacity-50" />
+    <LazyParticleCanvas id="warp-canvas" className="fixed top-0 left-0 w-screen h-screen z-0 pointer-events-none opacity-50" />
 
     <div className="relative z-10 w-full text-slate-400">
         
@@ -258,8 +258,8 @@ export default function AdvertisersPage() {
         <div className="partner-popup-content">
             <button id="close-modal" className="popup-close-btn">&times;</button>
             <h3 className="text-3xl font-bold text-white mb-8">Advertiser Inquiry</h3>
-            <div className="relative z-20">
-                <ContactForm />
+            <div className="relative z-20 contact-form-shell p-6 md:p-10 rounded-[1.75rem]">
+                <ContactForm variant="homepage" />
             </div>
         </div>
     </div>

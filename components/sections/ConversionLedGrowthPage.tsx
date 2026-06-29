@@ -4,9 +4,10 @@ import "@/styles/conversion-led-growth.css";
 
 import ContactForm from "@/components/forms/ContactForm";
 
-import ParticleCanvas from "@/components/effects/ParticleCanvas";
+import LazyParticleCanvas from "@/components/effects/LazyParticleCanvas";
 
 import PageRevealEffects from "@/components/effects/PageRevealEffects";
+import FaqSection from "@/components/sections/FaqSection";
 
 import type { CSSProperties } from "react";
 
@@ -15,7 +16,7 @@ export default function ConversionLedGrowthPage() {
     <PageRevealEffects>
       <div style={{ position: "fixed", top: "0", left: "0", width: "100vw", height: "100vh", backgroundColor: "#020617", zIndex: "-9999", pointerEvents: "none" }}></div>
 
-<div id="cro-master" style={{ width: "100%", position: "relative", color: "#cbd5e1", overflowX: "hidden", fontFamily: "'Poppins', sans-serif" }}>
+<div id="cro-master" className="page-master antialiased text-white bg-[#020617] font-sans selection:bg-[#3F8BF9] selection:text-white" style={{ width: "100%", position: "relative", overflowX: "hidden" }}>
 
     
 
@@ -23,7 +24,7 @@ export default function ConversionLedGrowthPage() {
 
     
 
-    <ParticleCanvas id="warp-canvas" className="fixed top-0 left-0 w-screen h-screen z-0 pointer-events-none opacity-50" />
+    <LazyParticleCanvas id="warp-canvas" className="fixed top-0 left-0 w-screen h-screen z-0 pointer-events-none opacity-50" />
 
     <div className="relative z-10 w-full text-slate-300" style={{ perspective: "2000px" }}>
         
@@ -295,97 +296,62 @@ export default function ConversionLedGrowthPage() {
 
         <section className="py-24 px-6 lg:px-12 relative z-10">
             <div className="max-w-[1400px] mx-auto w-full">
-                <div className="trust-panel rounded-[2rem] p-8 md:p-12 lg:p-16 smm-reveal">
-                    <div className="grid lg:grid-cols-2 gap-12 items-start">
-                        <div>
-                            <div className="text-[#E057D8] font-bold tracking-widest text-sm uppercase mb-4">Experience, Trust & Measurement</div>
-                            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">Built Around Clarity, Trust, and <span className="text-gradient-smm">Measurable Action</span></h2>
-                            <div className="text-slate-200 text-lg leading-relaxed space-y-5">
-                                <p>Conversion-led growth is not only about changing page elements. It is about understanding how users experience the journey, where confidence is lost, and which improvements can create a measurable lift in campaign performance.</p>
-                                <p>AscendiaPrime connects campaign data, landing page experience, tracking events, and user behaviour insights to help advertisers make better post-click decisions.</p>
-                            </div>
+                <div className="trust-panel trust-section-panel smm-reveal">
+                    <div className="trust-copy">
+                        <div className="trust-eyebrow">Experience, Trust & Measurement</div>
+                        <h2>Built Around Clarity, Trust, and <span className="text-gradient-smm">Measurable Action</span></h2>
+                        <div className="trust-body">
+                            <p>Conversion-led growth is not only about changing page elements. It is about understanding how users experience the journey, where confidence is lost, and which improvements can create a measurable lift in campaign performance.</p>
+                            <p>Our platform connects campaign data, landing page experience, tracking events, and user behaviour insights to help advertisers make better post-click decisions.</p>
                         </div>
-                        <div className="grid sm:grid-cols-2 gap-4">
-                            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-slate-200">Landing page and offer alignment</div>
-                            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-slate-200">Funnel friction review</div>
-                            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-slate-200">CTA and message clarity</div>
-                            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-slate-200">Trust and reassurance signals</div>
-                            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-slate-200">Tracking and event validation</div>
-                            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-slate-200">Lead and conversion quality review</div>
-                            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-slate-200 sm:col-span-2">Campaign performance insights</div>
-                        </div>
+                    </div>
+                    <div className="trust-chip-grid">
+                        <div className="trust-chip">Landing page and offer alignment</div>
+                        <div className="trust-chip">Funnel friction review</div>
+                        <div className="trust-chip">CTA and message clarity</div>
+                        <div className="trust-chip">Trust and reassurance signals</div>
+                        <div className="trust-chip">Tracking and event validation</div>
+                        <div className="trust-chip">Lead and conversion quality review</div>
+                        <div className="trust-chip">Campaign performance insights</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section className="relative z-10 py-24 faq-section-ppc">
-            <div className="max-w-4xl mx-auto px-6 lg:px-12 smm-reveal">
-                <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-12">FAQ Section</h2>
-                
-                <div className="space-y-4" id="faq-container">
-                    <div className="faq-item trace-card relative theme-blue px-6 py-2 md:px-8 md:py-3 text-left">
-                        <button className="faq-button text-white w-full select-none outline-none focus:outline-none -webkit-tap-highlight-color-transparent" type="button" aria-expanded="false">
-                            <span>What is conversion-led growth?</span>
-                            <svg className="w-6 h-6 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg>
-                        </button>
-                        <div className="faq-answer text-[#cbd5e1]">
-                            Conversion-led growth focuses on improving the journey after a user clicks, helping more visitors complete meaningful actions such as purchases, leads, sign-ups, enquiries, or other campaign goals.
-                        </div>
-                    </div>
-
-                    <div className="faq-item trace-card relative theme-indigo px-6 py-2 md:px-8 md:py-3 text-left">
-                        <button className="faq-button text-white w-full select-none outline-none focus:outline-none -webkit-tap-highlight-color-transparent" type="button" aria-expanded="false">
-                            <span>How is this different from simply driving more traffic?</span>
-                            <svg className="w-6 h-6 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg>
-                        </button>
-                        <div className="faq-answer text-[#cbd5e1]">
-                            Driving traffic increases volume. Conversion-led growth improves the experience after users arrive, helping advertisers make better use of existing campaign traffic.
-                        </div>
-                    </div>
-
-                    <div className="faq-item trace-card relative theme-purple px-6 py-2 md:px-8 md:py-3 text-left">
-                        <button className="faq-button text-white w-full select-none outline-none focus:outline-none -webkit-tap-highlight-color-transparent" type="button" aria-expanded="false">
-                            <span>What areas do you review for conversion improvement?</span>
-                            <svg className="w-6 h-6 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg>
-                        </button>
-                        <div className="faq-answer text-[#cbd5e1]">
-                            We review landing pages, forms, product pages, carts, checkout flows, CTAs, messaging, trust signals, tracking events, and user behaviour across the post-click journey.
-                        </div>
-                    </div>
-
-                    <div className="faq-item trace-card relative theme-pink px-6 py-2 md:px-8 md:py-3 text-left">
-                        <button className="faq-button text-white w-full select-none outline-none focus:outline-none -webkit-tap-highlight-color-transparent" type="button" aria-expanded="false">
-                            <span>Can this support both e-commerce and lead generation campaigns?</span>
-                            <svg className="w-6 h-6 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg>
-                        </button>
-                        <div className="faq-answer text-[#cbd5e1]">
-                            Yes. It can support e-commerce sales, cart recovery, lead form completion, enquiry generation, sign-ups, subscriptions, and other measurable actions.
-                        </div>
-                    </div>
-
-                    <div className="faq-item trace-card relative theme-blue px-6 py-2 md:px-8 md:py-3 text-left">
-                        <button className="faq-button text-white w-full select-none outline-none focus:outline-none -webkit-tap-highlight-color-transparent" type="button" aria-expanded="false">
-                            <span>Do advertisers get visibility into conversion performance?</span>
-                            <svg className="w-6 h-6 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg>
-                        </button>
-                        <div className="faq-answer text-[#cbd5e1]">
-                            Yes. Advertisers can receive reporting visibility across traffic sources, user actions, conversion events, campaign movement, and optimization insights based on the campaign setup.
-                        </div>
-                    </div>
-
-                    <div className="faq-item trace-card relative theme-indigo px-6 py-2 md:px-8 md:py-3 text-left">
-                        <button className="faq-button text-white w-full select-none outline-none focus:outline-none -webkit-tap-highlight-color-transparent" type="button" aria-expanded="false">
-                            <span>Do you redesign the full website or only campaign pages?</span>
-                            <svg className="w-6 h-6 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg>
-                        </button>
-                        <div className="faq-answer text-[#cbd5e1]">
-                            This depends on the requirement. In many cases, we focus first on campaign landing pages, forms, product pages, checkout flows, or key conversion paths before recommending wider website improvements.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <FaqSection
+          items={[
+            {
+              question: "What is conversion-led growth?",
+              answer:
+                "Conversion-led growth focuses on improving the journey after a user clicks, helping more visitors complete meaningful actions such as purchases, leads, sign-ups, enquiries, or other campaign goals.",
+            },
+            {
+              question: "How is this different from simply driving more traffic?",
+              answer:
+                "Driving traffic increases volume. Conversion-led growth improves the experience after users arrive, helping advertisers make better use of existing campaign traffic.",
+            },
+            {
+              question: "What areas do you review for conversion improvement?",
+              answer:
+                "We review landing pages, forms, product pages, carts, checkout flows, CTAs, messaging, trust signals, tracking events, and user behaviour across the post-click journey.",
+            },
+            {
+              question: "Can this support both e-commerce and lead generation campaigns?",
+              answer:
+                "Yes. It can support e-commerce sales, cart recovery, lead form completion, enquiry generation, sign-ups, subscriptions, and other measurable actions.",
+            },
+            {
+              question: "Do advertisers get visibility into conversion performance?",
+              answer:
+                "Yes. Advertisers can receive reporting visibility across traffic sources, user actions, conversion events, campaign movement, and optimization insights based on the campaign setup.",
+            },
+            {
+              question: "Do you redesign the full website or only campaign pages?",
+              answer:
+                "This depends on the requirement. In many cases, we focus first on campaign landing pages, forms, product pages, checkout flows, or key conversion paths before recommending wider website improvements.",
+            },
+          ]}
+        />
 
         <section id="target-audit-section" className="relative z-10 py-32 px-6 lg:px-12 overflow-visible border-t border-white/5" style={{ background: "linear-gradient(to bottom, rgba(15, 23, 42, 0.95) 0%, rgba(0, 0, 0, 1) 100%)" }}>
             <div className="max-w-4xl mx-auto text-center smm-reveal">
@@ -411,7 +377,9 @@ export default function ConversionLedGrowthPage() {
         <div className="conversation-modal-panel popup-content modern-form-wrapper scale-95" role="dialog" aria-modal="true" aria-labelledby="conversation-modal-title" style={{ boxShadow: "0 0 40px rgba(171,87,243,0.25)" }}>
             <button className="modal-close-btn js-close-conversation" type="button" aria-label="Close conversation form">&times;</button>
             <h3 id="conversation-modal-title" className="text-3xl font-bold text-white mb-8 pr-10">Lets talk growth</h3>
-            <ContactForm />
+            <div className="contact-form-shell relative p-6 md:p-10 rounded-[1.75rem]">
+            <ContactForm variant="homepage" />
+            </div>
         </div>
     </div>
 

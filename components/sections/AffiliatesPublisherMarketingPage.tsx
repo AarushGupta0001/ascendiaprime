@@ -4,16 +4,17 @@ import "@/styles/affiliates-publisher-marketing.css";
 
 import ContactForm from "@/components/forms/ContactForm";
 
-import ParticleCanvas from "@/components/effects/ParticleCanvas";
+import LazyParticleCanvas from "@/components/effects/LazyParticleCanvas";
 
 import PageRevealEffects from "@/components/effects/PageRevealEffects";
+import FaqSection from "@/components/sections/FaqSection";
 
 export default function AffiliatesPublisherMarketingPage() {
   return (
     <PageRevealEffects>
-      <div id="page-master" style={{ width: "100%", position: "relative", color: "#3F8BF9", fontFamily: "'Poppins', sans-serif" }}>
+      <div id="page-master" className="page-master antialiased text-white bg-[#020617] font-sans selection:bg-[#3F8BF9] selection:text-white" style={{ width: "100%", position: "relative", overflowX: "hidden" }}>
 
-    <ParticleCanvas id="nexus-canvas" className="fixed top-0 left-0 w-screen h-screen z-0 pointer-events-none opacity-50" />
+    <LazyParticleCanvas id="nexus-canvas" className="fixed top-0 left-0 w-screen h-screen z-0 pointer-events-none opacity-50" />
 
     <div id="contact-modal" className="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6 opacity-0 transition-opacity duration-300">
         <div className="absolute inset-0 bg-[#0B1221]/80 backdrop-blur-md modal-close-overlay cursor-pointer"></div>
@@ -29,8 +30,8 @@ export default function AffiliatesPublisherMarketingPage() {
                 <p className="text-slate-400 text-sm">Fill out the form below and our team will get back to you shortly.</p>
             </div>
             
-            <div className="w-full text-left">
-                <ContactForm />
+            <div className="w-full text-left contact-form-shell relative p-6 md:p-10 rounded-[1.75rem] backdrop-blur-xl">
+                <ContactForm variant="homepage" />
             </div>
         </div>
     </div>
@@ -503,77 +504,48 @@ export default function AffiliatesPublisherMarketingPage() {
             </div>
         </section>
 
-        <section className="py-24 px-6 lg:px-12 relative z-10">
-            <div className="max-w-[1000px] mx-auto w-full fade-up-element">
-                <div className="text-center mb-16">
-                    <h2 className="text-sm font-bold text-[#7469F8] uppercase tracking-widest mb-4">Got Questions?</h2>
-                    <h3 className="text-4xl font-bold pb-1 text-transparent bg-clip-text bg-gradient-to-r from-[#7469F8] to-[#E057D8]">Frequently Asked Questions</h3>
-                </div>
-
-                <div className="bg-[#101930]/80 backdrop-blur-md border border-white/10 rounded-3xl p-6 md:p-10">
-                    
-                    <div className="faq-item cursor-pointer border-b border-white/10 py-6">
-                        <div className="flex justify-between items-center gap-4">
-                            <h4 className="text-xl font-bold text-white">What is affiliate and publisher marketing?</h4>
-                            <svg className="faq-icon w-6 h-6 text-slate-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </div>
-                        <div className="faq-answer">
-                            <p className="text-slate-400 mt-4 leading-relaxed font-light">Affiliate and publisher marketing is a performance-led approach where approved partners promote a brand and are rewarded for measurable actions such as sales, leads, registrations, or conversions.</p>
-                        </div>
-                    </div>
-
-                    <div className="faq-item cursor-pointer border-b border-white/10 py-6">
-                        <div className="flex justify-between items-center gap-4">
-                            <h4 className="text-xl font-bold text-white">How can affiliate and publisher marketing help advertisers?</h4>
-                            <svg className="faq-icon w-6 h-6 text-slate-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </div>
-                        <div className="faq-answer">
-                            <p className="text-slate-400 mt-4 leading-relaxed font-light">It helps advertisers reach relevant audiences through trusted partner channels, support customer acquisition, improve campaign reach, and drive measurable outcomes based on defined campaign goals.</p>
-                        </div>
-                    </div>
-
-                    <div className="faq-item cursor-pointer border-b border-white/10 py-6">
-                        <div className="flex justify-between items-center gap-4">
-                            <h4 className="text-xl font-bold text-white">What type of partners can be activated?</h4>
-                            <svg className="faq-icon w-6 h-6 text-slate-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </div>
-                        <div className="faq-answer">
-                            <p className="text-slate-400 mt-4 leading-relaxed font-light">Partner types may include content publishers, coupon and deal sites, review platforms, comparison sites, niche affiliates, commerce media partners, agencies, and sub-networks.</p>
-                        </div>
-                    </div>
-
-                    <div className="faq-item cursor-pointer border-b border-white/10 py-6">
-                        <div className="flex justify-between items-center gap-4">
-                            <h4 className="text-xl font-bold text-white">Can advertisers control the type of traffic allowed?</h4>
-                            <svg className="faq-icon w-6 h-6 text-slate-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </div>
-                        <div className="faq-answer">
-                            <p className="text-slate-400 mt-4 leading-relaxed font-light">Yes. Campaign terms can define allowed traffic sources, restricted activity, coupon rules, promotional guidelines, geography, and validation requirements.</p>
-                        </div>
-                    </div>
-
-                    <div className="faq-item cursor-pointer border-b border-white/10 py-6">
-                        <div className="flex justify-between items-center gap-4">
-                            <h4 className="text-xl font-bold text-white">Do advertisers get real-time performance visibility?</h4>
-                            <svg className="faq-icon w-6 h-6 text-slate-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </div>
-                        <div className="faq-answer">
-                            <p className="text-slate-400 mt-4 leading-relaxed font-light">Yes. We provide advertisers with dashboard access and reporting visibility to monitor campaign performance, conversions, traffic activity, and optimization insights. This helps brands make informed decisions and maintain better control over campaign performance.</p>
-                        </div>
-                    </div>
-
-                    <div className="faq-item cursor-pointer py-6">
-                        <div className="flex justify-between items-center gap-4">
-                            <h4 className="text-xl font-bold text-white">What campaign models can we support?</h4>
-                            <svg className="faq-icon w-6 h-6 text-slate-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </div>
-                        <div className="faq-answer">
-                            <p className="text-slate-400 mt-4 leading-relaxed font-light">We can support CPA, CPL, CPS, hybrid, product feed, coupon-led, content partnership, and publisher placement models depending on advertiser objectives.</p>
-                        </div>
-                    </div>
-                </div>
+        <FaqSection
+          header={
+            <div className="text-center mb-16">
+              <h2 className="text-sm font-bold text-[#7469F8] uppercase tracking-widest mb-4">Got Questions?</h2>
+              <h3 className="text-4xl font-bold pb-1 text-transparent bg-clip-text bg-gradient-to-r from-[#7469F8] to-[#E057D8]">
+                Frequently Asked Questions
+              </h3>
             </div>
-        </section>
+          }
+          items={[
+            {
+              question: "What is affiliate and publisher marketing?",
+              answer:
+                "Affiliate and publisher marketing is a performance-led approach where approved partners promote a brand and are rewarded for measurable actions such as sales, leads, registrations, or conversions.",
+            },
+            {
+              question: "How can affiliate and publisher marketing help advertisers?",
+              answer:
+                "It helps advertisers reach relevant audiences through trusted partner channels, support customer acquisition, improve campaign reach, and drive measurable outcomes based on defined campaign goals.",
+            },
+            {
+              question: "What type of partners can be activated?",
+              answer:
+                "Partner types may include content publishers, coupon and deal sites, review platforms, comparison sites, niche affiliates, commerce media partners, agencies, and sub-networks.",
+            },
+            {
+              question: "Can advertisers control the type of traffic allowed?",
+              answer:
+                "Yes. Campaign terms can define allowed traffic sources, restricted activity, coupon rules, promotional guidelines, geography, and validation requirements.",
+            },
+            {
+              question: "Do advertisers get real-time performance visibility?",
+              answer:
+                "Yes. We provide advertisers with dashboard access and reporting visibility to monitor campaign performance, conversions, traffic activity, and optimization insights. This helps brands make informed decisions and maintain better control over campaign performance.",
+            },
+            {
+              question: "What campaign models can we support?",
+              answer:
+                "We can support CPA, CPL, CPS, hybrid, product feed, coupon-led, content partnership, and publisher placement models depending on advertiser objectives.",
+            },
+          ]}
+        />
 
         <section className="py-24 px-6 lg:px-12 relative z-10 mb-20">
             <div className="max-w-[1200px] mx-auto w-full fade-up-element">

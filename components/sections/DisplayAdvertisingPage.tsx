@@ -5,12 +5,13 @@ import "@/styles/display-advertising.css";
 import ContactForm from "@/components/forms/ContactForm";
 
 import PageRevealEffects from "@/components/effects/PageRevealEffects";
+import FaqSection from "@/components/sections/FaqSection";
 
 export default function DisplayAdvertisingPage() {
   return (
     <PageRevealEffects>
       <div style={{ position: "fixed", top: "0", left: "0", width: "100vw", height: "100vh", backgroundColor: "#020617", zIndex: "-9999", pointerEvents: "none" }}></div>
-<div id="display-master">
+<div id="display-master" className="page-master antialiased text-white bg-[#020617] font-sans selection:bg-[#3F8BF9] selection:text-white">
   <div id="contact-modal" className="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6 opacity-0 transition-opacity duration-300">
     <div className="absolute inset-0 bg-[#020617]/80 backdrop-blur-md modal-close-overlay cursor-pointer"></div>
     <div className="relative w-full max-w-2xl bg-[#101930] border border-[#7469F8]/30 rounded-3xl p-8 sm:p-12 shadow-[0_0_50px_rgba(116,105,248,0.2)] transform scale-95 transition-transform duration-300 popup-content overflow-y-auto max-h-[90vh]">
@@ -21,8 +22,8 @@ export default function DisplayAdvertisingPage() {
         <h3 className="text-3xl font-bold text-white mb-3">Lets talk growth</h3>
         <p className="text-slate-400 text-sm">Fill out the form below and our team will get back to you shortly.</p>
       </div>
-      <div className="w-full text-left">
-        <ContactForm />
+      <div className="w-full text-left contact-form-shell relative p-6 md:p-10 rounded-[1.75rem] backdrop-blur-xl">
+        <ContactForm variant="homepage" />
       </div>
     </div>
   </div>
@@ -269,19 +270,40 @@ export default function DisplayAdvertisingPage() {
       </div>
     </section>
 
-    <section className="relative z-10 py-24 px-6 lg:px-12" style={{ background: "linear-gradient(to bottom, rgba(2, 6, 23, 0.2), rgba(15, 23, 42, 0.78))" }}>
-      <div className="max-w-4xl mx-auto reveal-up">
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-12">FAQ Section</h2>
-        <div className="space-y-4">
-          <div className="faq-item glass-card theme-blue rounded-3xl px-6 py-2 md:px-8 md:py-3 text-left"><button className="faq-button" type="button"><span>What is display advertising?</span><svg className="w-6 h-6 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg></button><div className="faq-answer">Display advertising uses visual ad formats such as banners, responsive ads, and rich media units to help brands reach audiences across websites, apps, and digital placements.</div></div>
-          <div className="faq-item glass-card theme-indigo rounded-3xl px-6 py-2 md:px-8 md:py-3 text-left"><button className="faq-button" type="button"><span>How does display advertising support brand awareness?</span><svg className="w-6 h-6 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg></button><div className="faq-answer">It keeps a brand visible across relevant digital environments, helping support recognition, recall, product discovery, and consideration.</div></div>
-          <div className="faq-item glass-card theme-purple rounded-3xl px-6 py-2 md:px-8 md:py-3 text-left"><button className="faq-button" type="button"><span>Can display advertising be targeted?</span><svg className="w-6 h-6 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg></button><div className="faq-answer">Yes. Display campaigns can be planned around audience signals, geography, device type, context, behaviour, interests, and campaign objectives.</div></div>
-          <div className="faq-item glass-card theme-pink rounded-3xl px-6 py-2 md:px-8 md:py-3 text-left"><button className="faq-button" type="button"><span>How do you maintain placement quality?</span><svg className="w-6 h-6 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg></button><div className="faq-answer">We support display campaigns with placement review, brand-safety considerations, frequency control, and delivery monitoring based on the campaign setup.</div></div>
-          <div className="faq-item glass-card theme-blue rounded-3xl px-6 py-2 md:px-8 md:py-3 text-left"><button className="faq-button" type="button"><span>Is display advertising only for awareness?</span><svg className="w-6 h-6 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg></button><div className="faq-answer">Display is commonly used for awareness and prospecting, but it can also support traffic, promotional visibility, retargeting, and mid-funnel engagement depending on strategy.</div></div>
-          <div className="faq-item glass-card theme-indigo rounded-3xl px-6 py-2 md:px-8 md:py-3 text-left"><button className="faq-button" type="button"><span>Do advertisers get visibility into display campaign performance?</span><svg className="w-6 h-6 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg></button><div className="faq-answer">Yes. Advertisers can receive reporting visibility across impressions, clicks, reach, frequency, placement quality, engagement movement, and optimization signals depending on the campaign setup.</div></div>
-        </div>
-      </div>
-    </section>
+    <FaqSection
+      items={[
+        {
+          question: "What is display advertising?",
+          answer:
+            "Display advertising uses visual ad formats such as banners, responsive ads, and rich media units to help brands reach audiences across websites, apps, and digital placements.",
+        },
+        {
+          question: "How does display advertising support brand awareness?",
+          answer:
+            "It keeps a brand visible across relevant digital environments, helping support recognition, recall, product discovery, and consideration.",
+        },
+        {
+          question: "Can display advertising be targeted?",
+          answer:
+            "Yes. Display campaigns can be planned around audience signals, geography, device type, context, behaviour, interests, and campaign objectives.",
+        },
+        {
+          question: "How do you maintain placement quality?",
+          answer:
+            "We support display campaigns with placement review, brand-safety considerations, frequency control, and delivery monitoring based on the campaign setup.",
+        },
+        {
+          question: "Is display advertising only for awareness?",
+          answer:
+            "Display is commonly used for awareness and prospecting, but it can also support traffic, promotional visibility, retargeting, and mid-funnel engagement depending on strategy.",
+        },
+        {
+          question: "Do advertisers get visibility into display campaign performance?",
+          answer:
+            "Yes. Advertisers can receive reporting visibility across impressions, clicks, reach, frequency, placement quality, engagement movement, and optimization signals depending on the campaign setup.",
+        },
+      ]}
+    />
 
     <section className="relative z-10 py-32 px-6 lg:px-12" style={{ background: "linear-gradient(to bottom, rgba(15, 23, 42, 0.85), rgba(0, 0, 0, 1))" }}>
       <div className="max-w-4xl mx-auto text-center reveal-up">

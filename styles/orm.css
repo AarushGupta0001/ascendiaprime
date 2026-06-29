@@ -13,9 +13,9 @@
   --on-dark-dim:    rgba(255, 255, 255, 0.85);
   --on-dark-mute:    rgba(255, 255, 255, 0.6);
 
-  --fd: 'Poppins', sans-serif;
-  --fb: 'Poppins', sans-serif;
-  --fm: 'Poppins', sans-serif;
+  --fd: var(--font-family);
+  --fb: var(--font-family);
+  --fm: var(--font-family);
   --ease: cubic-bezier(0.16,1,0.3,1);
 }
 
@@ -31,45 +31,26 @@
 /* ════════════════════════════════════════════════
    RESET & SEAMLESS DARK GRADIENT BACKGROUND
 ═══════════════════════════════════════════════════ */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; background-color: #050505; }
+#orm-master *,
+#orm-master *::before,
+#orm-master *::after { box-sizing: border-box; }
 
-body {
-  margin: 0;
-
-  background:
-    radial-gradient(
-      circle at 15% 20%,
-      rgba(63, 139, 249, 0.12) 0%,
-      transparent 35%
-    ),
-
-    radial-gradient(
-      circle at 85% 50%,
-      rgba(224, 87, 216, 0.10) 0%,
-      transparent 35%
-    ),
-
-    linear-gradient(
-      to bottom,
-      #020617 0%,
-      #0b111d 30%,
-      #0b111d 50%,
-      #0b111d 75%,
-      #020617 100%
-    );
-
-  background-attachment: fixed;
-
+#orm-master {
   font-family: var(--fb);
   color: var(--on-dark-dim);
   font-weight: 400;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(63, 139, 249, 0.12) 0%, transparent 35%),
+    radial-gradient(circle at 85% 50%, rgba(224, 87, 216, 0.10) 0%, transparent 35%),
+    linear-gradient(to bottom, #020617 0%, #0b111d 30%, #0b111d 50%, #0b111d 75%, #020617 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
 }
 
-a { text-decoration: none; color: inherit; }
-button { cursor: pointer; font-family: inherit; border: none; background: none; outline: none; }
+#orm-master a { text-decoration: none; color: inherit; }
+#orm-master button { cursor: pointer; font-family: inherit; border: none; background: none; outline: none; }
 
 .wrap { max-width: 1280px; margin: 0 auto; padding: 0 2.5rem; position: relative; }
 @media (max-width: 640px) { .wrap { padding: 0 1.25rem; } }

@@ -6,16 +6,16 @@ import "@/styles/about-us.css";
 
 import ContactForm from "@/components/forms/ContactForm";
 
-import ParticleCanvas from "@/components/effects/ParticleCanvas";
+import LazyParticleCanvas from "@/components/effects/LazyParticleCanvas";
 
 import PageRevealEffects from "@/components/effects/PageRevealEffects";
 
 export default function AboutUsPage() {
   return (
     <PageRevealEffects>
-      <div id="about-us-master" style={{ width: "100%", position: "relative", color: "#cbd5e1", fontFamily: "'Poppins', sans-serif" }}>
+      <div id="about-us-master" className="page-master antialiased text-white bg-[#020617] font-sans selection:bg-[#3F8BF9] selection:text-white" style={{ width: "100%", position: "relative", overflowX: "hidden" }}>
 
-    <ParticleCanvas id="nexus-canvas" className="fixed top-0 left-0 w-screen h-screen z-0 pointer-events-none opacity-50" />
+    <LazyParticleCanvas id="nexus-canvas" className="fixed top-0 left-0 w-screen h-screen z-0 pointer-events-none opacity-50" />
 
     <div id="contact-modal" className="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6 opacity-0 transition-opacity duration-300">
         <div className="absolute inset-0 bg-[#020617]/80 backdrop-blur-md modal-close-overlay cursor-pointer"></div>
@@ -31,8 +31,8 @@ export default function AboutUsPage() {
                 <p className="text-slate-400 text-sm">Fill out the form below and our team will get back to you shortly.</p>
             </div>
             
-            <div className="w-full text-left">
-                <ContactForm />
+            <div className="w-full text-left contact-form-shell relative p-6 md:p-10 rounded-[1.75rem] backdrop-blur-xl">
+                <ContactForm variant="homepage" />
             </div>
         </div>
     </div>

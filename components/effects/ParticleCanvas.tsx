@@ -14,14 +14,17 @@ type ParticleCanvasProps = {
 export default function ParticleCanvas({
   id,
   className = "",
-  numNodes = 70,
-  connectionDistance = 150,
+  numNodes = 45,
+  connectionDistance = 140,
   nodeColor = "rgba(116, 105, 248, 0.6)",
   lineColor = "rgba(63, 139, 249,",
 }: ParticleCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reducedMotion) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -31,6 +34,8 @@ export default function ParticleCanvas({
     let width = 0;
     let height = 0;
     let animationId = 0;
+    let isRunning = false;
+    const connectionDistanceSq = connectionDistance * connectionDistance;
 
     type Node = { x: number; y: number; vx: number; vy: number; radius: number };
 
@@ -57,6 +62,8 @@ export default function ParticleCanvas({
     };
 
     const animate = () => {
+      if (!isRunning) return;
+
       ctx.clearRect(0, 0, width, height);
 
       for (let i = 0; i < nodes.length; i++) {
@@ -76,9 +83,10 @@ export default function ParticleCanvas({
           const other = nodes[j];
           const dx = node.x - other.x;
           const dy = node.y - other.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
+          const distSq = dx * dx + dy * dy;
 
-          if (dist < connectionDistance) {
+          if (distSq < connectionDistanceSq) {
+            const dist = Math.sqrt(distSq);
             const alpha = 1 - dist / connectionDistance;
             ctx.beginPath();
             ctx.moveTo(node.x, node.y);
@@ -93,9 +101,25 @@ export default function ParticleCanvas({
       animationId = requestAnimationFrame(animate);
     };
 
+    const start = () => {
+      if (isRunning || document.hidden) return;
+      isRunning = true;
+      animationId = requestAnimationFrame(animate);
+    };
+
+    const stop = () => {
+      isRunning = false;
+      cancelAnimationFrame(animationId);
+    };
+
+    const handleVisibility = () => {
+      if (document.hidden) stop();
+      else start();
+    };
+
     resize();
     initNodes();
-    animate();
+    start();
 
     const handleResize = () => {
       resize();
@@ -103,9 +127,12 @@ export default function ParticleCanvas({
     };
 
     window.addEventListener("resize", handleResize);
+    document.addEventListener("visibilitychange", handleVisibility);
+
     return () => {
       window.removeEventListener("resize", handleResize);
-      cancelAnimationFrame(animationId);
+      document.removeEventListener("visibilitychange", handleVisibility);
+      stop();
     };
   }, [numNodes, connectionDistance, nodeColor, lineColor]);
 

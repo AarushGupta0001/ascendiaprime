@@ -2,15 +2,15 @@
 
 import "@/styles/complaints-policy.css";
 
-import ParticleCanvas from "@/components/effects/ParticleCanvas";
+import LazyParticleCanvas from "@/components/effects/LazyParticleCanvas";
 
 import PageRevealEffects from "@/components/effects/PageRevealEffects";
 
 export default function ComplaintsPolicyPage() {
   return (
     <PageRevealEffects>
-      <div id="complaints_policy">
-    <ParticleCanvas id="nexus-canvas" className="fixed top-0 left-0 w-screen h-screen z-0 pointer-events-none opacity-50" />
+      <div id="complaints_policy" className="page-master antialiased text-white bg-[#020617] font-sans selection:bg-[#3F8BF9] selection:text-white">
+    <LazyParticleCanvas id="nexus-canvas" className="fixed top-0 left-0 w-screen h-screen z-0 pointer-events-none opacity-50" />
 
     <div className="relative z-10 w-full">
         <header className="policy-hero fade-up-element">

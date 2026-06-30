@@ -2,6 +2,7 @@
 
 import "@/styles/display-advertising.css";
 
+import HeroCenterLogo from "@/components/HeroCenterLogo";
 import ContactForm from "@/components/forms/ContactForm";
 
 import PageRevealEffects from "@/components/effects/PageRevealEffects";
@@ -66,26 +67,27 @@ export default function DisplayAdvertisingPage() {
             <div className="display-label label-audience">Audience<br />Signals</div>
 
             <div className="display-node">
-              <img className="display-logo" src="/images/logos/ascendiaprime-logo.png" alt="AscendiaPrime"  />
-              <strong>AscendiaPrime</strong>
+              <HeroCenterLogo className="display-logo" />
             </div>
 
             <div className="display-card desktop-card">
-              <div className="screen-inner">
+              <div className="screen-inner desktop-screen-inner">
                 <div className="screen-nav"><span>Home</span><span>World</span><span>Business</span><span>Tech</span></div>
-                <div className="news-title">Market rally boosts investor confidence to highest level in years</div>
-                <div className="ad-banner desktop-ad"></div>
+                <div className="desktop-content-row">
+                  <div className="news-title">Brand visibility where it counts</div>
+                  <div className="ad-banner desktop-ad"></div>
+                </div>
                 <div className="top-stories">
-                  <div className="story-thumb"></div>
-                  <div className="story-thumb"></div>
-                  <div className="story-thumb"></div>
+                  <div className="story-thumb story-thumb-1" aria-hidden="true"></div>
+                  <div className="story-thumb story-thumb-2" aria-hidden="true"></div>
+                  <div className="story-thumb story-thumb-3" aria-hidden="true"></div>
                 </div>
               </div>
             </div>
 
             <div className="display-card content-card">
               <div className="screen-inner">
-                <div className="content-image"></div>
+                <div className="content-image" aria-hidden="true"></div>
                 <div className="screen-lines">
                   <div className="screen-line"></div>
                   <div className="screen-line mid"></div>
@@ -97,7 +99,7 @@ export default function DisplayAdvertisingPage() {
             <div className="display-card commerce-card">
               <div className="screen-inner">
                 <div className="commerce-top">
-                  <div className="product-image"></div>
+                  <div className="product-image" aria-hidden="true"></div>
                   <div>
                     <div className="screen-line mid"></div>
                     <div className="rating">★★★★★</div>
@@ -130,7 +132,7 @@ export default function DisplayAdvertisingPage() {
                   <div className="screen-line short"></div>
                   <div className="screen-line"></div>
                 </div>
-                <div className="ad-banner phone-ad"></div>
+                <div className="ad-banner phone-ad app-ad"></div>
                 <div className="screen-lines">
                   <div className="screen-line"></div>
                   <div className="screen-line mid"></div>

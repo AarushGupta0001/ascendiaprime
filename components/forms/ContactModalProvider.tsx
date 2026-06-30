@@ -3,6 +3,8 @@
 import { createContext, useCallback, useContext, useMemo, useState, type ReactNode } from "react";
 import dynamic from "next/dynamic";
 
+import ContactInteractions from "@/components/forms/ContactInteractions";
+
 const ContactModal = dynamic(() => import("@/components/forms/ContactModal"), {
   ssr: false,
   loading: () => null,
@@ -28,6 +30,7 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
 
   return (
     <ContactModalContext.Provider value={value}>
+      <ContactInteractions />
       {children}
       {isOpen ? <ContactModal isOpen={isOpen} onClose={closeContactModal} /> : null}
     </ContactModalContext.Provider>

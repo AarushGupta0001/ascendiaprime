@@ -118,6 +118,72 @@
         border-bottom-color: #3F8BF9; border-radius: 50%; display: inline-block;
         box-sizing: border-box; animation: rotation 1s linear infinite;
       }
+
+      /* --- SEO HERO ROBOT ANIMATION --- */
+      .robot-orbit-wrap {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .robot-bot {
+        width: min(70%, 360px);
+        height: auto;
+        filter: drop-shadow(0 0 35px rgba(63, 139, 249, 0.45));
+        animation: bot-float 5s ease-in-out infinite;
+        will-change: transform;
+      }
+      .robot-glow {
+        position: absolute;
+        width: 60%;
+        height: 60%;
+        background: radial-gradient(circle, rgba(116, 105, 248, 0.35) 0%, transparent 70%);
+        filter: blur(40px);
+        animation: robot-pulse-glow 6s ease-in-out infinite alternate;
+        pointer-events: none;
+      }
+      .robot-ring {
+        position: absolute;
+        border-radius: 50%;
+        border: 1px solid rgba(63, 139, 249, 0.25);
+        pointer-events: none;
+      }
+      .ring-1 { width: 78%; height: 78%; animation: ring-spin 18s linear infinite; }
+      .ring-2 { width: 92%; height: 92%; border-color: rgba(171, 87, 243, 0.18); animation: ring-spin 28s linear infinite reverse; }
+
+      .bot-eye { animation: eye-blink 4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+      .bot-core { animation: core-spin 6s linear infinite; transform-origin: 100px 176px; transform-box: fill-box; }
+      .bot-core-dot { animation: robot-pulse-glow 2.5s ease-in-out infinite alternate; transform-origin: 100px 176px; transform-box: fill-box; }
+      .antenna-tip { animation: robot-pulse-glow 2s ease-in-out infinite alternate; }
+
+      @keyframes bot-float {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-18px) rotate(1.5deg); }
+      }
+      @keyframes ring-spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      @keyframes eye-blink {
+        0%, 90%, 100% { transform: scaleY(1); }
+        95% { transform: scaleY(0.1); }
+      }
+      @keyframes core-spin {
+        from { stroke-dasharray: 30 95; stroke-dashoffset: 0; }
+        to { stroke-dasharray: 30 95; stroke-dashoffset: -125; }
+      }
+      @keyframes robot-pulse-glow {
+        0% { opacity: 0.55; transform: scale(0.92); }
+        100% { opacity: 1; transform: scale(1.08); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .robot-bot, .robot-ring, .bot-eye, .bot-core, .bot-core-dot, .antenna-tip, .robot-glow {
+          animation: none !important;
+        }
+      }
       @keyframes rotation { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
   
       /* ==========================================================================

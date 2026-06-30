@@ -245,9 +245,12 @@ export default function AdvertisersPage() {
                     <button className="partner-popup-trigger glow-btn bg-[#7469F8] text-white px-10 py-4 rounded-full font-bold transition-all" data-partner-type="advertiser">
                         Submit Advertiser Enquiry
                     </button>
-                    <a href="#" className="border border-white/20 text-white px-10 py-4 rounded-full font-bold hover:bg-white/5 transition-all" style={{ textDecoration: "none" }}>
+                    <button
+                      type="button"
+                      className="partner-popup-trigger border border-white/20 text-white px-10 py-4 rounded-full font-bold hover:bg-white/5 transition-all"
+                    >
                         Start a Conversation
-                    </a>
+                    </button>
                 </div>
             </div>
         </section>
@@ -259,7 +262,7 @@ export default function AdvertisersPage() {
             <button id="close-modal" className="popup-close-btn">&times;</button>
             <h3 className="text-3xl font-bold text-white mb-8">Advertiser Inquiry</h3>
             <div className="relative z-20 contact-form-shell p-6 md:p-10 rounded-[1.75rem]">
-                <ContactForm variant="homepage" />
+                <ContactForm variant="homepage" formId="1808" />
             </div>
         </div>
     </div>

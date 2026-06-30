@@ -9,14 +9,11 @@ import LazyParticleCanvas from "@/components/effects/LazyParticleCanvas";
 import PageRevealEffects from "@/components/effects/PageRevealEffects";
 import FaqSection from "@/components/sections/FaqSection";
 
-import SplineScript from "@/components/SplineScript";
-
 import type { CSSProperties } from "react";
 
 export default function SeoPage() {
   return (
     <PageRevealEffects>
-      <SplineScript />
       <div style={{ position: "fixed", top: "0", left: "0", width: "100vw", height: "100vh", backgroundColor: "#020617", zIndex: "-9999", pointerEvents: "none" }}></div>
   
   <div id="ascendia-seo-master" className="page-master antialiased text-white bg-[#020617] font-sans selection:bg-[#3F8BF9] selection:text-white" style={{ width: "100%", position: "relative", overflowX: "hidden" }}>
@@ -88,11 +85,42 @@ export default function SeoPage() {
             </div>
   
             <div className="hero-animate relative h-[500px] lg:h-[700px] w-full flex items-center justify-center hover-target" style={{ animationDelay: "0.6s" }}>
-              <div id="spline-loader-hero" className="absolute inset-0 flex items-center justify-center bg-transparent z-20 transition-opacity duration-500">
-                <span className="spline-loader"></span>
-              </div>
-              <div className="absolute inset-0 w-full h-full" style={{ transform: "scale(1.15)" }}>
-                <spline-viewer id="spline-scene-hero" url="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode" style={{ opacity: "0", transition: "opacity 1s ease-in-out" }}></spline-viewer>
+              <div className="robot-orbit-wrap">
+                <div className="robot-ring ring-1"></div>
+                <div className="robot-ring ring-2"></div>
+                <div className="robot-glow"></div>
+
+                <svg className="robot-bot" viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="seoBotGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#3F8BF9" />
+                      <stop offset="50%" stopColor="#7469F8" />
+                      <stop offset="100%" stopColor="#AB57F3" />
+                    </linearGradient>
+                    <radialGradient id="seoEyeGrad" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stopColor="#ffffff" />
+                      <stop offset="100%" stopColor="#3F8BF9" />
+                    </radialGradient>
+                  </defs>
+
+                  <line x1="100" y1="20" x2="100" y2="45" stroke="url(#seoBotGrad)" strokeWidth="3" strokeLinecap="round" />
+                  <circle className="antenna-tip" cx="100" cy="16" r="7" fill="url(#seoEyeGrad)" />
+
+                  <rect x="55" y="45" width="90" height="75" rx="22" fill="url(#seoBotGrad)" opacity="0.9" />
+                  <rect x="55" y="45" width="90" height="75" rx="22" fill="none" stroke="#ffffff" strokeOpacity="0.25" strokeWidth="1.5" />
+
+                  <circle className="bot-eye" cx="80" cy="82" r="9" fill="url(#seoEyeGrad)" />
+                  <circle className="bot-eye" cx="120" cy="82" r="9" fill="url(#seoEyeGrad)" style={{ animationDelay: "0.15s" }} />
+
+                  <rect x="90" y="120" width="20" height="14" fill="#3F8BF9" opacity="0.7" />
+
+                  <rect x="40" y="134" width="120" height="85" rx="26" fill="#0f172a" stroke="url(#seoBotGrad)" strokeWidth="2.5" />
+                  <circle className="bot-core" cx="100" cy="176" r="20" fill="none" stroke="url(#seoBotGrad)" strokeWidth="3" />
+                  <circle className="bot-core-dot" cx="100" cy="176" r="7" fill="url(#seoEyeGrad)" />
+
+                  <rect x="18" y="142" width="16" height="50" rx="8" fill="url(#seoBotGrad)" opacity="0.85" />
+                  <rect x="166" y="142" width="16" height="50" rx="8" fill="url(#seoBotGrad)" opacity="0.85" />
+                </svg>
               </div>
             </div>
           </div>

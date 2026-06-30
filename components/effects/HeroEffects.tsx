@@ -68,7 +68,6 @@ export default function HeroEffects() {
   useEffect(() => {
     const heroContent = document.getElementById("hero-content-left");
     const heroVisuals = document.getElementById("hero-visuals-right");
-    const ambientGlow = document.getElementById("ambient-glow");
 
     let heroTicking = false;
 
@@ -94,10 +93,6 @@ export default function HeroEffects() {
           heroVisuals.style.opacity = String(visualOpacity);
           heroVisuals.style.filter = `blur(${visualBlur}px)`;
           heroVisuals.style.transform = `translate3d(0, ${scrolled * 0.1}px, 0) scale(${visualScale})`;
-        }
-
-        if (ambientGlow) {
-          ambientGlow.style.transform = `translate3d(-50%, calc(-50% + ${scrolled * 0.4}px), 0)`;
         }
 
         heroTicking = false;

@@ -7,6 +7,14 @@ import ContactForm from "@/components/forms/ContactForm";
 import PageRevealEffects from "@/components/effects/PageRevealEffects";
 import FaqSection from "@/components/sections/FaqSection";
 
+const CONTINUE_WATCHING_THUMBS = [
+  "/images/animations/connected-tv/thumb-1.jpg",
+  "/images/animations/connected-tv/thumb-2.jpg",
+  "/images/animations/connected-tv/thumb-3.jpg",
+  "/images/animations/connected-tv/thumb-4.jpg",
+  "/images/animations/connected-tv/thumb-5.jpg",
+] as const;
+
 export default function ConnectedTvPage() {
   return (
     <PageRevealEffects>
@@ -67,6 +75,12 @@ export default function ConnectedTvPage() {
             <div className="tv-backlight"></div>
             <div className="tv-frame">
               <div className="tv-screen">
+                <img
+                  src="/images/animations/connected-tv/tv-hero.jpg"
+                  alt=""
+                  className="tv-screen-bg"
+                  loading="eager"
+                />
                 <div className="tv-creative">
                   <span>Ad 0:15</span>
                   <img className="tv-brand-logo" src="/images/logos/brand-logo.png" alt="Your Brand"  />
@@ -75,11 +89,11 @@ export default function ConnectedTvPage() {
                 <div className="continue-row">
                   <strong>Continue Watching</strong>
                   <div className="thumbs">
-                    <div className="thumb"></div>
-                    <div className="thumb"></div>
-                    <div className="thumb"></div>
-                    <div className="thumb"></div>
-                    <div className="thumb"></div>
+                    {CONTINUE_WATCHING_THUMBS.map((src) => (
+                      <div className="thumb" key={src}>
+                        <img src={src} alt="" loading="lazy" />
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>

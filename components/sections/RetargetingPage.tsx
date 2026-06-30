@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import "@/styles/retargeting.css";
@@ -9,7 +10,39 @@ import ContactForm from "@/components/forms/ContactForm";
 import PageRevealEffects from "@/components/effects/PageRevealEffects";
 import FaqSection from "@/components/sections/FaqSection";
 
+const MATRIX_ITEMS = [
+  { label: "Cart Abandoners", badge: "High" },
+  { label: "Product Viewers", badge: "Mid" },
+  { label: "Lead Form Starters", badge: "High" },
+  { label: "CRM / First-Party", badge: "Match" },
+  { label: "Frequency Cap", badge: "3x/Day" },
+  { label: "Suppression Rules", badge: "Auto" },
+  { label: "Sequential Flows", badge: "Active" },
+  { label: "Placement Safe", badge: "100%" },
+  { label: "Google Display & YT", badge: "Bidding" },
+  { label: "Meta & Instagram", badge: "Dynamic" },
+  { label: "Premium Publisher", badge: "Direct" },
+  { label: "LinkedIn Network", badge: "B2B" },
+] as const;
+
+function isMatrixItemActive(index: number, cycleIndex: number) {
+  const column = Math.floor(index / 4);
+  const row = index % 4;
+  const activeRow = (cycleIndex + column) % 4;
+  return row === activeRow;
+}
+
 export default function RetargetingPage() {
+  const [cycleIndex, setCycleIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setCycleIndex((prev) => prev + 1);
+    }, 3000);
+
+    return () => window.clearInterval(interval);
+  }, []);
+
   return (
     <PageRevealEffects>
       <div id="retargeting-master" className="page-master">
@@ -33,52 +66,85 @@ export default function RetargetingPage() {
         </div>
       </div>
         
-      <div className="intent-loop" aria-label="Intent Re-Engagement Loop">
-        <div className="loop-panel left">
-          <h3>Audience Signals</h3>
-          <span className="loop-chip">Product Viewers</span>
-          <span className="loop-chip">Cart Abandoners</span>
-          <span className="loop-chip">Lead Form Starters</span>
-          <span className="loop-chip">Returning Visitors</span>
-          <span className="loop-chip">High Engagement Visitors</span>
-          <span className="loop-chip">CRM / First-Party Audiences</span>
+      <div className="intent-matrix" aria-label="AscendiaPrime Retargeting Pipeline Optimizer">
+        <div className="matrix-header">
+          <div className="matrix-status">
+            <span className="matrix-pulse-dot"></span>
+            <span>AscendiaPrime Engine Active</span>
+          </div>
+          <span className="t-eyebrow matrix-version">Control Panel v4.1</span>
         </div>
-        <div className="loop-panel right">
-          <h3>Delivery Controls</h3>
-          <span className="loop-chip">Frequency Cap</span>
-          <span className="loop-chip">Exclusions</span>
-          <span className="loop-chip">Sequential Messaging</span>
-          <span className="loop-chip">Placement Visibility</span>
-          <span className="loop-chip">Audience Suppression</span>
-          <span className="loop-chip">Smart Bidding &amp; Optimization</span>
+
+        <div className="matrix-grid">
+          <div className="matrix-col col-signals">
+            <div className="matrix-col-title">
+              <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
+                <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+              Audience Signals
+            </div>
+            {MATRIX_ITEMS.slice(0, 4).map((item, index) => (
+              <div
+                key={item.label}
+                className={`matrix-item${isMatrixItemActive(index, cycleIndex) ? " active-node" : ""}`}
+              >
+                <span>{item.label}</span>
+                <span className="value-badge">{item.badge}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="matrix-col col-controls">
+            <div className="matrix-col-title">
+              <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
+                <path d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+              </svg>
+              Delivery Controls
+            </div>
+            {MATRIX_ITEMS.slice(4, 8).map((item, index) => (
+              <div
+                key={item.label}
+                className={`matrix-item${isMatrixItemActive(index + 4, cycleIndex) ? " active-node" : ""}`}
+              >
+                <span>{item.label}</span>
+                <span className="value-badge">{item.badge}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="matrix-col col-channels">
+            <div className="matrix-col-title">
+              <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
+                <path d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+              </svg>
+              Recovery Channels
+            </div>
+            {MATRIX_ITEMS.slice(8, 12).map((item, index) => (
+              <div
+                key={item.label}
+                className={`matrix-item${isMatrixItemActive(index + 8, cycleIndex) ? " active-node" : ""}`}
+              >
+                <span>{item.label}</span>
+                <span className="value-badge">{item.badge}</span>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="signal-line left"></div>
-        <div className="signal-line right"></div>
-        <div className="loop-orbit"></div>
-        <div className="loop-engine">
-          <strong>AscendiaPrime</strong>
-          <span>Retargeting Engine</span>
-        </div>
-        <div className="loop-node node-1" data-step="1">Website Visit</div>
-        <div className="loop-node node-2" data-step="2">Product / Page Engagement</div>
-        <div className="loop-node node-3" data-step="3">Audience Segment</div>
-        <div className="loop-node node-4" data-step="4">Retargeting Message</div>
-        <div className="loop-node node-5" data-step="5">Return Visit</div>
-        <div className="loop-node node-6" data-step="6">Conversion</div>
-        <div className="outcome-strip">
-          <span>Recovery of Lost Opportunities</span>
-          <span>Improved Conversion Rates</span>
-          <span>Better Campaign Efficiency</span>
-        </div>
-        <div className="channel-dock">
-          <h3>Delivery Channels</h3>
-          <div className="channel-grid">
-            <span className="channel-badge">f</span>
-            <span className="channel-badge">IG</span>
-            <span className="channel-badge">G</span>
-            <span className="channel-badge">YT</span>
-            <span className="channel-badge">in</span>
-            <span className="channel-badge">+</span>
+
+        <div className="matrix-footer">
+          <div className="matrix-stat-box">
+            <h4>Recovery Performance</h4>
+            <p>
+              <span>+24.8%</span> Conversion Lift
+            </p>
+          </div>
+          <div className="matrix-stat-box">
+            <h4>Ad Fatigue Shield</h4>
+            <p>Active Suppression</p>
+          </div>
+          <div className="matrix-stat-box">
+            <h4>Tracking Accuracy</h4>
+            <p>Server-Side Match</p>
           </div>
         </div>
       </div>

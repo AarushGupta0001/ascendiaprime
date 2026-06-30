@@ -186,7 +186,8 @@
             opacity: 0.16 !important;
         }
         .text-shimmer,
-        #about-us-master .bg-gradient-to-r,
+        #about-us-master .bg-clip-text,
+        #about-us-master .text-transparent,
         #about-us-master .text-\[\#3F8BF9\],
         #about-us-master .text-\[\#7469F8\],
         #about-us-master .text-\[\#AB57F3\],
@@ -226,6 +227,7 @@
         #contact-modal .contact-button-submit {
             background: linear-gradient(to right, #3F8BF9, #7469F8, #AB57F3) !important;
             color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
             border: 1px solid rgba(63, 139, 249, 0.3) !important;
             border-radius: 16px !important;
             box-shadow: 0 0 20px rgba(63, 139, 249, 0.4) !important;

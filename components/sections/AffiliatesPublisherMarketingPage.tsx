@@ -3,6 +3,7 @@
 import "@/styles/affiliates-publisher-marketing.css";
 
 import ContactForm from "@/components/forms/ContactForm";
+import HeroCenterLogo from "@/components/HeroCenterLogo";
 
 import LazyParticleCanvas from "@/components/effects/LazyParticleCanvas";
 
@@ -89,17 +90,17 @@ export default function AffiliatesPublisherMarketingPage() {
                         </defs>
                         <g strokeWidth="2" fill="none" className="opacity-50">
                             
-                            <path id="p1" d="M 220 150 C 350 150, 400 500, 500 500" stroke="#E057D8" />
-                            <path id="p2" d="M 220 325 C 350 325, 400 500, 500 500" stroke="#E057D8" />
+                            <path id="p1" d="M 220 95 C 350 95, 400 500, 500 500" stroke="#E057D8" />
+                            <path id="p2" d="M 220 298 C 350 298, 400 500, 500 500" stroke="#E057D8" />
                             <path id="p3" d="M 220 500 C 350 500, 400 500, 500 500" stroke="#AB57F3" />
-                            <path id="p4" d="M 220 675 C 350 675, 400 500, 500 500" stroke="#AB57F3" />
-                            <path id="p5" d="M 220 850 C 350 850, 400 500, 500 500" stroke="#7469F8" />
+                            <path id="p4" d="M 220 702 C 350 702, 400 500, 500 500" stroke="#AB57F3" />
+                            <path id="p5" d="M 220 905 C 350 905, 400 500, 500 500" stroke="#7469F8" />
 
                             
-                            <path id="a1" d="M 500 500 C 600 500, 650 200, 780 200" stroke="#3F8BF9" />
-                            <path id="a2" d="M 500 500 C 600 500, 650 400, 780 400" stroke="#3F8BF9" />
-                            <path id="a3" d="M 500 500 C 600 500, 650 600, 780 600" stroke="#3F8BF9" />
-                            <path id="a4" d="M 500 500 C 600 500, 650 800, 780 800" stroke="#3F8BF9" />
+                            <path id="a1" d="M 500 500 C 600 500, 650 160, 780 160" stroke="#3F8BF9" />
+                            <path id="a2" d="M 500 500 C 600 500, 650 385, 780 385" stroke="#3F8BF9" />
+                            <path id="a3" d="M 500 500 C 600 500, 650 615, 780 615" stroke="#3F8BF9" />
+                            <path id="a4" d="M 500 500 C 600 500, 650 840, 780 840" stroke="#3F8BF9" />
                         </g>
 
                         
@@ -117,9 +118,9 @@ export default function AffiliatesPublisherMarketingPage() {
                     </svg>
 
                     
-                    <div className="absolute left-0 top-0 h-full flex flex-col justify-between py-[5%] w-[35%] lg:w-[30%] z-10">
-                        <p className="text-[10px] font-bold text-[#E057D8] tracking-widest uppercase ml-2 mb-2 hidden md:block">Publishers</p>
-                        
+                    <div className="absolute left-0 top-0 h-full py-[5%] w-[35%] lg:w-[30%] z-10">
+                        <p className="text-[10px] font-bold text-[#E057D8] tracking-widest uppercase ml-2 hidden md:block absolute -top-1 left-0">Publishers</p>
+                        <div className="h-full flex flex-col justify-between">
                         <div className="bg-[#101930]/90 border border-white/10 rounded-xl p-2.5 flex items-center gap-3 backdrop-blur-md w-full shadow-lg relative left-0 transition-transform hover:translate-x-2">
                             <div className="w-8 h-8 rounded bg-[#E057D8]/20 text-[#E057D8] flex items-center justify-center shrink-0">
                                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path></svg>
@@ -169,11 +170,13 @@ export default function AffiliatesPublisherMarketingPage() {
                                 <p className="text-[11px] font-bold text-white">18,300+</p>
                             </div>
                         </div>
+                        </div>
                     </div>
 
                     
-                    <div className="absolute right-0 top-0 h-full flex flex-col justify-between py-[12%] w-[35%] lg:w-[30%] z-10">
-                        <p className="text-[10px] font-bold text-[#3F8BF9] tracking-widest uppercase ml-2 mb-2 hidden md:block">Advertisers</p>
+                    <div className="absolute right-0 top-0 h-full py-[12%] w-[35%] lg:w-[30%] z-10">
+                        <p className="text-[10px] font-bold text-[#3F8BF9] tracking-widest uppercase ml-2 hidden md:block absolute -top-1 left-0">Advertisers</p>
+                        <div className="h-full flex flex-col justify-between">
 
                         <div className="bg-[#101930]/90 border border-white/10 rounded-xl p-2.5 flex items-center gap-3 backdrop-blur-md w-full shadow-lg relative right-0 transition-transform hover:-translate-x-2">
                             <div className="w-8 h-8 rounded bg-[#3F8BF9]/20 text-[#3F8BF9] flex items-center justify-center shrink-0">
@@ -226,20 +229,19 @@ export default function AffiliatesPublisherMarketingPage() {
                                 <svg viewBox="0 0 40 15" className="w-full stroke-[#3F8BF9] fill-none" strokeWidth="1.5"><path d="M0 12 Q5 14, 10 10 T20 12 T30 4 T40 2"/></svg>
                             </div>
                         </div>
+                        </div>
                     </div>
 
                     
                     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-                        <div className="w-28 h-28 lg:w-36 lg:h-36 rounded-full border border-[#AB57F3]/40 bg-[#0B1221] shadow-[0_0_60px_rgba(171,87,243,0.4)] flex items-center justify-center relative">
+                        <div className="w-28 h-28 lg:w-36 lg:h-36 rounded-full border border-[#AB57F3]/40 bg-black shadow-[0_0_60px_rgba(171,87,243,0.4)] flex items-center justify-center relative">
                             
                             <div className="absolute inset-[-10px] rounded-full border border-[#AB57F3] animate-ping opacity-20" style={{ animationDuration: "3s" }}></div>
                             <div className="absolute inset-[-20px] rounded-full border border-[#7469F8] animate-ping opacity-10" style={{ animationDuration: "4s" }}></div>
                             
                             
-                            <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full border-2 border-t-[#E057D8] border-r-[#AB57F3] border-b-[#7469F8] border-l-[#3F8BF9] flex items-center justify-center bg-[#101930] shadow-inner relative z-10">
-                                <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M21.5 19.5L12 3 2.5 19.5h3.6l5.9-10.2 5.9 10.2h3.6z M12 14.5l-2.6 4.5h5.2z"/>
-                                </svg>
+                            <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full border-2 border-t-[#E057D8] border-r-[#AB57F3] border-b-[#7469F8] border-l-[#3F8BF9] flex items-center justify-center bg-black shadow-inner relative z-10">
+                                <HeroCenterLogo className="w-full h-full p-2 lg:p-1.5" />
                             </div>
                         </div>
                     </div>

@@ -43,6 +43,8 @@
 #contact-form-container .contact-custom-form,
 .contact-form-shell .contact-custom-form {
   color: #ffffff !important;
+  width: 100%;
+  text-align: left;
 }
 
 #contact-form-container .contact-row,
@@ -50,6 +52,35 @@
 .contact-form-shell .contact-row,
 .contact-form-shell .contact-field {
   margin-bottom: 18px !important;
+  width: 100%;
+}
+
+#contact-form-container .contact-field,
+.contact-form-shell .contact-field {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+#contact-form-container .contact-message-header,
+.contact-form-shell .contact-message-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+#contact-form-container .contact-message-header label,
+.contact-form-shell .contact-message-header label {
+  margin-bottom: 0 !important;
+}
+
+#contact-form-container .contact-message-header .contact-description,
+.contact-form-shell .contact-message-header .contact-description {
+  margin-bottom: 0 !important;
+  flex-shrink: 0;
+  text-align: right;
 }
 
 #contact-form-container label,
@@ -91,6 +122,8 @@
 .contact-form-shell textarea,
 .contact-form-shell select {
   width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
   min-height: 52px !important;
   padding: 14px 16px !important;
   border-radius: 16px !important;
@@ -175,4 +208,61 @@
   transform: translateY(-2px);
   filter: brightness(1.08);
   box-shadow: 0 20px 42px rgba(171, 87, 243, 0.42);
+}
+
+/* Forminator embed overrides */
+.forminator-embed-shell,
+.forminator-embed-target .forminator-ui {
+  width: 100%;
+}
+
+.forminator-embed-shell .forminator-label,
+.forminator-embed-shell .forminator-label-title,
+.forminator-embed-shell legend {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.forminator-embed-shell .forminator-input,
+.forminator-embed-shell .forminator-textarea,
+.forminator-embed-shell .forminator-select--field,
+.forminator-embed-shell .forminator-field--phone {
+  width: 100% !important;
+  background: rgba(15, 23, 42, 0.85) !important;
+  border: 1px solid rgba(63, 139, 249, 0.3) !important;
+  color: #ffffff !important;
+  border-radius: 0.75rem !important;
+  padding: 1rem 1.2rem !important;
+}
+
+.forminator-embed-shell .forminator-description,
+.forminator-embed-shell .forminator-error-message,
+.forminator-embed-shell .forminator-response-message {
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+
+.forminator-embed-shell .forminator-button-submit {
+  width: 100%;
+  justify-content: center;
+  margin-top: 0.5rem;
+  padding: 1rem 1.5rem !important;
+  border-radius: 999px !important;
+  background: linear-gradient(135deg, #3f8bf9, #7469f8, #ab57f3, #e057d8) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 8px 25px rgba(116, 105, 248, 0.4) !important;
+  font-weight: 600 !important;
+}
+
+.forminator-embed-shell .forminator-row,
+.forminator-embed-shell .forminator-field {
+  margin-bottom: 1rem;
+}
+
+.forminator-embed-shell .forminator-embed-frame {
+  width: 100%;
+  border: none;
+  display: block;
+  background: transparent;
 }

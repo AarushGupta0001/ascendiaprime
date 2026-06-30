@@ -2,6 +2,7 @@
 
 import "@/styles/ppc.css";
 
+import HeroCenterLogo from "@/components/HeroCenterLogo";
 import PageRevealEffects from "@/components/effects/PageRevealEffects";
 import FaqSection from "@/components/sections/FaqSection";
 
@@ -72,12 +73,11 @@ export default function PpcPage() {
                     </svg>
 
                     
-                    <div className="relative z-20 w-44 h-44 rounded-full border border-[#7469F8]/40 bg-slate-950/80 backdrop-blur-md flex flex-col items-center justify-center shadow-[0_0_50px_rgba(116,105,248,0.25)] hover:shadow-[0_0_70px_rgba(116,105,248,0.4)] transition-shadow duration-500">
+                    <div className="relative z-20 w-44 h-44 rounded-full border border-[#7469F8]/40 bg-slate-950/80 backdrop-blur-md flex items-center justify-center shadow-[0_0_50px_rgba(116,105,248,0.25)] hover:shadow-[0_0_70px_rgba(116,105,248,0.4)] transition-shadow duration-500">
                         
                         <div className="absolute inset-0 rounded-full border-2 border-transparent bg-gradient-to-r from-[#3F8BF9] via-[#AB57F3] to-[#E057D8]" style={{ WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)", WebkitMaskComposite: "xor", maskComposite: "exclude", padding: "2px" }}></div>
                         
-                        <img src="/images/logos/ascendiaprime-logo.png" alt="Optimization Hub" className="h-10 w-auto mb-2 object-contain filter drop-shadow-[0_0_10px_rgba(63,139,249,0.5)]"  />
-                        <span className="text-[10px] text-slate-300 font-medium tracking-widest uppercase text-center leading-tight"></span>
+                        <HeroCenterLogo className="w-40 h-40 object-contain filter drop-shadow-[0_0_10px_rgba(63,139,249,0.5)]" />
                         
                         <div className="absolute inset-0 rounded-full border border-[#3F8BF9] animate-ping opacity-20"></div>
                     </div>

@@ -194,9 +194,7 @@ export default function OurPartnersPage() {
 
                             <g>
                                 <circle className="svg-pulse-core" cx="500" cy="225" r="92" fill="url(#center-hub-blue)" stroke="#7469F8" strokeWidth="1.5"/>
-                                <image href="/images/logos/ascendiaprime-logo.png" x="420" y="165" width="160" height="55" preserveAspectRatio="xMidYMid meet" />
-                                <text x="500" y="240" fill="rgba(63, 139, 249, 0.8)" fontSize="7" fontWeight="bold" letterSpacing="1.2" textAnchor="middle" dominantBaseline="middle" fontFamily="'Poppins', sans-serif">POWERING PERFORMANCE</text>
-                                <text x="500" y="252" fill="rgba(63, 139, 249, 0.8)" fontSize="7" fontWeight="bold" letterSpacing="1.2" textAnchor="middle" dominantBaseline="middle" fontFamily="'Poppins', sans-serif">DRIVING GROWTH</text>
+                                <image href="/images/logos/logo-icon.png" x="455" y="180" width="90" height="90" preserveAspectRatio="xMidYMid meet" />
                             </g>
 
                             <foreignObject x="710" y="165" width="280" height="120" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
@@ -347,7 +345,7 @@ export default function OurPartnersPage() {
             <button id="close-modal" className="popup-close-btn">&times;</button>
             <h3 className="text-3xl font-bold text-white mb-8">Partnership Inquiry</h3>
             <div className="relative z-20 contact-form-shell p-6 md:p-10 rounded-[1.75rem]">
-                <ContactForm variant="homepage" />
+                <ContactForm variant="homepage" formId="2081" />
             </div>
         </div>
     </div>

@@ -63,7 +63,15 @@ export default function VideoNativeAdsPage() {
             <div className="attention-kicker">Attention</div>
             <div className="context-kicker">Context</div>
             <div className="format-card video-card">
-              <div className="video-frame"><div className="play-button"></div></div>
+              <div className="video-frame">
+                <img
+                  src="/images/animations/video-native-ads/video-frame.jpg"
+                  alt=""
+                  className="video-frame-image"
+                  loading="eager"
+                />
+                <div className="play-button"></div>
+              </div>
               <div className="video-controls">
                 <div className="control-play"></div>
                 <div className="progress-bar"></div>
@@ -85,7 +93,13 @@ export default function VideoNativeAdsPage() {
                 <div className="native-dots">...</div>
               </div>
               <div className="sponsored"><span className="sponsored-star"></span> Sponsored</div>
-              <div className="native-image"></div>
+              <div className="native-image">
+                <img
+                  src="/images/animations/video-native-ads/native-content.jpg"
+                  alt=""
+                  loading="eager"
+                />
+              </div>
               <div className="native-copy-lines">
                 <div className="native-line"></div>
                 <div className="native-line long"></div>

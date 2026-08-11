@@ -27,11 +27,7 @@ export default function OurPartnersPage() {
             <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center max-w-[1600px] mx-auto w-full">
                 
                 <div className="lg:col-span-5 relative z-20 pr-4 lg:pr-8">
-                    <div className="hero-animate inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-[#7469F8]/20 bg-[#7469F8]/5 text-[#4c94f6] text-xs font-bold uppercase tracking-widest mb-8 backdrop-blur-md" style={{ animationDelay: "0.1s" }}>
-                        <span className="w-2 h-2 rounded-full bg-[#AB57F3] animate-pulse"></span>
-                        Our Partner Ecosystem
-                    </div>
-                    <h1 className="hero-animate text-5xl md:text-5xl lg:text-6xl font-black leading-[1.05] text-white tracking-tight mb-6" style={{ animationDelay: "0.2s" }}>
+                    <h1 className="hero-animate text-5xl md:text-5xl lg:text-6xl font-black leading-[1.05] text-white tracking-tight mb-6" style={{ animationDelay: "0.1s" }}>
                         Built to Connect Brands With the<br/>
                         <span className="text-gradient-smm drop-shadow-[0_0_15px_rgba(63,139,249,0.15)]">Right Growth Partners</span>
                     </h1>

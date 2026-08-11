@@ -32,11 +32,7 @@ export default function ConversionLedGrowthPage() {
             <div className="grid lg:grid-cols-12 gap-12 items-center max-w-[1400px] mx-auto w-full">
                 
                 <div className="lg:col-span-6 relative z-20">
-                    <div className="hero-animate inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-[#3F8BF9]/30 bg-[#3F8BF9]/10 text-[#3F8BF9] text-xs font-bold uppercase tracking-widest mb-8 backdrop-blur-md" style={{ animationDelay: "0.1s" }}>
-                        <span className="w-2 h-2 rounded-full bg-[#E057D8] animate-pulse"></span>
-                        Performance Marketing & Partner Growth
-                    </div>
-                    <h1 className="hero-animate text-5xl md:text-6xl lg:text-[4.5rem] font-black leading-[1.05] text-white tracking-tight mb-6" style={{ animationDelay: "0.2s" }}>
+                    <h1 className="hero-animate text-5xl md:text-6xl lg:text-[4.5rem] font-black leading-[1.05] text-white tracking-tight mb-6" style={{ animationDelay: "0.1s" }}>
                         Conversion-Led Growth for <br/>
                         <span className="text-gradient-smm drop-shadow-[0_0_15px_rgba(63,139,249,0.3)]">Stronger Campaign Outcomes</span>
                     </h1>
@@ -352,23 +348,6 @@ export default function ConversionLedGrowthPage() {
             },
           ]}
         />
-
-        <section id="target-audit-section" className="relative z-10 py-32 px-6 lg:px-12 overflow-visible border-t border-white/5" style={{ background: "linear-gradient(to bottom, rgba(15, 23, 42, 0.95) 0%, rgba(0, 0, 0, 1) 100%)" }}>
-            <div className="max-w-4xl mx-auto text-center smm-reveal">
-                <h2 className="text-5xl lg:text-7xl font-bold tracking-tight text-white mb-6">Ready to Turn More Traffic Into <span className="text-gradient-smm">Meaningful Action?</span></h2>
-                <p className="text-lg text-slate-300 mb-10 max-w-2xl mx-auto">Let's explore how AscendiaPrime can help your brand improve post-click journeys, reduce friction, and strengthen conversion outcomes with a clearer performance-led approach.</p>
-                
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <button className="open-contact-modal w-full sm:w-auto text-white bg-gradient-to-r from-[#3F8BF9] via-[#7469F8] to-[#AB57F3] px-8 py-4 rounded-2xl font-bold text-lg shadow-[0_0_20px_rgba(63,139,249,0.4)] hover:shadow-[0_0_30px_rgba(63,139,249,0.6)] hover:-translate-y-0.5 transition-all" type="button">
-                        Submit Advertiser Enquiry
-                    </button>
-                    <button className="open-contact-modal w-full sm:w-auto text-white border border-[#AB57F3]/30 bg-gradient-to-r from-[#7469F8] via-[#AB57F3] to-[#E057D8] px-8 py-4 rounded-2xl font-bold text-lg shadow-[0_0_20px_rgba(171,87,243,0.4)] hover:shadow-[0_0_30px_rgba(171,87,243,0.6)] hover:-translate-y-0.5 transition-all" type="button">
-                        Start a Conversation
-                    </button>
-                </div>
-            </div>
-
-        </section>
 
     </div> 
 

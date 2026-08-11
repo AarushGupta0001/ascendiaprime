@@ -32,10 +32,6 @@ export default function VideoNativeAdsPage() {
     <section className="min-h-[90vh] flex items-center py-28 px-6 lg:px-12">
       <div className="max-w-[1400px] mx-auto grid lg:grid-cols-12 gap-14 items-center w-full">
         <div className="lg:col-span-6 reveal-up">
-          <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-[#3F8BF9]/30 bg-[#3F8BF9]/10 text-[#3F8BF9] text-xs font-bold uppercase tracking-widest mb-8 backdrop-blur-md">
-            <span className="w-2 h-2 rounded-full bg-[#E057D8] animate-pulse"></span>
-            Programmatic Branding & Awareness
-          </div>
           <h1 className="text-5xl md:text-6xl lg:text-[4.8rem] font-black leading-[1.05] text-white tracking-tight mb-6">
             Video & Native Ads Built for <span className="text-gradient-brand">Attention and Context</span>
           </h1>
@@ -281,16 +277,6 @@ export default function VideoNativeAdsPage() {
       ]}
     />
 
-    <section className="relative z-10 py-32 px-6 lg:px-12" style={{ background: "linear-gradient(to bottom, rgba(15, 23, 42, 0.85), rgba(0, 0, 0, 1))" }}>
-      <div className="max-w-4xl mx-auto text-center reveal-up">
-        <h2 className="text-5xl lg:text-7xl font-bold tracking-tight text-white mb-6">Ready to Build Attention Through <span className="text-gradient-brand">Better Media Formats?</span></h2>
-        <p className="text-lg text-slate-300 mb-10 max-w-2xl mx-auto">Let's explore how AscendiaPrime can help your brand use video and native advertising to improve awareness, engagement, and contextual visibility.</p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button className="open-contact-modal btn-glow w-full sm:w-auto" type="button">Explore Media Solutions</button>
-          <button className="open-contact-modal btn-glow secondary w-full sm:w-auto" type="button">Start a Conversation</button>
-        </div>
-      </div>
-    </section>
   </main>
 </div>
     </PageRevealEffects>

@@ -5,8 +5,6 @@ import Link from "next/link";
 
 import "@/styles/retargeting.css";
 
-import ContactForm from "@/components/forms/ContactForm";
-
 import PageRevealEffects from "@/components/effects/PageRevealEffects";
 import FaqSection from "@/components/sections/FaqSection";
 
@@ -417,23 +415,6 @@ export default function RetargetingPage() {
   ]}
 />
 
-<section className="contact-section" id="contact">
-  <div className="wrap">
-    <div className="contact-intro">
-      <span className="t-eyebrow">Final CTA</span>
-      <h2 className="t-section">Ready to Recover High-Intent Opportunities?</h2>
-      <p>Let's explore how AscendiaPrime can help your brand re-engage interested users, improve conversion recovery, and scale retargeting with greater transparency and control.</p>
-      <div className="contact-actions">
-        <Link href="#contact" className="btn btn-fill">Submit Advertiser Enquiry</Link>
-        <Link href="#contact" className="btn btn-ghost">Start a Conversation</Link>
-      </div>
-    </div>
-      
-    <div className="contact-container contact-form-shell relative p-6 md:p-10 rounded-[1.75rem]">
-      <ContactForm variant="homepage" />
-    </div>
-  </div>
-</section>
     </div>
     </PageRevealEffects>
   );

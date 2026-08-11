@@ -44,11 +44,6 @@ export default function AboutUsPage() {
             
             <div className="max-w-[1400px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-20">
                 <div className="fade-up-element text-left">
-                    <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-[#AB57F3]/30 bg-[#AB57F3]/10 text-[#E057D8] text-xs font-bold uppercase tracking-widest mb-8">
-                        <span className="w-2 h-2 rounded-full bg-[#E057D8] animate-ping"></span>
-                        About AscendiaPrime
-                    </div>
-                    
                     <h1 className="text-4xl md:text-6xl lg:text-[4.5rem] font-black leading-[1.1] text-white tracking-tight mb-8">
                         Built on Experience.<br/>
                         Driven by <span className="text-shimmer">Transparency.</span><br/>
@@ -61,7 +56,7 @@ export default function AboutUsPage() {
                     </p>
                     
                     <div>
-                        <Link href="#services" className="inline-flex justify-center items-center px-8 py-4 rounded-2xl bg-gradient-to-r from-[#7469F8] to-[#AB57F3] text-white font-bold text-lg transition-transform hover:scale-105 shadow-[0_0_20px_rgba(171,87,243,0.4)]">
+                        <Link href="/#split-services-wrapper" className="inline-flex justify-center items-center px-8 py-4 rounded-2xl bg-gradient-to-r from-[#7469F8] to-[#AB57F3] text-white font-bold text-lg transition-transform hover:scale-105 shadow-[0_0_20px_rgba(171,87,243,0.4)]">
                                 Explore Our Growth Framework
                         </Link>
                     </div>

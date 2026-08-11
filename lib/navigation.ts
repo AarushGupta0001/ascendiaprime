@@ -75,11 +75,11 @@ export const megaMenuColumns: MegaMenuColumn[] = [
 
 export const footerCompanyLinks: NavItem[] = [
   { href: "/about-us", label: "About Us" },
-  { href: "/#case-studies", label: "Case Studies" },
-  { href: "/#testimonials", label: "Testimonials" },
+  { href: "/coming-soon", label: "Case Studies" },
+  { href: "/coming-soon", label: "Testimonials" },
   { href: "/#different", label: "How are we different?" },
   { href: "/#contact", label: "Contact" },
-  { href: "#", label: "Blogs" },
+  { href: "/coming-soon", label: "Blogs" },
 ];
 
 export const footerLegalLinks: NavItem[] = [

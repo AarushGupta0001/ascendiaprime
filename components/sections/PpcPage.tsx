@@ -30,10 +30,6 @@ export default function PpcPage() {
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 min-h-[75vh] flex flex-col lg:flex-row items-center justify-between mb-12">
             
             <div className="w-full lg:w-5/12 text-center lg:text-left z-20 reveal-up mb-16 lg:mb-0">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#3F8BF9]/10 border border-[#3F8BF9]/30 text-[#cbd5e1] text-sm font-medium tracking-wide mb-8">
-                    <span className="w-2 h-2 rounded-full bg-[#E057D8] animate-pulse"></span>
-                    Performance Marketing & Partner Growth
-                </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-8 leading-tight">
                     Paid Media Built Around Intent,
                     <br className="hidden md:block" />
@@ -470,25 +466,6 @@ export default function PpcPage() {
       ]}
     />
 
-    
-    <section className="relative z-10 py-32" style={{ background: "linear-gradient(to bottom, rgba(15, 23, 42, 0.95) 0%, rgba(0, 0, 0, 1) 100%)" }}>
-        <div className="max-w-4xl mx-auto px-6 text-center reveal-up">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Ready to Improve Paid Media Performance?</h2>
-            <p className="text-lg text-slate-300 mb-10 max-w-2xl mx-auto">
-                Let’s explore how we can help your brand reach the right audiences, improve campaign efficiency, and scale through Google, Meta, and PPC-led growth.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#enquiry" className="btn-glow cursor-pointer w-full sm:w-auto">
-                    Submit Advertiser Enquiry
-                </a>
-                <a href="#conversation" className="btn-glow btn-glow-secondary w-full sm:w-auto">
-                    Start a Conversation
-                </a>
-            </div>
-        </div>
-    </section>
-
-    
     
 </div>
     </PageRevealEffects>

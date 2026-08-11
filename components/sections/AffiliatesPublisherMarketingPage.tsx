@@ -44,11 +44,6 @@ export default function AffiliatesPublisherMarketingPage() {
             
             <div className="max-w-[1400px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-20">
                 <div className="fade-up-element text-left">
-                    <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-[#AB57F3]/30 bg-[#AB57F3]/10 text-[#E057D8] text-xs font-bold uppercase tracking-widest mb-8 backdrop-blur-md">
-                        <span className="w-2 h-2 rounded-full bg-[#E057D8] animate-ping"></span>
-                        Performance Marketing & Partner Growth
-                    </div>
-                    
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.15] text-white tracking-tight mb-8">
                         Affiliate & Publisher Marketing for <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3F8BF9] to-[#AB57F3]">Scalable Customer Acquisition</span>
                     </h1>
@@ -549,33 +544,6 @@ export default function AffiliatesPublisherMarketingPage() {
           ]}
         />
 
-        <section className="py-24 px-6 lg:px-12 relative z-10 mb-20">
-            <div className="max-w-[1200px] mx-auto w-full fade-up-element">
-                <div className="relative overflow-hidden rounded-[2.5rem] p-12 md:p-20 text-center border border-[#7469F8]/30 shadow-[0_0_80px_rgba(116,105,248,0.15)]">
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#101930] to-[#0B1221] z-0"></div>
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle,rgba(63,139,249,0.15)_0%,transparent_70%)] pointer-events-none z-0"></div>
-                    
-                    <div className="relative z-10">
-                        <h2 className="text-4xl md:text-5xl font-black text-white mb-8 leading-tight">Ready to Scale Through Trusted <br/><span className="text-shimmer">Affiliate & Publisher Partnerships?</span></h2>
-                        
-                        <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-12 font-light leading-relaxed">
-                            Let’s explore how we can help your brand reach relevant audiences, activate the right partner channels, and grow through transparent, performance-led execution.
-                        </p>
-                        
-                        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                            <button className="open-contact-modal home-gradient-btn w-full sm:w-auto">
-                                Submit Advertiser Enquiry
-                            </button>
-                            
-                            <button className="open-contact-modal home-gradient-btn secondary w-full sm:w-auto">
-                                Start a Conversation
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
     </div> 
 
     

@@ -32,10 +32,6 @@ export default function DspPage() {
     <section className="min-h-[90vh] flex items-center py-28 px-6 lg:px-12">
       <div className="max-w-[1400px] mx-auto grid lg:grid-cols-12 gap-14 items-center w-full">
         <div className="lg:col-span-6 reveal-up">
-          <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-[#3F8BF9]/30 bg-[#3F8BF9]/10 text-[#3F8BF9] text-xs font-bold uppercase tracking-widest mb-8 backdrop-blur-md">
-            <span className="w-2 h-2 rounded-full bg-[#E057D8] animate-pulse"></span>
-            Programmatic Branding & Awareness
-          </div>
           <h1 className="text-5xl md:text-6xl lg:text-[4.8rem] font-black leading-[1.05] text-white tracking-tight mb-6">
             DSP-Led Media Buying With <span className="text-gradient-brand">Control and Clarity</span>
           </h1>

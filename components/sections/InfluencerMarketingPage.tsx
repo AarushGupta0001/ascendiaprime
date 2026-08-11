@@ -34,10 +34,6 @@ export default function InfluencerMarketingPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-[1400px] mx-auto w-full">
             
             <div className="inf-reveal z-20 text-center lg:text-left">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#7469F8]/40 bg-[#7469F8]/10 text-[#e9d5ff] text-sm font-medium mb-6 backdrop-blur-md">
-                    <span className="w-2 h-2 rounded-full bg-[#3F8BF9] animate-pulse shadow-[0_0_8px_#3F8BF9]"></span>
-                    Ascendia Prime Influencer Growth
-                </div>
                 <h1 className="text-4xl md:text-5xl xl:text-6xl font-extrabold text-white tracking-tight mb-8 leading-tight">
                     Creator Partnerships<br />
                     Built to <span className="text-gradient-social drop-shadow-[0_0_15px_rgba(116,105,248,0.4)]">Grow</span><br />

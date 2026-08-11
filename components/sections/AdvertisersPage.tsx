@@ -26,10 +26,6 @@ export default function AdvertisersPage() {
         
         <section className="min-h-[85vh] flex flex-col justify-center pt-32 pb-20 px-6 lg:px-12 relative z-10">
             <div className="max-w-[1400px] mx-auto w-full text-center">
-                <div className="hero-animate inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-[#3F8BF9]/20 bg-[#3F8BF9]/5 text-[#3F8BF9] text-xs font-bold uppercase tracking-widest mb-8 backdrop-blur-md">
-                    <span className="w-2 h-2 rounded-full bg-[#3F8BF9] animate-pulse"></span>
-                    Advertiser Solutions
-                </div>
                 <h1 className="hero-animate text-5xl md:text-7xl font-black leading-[1.1] text-white tracking-tight mb-8">
                     Advertiser Growth, Built Around <br/>
                     <span className="text-gradient-smm drop-shadow-[0_0_15px_rgba(63,139,249,0.15)]">Performance and Clarity</span>
@@ -233,24 +229,6 @@ export default function AdvertisersPage() {
                         <li className="flex items-start gap-4"><span className="font-bold text-[#3F8BF9]">05</span> Optimization insights</li>
                         <li className="flex items-start gap-4"><span className="font-bold text-[#3F8BF9]">06</span> Transparent communication</li>
                     </ul>
-                </div>
-            </div>
-        </section>
-
-        <section className="py-24 px-6 lg:px-12 relative z-10 text-center">
-            <div className="max-w-4xl mx-auto smm-reveal">
-                <h2 className="text-4xl font-bold text-white mb-8">Ready to Build a <span className="text-gradient-smm">Performance-Led Growth Partnership?</span></h2>
-                <p className="mb-12">Let’s explore how we can support your customer acquisition, retargeting, partner growth, and media strategy with a performance-led approach.</p>
-                <div className="flex flex-col sm:flex-row justify-center gap-6">
-                    <button className="partner-popup-trigger glow-btn bg-[#7469F8] text-white px-10 py-4 rounded-full font-bold transition-all" data-partner-type="advertiser">
-                        Submit Advertiser Enquiry
-                    </button>
-                    <button
-                      type="button"
-                      className="partner-popup-trigger border border-white/20 text-white px-10 py-4 rounded-full font-bold hover:bg-white/5 transition-all"
-                    >
-                        Start a Conversation
-                    </button>
                 </div>
             </div>
         </section>

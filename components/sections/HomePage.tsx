@@ -222,10 +222,6 @@ export default function HomePage() {
             <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg width=\\'60\\' height=\\'60\\' viewBox=\\'0 0 60 60\\' xmlns=\\'http://www.w3.org/2000/svg\\'%3E%3Cg fill=\\'none\\' fill-rule=\\'evenodd\\'%3E%3Cg fill=\\'%23ffffff\\' fill-opacity=\\'1\\'%3E%3Cpath d=\\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')" }}></div>
             
             <div className="relative z-10 max-w-2xl text-left">
-                <div className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-800/50 px-4 py-1.5 text-xs font-bold text-slate-300 mb-6 uppercase tracking-[0.2em] backdrop-blur-sm shadow-sm">
-                    <span className="w-2 h-2 rounded-full bg-[#E057D8] animate-pulse"></span>
-                    For Advertisers
-                </div>
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400 mb-6 tracking-tight leading-tight">
                     Scale Customer Acquisition <br className="hidden md:block" />
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#3F8BF9] to-[#AB57F3]">With Clarity and Control.</span>
@@ -253,9 +249,9 @@ export default function HomePage() {
 
     <div className="w-full max-w-[1200px] mx-auto mb-12 relative z-10 px-0 md:px-0 text-left">
         <h2 className="text-5xl md:text-7xl font-bold tracking-tight text-white drop-shadow-[0_0_30px_rgba(0,0,0,1)]">Our Growth
-<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3F8BF9] to-[#AB57F3]">Framework</span>.</h2>
-        <p className="text-slate-400 mt-4 text-lg max-w-2xl">Three connected pillars that organize our capabilities across customer acquisition, brand visibility, and digital presence  helping brands grow across the full customer journey
-.</p>
+<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3F8BF9] to-[#AB57F3]">Framework</span></h2>
+        <p className="text-slate-400 mt-4 text-lg max-w-2xl">Three connected pillars that organise our capabilities across customer acquisition, brand visibility, and digital presence — helping brands grow across the full customer journey.
+</p>
     </div>
 
     <div className="split-services-container" id="main-services-container">
@@ -483,7 +479,7 @@ export default function HomePage() {
         
         <div>
             <div className="container mx-auto px-6 md:px-12 flex flex-col items-center text-center scale-in" style={{ animationDelay: "0.2s" }}>
-                <h2 className="mb-5 text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white">Trusted by these companies</h2>
+                <h2 className="mb-5 text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white">Brands in Our Growth Ecosystem </h2>
             </div>
             <div className="w-full relative scale-in hover-target z-10" style={{ animationDelay: "0.4s" }}>
                 <div className="relative w-full flex items-center justify-center overflow-hidden logo-track">
@@ -509,7 +505,7 @@ export default function HomePage() {
 
         <div>
             <div className="container mx-auto px-6 md:px-12 flex flex-col items-center text-center scale-in" style={{ animationDelay: "0.3s" }}>
-                <h2 className="mb-5 text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white">Our Network Partners</h2>
+                <h2 className="mb-5 text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white">Partner Network Ecosystems </h2>
             </div>
             <div className="w-full relative scale-in hover-target z-10" style={{ animationDelay: "0.5s" }}>
                 <div className="relative w-full flex items-center justify-center overflow-hidden">
@@ -534,7 +530,7 @@ export default function HomePage() {
 <section id="case-studies" className="relative pt-14 pb-32 w-full bg-[#050b21] z-10 overflow-hidden">
     <div className="max-w-[1400px] mx-auto px-6 md:px-12 mb-16 relative z-40 text-left">
         <h2 className="text-5xl md:text-7xl font-bold tracking-tight text-white drop-shadow-[0_0_30px_rgba(0,0,0,1)]">
-            Case <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3F8BF9] to-[#AB57F3]">Case Studies</span>.
+            Case <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3F8BF9] to-[#AB57F3]">Studies</span>
         </h2>
         <p className="text-slate-400 mt-4 text-lg max-w-2xl">Explore our high-impact growth campaigns across major global verticals.</p>
     </div>
@@ -639,11 +635,7 @@ export default function HomePage() {
 
 <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
 <div className="mb-16 text-center max-w-3xl mx-auto">
-<div className="scale-in mb-4 inline-flex items-center gap-2 rounded-full bg-white border border-[#3F8BF9]/30 px-5 py-2.5 text-sm font-medium text-[#3F8BF9] backdrop-blur-sm shadow-sm" style={{ animationDelay: "0.1s" }}>
-<svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-Why Choose Us
-</div>
-<h2 className="scale-in text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-tight" style={{ animationDelay: "0.2s" }}>
+<h2 className="scale-in text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-tight" style={{ animationDelay: "0.1s" }}>
 How Are We <span className="text-[#3F8BF9]">Different</span>?
 </h2>
 <p className="scale-in text-slate-300 text-lg leading-relaxed" style={{ animationDelay: "0.3s" }}>We don't just follow industry standards—we set them. Here's what makes us stand out from the crowd in driving actual, scalable growth.</p>
@@ -652,15 +644,15 @@ How Are We <span className="text-[#3F8BF9]">Different</span>?
 <div className="bento-grid grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-24 max-w-6xl mx-auto relative z-10">
 <div className="fade-in-left bento-card bento-audience md:col-span-2 md:row-span-1 p-8 hover-target min-h-[250px] bg-white border border-slate-200 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)] transition-all duration-300 hover:-translate-y-1" style={{ animationDelay: "0.1s" }}>
 <div className="bento-content flex flex-col md:flex-row items-start md:items-center justify-between gap-8 h-full">
-<div className="flex-1"><div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#3F8BF9]/10 text-[#3F8BF9]"><svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg></div><h3 className="mb-3 text-2xl font-bold text-slate-900">Audience Intelligence</h3><p className="text-slate-600 leading-relaxed">We leverage first-party data and predictive modeling to find your highest-converting customers before they even search for you.</p></div>
+<div className="flex-1"><div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#3F8BF9]/10 text-[#3F8BF9]"><svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg></div><h3 className="mb-3 text-2xl font-bold text-slate-900">Audience Intelligence</h3><p className="text-slate-600 leading-relaxed">Understand audience behaviour, intent signals, and traffic quality before scaling campaigns across the right channels.</p></div>
 <div className="relative w-32 h-32 flex-shrink-0 opacity-100 mix-blend-multiply pointer-events-none drop-shadow-md animate-spin" style={{ animationDuration: "10s" }}><svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-md"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(63, 139, 249, 0.6)" strokeWidth="4"/><circle cx="50" cy="50" r="25" fill="none" stroke="rgba(63, 139, 249, 0.8)" strokeWidth="4"/><circle cx="50" cy="50" r="10" fill="rgba(63, 139, 249, 1)"/><path d="M50 50 L50 10 A40 40 0 0 1 90 50 Z" fill="url(#radarGrad)" className="radar-sweep"/><defs><linearGradient id="radarGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="rgba(63, 139, 249, 0.5)"/><stop offset="100%" stopColor="transparent"/></linearGradient></defs></svg></div>
 </div>
 </div>
 <div className="fade-in-right bento-card bento-performance md:col-span-1 md:row-span-2 p-8 hover-target flex flex-col min-h-[300px] bg-white border border-slate-200 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)] transition-all duration-300 hover:-translate-y-1" style={{ animationDelay: "0.2s" }}>
 <div className="bento-content flex-1 flex flex-col relative z-20 min-h-0">
     <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#7469F8]/10 text-[#7469F8]"><svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg></div>
-    <h3 className="mb-3 text-2xl font-bold text-slate-900 relative z-10">Performance Obsessed</h3>
-    <p className="text-slate-600 leading-relaxed relative z-10">We don't report on vanity metrics. We measure success by pipeline generated, CAC, and revenue closed.</p>
+    <h3 className="mb-3 text-2xl font-bold text-slate-900 relative z-10">Performance Visibility</h3>
+    <p className="text-slate-600 leading-relaxed relative z-10">Keep campaign activity, partner contribution, traffic quality, and conversion outcomes clear across the full journey.</p>
     
     <div className="bento-chart-area relative w-full mt-6 flex flex-col justify-end">
         <div className="absolute top-2 right-2 bg-[#3F8BF9]/20 border border-[#3F8BF9]/30 text-[#3F8BF9] px-3 py-1 rounded-full text-xs font-bold floating-anim z-30 backdrop-blur-sm">+342% ROI</div>
@@ -707,20 +699,20 @@ How Are We <span className="text-[#3F8BF9]">Different</span>?
 </div>
 </div>
 <div className="fade-in-left bento-card bento-agile md:col-span-1 p-8 hover-target min-h-[250px] bg-white border border-slate-200 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)] transition-all duration-300 hover:-translate-y-1" style={{ animationDelay: "0.3s" }}>
-<div className="bento-content h-full flex flex-col relative overflow-hidden"><div className="relative z-10"><div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#3F8BF9]/10 text-[#3F8BF9]"><svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg></div><h3 className="mb-3 text-xl font-bold text-slate-900">Agile Execution</h3><p className="text-slate-600 text-sm leading-relaxed relative z-10 pr-6 pb-6">Deploy campaigns in days. We iterate rapidly based on live performance data.</p></div><svg className="absolute right-[-10px] bottom-[-10px] w-24 h-24 opacity-80 pointer-events-none mix-blend-multiply z-0" viewBox="0 0 100 100"><path d="M10,90 L90,10" stroke="#3F8BF9" strokeWidth="6" fill="none" className="dash-line-anim"/><path d="M10,70 L70,10" stroke="#AB57F3" strokeWidth="4" fill="none" className="dash-line-anim" style={{ animationDuration: "1.5s" }}/><path d="M30,90 L90,30" stroke="#3F8BF9" strokeWidth="4" fill="none" className="dash-line-anim" style={{ animationDuration: "2.5s" }}/></svg></div>
+<div className="bento-content h-full flex flex-col relative overflow-hidden"><div className="relative z-10"><div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#3F8BF9]/10 text-[#3F8BF9]"><svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg></div><h3 className="mb-3 text-xl font-bold text-slate-900">Agile Execution</h3><p className="text-slate-600 text-sm leading-relaxed relative z-10 pr-6 pb-6">Move from strategy to setup, activation, optimisation, and scale with speed, structure, and control.</p></div><svg className="absolute right-[-10px] bottom-[-10px] w-24 h-24 opacity-80 pointer-events-none mix-blend-multiply z-0" viewBox="0 0 100 100"><path d="M10,90 L90,10" stroke="#3F8BF9" strokeWidth="6" fill="none" className="dash-line-anim"/><path d="M10,70 L70,10" stroke="#AB57F3" strokeWidth="4" fill="none" className="dash-line-anim" style={{ animationDuration: "1.5s" }}/><path d="M30,90 L90,30" stroke="#3F8BF9" strokeWidth="4" fill="none" className="dash-line-anim" style={{ animationDuration: "2.5s" }}/></svg></div>
 </div>
 <div className="fade-in-right bento-card bento-dedicated md:col-span-1 p-8 hover-target min-h-[250px] bg-white border border-slate-200 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)] transition-all duration-300 hover:-translate-y-1" style={{ animationDelay: "0.4s" }}>
-<div className="bento-content h-full flex flex-col relative"><div className="relative z-10"><div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#E057D8]/10 text-[#E057D8]"><svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg></div><h3 className="mb-3 text-xl font-bold text-slate-900">Dedicated Partners</h3><p className="text-slate-600 text-sm leading-relaxed relative z-10 pr-6 pb-6">Direct access to the senior strategists actually running your campaigns.</p></div>
+<div className="bento-content h-full flex flex-col relative"><div className="relative z-10"><div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#E057D8]/10 text-[#E057D8]"><svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg></div><h3 className="mb-3 text-xl font-bold text-slate-900">Dedicated Partnership</h3><p className="text-slate-600 text-sm leading-relaxed relative z-10 pr-6 pb-6">Work with a hands-on team focused on clear communication, proactive support, and long-term growth.</p></div>
 <div className="absolute right-6 bottom-8 w-20 h-1.5 bg-slate-100 rounded-full overflow-visible pointer-events-none z-0">
     <div className="w-3 h-3 bg-[#E057D8] rounded-full shadow-[0_0_10px_#E057D8] -top-[3px] relative animate-dot-slide"></div>
 </div>
 </div>
 </div>
 <div className="fade-in-up bento-card bento-omni md:col-span-2 p-8 hover-target min-h-[250px] bg-white border border-slate-200 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)] transition-all duration-300 hover:-translate-y-1" style={{ animationDelay: "0.5s" }}>
-<div className="bento-content flex flex-col md:flex-row items-start md:items-center justify-between gap-8 h-full"><div className="flex-1"><div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#7469F8]/10 text-[#7469F8]"><svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg></div><h3 className="mb-3 text-2xl font-bold text-slate-900">Omni-Channel Scale</h3><p className="text-slate-600 leading-relaxed">Seamlessly integrated campaigns across Search, Social, Programmatic, and Email for a unified, high-converting brand voice.</p></div><div className="relative w-32 h-32 flex-shrink-0 opacity-100 mix-blend-multiply pointer-events-none drop-shadow-md"><div className="absolute inset-0 border-4 border-[#7469F8]/30 rounded-full flex items-center justify-center animate-[spin_6s_linear_infinite]"><div className="absolute w-3 h-3 bg-[#7469F8] rounded-full orbit-dot top-0 left-1/2 -translate-x-1/2 shadow-[0_0_10px_#7469F8]"></div><div className="w-16 h-16 border-4 border-[#3F8BF9]/30 rounded-full flex items-center justify-center animate-[spin_4s_linear_infinite_reverse]"><div className="w-3 h-3 bg-[#3F8BF9] rounded-full shadow-[0_0_15px_#3F8BF9] absolute top-0 left-1/2 -translate-x-1/2"></div></div></div></div></div>
+<div className="bento-content flex flex-col md:flex-row items-start md:items-center justify-between gap-8 h-full"><div className="flex-1"><div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#7469F8]/10 text-[#7469F8]"><svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg></div><h3 className="mb-3 text-2xl font-bold text-slate-900">Omni-Channel Scale</h3><p className="text-slate-600 leading-relaxed">Activate growth across affiliate, publisher, programmatic, retargeting, paid media, social, and digital channels.</p></div><div className="relative w-32 h-32 flex-shrink-0 opacity-100 mix-blend-multiply pointer-events-none drop-shadow-md"><div className="absolute inset-0 border-4 border-[#7469F8]/30 rounded-full flex items-center justify-center animate-[spin_6s_linear_infinite]"><div className="absolute w-3 h-3 bg-[#7469F8] rounded-full orbit-dot top-0 left-1/2 -translate-x-1/2 shadow-[0_0_10px_#7469F8]"></div><div className="w-16 h-16 border-4 border-[#3F8BF9]/30 rounded-full flex items-center justify-center animate-[spin_4s_linear_infinite_reverse]"><div className="w-3 h-3 bg-[#3F8BF9] rounded-full shadow-[0_0_15px_#3F8BF9] absolute top-0 left-1/2 -translate-x-1/2"></div></div></div></div></div>
 </div>
 <div className="fade-in-up bento-card bento-transparency md:col-span-1 p-8 hover-target min-h-[250px] bg-white border border-slate-200 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)] transition-all duration-300 hover:-translate-y-1" style={{ animationDelay: "0.6s" }}>
-<div className="bento-content h-full flex flex-col"><div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#3F8BF9]/10 text-[#3F8BF9]"><svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div><h3 className="mb-3 text-xl font-bold text-slate-900">Transparency</h3><p className="text-slate-600 text-sm leading-relaxed">Full access to ad accounts and clear visibility into management fees.</p></div>
+<div className="bento-content h-full flex flex-col"><div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#3F8BF9]/10 text-[#3F8BF9]"><svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div><h3 className="mb-3 text-xl font-bold text-slate-900">Transparency</h3><p className="text-slate-600 text-sm leading-relaxed">Build campaigns around clear terms, responsible tracking, measurable outcomes, and accountable partner activity.</p></div>
 </div>
 </div>
 
@@ -769,10 +761,6 @@ How Are We <span className="text-[#3F8BF9]">Different</span>?
             <div id="contact-form-container" className="relative z-10 p-6 md:p-10 rounded-[1.75rem] w-full backdrop-blur-xl">
                 
                 <div className="mb-10 text-center flex flex-col items-center">
-                    <div className="inline-flex items-center gap-2 rounded-full border border-[#3F8BF9]/30 bg-[#3F8BF9]/10 px-4 py-1.5 text-sm font-semibold text-[#9fc6ff] mb-6 shadow-[0_0_24px_rgba(63,139,249,0.18)]">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                        Expert Consultation
-                    </div>
                     <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">Ready to Scale?</h2>
                     <p className="text-slate-200 text-lg leading-relaxed max-w-md mx-auto">Let's discuss how our team can integrate performance, brand, and technology into your growth ecosystem.</p>
                 </div>

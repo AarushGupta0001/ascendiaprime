@@ -346,14 +346,14 @@
       }
       .timeline-content.left {
         grid-column: 1;
-        text-align: right;
+        text-align: center;
       }
       .timeline-content.left::before {
         right: -24px;
       }
       .timeline-content.right {
         grid-column: 3;
-        text-align: left;
+        text-align: center;
       }
       .timeline-content.right::before {
         left: -24px;
@@ -393,7 +393,7 @@
         .timeline-content.left,
         .timeline-content.right {
           grid-column: 2;
-          text-align: left;
+          text-align: center;
           padding: 1.25rem;
         }
         .timeline-content::before,

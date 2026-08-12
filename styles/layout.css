@@ -1,19 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 @import "./tokens.css";
 
 /* ============================================
    AscendiaPrime — Header, Mega Menu, Footer
    ============================================ */
 
+*, *::before, *::after, body, h1, h2, h3, h4, h5, h6, p, span, a, div, button, input, select, textarea {
+  font-family: 'Poppins', sans-serif !important;
+}
+
 #site-header-wrapper {
   width: 100%;
   position: relative;
   z-index: 9999;
-  font-family: var(--font-family-header);
+  font-family: 'Poppins', sans-serif !important;
   color: var(--color-text);
 }
 
 #site-header-wrapper * {
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 /* --- HEADER --- */
@@ -47,6 +53,19 @@
 .header-logo-link {
   z-index: 50;
   text-decoration: none;
+}
+
+/* Global Button Text-Decoration Reset */
+button,
+a.glow-btn,
+a.btn,
+a.btn-glow,
+a.inline-block,
+a.inline-flex,
+.partner-popup-trigger,
+.glow-btn,
+.btn-header {
+  text-decoration: none !important;
 }
 
 .stellar-logo-wrap {

@@ -6,7 +6,7 @@
         margin: 0 !important;
         padding: 0 !important;
         overflow-x: hidden !important;
-        font-family: 'Poppins', sans-serif !important;
+        font-family: var(--font-family) !important;
     }
     .-page, .-section-wrap, .-widget-wrap, .-widget-container, .-section {
         background-color: transparent !important;
@@ -258,7 +258,7 @@
         #partners-master {
             background: #020617 !important;
             color: #cbd5e1 !important;
-            font-family: 'Poppins', sans-serif !important;
+            font-family: var(--font-family) !important;
         }
         #partners-master *,
         #partners-master *::before,
@@ -269,7 +269,7 @@
         select,
         .contact-custom-form,
         .contact-custom-form * {
-            font-family: 'Poppins', sans-serif !important;
+            font-family: var(--font-family) !important;
         }
         .-page,
         .-section-wrap,
@@ -391,4 +391,20 @@
         #partners-master input::placeholder,
         #partners-master textarea::placeholder {
             color: #94a3b8 !important;
+        }
+
+        /* Mobile Responsiveness Overrides */
+        @media (max-width: 767px) {
+            .partner-popup-content {
+                padding: 1.75rem 1.25rem !important;
+                border-radius: 1.25rem !important;
+                max-width: 95% !important;
+            }
+            .modern-form-wrapper {
+                padding: 1.5rem 1.25rem !important;
+                border-radius: 1.25rem !important;
+            }
+            #partners-master h1 {
+                font-size: clamp(2rem, 8vw, 3rem) !important;
+            }
         }

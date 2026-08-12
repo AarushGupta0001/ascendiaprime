@@ -46,10 +46,10 @@ export default function HomePage() {
             </p>
             <div className="fade-in-up flex flex-col sm:flex-row gap-4" style={{ animationDelay: "0.3s" }}>
                 <div className="hover-target">
-                    <Link href="#split-services-wrapper" className="inline-block text-center bg-gradient-to-r from-[#3F8BF9] via-[#7469F8] to-[#AB57F3] text-white px-8 py-3.5 rounded-full font-medium transition-all duration-300 shadow-[0_0_20px_rgba(63,139,249,0.4)] hover:shadow-[0_0_30px_rgba(63,139,249,0.6)] hover:-translate-y-0.5 w-full sm:w-auto border border-[#3F8BF9]/30 text-decoration-none">Explore Our Growth Framework</Link>
+                    <Link href="#split-services-wrapper" className="inline-block text-center bg-gradient-to-r from-[#3F8BF9] via-[#7469F8] to-[#AB57F3] text-white px-8 py-3.5 rounded-full font-medium transition-all duration-300 shadow-[0_0_20px_rgba(63,139,249,0.4)] hover:shadow-[0_0_30px_rgba(63,139,249,0.6)] hover:-translate-y-0.5 w-full sm:w-auto border border-[#3F8BF9]/30 no-underline">Explore Our Growth Framework</Link>
                 </div>
                 <div className="hover-target">
-                    <Link href="#contact" className="inline-block text-center bg-gradient-to-r from-[#7469F8] via-[#AB57F3] to-[#E057D8] text-white px-8 py-3.5 rounded-full font-medium transition-all duration-300 shadow-[0_0_20px_rgba(171,87,243,0.4)] hover:shadow-[0_0_30px_rgba(171,87,243,0.6)] hover:-translate-y-0.5 w-full sm:w-auto border border-[#AB57F3]/30 text-decoration-none">Start a Conversation</Link>
+                    <Link href="#contact" className="inline-block text-center bg-gradient-to-r from-[#7469F8] via-[#AB57F3] to-[#E057D8] text-white px-8 py-3.5 rounded-full font-medium transition-all duration-300 shadow-[0_0_20px_rgba(171,87,243,0.4)] hover:shadow-[0_0_30px_rgba(171,87,243,0.6)] hover:-translate-y-0.5 w-full sm:w-auto border border-[#AB57F3]/30 no-underline">Start a Conversation</Link>
                 </div>
             </div>
         </div>
@@ -234,7 +234,7 @@ export default function HomePage() {
             <div className="relative z-10 flex-shrink-0 group/btn">
                 <div className="absolute -inset-1.5 bg-gradient-to-r from-[#3F8BF9] via-[#AB57F3] to-[#E057D8] rounded-full blur opacity-60 group-hover/btn:opacity-100 transition duration-500 animate-gradient-xy"></div>
                 
-                <Link href="/advertisers" className="relative inline-flex items-center gap-3 bg-[#050b21] text-white font-semibold text-lg px-10 py-5 rounded-full transition-all duration-300 transform group-hover/btn:scale-[1.02] shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] text-decoration-none">
+                <Link href="/advertisers" className="relative inline-flex items-center gap-3 bg-[#050b21] text-white font-semibold text-lg px-10 py-5 rounded-full transition-all duration-300 transform group-hover/btn:scale-[1.02] shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] no-underline">
                     Explore Advertiser Solutions
                     <svg className="w-5 h-5 transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                 </Link>

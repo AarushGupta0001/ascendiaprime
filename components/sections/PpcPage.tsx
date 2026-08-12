@@ -112,7 +112,7 @@ export default function PpcPage() {
                     </div>
 
                     
-                    <div className="absolute top-[45%] left-[-5%] md:-left-[15%] z-20 trace-card theme-purple p-3 w-40 animate-float-fast" style={{ borderRadius: "0.75rem" }}>
+                    <div className="absolute top-[45%] left-0 md:-left-[15%] z-20 trace-card theme-purple p-3 w-40 animate-float-fast" style={{ borderRadius: "0.75rem" }}>
                          <div className="flex items-center gap-2 mb-2">
                             <svg className="w-3.5 h-3.5 text-[#AB57F3]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                             <span className="text-[9px] text-white font-bold uppercase tracking-widest">Creative Test</span>
@@ -130,7 +130,7 @@ export default function PpcPage() {
                     </div>
 
                     
-                    <div className="absolute top-[45%] right-[-5%] md:-right-[15%] z-20 trace-card theme-pink p-3 w-44 animate-float-slow" style={{ borderRadius: "0.75rem" }}>
+                    <div className="absolute top-[45%] right-0 md:-right-[15%] z-20 trace-card theme-pink p-3 w-44 animate-float-slow" style={{ borderRadius: "0.75rem" }}>
                         <div className="flex items-center gap-2 mb-3">
                             <svg className="w-3.5 h-3.5 text-[#E057D8]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
                             <span className="text-[9px] text-white font-bold uppercase tracking-widest">Optimization</span>
@@ -301,6 +301,26 @@ export default function PpcPage() {
                     <p className="text-sm text-slate-300 leading-relaxed">Continuously optimize audiences, keywords, creatives, bids, budgets, placements, CPA, ROAS, and conversion quality.</p>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    {/* ── Best-Fit Campaigns ── */}
+    <section className="relative z-10 py-16" style={{ background: "linear-gradient(to bottom, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%)" }}>
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <div className="text-center max-w-2xl mx-auto mb-10 reveal-up">
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+                    Best-Fit <span className="text-gradient-brand">Campaigns</span>
+                </h2>
+                <p className="text-[#94a3b8] text-base">Campaign types where paid media delivers the strongest results.</p>
+            </div>
+            <div className="flex flex-wrap justify-center gap-4 reveal-up">
+                <span className="best-fit-badge">Lead Generation</span>
+                <span className="best-fit-badge">E-commerce Sales</span>
+                <span className="best-fit-badge">Brand Search Protection</span>
+                <span className="best-fit-badge">Competitor Keyword Targeting</span>
+                <span className="best-fit-badge">Product Launches</span>
+                <span className="best-fit-badge">Geo-Specific Acquisition</span>
             </div>
         </div>
     </section>

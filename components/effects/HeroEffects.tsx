@@ -77,22 +77,34 @@ export default function HeroEffects() {
 
       window.requestAnimationFrame(() => {
         const scrolled = window.scrollY;
+        const heroEl = document.getElementById("home-hero");
+        const heroHeight = heroEl ? heroEl.offsetHeight : window.innerHeight;
+
+        // Content remains 100% intact while in screen.
+        // Fading/blurring only begins in final exit phase (after scrolling 50% of hero height) as it leaves screen.
+        const fadeStart = heroHeight * 0.5;
+        const fadeDistance = heroHeight * 0.5;
+
+        let progress = 0;
+        if (scrolled > fadeStart) {
+          progress = Math.min(1, (scrolled - fadeStart) / fadeDistance);
+        }
 
         if (heroContent) {
-          const contentOpacity = Math.max(0, 1 - scrolled / 400);
-          const contentBlur = Math.min(10, scrolled * 0.02);
+          const contentOpacity = 1 - progress;
+          const contentBlur = progress * 8;
           heroContent.style.opacity = String(contentOpacity);
-          heroContent.style.filter = `blur(${contentBlur}px)`;
-          heroContent.style.transform = `translate3d(0, ${scrolled * 0.15}px, 0)`;
+          heroContent.style.filter = progress > 0 ? `blur(${contentBlur}px)` : "none";
+          heroContent.style.transform = `translate3d(0, ${scrolled * 0.1}px, 0)`;
         }
 
         if (heroVisuals) {
-          const visualOpacity = Math.max(0, 1 - scrolled / 500);
-          const visualBlur = Math.min(20, scrolled * 0.03);
-          const visualScale = 1 + scrolled * 0.0005;
+          const visualOpacity = 1 - progress;
+          const visualBlur = progress * 10;
+          const visualScale = 1 + scrolled * 0.0003;
           heroVisuals.style.opacity = String(visualOpacity);
-          heroVisuals.style.filter = `blur(${visualBlur}px)`;
-          heroVisuals.style.transform = `translate3d(0, ${scrolled * 0.1}px, 0) scale(${visualScale})`;
+          heroVisuals.style.filter = progress > 0 ? `blur(${visualBlur}px)` : "none";
+          heroVisuals.style.transform = `translate3d(0, ${scrolled * 0.08}px, 0) scale(${visualScale})`;
         }
 
         heroTicking = false;

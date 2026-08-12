@@ -38,7 +38,6 @@ export default function OurPartnersPage() {
                         <div className="magnetic-btn w-full sm:w-auto">
                             <button onClick={() => { document.getElementById('inquiry-form-section')?.scrollIntoView({ behavior: 'smooth' }); }} className="w-full glow-btn text-white bg-gradient-to-r from-[#7469F8] to-[#AB57F3] opacity-90 hover:opacity-100 px-8 py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(116,105,248,0.25)] hover:shadow-[0_0_30px_rgba(171,87,243,0.4)] transition-all">
                                 Explore Partnerships
-                                <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
                             </button>
                         </div>
                     </div>
@@ -193,7 +192,7 @@ export default function OurPartnersPage() {
                                 <image href="/images/logos/logo-icon.png" x="455" y="180" width="90" height="90" preserveAspectRatio="xMidYMid meet" />
                             </g>
 
-                            <foreignObject x="710" y="165" width="280" height="120" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                            <foreignObject x="710" y="165" width="280" height="120" className="hidden md:block" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
                                 <div className="svg-results-card-container">
                                     <div className="svg-results-card-inner" style={{ borderColor: "rgba(63, 139, 249, 0.25)", background: "rgba(30, 41, 59, 0.8)" }}>
                                         <div className="flex flex-col items-center flex-1">
@@ -241,9 +240,8 @@ export default function OurPartnersPage() {
                             <p className="text-slate-300 leading-relaxed text-lg mb-8">Content, editorial, commerce, and media partners that help brands reach relevant audiences across the funnel.</p>
                         </div>
                         <div className="mt-auto">
-                            <button className="w-max glow-btn bg-[#3F8BF9]/10 hover:bg-[#3F8BF9] text-[#3F8BF9] hover:text-white border border-[#3F8BF9]/30 px-6 py-2.5 rounded-full font-bold text-sm flex items-center justify-center gap-2 transition-all partner-popup-trigger" data-partner-type="publisher">
+                            <button className="glow-btn partner-popup-trigger text-white bg-gradient-to-r from-[#3F8BF9] via-[#7469F8] to-[#AB57F3] px-6 py-3 rounded-2xl font-bold text-sm inline-flex items-center justify-center transition-all shadow-[0_0_15px_rgba(63,139,249,0.3)] hover:shadow-[0_0_30px_rgba(63,139,249,0.5)] cursor-pointer" data-partner-type="publisher">
                                 Partner With Us
-                                <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                             </button>
                         </div>
                     </div>
@@ -257,9 +255,8 @@ export default function OurPartnersPage() {
                             <p className="text-slate-300 leading-relaxed text-lg mb-8">Performance-driven partners focused on measurable actions such as leads, sales, sign-ups, and conversions.</p>
                         </div>
                         <div className="mt-auto">
-                            <button className="w-max glow-btn bg-[#7469F8]/10 hover:bg-[#7469F8] text-[#7469F8] hover:text-white border border-[#7469F8]/30 px-6 py-2.5 rounded-full font-bold text-sm flex items-center justify-center gap-2 transition-all partner-popup-trigger" data-partner-type="affiliate">
+                            <button className="glow-btn partner-popup-trigger text-white bg-gradient-to-r from-[#3F8BF9] via-[#7469F8] to-[#AB57F3] px-6 py-3 rounded-2xl font-bold text-sm inline-flex items-center justify-center transition-all shadow-[0_0_15px_rgba(63,139,249,0.3)] hover:shadow-[0_0_30px_rgba(63,139,249,0.5)] cursor-pointer" data-partner-type="affiliate">
                                 Partner With Us
-                                <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                             </button>
                         </div>
                     </div>
@@ -273,9 +270,8 @@ export default function OurPartnersPage() {
                             <p className="text-slate-300 leading-relaxed text-lg mb-8">Creators and influencer partners that support brand storytelling, audience trust, and social engagement.</p>
                         </div>
                         <div className="mt-auto">
-                            <button className="w-max glow-btn bg-[#AB57F3]/10 hover:bg-[#AB57F3] text-[#AB57F3] hover:text-white border border-[#AB57F3]/30 px-6 py-2.5 rounded-full font-bold text-sm flex items-center justify-center gap-2 transition-all partner-popup-trigger" data-partner-type="creator">
+                            <button className="glow-btn partner-popup-trigger text-white bg-gradient-to-r from-[#3F8BF9] via-[#7469F8] to-[#AB57F3] px-6 py-3 rounded-2xl font-bold text-sm inline-flex items-center justify-center transition-all shadow-[0_0_15px_rgba(63,139,249,0.3)] hover:shadow-[0_0_30px_rgba(63,139,249,0.5)] cursor-pointer" data-partner-type="creator">
                                 Partner With Us
-                                <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                             </button>
                         </div>
                     </div>
@@ -289,9 +285,8 @@ export default function OurPartnersPage() {
                             <p className="text-slate-300 leading-relaxed text-lg mb-8">Agencies and sub-networks that help extend campaign reach through managed publisher relationships, niche traffic sources, and performance-led collaborations across multiple verticals and markets.</p>
                         </div>
                         <div className="mt-auto">
-                            <button className="w-max glow-btn bg-[#E057D8]/10 hover:bg-[#E057D8] text-[#E057D8] hover:text-white border border-[#E057D8]/30 px-6 py-2.5 rounded-full font-bold text-sm flex items-center justify-center gap-2 transition-all partner-popup-trigger" data-partner-type="agency">
+                            <button className="glow-btn partner-popup-trigger text-white bg-gradient-to-r from-[#3F8BF9] via-[#7469F8] to-[#AB57F3] px-6 py-3 rounded-2xl font-bold text-sm inline-flex items-center justify-center transition-all shadow-[0_0_15px_rgba(63,139,249,0.3)] hover:shadow-[0_0_30px_rgba(63,139,249,0.5)] cursor-pointer" data-partner-type="agency">
                                 Partner With Us
-                                <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                             </button>
                         </div>
                     </div>
@@ -307,7 +302,50 @@ export default function OurPartnersPage() {
             </div>
         </section>
 
-        <section id="inquiry-form-section" className="py-32 px-6 lg:px-12 relative overflow-hidden border-t border-white/5">
+        {/* ── Why Publishers Partner With Ascendia Prime ── */}
+        <section className="py-24 px-6 lg:px-12 relative z-10 border-t border-white/10">
+            <div className="max-w-[1400px] mx-auto">
+                <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+
+                    {/* Left — Heading */}
+                    <div className="smm-reveal">
+                        <p className="text-sm font-semibold tracking-widest uppercase text-[#3F8BF9] mb-4">Publisher Partners</p>
+                        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                            Why Publishers Partner With{" "}
+                            <span className="text-gradient-smm">Ascendia Prime</span>
+                        </h2>
+                        <p className="text-slate-400 text-lg leading-relaxed">
+                            We build long-term publisher relationships grounded in clarity, fair terms, and mutual growth — giving partners the support and campaigns they need to monetise effectively.
+                        </p>
+                    </div>
+
+                    {/* Right — 6 bullet points */}
+                    <div className="smm-reveal" style={{ transitionDelay: "0.15s" }}>
+                        <ul className="space-y-5">
+                            {[
+                                { color: "#3F8BF9", text: "Access to multiple global campaigns" },
+                                { color: "#7469F8", text: "CPA, CPL, CPS and hybrid opportunities" },
+                                { color: "#AB57F3", text: "Timely communication and faster payment support" },
+                                { color: "#E057D8", text: "Clear campaign terms and restrictions" },
+                                { color: "#3F8BF9", text: "Dedicated support for campaign activation" },
+                                { color: "#7469F8", text: "Long-term growth partnership" },
+                            ].map((item, i) => (
+                                <li key={i} className="flex items-start gap-4 group">
+                                    <span
+                                        className="mt-[6px] w-3 h-3 rounded-full flex-shrink-0 transition-transform duration-300 group-hover:scale-125"
+                                        style={{ background: item.color, boxShadow: `0 0 10px ${item.color}80` }}
+                                    />
+                                    <span className="text-slate-200 font-medium text-lg leading-snug group-hover:text-white transition-colors duration-300">{item.text}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="inquiry-form-section" className="py-32 px-6 lg:px-12 relative overflow-hidden border-t border-white/10">
             <div className="max-w-[800px] mx-auto flex flex-col items-center text-center w-full smm-reveal">
                 
                 <h2 className="text-5xl lg:text-7xl font-bold tracking-tight text-white mb-6">Partner With <br/><span className="text-gradient-smm">Ascendia Prime</span></h2>
@@ -322,12 +360,10 @@ export default function OurPartnersPage() {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full">
                     <a href="https://partners.ascendiamedia.co.uk/registration" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto glow-btn bg-gradient-to-r from-[#3F8BF9] to-[#AB57F3] text-white px-10 py-4 rounded-full font-bold text-lg flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(63,139,249,0.3)] hover:shadow-[0_0_40px_rgba(171,87,243,0.5)] transition-all no-underline">
                         Sign Up as a Partner
-                        <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </a>
                     
                     <button className="w-full sm:w-auto glow-btn bg-transparent border-2 border-[#7469F8]/50 text-white hover:bg-[#7469F8]/10 px-10 py-4 rounded-full font-bold text-lg flex items-center justify-center gap-2 transition-all partner-popup-trigger">
                         Submit an Enquiry
-                        <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
                     </button>
                 </div>
 

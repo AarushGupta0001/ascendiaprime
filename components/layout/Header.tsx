@@ -21,12 +21,19 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      const hero = document.getElementById("home-hero") || document.querySelector("section");
+      const heroHeight = hero ? hero.offsetHeight : window.innerHeight;
+      const threshold = Math.max(200, heroHeight - 80);
+      setIsScrolled(window.scrollY >= threshold);
     };
 
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, []);
 
   useEffect(() => {

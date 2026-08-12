@@ -58,7 +58,6 @@ export default function SeoPage() {
                   
                   <button id="hero-cta-btn" className="w-full bg-gradient-to-r from-[#3F8BF9] to-[#AB57F3] text-white px-8 py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(63,139,249,0.3)] hover:shadow-[0_0_40px_rgba(63,139,249,0.6)] transition-shadow duration-300">
                     Get Free SEO Audit
-                    <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                   </button>
                 </div>
                 

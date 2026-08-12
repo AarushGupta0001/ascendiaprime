@@ -48,9 +48,6 @@ export default function Footer() {
                   Contact@ascendiaprime.com
                 </a>
                 <Link href="/advertisers" className="site-footer__advertiser-link">
-                  <svg className="site-footer__inline-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                  </svg>
                   Explore Advertiser Solutions
                 </Link>
               </div>

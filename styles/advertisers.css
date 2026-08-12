@@ -165,7 +165,7 @@
         #partners-master {
             background: #020617 !important;
             color: #cbd5e1 !important;
-            font-family: 'Poppins', sans-serif !important;
+            font-family: var(--font-family) !important;
         }
         #partners-master *,
         #partners-master *::before,
@@ -176,7 +176,7 @@
         select,
         .contact-custom-form,
         .contact-custom-form * {
-            font-family: 'Poppins', sans-serif !important;
+            font-family: var(--font-family) !important;
         }
         .-page,
         .-section-wrap,
@@ -233,6 +233,12 @@
             background: rgba(51, 65, 85, 0.95) !important;
             border-color: rgba(116, 105, 248, 0.6) !important;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5) !important;
+        }
+        .glass-base-static:hover {
+            background: rgba(30, 41, 59, 0.8) !important;
+            border-color: rgba(63, 139, 249, 0.3) !important;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25) !important;
+            transform: none !important;
         }
         .glow-btn,
         .partner-popup-trigger,

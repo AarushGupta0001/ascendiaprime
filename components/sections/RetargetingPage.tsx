@@ -48,10 +48,6 @@ export default function RetargetingPage() {
   <div className="wrap">
     <div className="hero-grid">
       <div className="hero-content">
-        <div className="hero-kicker">
-          <span className="dot"></span>
-          <span className="t-eyebrow">Performance Marketing &amp; Partner Growth</span>
-        </div>
         <h1 className="t-mega">
           Retargeting Campaigns Built Around <span className="grad-text">Intent and Control</span>
         </h1>
@@ -342,32 +338,33 @@ export default function RetargetingPage() {
   <div className="wrap">
     <div className="usecase-grid">
       <div className="usecase-panel">
-        <h3>Retargeting Use Cases</h3>
-        <div className="chip-wrap">
-          <span className="chip">Cart Abandonment Recovery</span>
-          <span className="chip">Product View Retargeting</span>
-          <span className="chip">Lead Form Recovery</span>
-          <span className="chip">Checkout Drop-Off Recovery</span>
-          <span className="chip">Offer Reminder Campaigns</span>
-          <span className="chip">Cross-Sell and Upsell Retargeting</span>
-          <span className="chip">Seasonal Promotion Retargeting</span>
-          <span className="chip">High-Intent Visitor Re-Engagement</span>
-          <span className="chip">CRM / First-Party Audience Activation</span>
+        <h3 className="usecase-title">Retargeting Use Cases</h3>
+        <div className="usecase-grid-5x2">
+          <div className="usecase-chip-item">Cart Abandonment Recovery</div>
+          <div className="usecase-chip-item">Product View Retargeting</div>
+          <div className="usecase-chip-item">Lead Form Recovery</div>
+          <div className="usecase-chip-item">Checkout Drop-Off Recovery</div>
+          <div className="usecase-chip-item">Offer Reminder Campaigns</div>
+          <div className="usecase-chip-item">Cross-Sell &amp; Upsell Retargeting</div>
+          <div className="usecase-chip-item">Seasonal Promotion Retargeting</div>
+          <div className="usecase-chip-item">High-Intent Re-Engagement</div>
+          <div className="usecase-chip-item">CRM / First-Party Activation</div>
+          <div className="usecase-chip-item">Win-Back &amp; Loyalty Campaigns</div>
         </div>
       </div>
       <div className="usecase-panel">
-        <h3>Built for Multiple Verticals</h3>
-        <div className="chip-wrap">
-          <span className="chip">E-commerce &amp; D2C</span>
-          <span className="chip">Fashion &amp; Lifestyle</span>
-          <span className="chip">Beauty &amp; Wellness</span>
-          <span className="chip">Health &amp; Supplements</span>
-          <span className="chip">Technology &amp; Electronics</span>
-          <span className="chip">Travel &amp; Hospitality</span>
-          <span className="chip">Finance &amp; Insurance</span>
-          <span className="chip">Education &amp; Lead Generation</span>
-          <span className="chip">Subscription Brands</span>
-          <span className="chip">B2B &amp; SaaS</span>
+        <h3 className="usecase-title">Built for Multiple Verticals</h3>
+        <div className="usecase-grid-5x2">
+          <div className="usecase-chip-item">E-commerce &amp; D2C</div>
+          <div className="usecase-chip-item">Fashion &amp; Lifestyle</div>
+          <div className="usecase-chip-item">Beauty &amp; Wellness</div>
+          <div className="usecase-chip-item">Health &amp; Supplements</div>
+          <div className="usecase-chip-item">Technology &amp; Electronics</div>
+          <div className="usecase-chip-item">Travel &amp; Hospitality</div>
+          <div className="usecase-chip-item">Finance &amp; Insurance</div>
+          <div className="usecase-chip-item">Education &amp; Lead Generation</div>
+          <div className="usecase-chip-item">Subscription Brands</div>
+          <div className="usecase-chip-item">B2B &amp; SaaS</div>
         </div>
       </div>
     </div>

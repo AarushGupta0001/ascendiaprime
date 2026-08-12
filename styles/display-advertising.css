@@ -598,6 +598,50 @@ html.modal-open {
   .label-audience { right: 50%; transform: translateX(50%); top: auto; bottom: -3%; }
   .display-line,
   .hub-spine { display: none; }
+.timeline-content h3 {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin: 0 0 0.75rem;
+}
+.timeline-content p {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+}
+#contact-modal label,
+#contact-modal .contact-label,
+#contact-modal .contact-title,
+#contact-modal .contact-subtitle,
+#contact-modal .contact-description,
+#contact-modal .contact-checkbox,
+#contact-modal .contact-radio {
+  color: #ffffff !important;
+}
+body.modal-open,
+html.modal-open {
+  overflow: hidden !important;
+}
+@media (max-width: 1024px) {
+  .device-stage { min-height: 900px; max-width: 420px; }
+  .display-label { min-width: auto; font-size: 0.78rem; padding: 0.62rem 0.7rem; }
+  .label-desktop { left: 3%; top: 6%; }
+  .desktop-card { left: 22%; top: 3%; width: 250px; height: 166px; }
+  .label-content { left: 0; top: 25%; }
+  .content-card { left: 31%; top: 24%; width: 150px; height: 110px; }
+  .label-commerce { left: 0; top: 43%; }
+  .commerce-card { left: 24%; bottom: auto; top: 42%; width: 210px; height: 108px; }
+  .display-node { left: 50%; top: 62%; width: 106px; height: 106px; }
+  .phone-card { right: auto; width: 78px; height: 168px; }
+  .mobile-card { left: 10%; top: 69%; }
+  .app-card { right: 10%; top: 69%; left: auto; }
+  .label-mobile { left: 1%; right: auto; top: 86%; }
+  .label-app { right: 1%; top: 86%; }
+  .signal-orbit { right: 50%; bottom: -1%; transform: translateX(50%) scale(0.8); }
+  .label-audience { right: 50%; transform: translateX(50%); top: auto; bottom: -3%; }
+  .display-line,
+  .hub-spine { display: none; }
 }
 @media (max-width: 767px) {
   .device-stage { transform: scale(0.88); transform-origin: top center; margin-bottom: -90px; }
@@ -605,4 +649,8 @@ html.modal-open {
   .vertical-timeline-item { grid-template-columns: 58px minmax(0, 1fr); gap: 1rem; align-items: flex-start; min-height: auto; }
   .timeline-number { grid-column: 1; width: 50px; height: 50px; }
   .timeline-content, .timeline-content.left, .timeline-content.right { grid-column: 2; text-align: center; }
+  #display-master section {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
 }

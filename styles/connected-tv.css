@@ -750,6 +750,57 @@ html.modal-open {
   .partner-copy { top: 532px; width: 250px; }
   .ring-one, .ring-two { display: none; }
   .audience-node { width: 40px; height: 40px; }
+.timeline-content h3 {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin: 0 0 0.75rem;
+}
+.timeline-content p {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+}
+#contact-modal label,
+#contact-modal .contact-label,
+#contact-modal .contact-title,
+#contact-modal .contact-subtitle,
+#contact-modal .contact-description,
+#contact-modal .contact-checkbox,
+#contact-modal .contact-radio {
+  color: #ffffff !important;
+}
+body.modal-open,
+html.modal-open {
+  overflow: hidden !important;
+}
+@media (max-width: 1024px) {
+  .ctv-visual { min-height: 650px; transform: scale(0.9); transform-origin: center; margin-bottom: -40px; }
+}
+@media (max-width: 767px) {
+  .ctv-visual { min-height: 600px; transform: scale(0.82); transform-origin: top center; margin-bottom: -90px; }
+  .ctv-visual-title { width: 95%; }
+  .ctv-visual-title p { font-size: 0.82rem; }
+  .tv-frame { width: min(385px, 92vw); top: 165px; }
+  .tv-creative { max-width: none; width: 70%; }
+  .tv-creative h3 { font-size: 1.2rem; }
+  .tv-creative p { display: none; }
+  .ctv-feature p { display: none; }
+  .ctv-feature { width: 90px; }
+  .ctv-feature h4 { font-size: 0.7rem; }
+  .ctv-icon { width: 44px; height: 44px; }
+  .ctv-icon svg { width: 23px; height: 23px; }
+  .feature-audience, .feature-streaming { top: 132px; }
+  .feature-market, .feature-safe { top: 316px; }
+  .feature-household, .feature-impact { display: none; }
+  .ctv-path { display: none; }
+  .ctv-console { width: 360px; top: 424px; }
+  .partner-path { top: 412px; }
+  .partner-node { top: 454px; width: 70px; height: 70px; }
+  .partner-copy { top: 532px; width: 250px; }
+  .ring-one, .ring-two { display: none; }
+  .audience-node { width: 40px; height: 40px; }
   .node-household { right: 5%; top: 28%; }
   .node-geo { left: 5%; bottom: 26%; }
   .node-report { right: 12%; bottom: 20%; }
@@ -757,4 +808,8 @@ html.modal-open {
   .vertical-timeline-item { grid-template-columns: 58px minmax(0, 1fr); gap: 1rem; align-items: flex-start; min-height: auto; }
   .timeline-number { grid-column: 1; width: 50px; height: 50px; }
   .timeline-content, .timeline-content.left, .timeline-content.right { grid-column: 2; text-align: center; }
+  #ctv-master section {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
 }

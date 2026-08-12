@@ -18,10 +18,6 @@ export default function WebdevPage() {
     <div className="wrap">
       <div className="hero-grid">
         <div>
-          <div className="hero-kicker rv">
-            <span className="dot"></span>
-            <span className="t-eyebrow">Professional Development</span>
-          </div>
           <h1 className="hero-headline t-mega in-view" id="hero-headline">
             <span className="split-line"><span className="split-word">Web Experiences</span></span>
             <span className="split-line"><span className="split-word">Built to&nbsp;</span><span className="split-word"><em>Perform</em></span></span>
@@ -33,7 +29,6 @@ export default function WebdevPage() {
           <div className="hero-ctas rv" data-d="3">
             <Link href="#contact" className="btn btn-fill">
               Start a Project
-              <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </Link>
             
           </div>

@@ -13,7 +13,7 @@ html, body {
   position: relative;
   overflow-x: hidden;
   color: #cbd5e1;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-family);
   background-color: #020617;
 }
 #vn-master * { box-sizing: border-box; }
@@ -677,4 +677,7 @@ html.modal-open {
   .vertical-timeline-item { grid-template-columns: 58px minmax(0, 1fr); gap: 1rem; align-items: flex-start; min-height: auto; }
   .timeline-number { grid-column: 1; width: 50px; height: 50px; }
   .timeline-content, .timeline-content.left, .timeline-content.right { grid-column: 2; text-align: center; }
+}
+@media (max-width: 480px) {
+  .attention-visual { min-height: 820px !important; }
 }

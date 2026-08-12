@@ -27,7 +27,7 @@ export default function AdvertisersPage() {
         <section className="min-h-[85vh] flex flex-col justify-center pt-32 pb-20 px-6 lg:px-12 relative z-10">
             <div className="max-w-[1400px] mx-auto w-full text-center">
                 <h1 className="hero-animate text-5xl md:text-7xl font-black leading-[1.1] text-white tracking-tight mb-8">
-                    Advertiser Growth, Built Around <br/>
+                    Advertiser Growth, Built Around{" "}
                     <span className="text-gradient-smm drop-shadow-[0_0_15px_rgba(63,139,249,0.15)]">Performance and Clarity</span>
                 </h1>
                 <p className="hero-animate text-xl text-slate-300 max-w-4xl mx-auto mb-12 leading-relaxed">
@@ -100,7 +100,90 @@ export default function AdvertisersPage() {
             </div>
         </section>
 
-        <section className="py-24 px-6 lg:px-12 relative z-10">
+        {/* ── What Advertisers Can Expect ── */}
+        <section className="py-24 px-6 lg:px-12 relative z-10 border-t border-white/5">
+            <div className="max-w-[1400px] mx-auto">
+                <div className="mb-16 text-center smm-reveal">
+                    <h2 className="text-4xl font-bold text-white mb-4">What Advertisers <span className="text-gradient-smm">Can Expect</span></h2>
+                    <p className="text-[#94a3b8] max-w-2xl mx-auto">A clear, structured experience from onboarding through to ongoing campaign support and growth.</p>
+                </div>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                    <div className="smm-reveal" style={{ transitionDelay: "0.05s" }}>
+                        <div className="solution-card h-full">
+                            <div className="w-12 h-12 bg-[#3F8BF9]/10 rounded-lg flex items-center justify-center text-[#3F8BF9] mb-5">
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>
+                            </div>
+                            <h3 className="text-lg font-bold text-white mb-3">Campaign Onboarding and Tracking Alignment</h3>
+                            <p className="text-sm text-slate-400">A structured onboarding process to align campaign objectives, tracking setup, and conversion measurement from day one.</p>
+                        </div>
+                    </div>
+
+                    <div className="smm-reveal" style={{ transitionDelay: "0.10s" }}>
+                        <div className="solution-card h-full">
+                            <div className="w-12 h-12 bg-[#7469F8]/10 rounded-lg flex items-center justify-center text-[#7469F8] mb-5">
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                            </div>
+                            <h3 className="text-lg font-bold text-white mb-3">Publisher and Traffic Source Review</h3>
+                            <p className="text-sm text-slate-400">Ongoing review of publisher quality, traffic sources, and partner performance to maintain campaign integrity.</p>
+                        </div>
+                    </div>
+
+                    <div className="smm-reveal" style={{ transitionDelay: "0.15s" }}>
+                        <div className="solution-card h-full">
+                            <div className="w-12 h-12 bg-[#AB57F3]/10 rounded-lg flex items-center justify-center text-[#AB57F3] mb-5">
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                            </div>
+                            <h3 className="text-lg font-bold text-white mb-3">Transparent Reporting</h3>
+                            <p className="text-sm text-slate-400">Clear campaign-level reporting with visibility into conversion activity, traffic quality, and performance trends.</p>
+                        </div>
+                    </div>
+
+                    <div className="smm-reveal" style={{ transitionDelay: "0.20s" }}>
+                        <div className="solution-card h-full">
+                            <div className="w-12 h-12 bg-[#E057D8]/10 rounded-lg flex items-center justify-center text-[#E057D8] mb-5">
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                            </div>
+                            <h3 className="text-lg font-bold text-white mb-3">Validation and Reconciliation Support</h3>
+                            <p className="text-sm text-slate-400">Support for conversion validation, lead quality review, and reconciliation processes between advertiser and partner records.</p>
+                        </div>
+                    </div>
+
+                    <div className="smm-reveal" style={{ transitionDelay: "0.25s" }}>
+                        <div className="solution-card h-full">
+                            <div className="w-12 h-12 bg-[#3F8BF9]/10 rounded-lg flex items-center justify-center text-[#3F8BF9] mb-5">
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
+                            </div>
+                            <h3 className="text-lg font-bold text-white mb-3">Retargeting and Recovery Strategy</h3>
+                            <p className="text-sm text-slate-400">Re-engagement strategies designed to bring back high-intent users who did not complete the desired action the first time.</p>
+                        </div>
+                    </div>
+
+                    <div className="smm-reveal col-span-1 sm:col-span-2 lg:col-span-2" style={{ transitionDelay: "0.30s" }}>
+                        <div className="solution-card h-full">
+                            <div className="w-12 h-12 bg-[#AB57F3]/10 rounded-lg flex items-center justify-center text-[#AB57F3] mb-5">
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+                            </div>
+                            <h3 className="text-lg font-bold text-white mb-3">Dedicated Account Management</h3>
+                            <p className="text-sm text-slate-400">A dedicated point of contact to support campaign queries, performance reviews, reporting, and day-to-day communication.</p>
+                        </div>
+                    </div>
+
+                    <div className="smm-reveal" style={{ transitionDelay: "0.35s" }}>
+                        <div className="solution-card h-full">
+                            <div className="w-12 h-12 bg-[#7469F8]/10 rounded-lg flex items-center justify-center text-[#7469F8] mb-5">
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.111 16.404a5.5 5.5 0 117.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.255-3.905 14.159 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" /></svg>
+                            </div>
+                            <h3 className="text-lg font-bold text-white mb-3">Programmatic and Paid Media Support</h3>
+                            <p className="text-sm text-slate-400">Access to programmatic display, native, video, and DSP-led paid media to build reach and support campaign scale.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section className="py-24 px-6 lg:px-12 relative z-10 border-t border-white/5">
             <div className="max-w-[1000px] mx-auto w-full flex flex-col items-center">
                 <div className="mb-16 smm-reveal text-center">
                     <h2 className="text-4xl font-bold text-white mb-6">Performance-Led Approach <br/><span className="text-[#3F8BF9]">With Transparent Execution</span></h2>
@@ -132,7 +215,7 @@ export default function AdvertisersPage() {
             </div>
         </section>
 
-        <section className="py-24 px-6 lg:px-12 relative z-10">
+        <section className="py-24 px-6 lg:px-12 relative z-10 border-t border-white/5">
             <div className="max-w-[1400px] mx-auto">
                 <div className="text-center mb-16 smm-reveal">
                     <h2 className="text-4xl font-bold text-white mb-4">Why Brands Choose <span className="text-gradient-smm">Us</span></h2>
@@ -190,22 +273,22 @@ export default function AdvertisersPage() {
                 <div className="smm-reveal" style={{ transitionDelay: "0.2s" }}>
                     <h2 className="text-3xl font-bold text-white mb-6">Built for <span className="text-[#E057D8]">Growth Verticals</span></h2>
                     <p className="mb-8 text-sm">We support brands across performance-driven verticals where intent, timing and trust matter.</p>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-4 gap-x-8 text-xs font-medium text-slate-300">
-                        <div className="flex items-center gap-2"><span className="w-1 h-1 bg-[#E057D8] rounded-full"></span> E-Commerce & D2C</div>
-                        <div className="flex items-center gap-2"><span className="w-1 h-1 bg-[#E057D8] rounded-full"></span> Fashion & Lifestyle</div>
-                        <div className="flex items-center gap-2"><span className="w-1 h-1 bg-[#E057D8] rounded-full"></span> Beauty & Wellness</div>
-                        <div className="flex items-center gap-2"><span className="w-1 h-1 bg-[#E057D8] rounded-full"></span> Technology & Electronics</div>
-                        <div className="flex items-center gap-2"><span className="w-1 h-1 bg-[#E057D8] rounded-full"></span> Health & Supplements</div>
-                        <div className="flex items-center gap-2"><span className="w-1 h-1 bg-[#E057D8] rounded-full"></span> Travel & Hospitality</div>
-                        <div className="flex items-center gap-2"><span className="w-1 h-1 bg-[#E057D8] rounded-full"></span> Finance & Insurance</div>
-                        <div className="flex items-center gap-2"><span className="w-1 h-1 bg-[#E057D8] rounded-full"></span> Education & Lead Generation</div>
-                        <div className="flex items-center gap-2"><span className="w-1 h-1 bg-[#E057D8] rounded-full"></span> Subscription Brands</div>
+                    <div className="flex flex-wrap gap-3">
+                        <span className="model-badge">E-Commerce & D2C</span>
+                        <span className="model-badge">Fashion & Lifestyle</span>
+                        <span className="model-badge">Beauty & Wellness</span>
+                        <span className="model-badge">Technology & Electronics</span>
+                        <span className="model-badge">Health & Supplements</span>
+                        <span className="model-badge">Travel & Hospitality</span>
+                        <span className="model-badge">Finance & Insurance</span>
+                        <span className="model-badge">Education & Lead Generation</span>
+                        <span className="model-badge">Subscription Brands</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section className="py-24 px-6 lg:px-12 relative z-10">
+        <section className="py-24 px-6 lg:px-12 relative z-10 border-t border-white/5">
             <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-12 items-center">
                 <div className="smm-reveal">
                     <h2 className="text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">Visibility That Supports <br/><span className="text-[#3F8BF9]">Better Decisions</span></h2>
@@ -216,7 +299,7 @@ export default function AdvertisersPage() {
                         Start a Conversation
                     </button>
                 </div>
-                <div className="glass-base p-10 rounded-3xl smm-reveal" style={{ transitionDelay: "0.2s" }}>
+                <div className="glass-base glass-base-static p-10 rounded-3xl smm-reveal" style={{ transitionDelay: "0.2s" }}>
                     <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
                         <svg className="w-6 h-6 text-[#3F8BF9]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         The Transparency Checklist

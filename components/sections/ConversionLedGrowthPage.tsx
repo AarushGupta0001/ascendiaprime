@@ -43,7 +43,6 @@ export default function ConversionLedGrowthPage() {
                         <div className="magnetic-btn w-full sm:w-auto">
                             <button id="hero-cta-btn" className="open-contact-modal w-full text-white bg-gradient-to-r from-[#3F8BF9] via-[#7469F8] to-[#AB57F3] px-8 py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(63,139,249,0.4)] hover:shadow-[0_0_30px_rgba(63,139,249,0.6)] hover:-translate-y-0.5 transition-all" type="button">
                                 Submit Advertiser Enquiry
-                                <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
                             </button>
                         </div>
                         <button className="open-contact-modal w-full sm:w-auto text-white border border-[#AB57F3]/30 bg-gradient-to-r from-[#7469F8] via-[#AB57F3] to-[#E057D8] px-8 py-4 rounded-2xl font-bold text-lg shadow-[0_0_20px_rgba(171,87,243,0.4)] hover:shadow-[0_0_30px_rgba(171,87,243,0.6)] hover:-translate-y-0.5 transition-all" type="button">

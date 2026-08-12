@@ -1,8 +1,12 @@
 /* Live site design tokens — match ascendiaprime.com */
 :root {
   /* Typography */
-  --font-family: var(--font-poppins), "Poppins", sans-serif;
-  --font-family-header: var(--font-outfit), "Outfit", sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+  --font-family: 'Poppins', var(--font-poppins), sans-serif;
+  --font-family-header: 'Poppins', var(--font-poppins), sans-serif;
+  --fd: 'Poppins', sans-serif;
+  --fb: 'Poppins', sans-serif;
+  --fm: 'Poppins', sans-serif;
   --font-weight-body: 400;
   --font-weight-nav: 500;
   --font-weight-heading: 700;

@@ -15,10 +15,6 @@ export default function OrmPage() {
   <div className="wrap">
     <div className="hero-grid">
       <div className="hero-content">
-        <div className="hero-kicker rv">
-          <span className="dot"></span>
-          <span className="t-eyebrow">Brand Sentinel Protocol</span>
-        </div>
         <h1 className="t-mega rv" data-d="2">
           Defend. <br />Create. <br /><span className="grad-text">Command Perception.</span>
         </h1>

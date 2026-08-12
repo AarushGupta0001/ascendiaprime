@@ -13,7 +13,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-poppins)", "Poppins", "sans-serif"],
-        header: ["var(--font-outfit)", "Outfit", "sans-serif"],
+        header: ["var(--font-poppins)", "Poppins", "sans-serif"],
       },
       colors: {
         dark: "#020617",

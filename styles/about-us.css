@@ -278,3 +278,14 @@
         #contact-modal textarea::placeholder {
             color: #94a3b8 !important;
         }
+
+        /* Mobile Responsiveness Overrides */
+        @media (max-width: 767px) {
+            #about-us-master section {
+                padding-top: 3.5rem !important;
+                padding-bottom: 3.5rem !important;
+            }
+            #about-us-master h1 {
+                font-size: clamp(2rem, 8vw, 3rem) !important;
+            }
+        }

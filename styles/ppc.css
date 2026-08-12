@@ -166,14 +166,14 @@
         }
         .timeline-content.left {
             grid-column: 1;
-            text-align: center;
+            text-align: left;
         }
         .timeline-content.left::before {
             right: -24px;
         }
         .timeline-content.right {
             grid-column: 3;
-            text-align: center;
+            text-align: left;
         }
         .timeline-content.right::before {
             left: -24px;
@@ -213,7 +213,7 @@
             .timeline-content.left,
             .timeline-content.right {
                 grid-column: 2;
-                text-align: center;
+                text-align: left;
                 padding: 1.25rem;
             }
             .timeline-content::before,
@@ -222,5 +222,51 @@
                 left: -16px;
                 right: auto;
                 width: 16px;
+            }
+        }
+
+        /* Best-Fit Campaigns — gradient-border pill badges */
+        .best-fit-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.4rem;
+            border-radius: 99px;
+            border: 1.5px solid transparent;
+            background:
+                linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)) padding-box,
+                linear-gradient(135deg, #3F8BF9, #7469F8, #AB57F3, #E057D8) border-box;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            transition: all 0.3s ease;
+            cursor: default;
+            white-space: nowrap;
+        }
+        .best-fit-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3F8BF9, #AB57F3);
+            flex-shrink: 0;
+        }
+        .best-fit-badge:hover {
+            background:
+                linear-gradient(rgba(63, 139, 249, 0.1), rgba(171, 87, 243, 0.1)) padding-box,
+                linear-gradient(135deg, #3F8BF9, #7469F8, #AB57F3, #E057D8) border-box;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(116, 105, 248, 0.25);
+        }
+
+        /* Compact enquiry CTA inside PPC page */
+        #enquiry, #conversation { scroll-margin-top: 80px; }
+
+        /* Mobile Responsiveness Overrides */
+        @media (max-width: 767px) {
+            #ppc-master section {
+                padding-top: 3.5rem !important;
+                padding-bottom: 3.5rem !important;
             }
         }

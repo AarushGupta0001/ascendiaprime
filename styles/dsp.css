@@ -589,34 +589,6 @@ html.modal-open {
 @media (max-width: 1024px) {
   .dsp-visual { min-height: 620px; transform: scale(0.82); transform-origin: center; margin-bottom: -80px; }
   .framework-flow::before { display: none; }
-.timeline-content h3 {
-  color: #ffffff;
-  font-size: 1.25rem;
-  font-weight: 800;
-  margin: 0 0 0.75rem;
-}
-.timeline-content p {
-  color: #cbd5e1;
-  font-size: 0.95rem;
-  line-height: 1.7;
-  margin: 0;
-}
-#contact-modal label,
-#contact-modal .contact-label,
-#contact-modal .contact-title,
-#contact-modal .contact-subtitle,
-#contact-modal .contact-description,
-#contact-modal .contact-checkbox,
-#contact-modal .contact-radio {
-  color: #ffffff !important;
-}
-body.modal-open,
-html.modal-open {
-  overflow: hidden !important;
-}
-@media (max-width: 1024px) {
-  .dsp-visual { min-height: 620px; transform: scale(0.82); transform-origin: center; margin-bottom: -80px; }
-  .framework-flow::before { display: none; }
 }
 @media (max-width: 767px) {
   .dsp-visual { min-height: 600px; transform: scale(0.68); transform-origin: top center; margin-bottom: -190px; }

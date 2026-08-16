@@ -744,6 +744,7 @@
   border-radius: 20px;
   padding: 3.5rem;
 }
+@media (max-width: 767px) {
   .matrix-col {
     display: flex;
     flex-direction: column;
@@ -794,58 +795,6 @@
     text-align: center;
     padding: 1.15rem;
   }
-  .timeline-content::before,
-  .timeline-content.left::before,
-  .timeline-content.right::before {
-    left: -16px;
-    right: auto;
-    width: 16px;
-  }
-  .trust-panel,
-  .usecase-panel,
-  .contact-container,
-  .faq-container {
-    padding: 1.5rem;
-  }
-}
-@media (max-width: 440px) {
-  .hero-content h1 { font-size: clamp(2.2rem, 12vw, 3.1rem); }
-}
-
-/* Global Contact Label Overrides to secure absolute white text color visibility */
-.contact-container label,
-.contact-container .contact-label,
-.contact-container .contact-label span,
-.contact-container .form-label {
-  display: block;
-  font-family: var(--fm) !important;
-  font-size: 0.85rem !important;
-  font-weight: 600 !important;
-  color: #ffffff !important;
-  margin-bottom: 0.6rem;
-  letter-spacing: 0.05em;
-  opacity: 1 !important;
-}
-
-.form-group { margin-bottom: 1.8rem; }
-
-.form-control {
-  width: 100%;
-  padding: 1rem 1.2rem;
-  background: rgba(255,255,255,0.03) !important;
-  border: 1px solid rgba(255,255,255,0.1) !important;
-  border-radius: 12px;
-  color: #fff;
-  font-family: var(--fb);
-  font-size: 1rem;
-  transition: all 0.3s var(--ease);
-}
-.form-control::placeholder { color: rgba(255,255,255,0.3); }
-.form-control:focus {
-  outline: none;
-  border-color: var(--grad-2) !important;
-  background: rgba(255,255,255,0.07) !important;
-  box-shadow: 0 0 20px rgba(116, 105, 248, 0.15) !important;
   .timeline-content::before,
   .timeline-content.left::before,
   .timeline-content.right::before {

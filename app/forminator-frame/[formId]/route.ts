@@ -86,7 +86,7 @@ export async function GET(_request: Request, context: RouteContext) {
     const sourceUrl = getForminatorSourceUrl(formId);
     const response = await fetch(sourceUrl, {
       headers: { "User-Agent": "AscendiaPrime-NextJS/1.0" },
-      next: { revalidate: 300 },
+      cache: "no-store",
     });
 
     if (!response.ok) {
@@ -104,7 +104,7 @@ export async function GET(_request: Request, context: RouteContext) {
     return new NextResponse(buildFrameDocument(formId, parsed), {
       headers: {
         "Content-Type": "text/html; charset=utf-8",
-        "Cache-Control": "public, s-maxage=300, stale-while-revalidate=600",
+        "Cache-Control": "no-store, no-cache, must-revalidate",
       },
     });
   } catch {

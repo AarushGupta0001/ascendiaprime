@@ -20,7 +20,7 @@ export async function GET(_request: Request, context: RouteContext) {
       headers: {
         "User-Agent": "AscendiaPrime-NextJS/1.0",
       },
-      next: { revalidate: 300 },
+      cache: "no-store",
     });
 
     if (!response.ok) {

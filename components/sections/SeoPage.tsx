@@ -8,8 +8,7 @@ import LazyParticleCanvas from "@/components/effects/LazyParticleCanvas";
 
 import PageRevealEffects from "@/components/effects/PageRevealEffects";
 import FaqSection from "@/components/sections/FaqSection";
-
-import type { CSSProperties } from "react";
+import SeoEcosystemSection from "@/components/sections/SeoEcosystemSection";
 
 export default function SeoPage() {
   return (
@@ -143,81 +142,7 @@ export default function SeoPage() {
         </div>
       </section>
   
-      <section className="orbit-section w-full relative z-10 py-16" style={{ background: "linear-gradient(to bottom, rgba(20, 18, 54, 0.9) 0%, rgba(30, 20, 60, 0.9) 100%)" }}>
-          
-        <div className="orbit-center-text seo-reveal water-card glass-card theme-emerald" data-water-theme="dark">
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6 drop-shadow-[0_0_15px_rgba(0,0,0,0.8)] leading-tight relative z-20">
-            Grow Your Business with <br/><span className="text-gradient-growth">Proven SEO</span>
-          </h2>
-          <div className="relative z-20">
-            <p className="text-base md:text-lg text-white font-medium leading-relaxed mb-4">
-              Enhancing search visibility, boosting qualified visitors, and optimizing return on investment are the goals of our company's SEO services.
-            </p>
-            <p className="text-sm md:text-base text-[#dbeafe] leading-relaxed">
-              Ascendia Prime is a reputable SEO service provider that uses values, scalable, and performance-focused SEO tactics to help companies conquer competitive marketplaces.
-            </p>
-          </div>
-        </div>
-  
-        <div id="orbit-track" className="orbit-track">
-          <div className="orbit-arm" style={{ "--angle": "0deg" } as CSSProperties}>
-            <div className="orbit-item-wrapper">
-              <div className="orbit-item hover-target">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600" alt="Data Analytics"  />
-                <div className="orbit-overlay"><h4 className="text-[#3F8BF9] font-bold text-lg mb-2">Data Analytics</h4><p className="text-xs text-white">Deep tracking to measure ROI and conversion funnels.</p></div>
-              </div>
-            </div>
-          </div>
-          <div className="orbit-arm" style={{ "--angle": "51.42deg" } as CSSProperties}>
-            <div className="orbit-item-wrapper">
-              <div className="orbit-item hover-target">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=600" alt="Mobile Traffic"  />
-                <div className="orbit-overlay"><h4 className="text-[#3F8BF9] font-bold text-lg mb-2">Mobile Indexing</h4><p className="text-xs text-white">Optimizing core web vitals for flawless mobile performance.</p></div>
-              </div>
-            </div>
-          </div>
-          <div className="orbit-arm" style={{ "--angle": "102.85deg" } as CSSProperties}>
-            <div className="orbit-item-wrapper">
-              <div className="orbit-item hover-target">
-                <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80&w=600" alt="Keyword Strategy"  />
-                <div className="orbit-overlay"><h4 className="text-[#3F8BF9] font-bold text-lg mb-2">Keyword Strategy</h4><p className="text-xs text-white">Targeting high-intent search terms that generate revenue.</p></div>
-              </div>
-            </div>
-          </div>
-          <div className="orbit-arm" style={{ "--angle": "154.28deg" } as CSSProperties}>
-            <div className="orbit-item-wrapper">
-              <div className="orbit-item hover-target">
-                <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=600" alt="Local SEO"  />
-                <div className="orbit-overlay"><h4 className="text-[#3F8BF9] font-bold text-lg mb-2">Local SEO</h4><p className="text-xs text-white">Dominating local map packs and driving regional footfall.</p></div>
-              </div>
-            </div>
-          </div>
-          <div className="orbit-arm" style={{ "--angle": "205.71deg" } as CSSProperties}>
-            <div className="orbit-item-wrapper">
-              <div className="orbit-item hover-target">
-                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=600" alt="Link Building"  />
-                <div className="orbit-overlay"><h4 className="text-[#3F8BF9] font-bold text-lg mb-2">Authority Building</h4><p className="text-xs text-white">Securing high-authority backlinks to boost domain trust.</p></div>
-              </div>
-            </div>
-          </div>
-          <div className="orbit-arm" style={{ "--angle": "257.14deg" } as CSSProperties}>
-            <div className="orbit-item-wrapper">
-              <div className="orbit-item hover-target">
-                <img src="https://images.unsplash.com/photo-1533750516457-a7f992034fec?auto=format&fit=crop&q=80&w=600" alt="Performance"  />
-                <div className="orbit-overlay"><h4 className="text-[#3F8BF9] font-bold text-lg mb-2">Performance Tracking</h4><p className="text-xs text-white">Continuous A/B testing and technical monitoring.</p></div>
-              </div>
-            </div>
-          </div>
-          <div className="orbit-arm" style={{ "--angle": "308.57deg" } as CSSProperties}>
-            <div className="orbit-item-wrapper">
-              <div className="orbit-item hover-target">
-                <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=600" alt="Content Strategy"  />
-                <div className="orbit-overlay"><h4 className="text-[#3F8BF9] font-bold text-lg mb-2">Content Strategy</h4><p className="text-xs text-white">Creating intent-driven content that algorithms reward.</p></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <SeoEcosystemSection />
   
       <section className="py-24 px-6 relative z-10" style={{ background: "linear-gradient(to bottom, rgba(30, 20, 60, 0.9) 0%, rgba(76, 56, 135, 0.95) 100%)" }}>
         <div className="max-w-[1400px] mx-auto w-full">

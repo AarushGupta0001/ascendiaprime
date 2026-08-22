@@ -135,7 +135,7 @@ export default function SeoPage() {
             <div className="w-16 h-[3px] bg-gradient-to-r from-[#AB57F3] to-[#3F8BF9] my-4 rounded-full group-hover:w-32 transition-all duration-500 ease-out relative z-20"></div>
               
             <p className="text-base md:text-lg text-[#dbeafe] text-center max-w-2xl font-light relative z-20">
-              Our cost-effective SEO services business model guarantees <strong className="text-white font-medium">quantifiable growth</strong> without needless expenses, regardless of the size of your brand. To get reliable results, we mix technological know-how, content optimization, and data-driven tactics.
+              Our cost-effective SEO services business model guarantees <strong className="text-white font-medium">quantifiable growth</strong> without needless expenses, regardless of the size of your brand. To get reliable results, we mix technological know-how, content optimisation, and data-driven tactics.
             </p>
   
           </div>
@@ -163,7 +163,7 @@ export default function SeoPage() {
                 </div>
                 <h3 className="text-3xl font-bold text-white mb-4 tracking-tight">70%+</h3>
                 <p className="text-[#3F8BF9] font-bold text-sm uppercase tracking-widest mb-6">Start with Search</p>
-                <p className="text-slate-200 leading-relaxed text-sm">Of online experiences start with a search engine. We ensure your brand is highly visible exactly when potential customers are searching.</p>
+                <p className="text-slate-200 leading-relaxed text-sm">Many online experiences begin with a search engine. We ensure your brand is highly visible exactly when potential customers are searching.</p>
               </div>
             </div>
   
@@ -216,7 +216,7 @@ export default function SeoPage() {
                   </div>
                   <div className="flex items-center gap-4 bg-[#020617]/40 p-4 rounded-xl border border-[#AB57F3]/40 hover:bg-[#334155]/50 transition-colors">
                     <div className="w-10 h-10 rounded-lg bg-[#AB57F3]/20 flex items-center justify-center border border-[#AB57F3]/50 flex-shrink-0"><svg className="w-5 h-5 text-[#E057D8]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg></div>
-                    <span className="text-white font-medium">On-Page SEO Optimization</span>
+                    <span className="text-white font-medium">On-Page SEO Optimisation</span>
                   </div>
                   <div className="flex items-center gap-4 bg-[#020617]/40 p-4 rounded-xl border border-[#AB57F3]/40 hover:bg-[#334155]/50 transition-colors">
                     <div className="w-10 h-10 rounded-lg bg-[#AB57F3]/20 flex items-center justify-center border border-[#AB57F3]/50 flex-shrink-0"><svg className="w-5 h-5 text-[#E057D8]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg></div>
@@ -269,7 +269,7 @@ export default function SeoPage() {
                 <ul className="space-y-3 text-sm text-white">
                   <li className="flex items-start gap-3"><div className="mt-1 w-1.5 h-1.5 rounded-full bg-[#AB57F3] shadow-[0_0_8px_#AB57F3]"></div> Buyer-intent keywords</li>
                   <li className="flex items-start gap-3"><div className="mt-1 w-1.5 h-1.5 rounded-full bg-[#AB57F3] shadow-[0_0_8px_#AB57F3]"></div> Local and national search opportunities</li>
-                  <li className="flex items-start gap-3"><div className="mt-1 w-1.5 h-1.5 rounded-full bg-[#AB57F3] shadow-[0_0_8px_#AB57F3]"></div> Industry-specific search behavior</li>
+                  <li className="flex items-start gap-3"><div className="mt-1 w-1.5 h-1.5 rounded-full bg-[#AB57F3] shadow-[0_0_8px_#AB57F3]"></div> Industry-specific search behaviour</li>
                 </ul>
               </div>
             </div>
@@ -294,7 +294,7 @@ export default function SeoPage() {
                 <div className="w-14 h-14 bg-[#AB57F3]/20 border border-[#AB57F3]/50 rounded-xl flex items-center justify-center text-[#AB57F3] mb-6 shadow-[0_0_15px_rgba(171,87,243,0.4)]">
                   <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4">Content Optimization</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">Content Optimisation</h3>
                 <p className="text-[#E0E7FF] leading-relaxed mb-6 text-sm">Content is the backbone of successful SEO. We create search-intent-focused content that ranks and converts across blogs, service pages, and e-commerce products.</p>
                 <ul className="space-y-3 text-sm text-white">
                   <li className="flex items-start gap-3"><div className="mt-1 w-1.5 h-1.5 rounded-full bg-[#AB57F3] shadow-[0_0_8px_#AB57F3]"></div> Core Service pages & Landing pages</li>
@@ -329,7 +329,7 @@ export default function SeoPage() {
               <div className="timeline-number">02</div>
               <div className="timeline-content right">
                 <h3>Enhances Brand Credibility</h3>
-                <p>Websites ranking at the top are perceived as more trustworthy. Consistent rankings, optimized content, and authoritative backlinks position your brand as an industry leader.</p>
+                <p>Websites ranking at the top are perceived as more trustworthy. Consistent rankings, optimised content, and authoritative backlinks position your brand as an industry leader.</p>
               </div>
             </div>
   
@@ -399,12 +399,12 @@ export default function SeoPage() {
           {
             question: "Do you offer local SEO services?",
             answer:
-              "Yes. We provide location-based SEO services including Google Business Profile optimization, local citations, and geo-targeted keywords.",
+              "Yes. We provide location-based SEO services including Google Business Profile optimisation, local citations, and geo-targeted keywords.",
           },
           {
             question: "How much do your SEO services cost?",
             answer:
-              "Our pricing is flexible and customized based on business size, goals, and competition. We are known as an affordable SEO services company without compromising quality.",
+              "Our pricing is flexible and customised based on business size, goals, and competition. We are known as an affordable SEO services company without compromising quality.",
           },
         ]}
       />

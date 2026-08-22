@@ -191,7 +191,7 @@ export default function DisplayAdvertisingPage() {
           <div className="glass-card glass-card-hover theme-purple rounded-3xl p-7"><h3 className="text-2xl font-bold text-white mb-3">Banner & Responsive Formats</h3><p className="text-slate-300 leading-relaxed">Support standard, responsive, animated, and rich display formats across digital placements.</p></div>
           <div className="glass-card glass-card-hover theme-pink rounded-3xl p-7"><h3 className="text-2xl font-bold text-white mb-3">Frequency & Pacing Control</h3><p className="text-slate-300 leading-relaxed">Manage exposure, campaign pacing, and delivery rhythm to avoid excessive repetition.</p></div>
           <div className="glass-card glass-card-hover theme-blue rounded-3xl p-7"><h3 className="text-2xl font-bold text-white mb-3">Creative Message Alignment</h3><p className="text-slate-300 leading-relaxed">Ensure display creative, offer, CTA, and landing experience follow a consistent campaign story.</p></div>
-          <div className="glass-card glass-card-hover theme-indigo rounded-3xl p-7"><h3 className="text-2xl font-bold text-white mb-3">Reporting & Optimization</h3><p className="text-slate-300 leading-relaxed">Review delivery, placements, reach, clicks, engagement, and media signals for ongoing improvement.</p></div>
+          <div className="glass-card glass-card-hover theme-indigo rounded-3xl p-7"><h3 className="text-2xl font-bold text-white mb-3">Reporting & Optimisation</h3><p className="text-slate-300 leading-relaxed">Review delivery, placements, reach, clicks, engagement, and media signals for ongoing improvement.</p></div>
         </div>
       </div>
     </section>
@@ -240,7 +240,7 @@ export default function DisplayAdvertisingPage() {
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-slate-200">Brand safety considerations</div>
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-slate-200">Placement quality monitoring</div>
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-slate-200">Delivery and engagement reporting</div>
-              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-slate-200 sm:col-span-2">Optimization based on media signals</div>
+              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-slate-200 sm:col-span-2">Optimisation based on media signals</div>
             </div>
           </div>
         </div>
@@ -298,7 +298,7 @@ export default function DisplayAdvertisingPage() {
         {
           question: "Do advertisers get visibility into display campaign performance?",
           answer:
-            "Yes. Advertisers can receive reporting visibility across impressions, clicks, reach, frequency, placement quality, engagement movement, and optimization signals depending on the campaign setup.",
+            "Yes. Advertisers can receive reporting visibility across impressions, clicks, reach, frequency, placement quality, engagement movement, and optimisation signals depending on the campaign setup.",
         },
       ]}
     />

@@ -204,7 +204,7 @@ export default function InfluencerMarketingPage() {
                         <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-4">Influencer Research & Discovery</h3>
-                    <p className="text-sm text-[#e9d5ff] leading-relaxed">Finding the right influencer isn’t just about follower count. We analyze engagement rates, audience demographics, niche relevance, and past performance to shortlist influencers who can genuinely connect with your target audience.</p>
+                    <p className="text-sm text-[#e9d5ff] leading-relaxed">Finding the right influencer isn’t just about follower count. We analyse engagement rates, audience demographics, niche relevance, and past performance to shortlist influencers who can genuinely connect with your target audience.</p>
                 </div>
 
                 <div className="glass-card theme-creator trace-card interactive-el inf-reveal p-8 md:p-10 text-left w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]" style={{ transitionDelay: "100ms" }}>
@@ -220,7 +220,7 @@ export default function InfluencerMarketingPage() {
                         <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-4">Campaign Strategy & Planning</h3>
-                    <p className="text-sm text-[#e9d5ff] leading-relaxed">Every brand is unique, and so should be your campaign. We develop customized strategies that align with your marketing objectives, budget, and audience to maximize impact.</p>
+                    <p className="text-sm text-[#e9d5ff] leading-relaxed">Every brand is unique, and so should be your campaign. We develop customised strategies that align with your marketing objectives, budget, and audience to maximize impact.</p>
                 </div>
 
                 <div className="glass-card theme-creator trace-card interactive-el inf-reveal p-8 md:p-10 text-left w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]">
@@ -399,8 +399,8 @@ export default function InfluencerMarketingPage() {
                     <div className="timeline-number">06</div>
                     <div className="timeline-content right">
                         <span className="timeline-tag">Step 06</span>
-                        <h3>Reporting & Optimization</h3>
-                        <p>We track performance metrics, analyze results, and make data-driven adjustments for continuous improvement.</p>
+                        <h3>Reporting & Optimisation</h3>
+                        <p>We track performance metrics, analyse results, and make data-driven adjustments for continuous improvement.</p>
                     </div>
                 </div>
             </div>
@@ -420,7 +420,7 @@ export default function InfluencerMarketingPage() {
                 <div className="glass-card theme-cosmic trace-card interactive-el inf-reveal p-8 md:p-12 text-left">
                     <h3 className="text-3xl font-bold text-white mb-6">Why Choose Ascendia Prime</h3>
                     <p className="text-[#e9d5ff] text-base leading-relaxed mb-6">Choosing the right influencer marketing agency is crucial for campaign success. Ascendia Prime stands out because we combine industry expertise, a data-driven approach, and a wide network of influencers to deliver measurable results.</p>
-                    <p className="text-[#e9d5ff] text-base leading-relaxed">Our team ensures campaigns are strategically planned, authentically executed, and continuously optimized to boost brand visibility, engagement, and ROI.</p>
+                    <p className="text-[#e9d5ff] text-base leading-relaxed">Our team ensures campaigns are strategically planned, authentically executed, and continuously optimised to boost brand visibility, engagement, and ROI.</p>
                 </div>
             </div>
             
@@ -452,7 +452,7 @@ export default function InfluencerMarketingPage() {
         {
           question: "How do you choose the right influencers?",
           answer:
-            "We analyze audience demographics, engagement rates, content quality, brand alignment, and past performance to select influencers who will drive results.",
+            "We analyse audience demographics, engagement rates, content quality, brand alignment, and past performance to select influencers who will drive results.",
         },
         {
           question: "Is influencer marketing suitable for small businesses?",

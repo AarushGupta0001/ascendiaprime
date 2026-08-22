@@ -21,7 +21,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "case-study-1",
     title: "Transforming Insurance Operations.",
     description:
-      "Discover how we maximized customer acquisition routes for a mid-sized insurance firm through data-driven digital infrastructure upgrades and optimization protocols.",
+      "Discover how we maximized customer acquisition routes for a mid-sized insurance firm through data-driven digital infrastructure upgrades and optimisation protocols.",
     hero: "/case-studies/1/hero.avif",
     challengeTitle: "Fragmented Data & Siloed Inefficiencies.",
     challenge: [
@@ -38,10 +38,10 @@ export const caseStudies: CaseStudy[] = [
       {
         title: "Target Filtering",
         description:
-          "Restructuring search optimization architecture to capture high-intent user inquiries and eliminate resource dissipation channels clean.",
+          "Restructuring search optimisation architecture to capture high-intent user enquiries and eliminate inefficient traffic channels.",
       },
       {
-        title: "Funnel Optimization",
+        title: "Funnel Optimisation",
         description:
           "Deploying integrated cross-platform message re-engagement paths to safely retain brand visibility throughout user decision cycles.",
       },
@@ -57,7 +57,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "case-study-2",
     title: "Boosting Cybersecurity Sales.",
     description:
-      "Discover how our customised, data-led strategy boosted a global anti-virus company's sales by over 712% in just 3 months through smart segmentation and personalization.",
+      "Discover how our customised, data-led strategy boosted a global antivirus company's sales by over 712% in just 3 months through smart segmentation and personalization.",
     hero: "/case-studies/2/hero.avif",
     challengeTitle: "Stagnant Sales & High Acquisition Costs.",
     challenge: [
@@ -69,17 +69,17 @@ export const caseStudies: CaseStudy[] = [
       {
         title: "Data-Driven Segmentation",
         description:
-          "Conducted in-depth research to identify the most promising customer segments by analyzing behavioral patterns, purchase intent, and regional market trends.",
+          "Conducted in-depth research to identify the most promising customer segments by analysing behavioural patterns, purchase intent, and regional market trends.",
       },
       {
-        title: "Personalized Campaigns",
+        title: "Personalised Campaigns",
         description:
           "Crafted highly targeted campaigns with localized messaging, multi-lingual support, and region-specific offers to increase engagement and brand trust.",
       },
       {
-        title: "Conversion Optimization",
+        title: "Conversion Optimisation",
         description:
-          "Optimized the entire user journey across landing pages, checkout flows, and mobile experiences to drastically reduce friction and boost conversion rates.",
+          "Optimised the entire user journey across landing pages, checkout flows, and mobile experiences to drastically reduce friction and boost conversion rates.",
       },
     ],
     metrics: [
@@ -94,7 +94,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "case-study-3",
     title: "Scaling a Family Law Firm.",
     description:
-      'Discover how a tailored strategy of intent-driven targeting, technical conversion funnels, and personalized messaging unlocked unprecedented growth for a "no-win-no-fee" law firm.',
+      'Discover how a tailored strategy of intent-driven targeting, technical conversion funnels, and personalised messaging unlocked unprecedented growth for a "no-win-no-fee" law firm.',
     hero: "/case-studies/3/hero.avif",
     challengeTitle: "Stagnating Growth & Fragmented Funnels.",
     challenge: [
@@ -114,7 +114,7 @@ export const caseStudies: CaseStudy[] = [
           "Implemented full-funnel conversion tracking from initial click to consultation booking, and launched chatbots for instant, empathetic audience engagement.",
       },
       {
-        title: "Multichannel Optimization",
+        title: "Multichannel Optimisation",
         description:
           "A/B tested scenario-specific landing pages, activated affinity-based affiliates, and deployed precise retargeting to re-engage past visitors effectively.",
       },
@@ -152,7 +152,7 @@ export const caseStudies: CaseStudy[] = [
       {
         title: "Dynamic Personalization",
         description:
-          "Engineered customized remarketing offers based on the user's specific destination browsing history to drastically improve conversion relevance.",
+          "Engineered customised remarketing offers based on the user's specific destination browsing history to drastically improve conversion relevance.",
       },
     ],
     metrics: [
@@ -167,7 +167,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "case-study-5",
     title: "Doubling Bank Customers.",
     description:
-      "Discover how a mid-sized UK challenger bank doubled their customer base at half the investment through intent segmentation, zero-fee affiliate models, and real-time optimization.",
+      "Discover how a mid-sized UK challenger bank doubled their customer base at half the investment through intent segmentation, zero-fee affiliate models, and real-time optimisation.",
     hero: "/case-studies/5/hero.avif",
     challengeTitle: "Fragmented Efforts & Expensive Acquisition.",
     challenge: [
@@ -187,7 +187,7 @@ export const caseStudies: CaseStudy[] = [
           "Moved away from generic networks to build a curated, tiered affiliate network. Eliminated override fees by shifting to a pure pay-on-performance model.",
       },
       {
-        title: "Dynamic Optimization",
+        title: "Dynamic Optimisation",
         description:
           "Leveraged AI-powered retargeting to capture bounced traffic with real-time offers, while enabling transparent dashboards for rapid weekly A/B testing.",
       },
@@ -204,14 +204,14 @@ export const caseStudies: CaseStudy[] = [
     slug: "case-study-6",
     title: "Accelerating Supplement Growth.",
     description:
-      "Discover how we accelerated a UK-based supplement brand's growth from a small business to a mid-tier player in just 3 months through customized campaigns and data analysis.",
+      "Discover how we accelerated a UK-based supplement brand's growth from a small business to a mid-tier player in just 3 months through customised campaigns and data analysis.",
     hero: "/case-studies/6/hero.avif",
     challengeTitle: "High Acquisition Costs & Inconsistent Revenue.",
     challenge: [
       "The brand struggled with limited digital diversification, relying heavily on a single acquisition channel. This resulted in high customer acquisition costs and low overall brand visibility in a highly competitive market.",
       "Resource constraints and poor scalability meant their campaigns were too generic, causing inconsistent revenue streams that made it risky to invest in further growth initiatives or new product lines.",
     ],
-    strategyTitle: "A Customized Growth Blueprint.",
+    strategyTitle: "A Customised Growth Blueprint.",
     strategies: [
       {
         title: "Technical Integration",
@@ -221,7 +221,7 @@ export const caseStudies: CaseStudy[] = [
       {
         title: "Tailored Campaigns",
         description:
-          "Split campaigns by verticals, product types, and regional demand with agile weekly optimizations rather than relying on a one-size-fits-all approach.",
+          "Split campaigns by verticals, product types, and regional demand with agile weekly optimisations rather than relying on a one-size-fits-all approach.",
       },
       {
         title: "Dynamic Retargeting",
@@ -239,13 +239,13 @@ export const caseStudies: CaseStudy[] = [
 
   {
     slug: "case-study-7",
-    title: "Boosting Anti-Virus Sales.",
+    title: "Boosting Antivirus Sales.",
     description:
-      "Discover how our bespoke marketing strategy and deep cybersecurity expertise boosted a global anti-virus company's sales by over 700% in just 12 weeks.",
+      "Discover how our bespoke marketing strategy and deep cybersecurity expertise boosted a global antivirus company's sales by over 700% in just 12 weeks.",
     hero: "/case-studies/7/hero.avif",
     challengeTitle: "Generic Strategies & Underwhelming ROI.",
     challenge: [
-      "A globally recognized anti-virus software firm was struggling to break through with digital marketing performance, despite significant investments in traditional networks and affiliate channels.",
+      "A globally recognized antivirus software firm was struggling to break through with digital marketing performance, despite significant investments in traditional networks and affiliate channels.",
       "Hesitant to engage new partners out of fear of cookie-cutter campaigns, they had only one core product in their affiliate program and heavily doubted that any agency truly understood the complexities of the cybersecurity ecosystem.",
     ],
     strategyTitle: "A Bespoke Marketing Strategy.",
@@ -253,10 +253,10 @@ export const caseStudies: CaseStudy[] = [
       {
         title: "Granular Data Analysis",
         description:
-          "Mapped detailed user behavior, click funnels, and conversion patterns across different segments to quickly identify high-performing affiliate partners.",
+          "Mapped detailed user behaviour, click funnels, and conversion patterns across different segments to quickly identify high-performing affiliate partners.",
       },
       {
-        title: "Dynamic Optimization",
+        title: "Dynamic Optimisation",
         description:
           "Utilized real-time data and feedback loops to fine-tune campaigns weekly, adjusting creatives, keywords, and innovative ad placements to enhance ROI.",
       },
@@ -290,15 +290,15 @@ export const caseStudies: CaseStudy[] = [
       {
         title: "Data Analysis",
         description:
-          "Conducted an in-depth analysis of customer data to identify key demographics, purchasing behaviors, and preference trends to inform marketing decisions.",
+          "Conducted an in-depth analysis of customer data to identify key demographics, purchasing behaviours, and preference trends to inform marketing decisions.",
       },
       {
         title: "Segmentation",
         description:
-          "Segmented the broader customer base into distinct groups to develop tailored marketing messages and customized offers designed to increase relevance.",
+          "Segmented the broader customer base into distinct groups to develop tailored marketing messages and customised offers designed to increase relevance.",
       },
       {
-        title: "Channel Optimization",
+        title: "Channel Optimisation",
         description:
           "Revamped online sales platforms for a seamless user experience, and deployed highly targeted advertising campaigns across social media and search engines.",
       },

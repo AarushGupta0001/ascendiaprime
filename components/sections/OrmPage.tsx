@@ -57,7 +57,7 @@ export default function OrmPage() {
         <div className="showcase-modular-card w-65">
           <div className="card-icon-node"><svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg></div>
           <h3 className="card-title">High-Converting Asset Studio</h3>
-          <p className="card-desc">We build top-tier high-fidelity graphic, narrative, and video assets optimized to flood digital nodes with positive, authoritative corporate authority content profiles.</p>
+          <p className="card-desc">We create high-quality visual, written, and video content that strengthens your digital presence and reinforces a credible, consistent brand reputation.</p>
         </div>
       </div>
 
@@ -104,7 +104,7 @@ export default function OrmPage() {
       <div className="vertical-timeline-item">
         <div className="timeline-content left">
           <h3>Creative Asset Production</h3>
-          <p>Our in-house design studio outputs rich, media-optimized copy decks, case studies, and explainer assets to command corporate narrative vectors effectively.</p>
+          <p>Our creative team develops polished content, case studies, and visual assets that communicate your brand clearly and support a stronger online reputation.</p>
         </div>
         <div className="timeline-number">03</div>
       </div>

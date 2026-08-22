@@ -327,7 +327,7 @@ export default function HomePage() {
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
                             </div>
                             <div className="minor-card-title-row">
-                                <h4>Google,Meta & PPC Ads</h4>
+                                <h4>Google, Meta & PPC Ads</h4>
                                 <span className="card-arrow">→</span>
                             </div>
                             <p>Capture high-intent traffic and generate demand across top search and social platforms.</p>
@@ -557,8 +557,8 @@ export default function HomePage() {
 
             <div className="bg-[#0b111d] border border-slate-800/80 rounded-2xl p-6 md:p-8 hover:border-slate-700 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
                 <div>
-                    <h3 className="text-xl font-bold text-white mb-4 line-clamp-3 leading-snug group-hover:text-[#3F8BF9] transition-colors duration-300">Customised Strategy Boosted a Global Anti-Virus Company's Sales by Over 7:1</h3>
-                    <p className="text-slate-400 text-sm md:text-base font-light leading-relaxed">Learn the precise strategies used to generate an impressive 7:1 return for a global cybersecurity and anti-virus brand.</p>
+                    <h3 className="text-xl font-bold text-white mb-4 line-clamp-3 leading-snug group-hover:text-[#3F8BF9] transition-colors duration-300">Customised Strategy Boosted a Global Antivirus Company's Sales by Over 7:1</h3>
+                    <p className="text-slate-400 text-sm md:text-base font-light leading-relaxed">Learn the precise strategies used to generate an impressive 7:1 return for a global cybersecurity and antivirus brand.</p>
                 </div>
                 <Link href="/case-studies" className="inline-flex items-center gap-2 text-sm font-semibold text-[#3F8BF9] mt-8 hover:text-white transition-colors duration-300">
                     View Case Studies
@@ -568,7 +568,7 @@ export default function HomePage() {
 
             <div className="bg-[#0b111d] border border-slate-800/80 rounded-2xl p-6 md:p-8 hover:border-slate-700 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
                 <div>
-                    <h3 className="text-xl font-bold text-white mb-4 line-clamp-3 leading-snug group-hover:text-[#3F8BF9] transition-colors duration-300">Scaling a Family Law Firm with No Win No Fee Growth in 6 Months</h3>
+                    <h3 className="text-xl font-bold text-white mb-4 line-clamp-3 leading-snug group-hover:text-[#3F8BF9] transition-colors duration-300">Scaling a Family Law Firm with No-Win-No-Fee Growth in 6 Months</h3>
                     <p className="text-slate-400 text-sm md:text-base font-light leading-relaxed">A look at how targeted campaigns rapidly scaled a family law firm over a 6-month period using a "no win, no fee" angle.</p>
                 </div>
                 <Link href="/case-studies" className="inline-flex items-center gap-2 text-sm font-semibold text-[#3F8BF9] mt-8 hover:text-white transition-colors duration-300">
@@ -612,8 +612,8 @@ export default function HomePage() {
 
             <div className="bg-[#0b111d] border border-slate-800/80 rounded-2xl p-6 md:p-8 hover:border-slate-700 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
                 <div>
-                    <h3 className="text-xl font-bold text-white mb-4 line-clamp-3 leading-snug group-hover:text-[#3F8BF9] transition-colors duration-300">Customised Strategy Boosted a Global Anti-Virus Company's Sales</h3>
-                    <p className="text-slate-400 text-sm md:text-base font-light leading-relaxed">Further insights and breakdown of the tailored marketing approach applied to scale the global anti-virus company.</p>
+                    <h3 className="text-xl font-bold text-white mb-4 line-clamp-3 leading-snug group-hover:text-[#3F8BF9] transition-colors duration-300">Customised Strategy Boosted a Global Antivirus Company's Sales</h3>
+                    <p className="text-slate-400 text-sm md:text-base font-light leading-relaxed">Further insights and breakdown of the tailored marketing approach applied to scale the global antivirus company.</p>
                 </div>
                 <Link href="/case-studies" className="inline-flex items-center gap-2 text-sm font-semibold text-[#3F8BF9] mt-8 hover:text-white transition-colors duration-300">
                     View Case Studies

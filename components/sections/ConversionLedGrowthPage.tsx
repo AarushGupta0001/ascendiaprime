@@ -187,7 +187,7 @@ export default function ConversionLedGrowthPage() {
                         <div className="w-12 h-12 rounded-2xl bg-[#E057D8]/10 border border-[#E057D8]/30 flex items-center justify-center mb-6 text-[#E057D8]">
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                         </div>
-                        <h3 className="text-2xl font-bold text-white mb-3">Trust Signal Optimization</h3>
+                        <h3 className="text-2xl font-bold text-white mb-3">Trust Signal Optimisation</h3>
                         <p className="text-slate-300 leading-relaxed">Strengthen confidence with reviews, proof points, security cues, and reassurance messaging.</p>
                     </div>
                     <div className="capability-card rounded-3xl p-7">
@@ -338,7 +338,7 @@ export default function ConversionLedGrowthPage() {
             {
               question: "Do advertisers get visibility into conversion performance?",
               answer:
-                "Yes. Advertisers can receive reporting visibility across traffic sources, user actions, conversion events, campaign movement, and optimization insights based on the campaign setup.",
+                "Yes. Advertisers can receive reporting visibility across traffic sources, user actions, conversion events, campaign movement, and optimisation insights based on the campaign setup.",
             },
             {
               question: "Do you redesign the full website or only campaign pages?",

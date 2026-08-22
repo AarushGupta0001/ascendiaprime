@@ -9,13 +9,13 @@ const CASE_STUDIES = [
   },
   {
     slug: "case-study-2",
-    title: "Customised Strategy Boosted a Global Anti-Virus Company's Sales by Over 7:1",
+    title: "Customised Strategy Boosted a Global Antivirus Company's Sales by Over 7:1",
     summary:
-      "Learn the precise strategies used to generate an impressive 7:1 return for a global cybersecurity and anti-virus brand.",
+      "Learn the precise strategies used to generate an impressive 7:1 return for a global cybersecurity and antivirus brand.",
   },
   {
     slug: "case-study-3",
-    title: "Scaling a Family Law Firm with No Win No Fee Growth in 6 Months",
+    title: "Scaling a Family Law Firm with No-Win-No-Fee Growth in 6 Months",
     summary:
       "A look at how targeted campaigns rapidly scaled a family law firm over a 6-month period using a no win, no fee angle.",
   },
@@ -39,9 +39,9 @@ const CASE_STUDIES = [
   },
   {
     slug: "case-study-7",
-    title: "Customised Strategy Boosted a Global Anti-Virus Company's Sales",
+    title: "Customised Strategy Boosted a Global Antivirus Company's Sales",
     summary:
-      "Further insights into the tailored marketing approach applied to scale a global anti-virus company.",
+      "Further insights into the tailored marketing approach applied to scale a global antivirus company.",
   },
   {
     slug: "case-study-8",

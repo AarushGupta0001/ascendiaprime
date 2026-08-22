@@ -102,7 +102,7 @@ export default function DspPage() {
             <div className="reporting-path-right"></div>
             <div className="reporting-panel">
               <div className="reporting-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M4 19h16M7 16v-5M12 16V6M17 16v-8"/></svg></div>
-              <div><h3>Reporting & Optimization</h3><p>Measure performance, analyse signals and optimise audience, inventory, bids and delivery.</p></div>
+              <div><h3>Reporting & Optimisation</h3><p>Measure performance, analyse signals and optimise audience, inventory, bids and delivery.</p></div>
             </div>
 
             <div className="dsp-hub">
@@ -146,7 +146,7 @@ export default function DspPage() {
           <div className="framework-step glass-card theme-indigo rounded-3xl p-6"><div className="framework-number">2</div><h3 className="text-xl font-bold text-white mb-3">Inventory & Media Access</h3><p className="text-slate-300 text-sm leading-relaxed">We review suitable programmatic inventory routes across available media opportunities.</p></div>
           <div className="framework-step glass-card theme-purple rounded-3xl p-6"><div className="framework-number">3</div><h3 className="text-xl font-bold text-white mb-3">Buying Strategy</h3><p className="text-slate-300 text-sm leading-relaxed">We align the campaign with the right buying approach for the campaign objective.</p></div>
           <div className="framework-step glass-card theme-pink rounded-3xl p-6"><div className="framework-number">4</div><h3 className="text-xl font-bold text-white mb-3">Delivery Controls</h3><p className="text-slate-300 text-sm leading-relaxed">We support pacing, frequency, placement review, brand safety, and budget discipline.</p></div>
-          <div className="framework-step glass-card theme-blue rounded-3xl p-6"><div className="framework-number">5</div><h3 className="text-xl font-bold text-white mb-3">Reporting & Optimization</h3><p className="text-slate-300 text-sm leading-relaxed">We review delivery signals, audience response, inventory quality, and optimization opportunities.</p></div>
+          <div className="framework-step glass-card theme-blue rounded-3xl p-6"><div className="framework-number">5</div><h3 className="text-xl font-bold text-white mb-3">Reporting & Optimisation</h3><p className="text-slate-300 text-sm leading-relaxed">We review delivery signals, audience response, inventory quality, and optimisation opportunities.</p></div>
         </div>
       </div>
     </section>
@@ -220,7 +220,7 @@ export default function DspPage() {
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-slate-200">Frequency management</div>
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-slate-200">Placement and brand-safety review</div>
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-slate-200">Delivery and engagement reporting</div>
-              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-slate-200 sm:col-span-2">Optimization based on buying signals</div>
+              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-slate-200 sm:col-span-2">Optimisation based on buying signals</div>
             </div>
           </div>
         </div>
@@ -237,7 +237,7 @@ export default function DspPage() {
         {
           question: "Does Ascendia Prime own a DSP platform?",
           answer:
-            "Ascendia Prime does not position itself as a DSP platform owner. We support advertisers with planning, campaign structuring, partner coordination, buying route alignment, reporting visibility, and optimization guidance.",
+            "Ascendia Prime does not position itself as a DSP platform owner. We support advertisers with planning, campaign structuring, partner coordination, buying route alignment, reporting visibility, and optimisation guidance.",
         },
         {
           question: "Why should brands use DSP-led buying?",
@@ -252,7 +252,7 @@ export default function DspPage() {
         {
           question: "How does Ascendia Prime support transparency in DSP-led campaigns?",
           answer:
-            "We support advertisers with setup review, audience and inventory alignment, placement quality checks, pacing guidance, frequency management, campaign reporting, and optimization insights.",
+            "We support advertisers with setup review, audience and inventory alignment, placement quality checks, pacing guidance, frequency management, campaign reporting, and optimisation insights.",
         },
         {
           question: "Can advertisers control where media appears?",

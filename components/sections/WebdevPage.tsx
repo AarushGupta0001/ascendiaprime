@@ -229,7 +229,7 @@ export default function WebdevPage() {
           <div className="timeline-content left">
             <span className="timeline-tag">SYS.DESIGN</span>
             <h3>Design & Prototyping</h3>
-            <p>High-fidelity prototypes incorporating contemporary UI/UX principles and your brand language. Iterative feedback ensures the final design exceeds expectation.</p>
+            <p>High-fidelity prototypes incorporating contemporary UI/UX principles and your brand language. Iterative feedback ensures the final design exceeds expectations.</p>
           </div>
           <div className="timeline-number">03</div>
         </div>

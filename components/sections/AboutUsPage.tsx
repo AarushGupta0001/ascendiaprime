@@ -99,7 +99,7 @@ export default function AboutUsPage() {
                     We support global advertisers, publishers, and agencies through a unified ecosystem built around sustainable performance, active campaign transparency, and exceptional customer experiences.
                 </p>
                 <p className="text-xl text-slate-300 leading-relaxed font-light mb-6">
-                    Our mission is to drive meaningful outcomes using precise audience strategies, robust stakeholder relationships, comprehensive reporting metrics, and continuous ecosystem optimization.
+                    Our mission is to drive meaningful outcomes using precise audience strategies, robust stakeholder relationships, comprehensive reporting metrics, and continuous ecosystem optimisation.
                 </p>
                 <p className="text-xl text-slate-300 leading-relaxed font-medium">
                     We ensure every partner receives complete campaign visibility and proactive operational support, establishing clear paths of communication and long-term ecosystem value.
@@ -189,7 +189,7 @@ export default function AboutUsPage() {
                         <ul className="space-y-3 text-slate-400">
                             <li className="flex items-start gap-3"><span className="text-[#3F8BF9] mt-1">▹</span> Dedicated account manager</li>
                             <li className="flex items-start gap-3"><span className="text-[#3F8BF9] mt-1">▹</span> Dashboard and reporting visibility</li>
-                            <li className="flex items-start gap-3"><span className="text-[#3F8BF9] mt-1">▹</span> Campaign monitoring and optimization</li>
+                            <li className="flex items-start gap-3"><span className="text-[#3F8BF9] mt-1">▹</span> Campaign monitoring and optimisation</li>
                             <li className="flex items-start gap-3"><span className="text-[#3F8BF9] mt-1">▹</span> Transparent retargeting and source visibility</li>
                             <li className="flex items-start gap-3"><span className="text-[#3F8BF9] mt-1">▹</span> Strategy support for scaling objectives</li>
                         </ul>
@@ -204,7 +204,7 @@ export default function AboutUsPage() {
                             <li className="flex items-start gap-3"><span className="text-[#AB57F3] mt-1">▹</span> Campaign access and onboarding support</li>
                             <li className="flex items-start gap-3"><span className="text-[#AB57F3] mt-1">▹</span> Inventory utilization guidance</li>
                             <li className="flex items-start gap-3"><span className="text-[#AB57F3] mt-1">▹</span> Regular communication</li>
-                            <li className="flex items-start gap-3"><span className="text-[#AB57F3] mt-1">▹</span> Timely and faster payments</li>
+                            <li className="flex items-start gap-3"><span className="text-[#AB57F3] mt-1">▹</span> Fast & Reliable Payments</li>
                             <li className="flex items-start gap-3"><span className="text-[#AB57F3] mt-1">▹</span> Long-term partnership focus</li>
                         </ul>
                     </div>

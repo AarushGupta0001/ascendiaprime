@@ -142,7 +142,7 @@ export default function CaseStudyPage({ caseStudy }: Props) {
           </h2>
 
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-slate-400">
-            AscendiaPrime brings together data, media, technology, and customer
+            Ascendia Prime brings together data, media, technology, and customer
             experience to create a performance-led growth ecosystem designed
             for scale, clarity, and measurable outcomes.
           </p>

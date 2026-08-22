@@ -322,7 +322,7 @@ export default function RetargetingPage() {
         <span className="t-eyebrow">Transparency &amp; Control</span>
         <h2 className="t-section">Built for Responsible Re-Engagement</h2>
         <p>Retargeting requires trust. Advertisers need confidence that audience activity is managed responsibly, delivery is controlled, and campaign visibility is not treated as a black box.</p>
-        <p>Ascendia Prime supports retargeting campaigns with clear implementation, source visibility, audience rules, reporting, and optimization review.</p>
+        <p>Ascendia Prime supports retargeting campaigns with clear implementation, source visibility, audience rules, reporting, and optimisation review.</p>
       </div>
       <ul className="check-list">
         <li>Pixel, tag, and event alignment</li>
@@ -405,7 +405,7 @@ export default function RetargetingPage() {
     {
       question: "Do advertisers get visibility into retargeting performance?",
       answer:
-        "Yes. Advertisers can receive reporting visibility across audience activity, placements, traffic movement, conversions, and optimization insights based on the campaign setup.",
+        "Yes. Advertisers can receive reporting visibility across audience activity, placements, traffic movement, conversions, and optimisation insights based on the campaign setup.",
     },
     {
       question: "Is retargeting compliant with privacy expectations?",

@@ -255,7 +255,7 @@ export default function AffiliatesPublisherMarketingPage() {
                     </div>
                     <div className="px-4 pt-6 md:pt-0 text-center md:text-left">
                         <h4 className="text-xl font-bold text-white mb-2">Transparent Tracking & Reporting</h4>
-                        <p className="text-slate-400 text-sm leading-relaxed">Dashboard visibility to support campaign monitoring, validation, and optimization.</p>
+                        <p className="text-slate-400 text-sm leading-relaxed">Dashboard visibility to support campaign monitoring, validation, and optimisation.</p>
                     </div>
                 </div>
             </div>
@@ -385,8 +385,8 @@ export default function AffiliatesPublisherMarketingPage() {
 
                     <div className="fade-up-element flex flex-col items-start group relative bg-white/5 rounded-3xl p-8 border border-white/10 hover:border-[#7469F8]/40 transition-colors" style={{ transitionDelay: "0.5s" }}>
                         <div className="w-14 h-14 rounded-full bg-[#0B1221] border-2 border-[#7469F8] text-[#7469F8] flex items-center justify-center text-xl font-bold group-hover:bg-[#7469F8] group-hover:text-white transition-colors duration-300 shadow-[0_0_15px_rgba(116,105,248,0.5)] mb-6">6</div>
-                        <h4 className="text-xl font-bold text-white mb-3">Optimization and Scale</h4>
-                        <p className="text-slate-400 text-sm leading-relaxed">We scale activity through stronger partners, improved visibility, campaign insights, and optimization actions aligned with advertiser objectives.</p>
+                        <h4 className="text-xl font-bold text-white mb-3">Optimisation and Scale</h4>
+                        <p className="text-slate-400 text-sm leading-relaxed">We scale activity through stronger partners, improved visibility, campaign insights, and optimisation actions aligned with advertiser objectives.</p>
                     </div>
 
                 </div>
@@ -534,7 +534,7 @@ export default function AffiliatesPublisherMarketingPage() {
             {
               question: "Do advertisers get real-time performance visibility?",
               answer:
-                "Yes. We provide advertisers with dashboard access and reporting visibility to monitor campaign performance, conversions, traffic activity, and optimization insights. This helps brands make informed decisions and maintain better control over campaign performance.",
+                "Yes. We provide advertisers with dashboard access and reporting visibility to monitor campaign performance, conversions, traffic activity, and optimisation insights. This helps brands make informed decisions and maintain better control over campaign performance.",
             },
             {
               question: "What campaign models can we support?",

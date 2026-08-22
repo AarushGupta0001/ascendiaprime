@@ -204,11 +204,11 @@ export default function AdvertisersPage() {
                         <p className="text-sm">Technical set-up on tracking, conversion attribution, flow reporting, and validation standards.</p>
                     </div>
                     <div className="step-node">
-                        <h4 className="text-lg font-bold text-white mb-1">Step 04: Launch & Monitored Activity</h4>
+                        <h4 className="text-lg font-bold text-white mb-1">Step 04: Launch & Ongoing Monitoring</h4>
                         <p className="text-sm">Campaigns are launched in a structured way with visibility on traffic quality and performance signals.</p>
                     </div>
                     <div className="step-node">
-                        <h4 className="text-lg font-bold text-white mb-1">Step 05: Ongoing Optimization</h4>
+                        <h4 className="text-lg font-bold text-white mb-1">Step 05: Ongoing Optimisation</h4>
                         <p className="text-sm">We monitor performance and optimize toward conversion quality, ROI, and long-term growth.</p>
                     </div>
                 </div>
@@ -309,7 +309,7 @@ export default function AdvertisersPage() {
                         <li className="flex items-start gap-4"><span className="font-bold text-[#3F8BF9]">02</span> Campaign-level reporting</li>
                         <li className="flex items-start gap-4"><span className="font-bold text-[#3F8BF9]">03</span> Traffic source validation</li>
                         <li className="flex items-start gap-4"><span className="font-bold text-[#3F8BF9]">04</span> Partner performance review</li>
-                        <li className="flex items-start gap-4"><span className="font-bold text-[#3F8BF9]">05</span> Optimization insights</li>
+                        <li className="flex items-start gap-4"><span className="font-bold text-[#3F8BF9]">05</span> Optimisation insights</li>
                         <li className="flex items-start gap-4"><span className="font-bold text-[#3F8BF9]">06</span> Transparent communication</li>
                     </ul>
                 </div>

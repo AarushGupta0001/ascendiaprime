@@ -36,10 +36,10 @@ export default function VideoNativeAdsPage() {
             Video & Native Ads Built for <span className="text-gradient-brand">Attention and Context</span>
           </h1>
           <p className="text-lg text-slate-300 max-w-xl mb-10 leading-relaxed">
-            AscendiaPrime helps brands build awareness and engagement through video and native ad formats designed to fit naturally within content environments, audience journeys, and media moments that matter.
+            Ascendia Prime helps brands build awareness and engagement through video and native ad formats designed to fit naturally within content environments, audience journeys, and media moments that matter.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="open-contact-modal btn-glow w-full sm:w-auto" type="button">Explore Media Solutions</button>
+            <button className="open-contact-modal btn-glow w-full sm:w-auto" type="button" data-form-id="1808">Submit Advertiser Enquiry</button>
             <button className="open-contact-modal btn-glow secondary w-full sm:w-auto" type="button">Start a Conversation</button>
           </div>
         </div>
@@ -144,7 +144,7 @@ export default function VideoNativeAdsPage() {
           </div>
           <div className="lg:col-span-7 text-slate-200 text-lg leading-relaxed space-y-5">
             <p>Some brand messages need more than a standard banner. They need motion, story, context, or a placement that feels aligned with the way users are already consuming content.</p>
-            <p>Video and native advertising help brands earn attention inside media environments rather than interrupting the experience. AscendiaPrime supports these campaigns with audience planning, placement alignment, creative format guidance, and delivery visibility across relevant digital channels.</p>
+            <p>Video and native advertising help brands earn attention inside media environments rather than interrupting the experience. Ascendia Prime supports these campaigns with audience planning, placement alignment, creative format guidance, and delivery visibility across relevant digital channels.</p>
           </div>
         </div>
 
@@ -199,7 +199,7 @@ export default function VideoNativeAdsPage() {
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">Built Around <span className="text-gradient-brand">Contextual Attention</span></h2>
               <div className="text-slate-200 text-lg leading-relaxed space-y-5">
                 <p>Video and native campaigns perform best when the message fits the environment. Advertisers need confidence that their media appears in relevant content spaces, follows suitable format standards, and supports the brand experience rather than disrupting it.</p>
-                <p>AscendiaPrime supports video and native media with placement alignment, creative format review, brand safety considerations, and delivery reporting to help brands understand how attention is being created.</p>
+                <p>Ascendia Prime supports video and native media with placement alignment, creative format review, brand safety considerations, and delivery reporting to help brands understand how attention is being created.</p>
               </div>
             </div>
             <div className="grid sm:grid-cols-2 gap-4">

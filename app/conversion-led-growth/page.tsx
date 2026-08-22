@@ -2,7 +2,7 @@ import { createPageMetadata } from "@/lib/metadata";
 import ConversionLedGrowthPage from "@/components/sections/ConversionLedGrowthPage";
 
 export const metadata = createPageMetadata({
-  title: "AscendiaPrime",
+  title: "Ascendia Prime",
   path: "/conversion-led-growth",
 });
 

@@ -2,7 +2,7 @@ import { createPageMetadata } from "@/lib/metadata";
 import HomePage from "@/components/sections/HomePage";
 
 export const metadata = createPageMetadata({
-  title: "Home - AscendiaPrime",
+  title: "Home - Ascendia Prime",
   path: "/",
 });
 

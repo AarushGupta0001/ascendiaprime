@@ -1,6 +1,8 @@
 export const SITE_ROUTES = {
   home: "/",
   aboutUs: "/about-us",
+  contactUs: "/contact-us",
+  caseStudies: "/case-studies",
   advertisers: "/advertisers",
   ourPartners: "/our-partners",
   ppc: "/ppc",

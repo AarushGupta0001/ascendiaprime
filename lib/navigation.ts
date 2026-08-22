@@ -18,22 +18,40 @@ export type MegaMenuColumn = {
   bordered?: boolean;
 };
 
+/** Homepage section anchors — verified against HomePage.tsx */
+export const homeAnchors = {
+  solutions: "/#split-services-wrapper",
+  caseStudies: "/#case-studies",
+  different: "/#different",
+  contact: "/#contact",
+} as const;
+
 export const headerNavItems: NavItem[] = [
   { href: "/", label: "Home" },
   { href: "/about-us", label: "About Us" },
   { href: "/advertisers", label: "For Advertisers" },
   { href: "/our-partners", label: "Our Partner Ecosystem" },
+  { href: "/case-studies", label: "Case Studies" },
 ];
 
 export const solutionsTrigger: NavItem = {
-  href: "/#split-services-wrapper",
+  href: homeAnchors.solutions,
   label: "Solutions",
 };
 
 export const contactCta: NavItem = {
-  href: "/#contact",
-  label: "Contact Us",
+  href: "/contact-us",
+  label: "Start a Conversation",
 };
+
+export const mobileNavLinks: NavItem[] = [
+  { href: "/", label: "Home" },
+  { href: "/about-us", label: "About Us" },
+  { href: solutionsTrigger.href, label: "Solutions" },
+  { href: "/advertisers", label: "For Advertisers" },
+  { href: "/our-partners", label: "Our Partners" },
+  { href: "/case-studies", label: "Case Studies" },
+];
 
 export const megaMenuColumns: MegaMenuColumn[] = [
   {
@@ -75,10 +93,10 @@ export const megaMenuColumns: MegaMenuColumn[] = [
 
 export const footerCompanyLinks: NavItem[] = [
   { href: "/about-us", label: "About Us" },
-  { href: "/coming-soon", label: "Case Studies" },
+  { href: "/case-studies", label: "Case Studies" },
   { href: "/coming-soon", label: "Testimonials" },
-  { href: "/#different", label: "How are we different?" },
-  { href: "/#contact", label: "Contact" },
+  { href: homeAnchors.different, label: "How are we different?" },
+  { href: "/contact-us", label: "Contact" },
   { href: "/coming-soon", label: "Blogs" },
 ];
 
@@ -113,3 +131,15 @@ export const socialLinks = [
     network: "instagram" as const,
   },
 ];
+
+/** IDs used as in-page contact / enquiry targets across service pages. */
+export const contactSectionIds = [
+  "contact",
+  "lead-form-section",
+  "campaign-form-section",
+  "enquire-form",
+  "inquiry-form-section",
+] as const;
+
+export const formSuccessMessage =
+  "Thank you for your enquiry. Our team will review your details and get back to you shortly.";

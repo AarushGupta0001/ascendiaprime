@@ -2,7 +2,7 @@ import { createPageMetadata } from "@/lib/metadata";
 import OurPartnersPage from "@/components/sections/OurPartnersPage";
 
 export const metadata = createPageMetadata({
-  title: "AscendiaPrime",
+  title: "Ascendia Prime",
   path: "/our-partners",
 });
 

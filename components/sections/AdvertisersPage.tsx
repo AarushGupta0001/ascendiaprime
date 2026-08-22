@@ -296,7 +296,7 @@ export default function AdvertisersPage() {
                         We believe performance growth should be measurable, transparent, and accountable. Our advertiser partnerships are supported by clear tracking, tech integration, and validation processes to help brands understand campaign performance and traffic quality.
                     </p>
                     <button className="partner-popup-trigger glow-btn bg-[#3F8BF9] text-white px-8 py-4 rounded-2xl font-bold shadow-[0_0_15px_rgba(63,139,249,0.3)] transition-all" data-partner-type="advertiser">
-                        Start a Conversation
+                        Submit Advertiser Enquiry
                     </button>
                 </div>
                 <div className="glass-base glass-base-static p-10 rounded-3xl smm-reveal" style={{ transitionDelay: "0.2s" }}>

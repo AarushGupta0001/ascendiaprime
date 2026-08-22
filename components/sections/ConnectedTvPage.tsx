@@ -44,10 +44,10 @@ export default function ConnectedTvPage() {
             Connected TV Advertising Through <span className="text-gradient-brand">Strategic Media Access</span>
           </h1>
           <p className="text-lg text-slate-300 max-w-xl mb-10 leading-relaxed">
-            AscendiaPrime helps brands explore and activate Connected TV opportunities through partner-led media access, audience planning, creative alignment, and controlled delivery across suitable streaming-led environments where available.
+            Ascendia Prime helps brands explore and activate Connected TV opportunities through partner-led media access, audience planning, creative alignment, and controlled delivery across suitable streaming-led environments where available.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="open-contact-modal btn-glow w-full sm:w-auto" type="button">Explore CTV Opportunities</button>
+            <button className="open-contact-modal btn-glow w-full sm:w-auto" type="button" data-form-id="1808">Submit Advertiser Enquiry</button>
             <button className="open-contact-modal btn-glow secondary w-full sm:w-auto" type="button">Start a Conversation</button>
           </div>
         </div>
@@ -164,7 +164,7 @@ export default function ConnectedTvPage() {
           </div>
           <div className="lg:col-span-7 text-slate-200 text-lg leading-relaxed space-y-5">
             <p>Connected TV gives brands the opportunity to appear in high-attention viewing environments where audiences are increasingly consuming content through smart TVs, streaming apps, and internet-connected screens.</p>
-            <p>For advertisers, the value of CTV is not only the screen size. It is the ability to plan awareness activity with audience relevance, creative suitability, media access, delivery control, and reporting visibility. AscendiaPrime helps brands evaluate and activate CTV as part of a broader programmatic and awareness strategy, depending on campaign goals, geography, budget, and available inventory.</p>
+            <p>For advertisers, the value of CTV is not only the screen size. It is the ability to plan awareness activity with audience relevance, creative suitability, media access, delivery control, and reporting visibility. Ascendia Prime helps brands evaluate and activate CTV as part of a broader programmatic and awareness strategy, depending on campaign goals, geography, budget, and available inventory.</p>
           </div>
         </div>
 
@@ -219,7 +219,7 @@ export default function ConnectedTvPage() {
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">Built for High-Attention <span className="text-gradient-brand">Media Planning</span></h2>
               <div className="text-slate-200 text-lg leading-relaxed space-y-5">
                 <p>CTV campaigns require thoughtful planning because the screen experience is different from standard web or mobile placements. Advertisers need confidence that their message appears in suitable viewing environments, reaches the intended audience, and follows a controlled delivery approach.</p>
-                <p>AscendiaPrime supports CTV planning with audience alignment, creative suitability review, partner coordination, frequency guidance, brand-safety considerations, and campaign reporting visibility.</p>
+                <p>Ascendia Prime supports CTV planning with audience alignment, creative suitability review, partner coordination, frequency guidance, brand-safety considerations, and campaign reporting visibility.</p>
               </div>
             </div>
             <div className="grid sm:grid-cols-2 gap-4">
@@ -273,9 +273,9 @@ export default function ConnectedTvPage() {
             "Connected TV advertising allows brands to deliver video ads through internet-connected television environments such as smart TVs, streaming devices, and OTT-style media placements.",
         },
         {
-          question: "Does AscendiaPrime own CTV inventory?",
+          question: "Does Ascendia Prime own CTV inventory?",
           answer:
-            "AscendiaPrime does not position itself as a CTV inventory owner. We support advertisers by helping them explore and activate suitable CTV opportunities through relevant media partners, programmatic buying routes, and available inventory sources where applicable.",
+            "Ascendia Prime does not position itself as a CTV inventory owner. We support advertisers by helping them explore and activate suitable CTV opportunities through relevant media partners, programmatic buying routes, and available inventory sources where applicable.",
         },
         {
           question: "How is CTV different from traditional TV advertising?",

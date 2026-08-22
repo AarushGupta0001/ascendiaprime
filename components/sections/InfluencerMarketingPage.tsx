@@ -43,8 +43,8 @@ export default function InfluencerMarketingPage() {
                     Ascendia Prime connects brands with the right creators to build trust, expand reach, and turn social attention into measurable campaign growth.
                 </p>
                 <div className="magnetic-btn hover-target">
-                    <button id="hero-cta-btn" className="btn-glow text-white px-8 py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(116,105,248,0.3)] hover:shadow-[0_0_40px_rgba(224,87,216,0.6)] transition-all">
-                        Launch Your Campaign
+                    <button id="hero-cta-btn" type="button" onClick={() => document.getElementById("campaign-form-section")?.scrollIntoView({ behavior: "smooth" })} className="btn-glow text-white px-8 py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(116,105,248,0.3)] hover:shadow-[0_0_40px_rgba(224,87,216,0.6)] transition-all">
+                        Start a Conversation
                     </button>
                 </div>
             </div>

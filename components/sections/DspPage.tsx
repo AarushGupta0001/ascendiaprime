@@ -36,7 +36,7 @@ export default function DspPage() {
             DSP-Led Media Buying With <span className="text-gradient-brand">Control and Clarity</span>
           </h1>
           <p className="text-lg text-slate-300 max-w-xl mb-10 leading-relaxed">
-            AscendiaPrime helps brands plan and activate programmatic media through DSP-led buying routes, audience strategy, inventory alignment, and controlled delivery across suitable digital environments where available.
+            Ascendia Prime helps brands plan and activate programmatic media through DSP-led buying routes, audience strategy, inventory alignment, and controlled delivery across suitable digital environments where available.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <button className="open-contact-modal btn-glow w-full sm:w-auto" type="button">Start a Conversation</button>
@@ -132,7 +132,7 @@ export default function DspPage() {
           </div>
           <div className="lg:col-span-7 text-slate-200 text-lg leading-relaxed space-y-5">
             <p>DSP-led buying gives advertisers access to programmatic media opportunities across multiple digital environments, but scale alone is not the objective.</p>
-            <p>The real value comes from how the campaign is structured, which audiences are selected, where media is delivered, how buying logic is applied, how frequency is managed, and how performance signals are reviewed. AscendiaPrime helps brands approach DSP-led media buying with clearer planning, better visibility, and stronger delivery discipline.</p>
+            <p>The real value comes from how the campaign is structured, which audiences are selected, where media is delivered, how buying logic is applied, how frequency is managed, and how performance signals are reviewed. Ascendia Prime helps brands approach DSP-led media buying with clearer planning, better visibility, and stronger delivery discipline.</p>
           </div>
         </div>
 
@@ -210,7 +210,7 @@ export default function DspPage() {
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">Built for Programmatic Media <span className="text-gradient-brand">Accountability</span></h2>
               <div className="text-slate-200 text-lg leading-relaxed space-y-5">
                 <p>Programmatic media gives advertisers scale, but scale without control can lead to poor media quality and wasted budget. Brands need better visibility into where media is delivered, how budgets are paced, and which inventory sources are contributing to the campaign.</p>
-                <p>AscendiaPrime supports DSP-led buying with structured setup, inventory review, pacing guidance, frequency management, placement quality checks, and campaign reporting visibility.</p>
+                <p>Ascendia Prime supports DSP-led buying with structured setup, inventory review, pacing guidance, frequency management, placement quality checks, and campaign reporting visibility.</p>
               </div>
             </div>
             <div className="grid sm:grid-cols-2 gap-4">
@@ -235,9 +235,9 @@ export default function DspPage() {
             "DSP-led media buying uses demand-side platforms or DSP-led buying routes to purchase digital advertising inventory programmatically across environments such as display, video, native, mobile, and CTV where available.",
         },
         {
-          question: "Does AscendiaPrime own a DSP platform?",
+          question: "Does Ascendia Prime own a DSP platform?",
           answer:
-            "AscendiaPrime does not position itself as a DSP platform owner. We support advertisers with planning, campaign structuring, partner coordination, buying route alignment, reporting visibility, and optimization guidance.",
+            "Ascendia Prime does not position itself as a DSP platform owner. We support advertisers with planning, campaign structuring, partner coordination, buying route alignment, reporting visibility, and optimization guidance.",
         },
         {
           question: "Why should brands use DSP-led buying?",
@@ -250,7 +250,7 @@ export default function DspPage() {
             "It can support awareness, prospecting, display, video, native, mobile, CTV opportunities where available, and cross-channel media delivery depending on campaign goals and inventory access.",
         },
         {
-          question: "How does AscendiaPrime support transparency in DSP-led campaigns?",
+          question: "How does Ascendia Prime support transparency in DSP-led campaigns?",
           answer:
             "We support advertisers with setup review, audience and inventory alignment, placement quality checks, pacing guidance, frequency management, campaign reporting, and optimization insights.",
         },
@@ -270,7 +270,7 @@ export default function DspPage() {
     <section className="relative z-10 py-32 px-6 lg:px-12" style={{ background: "linear-gradient(to bottom, rgba(15, 23, 42, 0.85), rgba(0, 0, 0, 1))" }}>
       <div className="max-w-4xl mx-auto text-center reveal-up">
         <h2 className="text-5xl lg:text-7xl font-bold tracking-tight text-white mb-6">Ready to Bring More Control to <span className="text-gradient-brand">Programmatic Media?</span></h2>
-        <p className="text-lg text-slate-300 mb-10 max-w-2xl mx-auto">Let's explore how AscendiaPrime can help your brand plan and activate DSP-led media buying with better audience alignment, inventory visibility, and delivery control.</p>
+        <p className="text-lg text-slate-300 mb-10 max-w-2xl mx-auto">Let's explore how Ascendia Prime can help your brand plan and activate DSP-led media buying with better audience alignment, inventory visibility, and delivery control.</p>
         <button className="open-contact-modal btn-glow w-full sm:w-auto" type="button">Start a Conversation</button>
       </div>
     </section>

@@ -7,6 +7,7 @@ type ContactModalProps = {
   isOpen: boolean;
   onClose: () => void;
   title?: string;
+  formId?: string;
   children?: ReactNode;
 };
 
@@ -14,6 +15,7 @@ export default function ContactModal({
   isOpen,
   onClose,
   title = "Get in Touch",
+  formId,
   children,
 }: ContactModalProps) {
   useEffect(() => {
@@ -72,7 +74,7 @@ export default function ContactModal({
         <h2 id="contact-modal-title" className="mb-6 text-2xl font-bold text-white">
           {title}
         </h2>
-        {children ?? <ContactForm variant="modal" />}
+        {children ?? <ContactForm variant="modal" formId={formId} />}
       </div>
     </div>
   );

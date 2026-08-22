@@ -37,10 +37,10 @@ export default function DisplayAdvertisingPage() {
             Display Advertising for <span className="text-gradient-brand">Meaningful Brand Visibility</span>
           </h1>
           <p className="text-lg text-slate-300 max-w-xl mb-10 leading-relaxed">
-            AscendiaPrime helps brands build visual presence across relevant digital environments through display campaigns planned around audience context, creative consistency, frequency control, and transparent media delivery.
+            Ascendia Prime helps brands build visual presence across relevant digital environments through display campaigns planned around audience context, creative consistency, frequency control, and transparent media delivery.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="open-contact-modal btn-glow w-full sm:w-auto" type="button">Explore Media Solutions</button>
+            <button className="open-contact-modal btn-glow w-full sm:w-auto" type="button" data-form-id="1808">Submit Advertiser Enquiry</button>
             <button className="open-contact-modal btn-glow secondary w-full sm:w-auto" type="button">Start a Conversation</button>
           </div>
         </div>
@@ -176,7 +176,7 @@ export default function DisplayAdvertisingPage() {
           </div>
           <div className="lg:col-span-7 text-slate-200 text-lg leading-relaxed space-y-5">
             <p>Display advertising is not simply about placing banners across the web. Its value comes from showing the right creative in the right environment, with the right frequency, to audiences that are more likely to notice, remember, and engage.</p>
-            <p>AscendiaPrime approaches display media with structure, combining audience planning, placement relevance, creative alignment, and delivery monitoring to help brands build awareness with greater control.</p>
+            <p>Ascendia Prime approaches display media with structure, combining audience planning, placement relevance, creative alignment, and delivery monitoring to help brands build awareness with greater control.</p>
           </div>
         </div>
 
@@ -230,7 +230,7 @@ export default function DisplayAdvertisingPage() {
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">Built for <span className="text-gradient-brand">Brand-Safe Visibility</span></h2>
               <div className="text-slate-200 text-lg leading-relaxed space-y-5">
                 <p>Display campaigns should create reach without becoming uncontrolled media exposure. Advertisers need clarity on where ads appear, how often users are exposed, and which placements contribute to campaign movement.</p>
-                <p>AscendiaPrime supports display activity with placement review, delivery monitoring, frequency management, and reporting visibility, helping brands build awareness with greater confidence.</p>
+                <p>Ascendia Prime supports display activity with placement review, delivery monitoring, frequency management, and reporting visibility, helping brands build awareness with greater confidence.</p>
               </div>
             </div>
             <div className="grid sm:grid-cols-2 gap-4">

@@ -363,7 +363,7 @@ export default function OurPartnersPage() {
                     </a>
                     
                     <button className="w-full sm:w-auto glow-btn bg-transparent border-2 border-[#7469F8]/50 text-white hover:bg-[#7469F8]/10 px-10 py-4 rounded-full font-bold text-lg flex items-center justify-center gap-2 transition-all partner-popup-trigger">
-                        Submit an Enquiry
+                        Submit Partnership Enquiry
                     </button>
                 </div>
 

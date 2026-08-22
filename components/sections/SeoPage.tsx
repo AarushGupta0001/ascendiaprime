@@ -55,8 +55,8 @@ export default function SeoPage() {
               <div className="hero-animate flex flex-col sm:flex-row gap-5 mb-16" style={{ animationDelay: "0.4s" }}>
                 <div className="magnetic-btn hover-target w-full sm:w-auto">
                   
-                  <button id="hero-cta-btn" className="w-full bg-gradient-to-r from-[#3F8BF9] to-[#AB57F3] text-white px-8 py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(63,139,249,0.3)] hover:shadow-[0_0_40px_rgba(63,139,249,0.6)] transition-shadow duration-300">
-                    Get Free SEO Audit
+                  <button id="hero-cta-btn" type="button" onClick={() => document.getElementById("lead-form-section")?.scrollIntoView({ behavior: "smooth" })} className="w-full bg-gradient-to-r from-[#3F8BF9] to-[#AB57F3] text-white px-8 py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(63,139,249,0.3)] hover:shadow-[0_0_40px_rgba(63,139,249,0.6)] transition-shadow duration-300">
+                    Start a Conversation
                   </button>
                 </div>
                 

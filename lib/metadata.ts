@@ -23,7 +23,7 @@ export function createPageMetadata(options: {
       title,
       description,
       url,
-      siteName: "AscendiaPrime",
+      siteName: "Ascendia Prime",
       locale: "en_GB",
       type: "website",
       ...openGraph,

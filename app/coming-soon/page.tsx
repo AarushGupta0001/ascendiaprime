@@ -64,7 +64,7 @@ export default function ComingSoonPage() {
             onClick={() => router.push("/#contact")}
             className="inline-flex items-center justify-center px-8 py-4 rounded-2xl border-2 border-[#7469F8]/50 text-white font-bold hover:border-[#7469F8] hover:bg-[#7469F8]/10 transition-all duration-300"
           >
-            Contact Our Team
+            Start a Conversation
             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
             </svg>

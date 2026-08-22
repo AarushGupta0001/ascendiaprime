@@ -3,6 +3,13 @@
 import { useEffect } from "react";
 
 import { useContactModal } from "@/components/forms/ContactModalProvider";
+import { FORMINATOR_FORMS } from "@/lib/forminator";
+import {
+  isContactHash,
+  parseRootHashHref,
+  scrollToContactSection,
+  scrollToHash,
+} from "@/lib/contact-routing";
 
 function openContactModalElement(modal: HTMLElement) {
   modal.classList.remove("hidden", "opacity-0");
@@ -103,24 +110,65 @@ function closeActiveModals() {
   }
 }
 
+function resolveFormIdFromTrigger(trigger: Element) {
+  const formId = trigger.getAttribute("data-form-id");
+  return formId ?? undefined;
+}
+
 export default function ContactInteractions() {
   const { openContactModal } = useContactModal();
 
   useEffect(() => {
-    function openContactFlow() {
-      if (!openPageContactModal()) {
-        openContactModal();
+    function openContactFlow(formId?: string) {
+      // Form-specific CTAs must retain their intended Forminator flow instead of
+      // being captured by a page-level generic contact modal.
+      if (formId) {
+        openContactModal(formId);
+        return;
       }
+
+      if (!openPageContactModal()) {
+        openContactModal(formId);
+      }
+    }
+
+    function handleContactHash(hash: string, formId?: string) {
+      if (isContactHash(hash)) {
+        if (scrollToContactSection()) return;
+        openContactFlow(formId);
+        return;
+      }
+
+      scrollToHash(hash);
     }
 
     function handleClick(event: MouseEvent) {
       const target = event.target as Element | null;
       if (!target) return;
 
+      const rootHashLink = target.closest('a[href^="/#"]') as HTMLAnchorElement | null;
+      if (rootHashLink) {
+        const hash = parseRootHashHref(rootHashLink.getAttribute("href") ?? "");
+        if (hash) {
+          if (window.location.pathname === "/") {
+            event.preventDefault();
+            window.history.pushState(null, "", `/${hash}`);
+            handleContactHash(hash);
+            return;
+          }
+
+          if (isContactHash(hash) && !document.getElementById("contact")) {
+            event.preventDefault();
+            openContactFlow();
+            return;
+          }
+        }
+      }
+
       const openTrigger = target.closest(".open-contact-modal");
       if (openTrigger) {
         event.preventDefault();
-        openContactFlow();
+        openContactFlow(resolveFormIdFromTrigger(openTrigger));
         return;
       }
 
@@ -131,7 +179,7 @@ export default function ContactInteractions() {
         if (partnerModal) {
           openPartnerModal(partnerModal);
         } else {
-          openContactFlow();
+          openContactFlow(FORMINATOR_FORMS.advertisers);
         }
         return;
       }
@@ -146,29 +194,23 @@ export default function ContactInteractions() {
       }
 
       const hashLink = target.closest(
-        'a[href="#contact"], a[href="#enquiry"], a[href="#conversation"]',
+        'a[href="#contact"], a[href="#enquiry"], a[href="#conversation"], a[href="#enquire-form"], a[href="#lead-form-section"], a[href="#campaign-form-section"]',
       ) as HTMLAnchorElement | null;
-      if (hashLink) {
-        const hasContactSection = document.getElementById("contact");
-        const hash = hashLink.getAttribute("href");
-        if (!hasContactSection && (hash === "#contact" || hash === "#enquiry" || hash === "#conversation")) {
-          event.preventDefault();
-          openContactFlow();
-        }
-      }
 
-      const deadLink = target.closest('a[href="#"]') as HTMLAnchorElement | null;
-      if (
-        deadLink &&
-        (deadLink.classList.contains("partner-popup-trigger") ||
-          deadLink.textContent?.toLowerCase().includes("conversation"))
-      ) {
-        event.preventDefault();
-        const partnerModal = document.getElementById("partner-modal");
-        if (partnerModal) {
-          openPartnerModal(partnerModal);
-        } else {
-          openContactFlow();
+      if (hashLink) {
+        const hash = hashLink.getAttribute("href");
+        if (!hash) return;
+
+        if (hash === "#lead-form-section" || hash === "#campaign-form-section" || hash === "#enquire-form") {
+          if (scrollToHash(hash)) {
+            event.preventDefault();
+          }
+          return;
+        }
+
+        if (isContactHash(hash)) {
+          event.preventDefault();
+          handleContactHash(hash);
         }
       }
     }

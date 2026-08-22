@@ -479,7 +479,10 @@ export default function HomePage() {
         
         <div>
             <div className="container mx-auto px-6 md:px-12 flex flex-col items-center text-center scale-in" style={{ animationDelay: "0.2s" }}>
-                <h2 className="mb-5 text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white">Brands in Our Growth Ecosystem </h2>
+                <h2 className="mb-3 text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white">Brands in Our Growth Ecosystem</h2>
+                <p className="mb-2 max-w-3xl text-base leading-relaxed text-slate-300 md:text-lg">
+                    A selection of advertiser brands and campaign opportunities available through our direct and partner-led performance ecosystem.
+                </p>
             </div>
             <div className="w-full relative scale-in hover-target z-10" style={{ animationDelay: "0.4s" }}>
                 <div className="relative w-full flex items-center justify-center overflow-hidden logo-track">
@@ -505,7 +508,10 @@ export default function HomePage() {
 
         <div>
             <div className="container mx-auto px-6 md:px-12 flex flex-col items-center text-center scale-in" style={{ animationDelay: "0.3s" }}>
-                <h2 className="mb-5 text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white">Partner Network Ecosystems </h2>
+                <h2 className="mb-3 text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white">Partner Network Ecosystems</h2>
+                <p className="mb-2 max-w-3xl text-base leading-relaxed text-slate-300 md:text-lg">
+                    We work across leading affiliate, performance and technology platforms to access campaigns opportunities, manage partnerships and support scalable growth.
+                </p>
             </div>
             <div className="w-full relative scale-in hover-target z-10" style={{ animationDelay: "0.5s" }}>
                 <div className="relative w-full flex items-center justify-center overflow-hidden">
@@ -543,8 +549,8 @@ export default function HomePage() {
                     <h3 className="text-xl font-bold text-white mb-4 line-clamp-3 leading-snug group-hover:text-[#3F8BF9] transition-colors duration-300">Transforming a Mid-Sized Insurance Firm with Data-Driven Digital Marketing</h3>
                     <p className="text-slate-400 text-sm md:text-base font-light leading-relaxed">Discover how a data-focused approach revitalized a mid-sized insurance provider's digital presence and acquisition strategy.</p>
                 </div>
-                <Link href="/case-study-1/" className="inline-flex items-center gap-2 text-sm font-semibold text-[#3F8BF9] mt-8 hover:text-white transition-colors duration-300">
-                    Read Case Study
+                <Link href="/case-studies" className="inline-flex items-center gap-2 text-sm font-semibold text-[#3F8BF9] mt-8 hover:text-white transition-colors duration-300">
+                    View Case Studies
                     <span className="transform group-hover:translate-x-1 transition-transform duration-300">→</span>
                 </Link>
             </div>
@@ -554,8 +560,8 @@ export default function HomePage() {
                     <h3 className="text-xl font-bold text-white mb-4 line-clamp-3 leading-snug group-hover:text-[#3F8BF9] transition-colors duration-300">Customised Strategy Boosted a Global Anti-Virus Company's Sales by Over 7:1</h3>
                     <p className="text-slate-400 text-sm md:text-base font-light leading-relaxed">Learn the precise strategies used to generate an impressive 7:1 return for a global cybersecurity and anti-virus brand.</p>
                 </div>
-                <Link href="/case-study-2/" className="inline-flex items-center gap-2 text-sm font-semibold text-[#3F8BF9] mt-8 hover:text-white transition-colors duration-300">
-                    Read Case Study
+                <Link href="/case-studies" className="inline-flex items-center gap-2 text-sm font-semibold text-[#3F8BF9] mt-8 hover:text-white transition-colors duration-300">
+                    View Case Studies
                     <span className="transform group-hover:translate-x-1 transition-transform duration-300">→</span>
                 </Link>
             </div>
@@ -565,8 +571,8 @@ export default function HomePage() {
                     <h3 className="text-xl font-bold text-white mb-4 line-clamp-3 leading-snug group-hover:text-[#3F8BF9] transition-colors duration-300">Scaling a Family Law Firm with No Win No Fee Growth in 6 Months</h3>
                     <p className="text-slate-400 text-sm md:text-base font-light leading-relaxed">A look at how targeted campaigns rapidly scaled a family law firm over a 6-month period using a "no win, no fee" angle.</p>
                 </div>
-                <Link href="/case-study-3/" className="inline-flex items-center gap-2 text-sm font-semibold text-[#3F8BF9] mt-8 hover:text-white transition-colors duration-300">
-                    Read Case Study
+                <Link href="/case-studies" className="inline-flex items-center gap-2 text-sm font-semibold text-[#3F8BF9] mt-8 hover:text-white transition-colors duration-300">
+                    View Case Studies
                     <span className="transform group-hover:translate-x-1 transition-transform duration-300">→</span>
                 </Link>
             </div>
@@ -576,8 +582,8 @@ export default function HomePage() {
                     <h3 className="text-xl font-bold text-white mb-4 line-clamp-3 leading-snug group-hover:text-[#3F8BF9] transition-colors duration-300">Travel Company Packs a 98% Sales Surge in 45 Days</h3>
                     <p className="text-slate-400 text-sm md:text-base font-light leading-relaxed">How our team identified the perfect client profile to nearly double sales for a travel agency in just one month and a half.</p>
                 </div>
-                <Link href="/case-study-4/" className="inline-flex items-center gap-2 text-sm font-semibold text-[#3F8BF9] mt-8 hover:text-white transition-colors duration-300">
-                    Read Case Study
+                <Link href="/case-studies" className="inline-flex items-center gap-2 text-sm font-semibold text-[#3F8BF9] mt-8 hover:text-white transition-colors duration-300">
+                    View Case Studies
                     <span className="transform group-hover:translate-x-1 transition-transform duration-300">→</span>
                 </Link>
             </div>
@@ -587,8 +593,8 @@ export default function HomePage() {
                     <h3 className="text-xl font-bold text-white mb-4 line-clamp-3 leading-snug group-hover:text-[#3F8BF9] transition-colors duration-300">Doubling Bank Customers at Half the Investment</h3>
                     <p className="text-slate-400 text-sm md:text-base font-light leading-relaxed">An inside look into the hyper-efficient acquisition model that brought in twice the banking customers at 50% of the cost.</p>
                 </div>
-                <Link href="/case-study-5/" className="inline-flex items-center gap-2 text-sm font-semibold text-[#3F8BF9] mt-8 hover:text-white transition-colors duration-300">
-                    Read Case Study
+                <Link href="/case-studies" className="inline-flex items-center gap-2 text-sm font-semibold text-[#3F8BF9] mt-8 hover:text-white transition-colors duration-300">
+                    View Case Studies
                     <span className="transform group-hover:translate-x-1 transition-transform duration-300">→</span>
                 </Link>
             </div>
@@ -598,8 +604,8 @@ export default function HomePage() {
                     <h3 className="text-xl font-bold text-white mb-4 line-clamp-3 leading-snug group-hover:text-[#3F8BF9] transition-colors duration-300">Accelerating Growth from Small to Medium in 3 Months (Supplement Brand)</h3>
                     <p className="text-slate-400 text-sm md:text-base font-light leading-relaxed">See how a UK-based supplement brand broke through its plateau, transitioning from a small to medium enterprise in just 90 days.</p>
                 </div>
-                <Link href="/case-study-6/" className="inline-flex items-center gap-2 text-sm font-semibold text-[#3F8BF9] mt-8 hover:text-white transition-colors duration-300">
-                    Read Case Study
+                <Link href="/case-studies" className="inline-flex items-center gap-2 text-sm font-semibold text-[#3F8BF9] mt-8 hover:text-white transition-colors duration-300">
+                    View Case Studies
                     <span className="transform group-hover:translate-x-1 transition-transform duration-300">→</span>
                 </Link>
             </div>
@@ -609,8 +615,8 @@ export default function HomePage() {
                     <h3 className="text-xl font-bold text-white mb-4 line-clamp-3 leading-snug group-hover:text-[#3F8BF9] transition-colors duration-300">Customised Strategy Boosted a Global Anti-Virus Company's Sales</h3>
                     <p className="text-slate-400 text-sm md:text-base font-light leading-relaxed">Further insights and breakdown of the tailored marketing approach applied to scale the global anti-virus company.</p>
                 </div>
-                <Link href="/case-study-7/" className="inline-flex items-center gap-2 text-sm font-semibold text-[#3F8BF9] mt-8 hover:text-white transition-colors duration-300">
-                    Read Case Study
+                <Link href="/case-studies" className="inline-flex items-center gap-2 text-sm font-semibold text-[#3F8BF9] mt-8 hover:text-white transition-colors duration-300">
+                    View Case Studies
                     <span className="transform group-hover:translate-x-1 transition-transform duration-300">→</span>
                 </Link>
             </div>
@@ -620,8 +626,8 @@ export default function HomePage() {
                     <h3 className="text-xl font-bold text-white mb-4 line-clamp-3 leading-snug group-hover:text-[#3F8BF9] transition-colors duration-300">Transforming a Mid-Sized Insurance Firm (Background)</h3>
                     <p className="text-slate-400 text-sm md:text-base font-light leading-relaxed">A deeper dive into the background, initial challenges, and foundational work behind the mid-sized insurance firm's success.</p>
                 </div>
-                <Link href="/case-study-8/" className="inline-flex items-center gap-2 text-sm font-semibold text-[#3F8BF9] mt-8 hover:text-white transition-colors duration-300">
-                    Read Case Study
+                <Link href="/case-studies" className="inline-flex items-center gap-2 text-sm font-semibold text-[#3F8BF9] mt-8 hover:text-white transition-colors duration-300">
+                    View Case Studies
                     <span className="transform group-hover:translate-x-1 transition-transform duration-300">→</span>
                 </Link>
             </div>
@@ -636,7 +642,7 @@ export default function HomePage() {
 <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
 <div className="mb-16 text-center max-w-3xl mx-auto">
 <h2 className="scale-in text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-tight" style={{ animationDelay: "0.1s" }}>
-How Are We <span className="text-[#3F8BF9]">Different</span>?
+Why Brands Choose <span className="text-[#3F8BF9]">Ascendia Prime</span>
 </h2>
 <p className="scale-in text-slate-300 text-lg leading-relaxed" style={{ animationDelay: "0.3s" }}>We don't just follow industry standards—we set them. Here's what makes us stand out from the crowd in driving actual, scalable growth.</p>
 </div>

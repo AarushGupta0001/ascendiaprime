@@ -51,7 +51,7 @@ export default function AboutUsPage() {
                     </h1>
                     
                     <p className="text-lg md:text-xl text-slate-300 mb-10 leading-relaxed font-light max-w-2xl">
-                        AscendiaPrime was founded in January 2025 with a clear objective: to bring more transparency, accountability, and ethical business practices into performance marketing.<br /><br />
+                        Ascendia Prime was founded in January 2025 with a clear objective: to bring more transparency, accountability, and ethical business practices into performance marketing.<br /><br />
                         Built by experienced professionals with over 20 years of collective industry expertise across marketing, advertising, media, and performance-led growth, we help brands and partners scale through clear strategy, transparent execution, and measurable outcomes across global markets.
                     </p>
                     
@@ -118,7 +118,7 @@ export default function AboutUsPage() {
                         <h3 className="text-3xl md:text-5xl font-bold mb-8 pb-1 text-transparent bg-clip-text bg-gradient-to-r from-[#7469F8] to-[#AB57F3]">Created to Make Performance Marketing <span className="text-shimmer">More Transparent</span></h3>
                         
                         <div className="space-y-6 text-lg text-slate-300 font-light leading-relaxed max-w-4xl mx-auto">
-                            <p>The digital performance space has evolved rapidly, but transparency, communication, and campaign visibility are still major concerns for many brands and partners. AscendiaPrime was created to address this gap.</p>
+                            <p>The digital performance space has evolved rapidly, but transparency, communication, and campaign visibility are still major concerns for many brands and partners. Ascendia Prime was created to address this gap.</p>
                             <p>Our objective is to offer a more thoughtful and accountable approach to growth — one where advertisers can understand how campaigns are performing, publishers receive the right support to scale effectively, and every activity is aligned with clear expectations, compliance, and measurable results.</p>
                             <div className="inline-block mt-6">
                                 <p className="text-xl font-medium text-white border-l-4 border-r-4 border-[#3F8BF9] px-6 py-4 bg-[#3F8BF9]/5 rounded-xl">
@@ -218,7 +218,7 @@ export default function AboutUsPage() {
                     <h2 className="text-sm font-bold text-[#7469F8] uppercase tracking-widest mb-4">Our Growth Ecosystem</h2>
                     <h3 className="text-4xl md:text-5xl font-bold mb-6 pb-1 text-transparent bg-clip-text bg-gradient-to-r from-[#7469F8] to-[#3F8BF9]">A Connected Ecosystem for Scalable Growth</h3>
                     <p className="text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                        AscendiaPrime brings together performance marketing, publisher partnerships, programmatic media, retargeting, and digital growth solutions into one connected framework. This ecosystem allows us to support brands at different stages of the customer journey — from awareness and engagement to acquisition, conversion, and retention.
+                        Ascendia Prime brings together performance marketing, publisher partnerships, programmatic media, retargeting, and digital growth solutions into one connected framework. This ecosystem allows us to support brands at different stages of the customer journey — from awareness and engagement to acquisition, conversion, and retention.
                     </p>
                 </div>
 
@@ -309,7 +309,7 @@ export default function AboutUsPage() {
                         <h2 className="text-4xl md:text-6xl font-black text-white mb-8">Growth With Visibility,<br/><span className="text-shimmer">Support, and Accountability</span></h2>
                         
                         <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-12 font-light leading-relaxed">
-                            We are building AscendiaPrime as a modern growth ecosystem — one where performance, transparency, customer experience, and ethical business practices work together to create meaningful outcomes for every stakeholder.
+                            We are building Ascendia Prime as a modern growth ecosystem — one where performance, transparency, customer experience, and ethical business practices work together to create meaningful outcomes for every stakeholder.
                         </p>
                         
                         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">

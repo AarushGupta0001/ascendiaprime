@@ -3,6 +3,7 @@ import { Outfit, Poppins } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { ContactModalProvider } from "@/components/forms/ContactModalProvider";
+import HashScrollHandler from "@/components/navigation/HashScrollHandler";
 import "@/styles/layout.css";
 import "@/styles/contact-form.css";
 import "@/styles/faq.css";
@@ -24,11 +25,11 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: {
-    default: "AscendiaPrime",
-    template: "%s | AscendiaPrime",
+    default: "Ascendia Prime",
+    template: "%s | Ascendia Prime",
   },
   description:
-    "AscendiaPrime connects intent, media and technology to power growth through performance marketing, programmatic media, and digital solutions.",
+    "Ascendia Prime connects intent, media and technology to power growth through performance marketing, programmatic media, and digital solutions.",
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://ascendiaprime.com"),
 };
 
@@ -49,6 +50,7 @@ export default function RootLayout({
       </head>
       <body className={`${poppins.className} ${poppins.variable} bg-[#020617] antialiased`}>
         <ContactModalProvider>
+          <HashScrollHandler />
           <Header />
           <main>{children}</main>
           <Footer />

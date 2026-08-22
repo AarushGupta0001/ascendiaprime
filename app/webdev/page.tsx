@@ -2,7 +2,7 @@ import { createPageMetadata } from "@/lib/metadata";
 import WebdevPage from "@/components/sections/WebdevPage";
 
 export const metadata = createPageMetadata({
-  title: "Web Development Services - AscendiaPrime",
+  title: "Web Development Services - Ascendia Prime",
   path: "/webdev",
 });
 

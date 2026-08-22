@@ -18,7 +18,7 @@ export default function Footer() {
                 Ascendia Prime
               </Link>
               <p className="site-footer__description">
-                AscendiaPrime brings together data, media, technology, and customer experience to create a
+                Ascendia Prime brings together data, media, technology, and customer experience to create a
                 performance-led growth ecosystem designed for scale, clarity, and measurable outcomes.
               </p>
               <SocialIcons />
@@ -45,7 +45,7 @@ export default function Footer() {
                   <svg className="site-footer__inline-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                  Contact@ascendiaprime.com
+                  contact@ascendiaprime.com
                 </a>
                 <Link href="/advertisers" className="site-footer__advertiser-link">
                   Explore Advertiser Solutions

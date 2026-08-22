@@ -28,27 +28,9 @@ export default function WebdevPage() {
           </p>
           <div className="hero-ctas rv" data-d="3">
             <Link href="#contact" className="btn btn-fill">
-              Start a Project
+              Start a Conversation
             </Link>
             
-          </div>
-          <div className="hero-stats rv" data-d="4">
-            <div>
-              <div className="hero-stat-num"><span className="counter" data-target="500">0</span><em>+</em></div>
-              <div className="hero-stat-label">Projects Shipped</div>
-            </div>
-            <div>
-              <div className="hero-stat-num"><span className="counter" data-target="8">0</span><em>+</em></div>
-              <div className="hero-stat-label">Years Operating</div>
-            </div>
-            <div>
-              <div className="hero-stat-num"><span className="counter" data-target="98">0</span><em>%</em></div>
-              <div className="hero-stat-label">Client Retention</div>
-            </div>
-            <div>
-              <div className="hero-stat-num"><span className="counter" data-target="40">0</span><em>+</em></div>
-              <div className="hero-stat-label">Engineers</div>
-            </div>
           </div>
         </div>
         <div className="hero-vis rv" data-d="2">

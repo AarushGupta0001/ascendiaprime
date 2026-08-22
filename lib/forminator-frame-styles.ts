@@ -79,6 +79,21 @@ export const FORMINATOR_FRAME_STYLES = `
     filter: brightness(1.08);
   }
 
+  .forminator-button-submit:disabled,
+  .forminator-ui button[type="submit"]:disabled {
+    cursor: not-allowed !important;
+    opacity: 0.65 !important;
+  }
+
+  .forminator-response-message.forminator-success {
+    margin-bottom: 1rem !important;
+    border: 1px solid rgba(63, 139, 249, 0.45) !important;
+    border-radius: 0.75rem !important;
+    background: rgba(63, 139, 249, 0.12) !important;
+    color: #dbeafe !important;
+    padding: 1rem 1.2rem !important;
+  }
+
   .forminator-row,
   .forminator-field {
     margin-bottom: 1rem !important;

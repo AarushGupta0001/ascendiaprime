@@ -5,15 +5,7 @@ import Link from "next/link";
 import NavItem from "@/components/ui/NavItem";
 import GradientButton from "@/components/ui/GradientButton";
 import MegaMenu from "@/components/layout/MegaMenu";
-import { contactCta, headerNavItems, solutionsTrigger } from "@/lib/navigation";
-
-const mobileLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about-us", label: "About Us" },
-  { href: "/#split-services-wrapper", label: "Solutions" },
-  { href: "/our-partners", label: "Our Partners" },
-  { href: "/#case-studies", label: "Case Studies" },
-];
+import { contactCta, headerNavItems, mobileNavLinks, solutionsTrigger } from "@/lib/navigation";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -46,16 +38,16 @@ export default function Header() {
   return (
     <div id="site-header-wrapper">
       <header id="site-header" className={isScrolled ? "scrolled" : ""}>
-        <Link href="/" id="header-logo-anchor" className="header-logo-link" aria-label="AscendiaPrime home">
+        <Link href="/" id="header-logo-anchor" className="header-logo-link" aria-label="Ascendia Prime home">
           <div className="stellar-logo-wrap">
             <img
               src="/images/logos/header-logo-default.png"
-              alt="AscendiaPrime"
+              alt="Ascendia Prime"
               className="header-logo-img default-logo"
             />
             <img
               src="/images/logos/header-logo-scrolled.png"
-              alt="AscendiaPrime"
+              alt="Ascendia Prime"
               className="header-logo-img scrolled-logo"
             />
           </div>
@@ -98,7 +90,7 @@ export default function Header() {
       </header>
 
       <div className={`mobile-menu-overlay ${mobileOpen ? "open" : ""}`} aria-hidden={!mobileOpen}>
-        {mobileLinks.map((link, index) => (
+        {mobileNavLinks.map((link, index) => (
           <Link
             key={link.href}
             href={link.href}

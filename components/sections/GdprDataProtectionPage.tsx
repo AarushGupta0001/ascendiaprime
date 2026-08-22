@@ -108,7 +108,7 @@ export default function GdprDataProtectionPage() {
         <article id="section-4-13" className="policy-section fade-up-element" style={{ transitionDelay: "0.35s" }}>
             <h2 className="policy-section-title text-shimmer">Data Protection Contact</h2>
             <div className="policy-section-body">
-                <div className="policy-card-grid"><div className="policy-highlight-card"><p className="policy-card-label">For data protection matters, contact</p><div className="policy-card-body"></div></div><div className="policy-highlight-card"><div className="policy-card-body">Email: <a href="mailto:gdpr@ascendiaprime.comPostal" className="policy-link">gdpr@ascendiaprime.comPostal</a> address: Ascendia Prime Media Ltd,<br />Unit 13e, First Floor Office,<br />27 Town Square,<br />Erith, Kent,<br />United Kingdom,<br />DA8 1SE.</div></div></div>
+                <div className="policy-card-grid"><div className="policy-highlight-card"><p className="policy-card-label">For data protection matters, contact</p><div className="policy-card-body"></div></div><div className="policy-highlight-card"><div className="policy-card-body">Email: <a href="mailto:gdpr@ascendiaprime.com" className="policy-link">gdpr@ascendiaprime.com</a> Postal address: Ascendia Prime Media Ltd,<br />Unit 13e, First Floor Office,<br />27 Town Square,<br />Erith, Kent,<br />United Kingdom,<br />DA8 1SE.</div></div></div>
             </div>
         </article>
 

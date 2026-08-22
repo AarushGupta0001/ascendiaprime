@@ -4,6 +4,7 @@ import { createContext, useCallback, useContext, useMemo, useState, type ReactNo
 import dynamic from "next/dynamic";
 
 import ContactInteractions from "@/components/forms/ContactInteractions";
+import { FORMINATOR_FORMS } from "@/lib/forminator";
 
 const ContactModal = dynamic(() => import("@/components/forms/ContactModal"), {
   ssr: false,
@@ -11,7 +12,7 @@ const ContactModal = dynamic(() => import("@/components/forms/ContactModal"), {
 });
 
 type ContactModalContextValue = {
-  openContactModal: () => void;
+  openContactModal: (formId?: string) => void;
   closeContactModal: () => void;
 };
 
@@ -19,8 +20,13 @@ const ContactModalContext = createContext<ContactModalContextValue | null>(null)
 
 export function ContactModalProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [modalFormId, setModalFormId] = useState<string>(FORMINATOR_FORMS.default);
 
-  const openContactModal = useCallback(() => setIsOpen(true), []);
+  const openContactModal = useCallback((formId?: string) => {
+    setModalFormId(formId ?? FORMINATOR_FORMS.default);
+    setIsOpen(true);
+  }, []);
+
   const closeContactModal = useCallback(() => setIsOpen(false), []);
 
   const value = useMemo(
@@ -32,7 +38,9 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
     <ContactModalContext.Provider value={value}>
       <ContactInteractions />
       {children}
-      {isOpen ? <ContactModal isOpen={isOpen} onClose={closeContactModal} /> : null}
+      {isOpen ? (
+        <ContactModal isOpen={isOpen} onClose={closeContactModal} formId={modalFormId} />
+      ) : null}
     </ContactModalContext.Provider>
   );
 }

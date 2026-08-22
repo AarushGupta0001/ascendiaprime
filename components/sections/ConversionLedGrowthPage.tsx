@@ -37,11 +37,11 @@ export default function ConversionLedGrowthPage() {
                         <span className="text-gradient-smm drop-shadow-[0_0_15px_rgba(63,139,249,0.3)]">Stronger Campaign Outcomes</span>
                     </h1>
                     <p className="hero-animate text-lg text-slate-200 max-w-lg mb-10 leading-relaxed" style={{ animationDelay: "0.3s" }}>
-                        AscendiaPrime helps advertisers improve the journey from click to conversion by aligning landing pages, messaging, tracking, and user experience with clear performance objectives.
+                        Ascendia Prime helps advertisers improve the journey from click to conversion by aligning landing pages, messaging, tracking, and user experience with clear performance objectives.
                     </p>
                     <div className="hero-animate flex flex-col sm:flex-row gap-5 mb-16" style={{ animationDelay: "0.4s" }}>
                         <div className="magnetic-btn w-full sm:w-auto">
-                            <button id="hero-cta-btn" className="open-contact-modal w-full text-white bg-gradient-to-r from-[#3F8BF9] via-[#7469F8] to-[#AB57F3] px-8 py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(63,139,249,0.4)] hover:shadow-[0_0_30px_rgba(63,139,249,0.6)] hover:-translate-y-0.5 transition-all" type="button">
+                            <button id="hero-cta-btn" className="open-contact-modal w-full text-white bg-gradient-to-r from-[#3F8BF9] via-[#7469F8] to-[#AB57F3] px-8 py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(63,139,249,0.4)] hover:shadow-[0_0_30px_rgba(63,139,249,0.6)] hover:-translate-y-0.5 transition-all" type="button" data-form-id="1808">
                                 Submit Advertiser Enquiry
                             </button>
                         </div>
@@ -152,7 +152,7 @@ export default function ConversionLedGrowthPage() {
                     </div>
                     <div className="lg:col-span-7 text-slate-200 text-lg leading-relaxed space-y-5">
                         <p>A click creates the opportunity, but the post-click journey decides whether that opportunity becomes a lead, sale, sign-up, or enquiry.</p>
-                        <p>When messaging, page experience, trust signals, and tracking are not aligned, even quality traffic can lose momentum. AscendiaPrime helps advertisers review and improve the journey after the click, so campaigns can work harder with the traffic already being generated.</p>
+                        <p>When messaging, page experience, trust signals, and tracking are not aligned, even quality traffic can lose momentum. Ascendia Prime helps advertisers review and improve the journey after the click, so campaigns can work harder with the traffic already being generated.</p>
                     </div>
                 </div>
 

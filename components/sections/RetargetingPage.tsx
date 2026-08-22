@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 
 import "@/styles/retargeting.css";
 
@@ -52,19 +51,23 @@ export default function RetargetingPage() {
           Retargeting Campaigns Built Around <span className="grad-text">Intent and Control</span>
         </h1>
         <p className="t-body">
-          AscendiaPrime helps advertisers re-engage high-intent audiences through structured retargeting strategies built around audience behaviour, frequency control, transparent tracking, and measurable conversion recovery.
+          Ascendia Prime helps advertisers re-engage high-intent audiences through structured retargeting strategies built around audience behaviour, frequency control, transparent tracking, and measurable conversion recovery.
         </p>
         <div className="hero-ctas">
-          <Link href="#contact" className="btn btn-fill">Submit Advertiser Enquiry</Link>
-          <Link href="#contact" className="btn btn-ghost">Start a Conversation</Link>
+          <button type="button" className="open-contact-modal btn btn-fill" data-form-id="1808">
+            Submit Advertiser Enquiry
+          </button>
+          <button type="button" className="open-contact-modal btn btn-ghost">
+            Start a Conversation
+          </button>
         </div>
       </div>
         
-      <div className="intent-matrix" aria-label="AscendiaPrime Retargeting Pipeline Optimizer">
+      <div className="intent-matrix" aria-label="Ascendia Prime Retargeting Pipeline Optimizer">
         <div className="matrix-header">
           <div className="matrix-status">
             <span className="matrix-pulse-dot"></span>
-            <span>AscendiaPrime Engine Active</span>
+            <span>Ascendia Prime Engine Active</span>
           </div>
           <span className="t-eyebrow matrix-version">Control Panel v4.1</span>
         </div>
@@ -174,7 +177,7 @@ export default function RetargetingPage() {
       </div>
       <div className="split-copy">
         <p>Retargeting works best when it respects the user journey. A visitor who browsed a product, abandoned a cart, or started a form should not be treated the same way as someone who briefly landed on a page and left.</p>
-        <p>At AscendiaPrime, we build retargeting campaigns around audience intent, timing, message relevance, and delivery control, helping brands reconnect with users where there is a genuine opportunity to bring them back.</p>
+        <p>At Ascendia Prime, we build retargeting campaigns around audience intent, timing, message relevance, and delivery control, helping brands reconnect with users where there is a genuine opportunity to bring them back.</p>
       </div>
     </div>
   </div>
@@ -319,7 +322,7 @@ export default function RetargetingPage() {
         <span className="t-eyebrow">Transparency &amp; Control</span>
         <h2 className="t-section">Built for Responsible Re-Engagement</h2>
         <p>Retargeting requires trust. Advertisers need confidence that audience activity is managed responsibly, delivery is controlled, and campaign visibility is not treated as a black box.</p>
-        <p>AscendiaPrime supports retargeting campaigns with clear implementation, source visibility, audience rules, reporting, and optimization review.</p>
+        <p>Ascendia Prime supports retargeting campaigns with clear implementation, source visibility, audience rules, reporting, and optimization review.</p>
       </div>
       <ul className="check-list">
         <li>Pixel, tag, and event alignment</li>
@@ -385,7 +388,7 @@ export default function RetargetingPage() {
         "A retargeting campaign is a digital advertising strategy used to re-engage users who have previously visited a website, viewed a product, started a form, added items to cart, or shown interest without completing the desired action.",
     },
     {
-      question: "How does AscendiaPrime build retargeting audiences?",
+      question: "How does Ascendia Prime build retargeting audiences?",
       answer:
         "We build audiences based on user behaviour, engagement depth, funnel stage, page activity, cart activity, form activity, and available first-party signals, depending on the advertiser's setup and campaign goals.",
     },
@@ -407,7 +410,7 @@ export default function RetargetingPage() {
     {
       question: "Is retargeting compliant with privacy expectations?",
       answer:
-        "Retargeting should be implemented with proper tracking alignment, platform policies, consent requirements where applicable, and agreed campaign guidelines. AscendiaPrime works with advertisers to align setup and execution responsibly.",
+        "Retargeting should be implemented with proper tracking alignment, platform policies, consent requirements where applicable, and agreed campaign guidelines. Ascendia Prime works with advertisers to align setup and execution responsibly.",
     },
   ]}
 />

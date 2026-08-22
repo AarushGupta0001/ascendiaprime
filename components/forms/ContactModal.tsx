@@ -49,7 +49,7 @@ export default function ContactModal({
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6"
+      className="contact-modal-overlay fixed inset-0 z-[999999] flex items-center justify-center p-4 sm:p-6"
       role="dialog"
       aria-modal="true"
       aria-labelledby="contact-modal-title"
@@ -60,7 +60,7 @@ export default function ContactModal({
         onClick={onClose}
         aria-label="Close modal"
       />
-      <div className="popup-content relative z-10 w-full max-w-lg rounded-2xl border border-[#7469F8]/30 bg-[#0b111d]/95 p-6 shadow-2xl backdrop-blur-xl sm:p-8">
+      <div className="popup-content relative z-10 w-full max-w-lg max-h-[calc(100vh-2rem)] sm:max-h-[calc(100vh-3rem)] overflow-y-auto overscroll-contain rounded-2xl border border-[#7469F8]/30 bg-[#0b111d]/95 p-6 shadow-2xl backdrop-blur-xl sm:p-8">
         <button
           type="button"
           className="modal-close-btn absolute right-4 top-4 text-slate-400 transition-colors hover:text-white"

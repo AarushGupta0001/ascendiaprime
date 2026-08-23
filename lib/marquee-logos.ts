@@ -19,7 +19,7 @@ export const trustedBrands = [
 ] as const;
 
 export const networkPartners = [
-  { title: "FlexOffers", src: "https://www.flexoffers.com/wp-content/blogs.dir/4/files/2021/04/FlexOffers-logo-.svg" },
+  { title: "FlexOffers", src: "/images/partners/flexoffers.svg" },
   { title: "impact", src: "/images/partners/impact.png" },
   { title: "Partnerize", src: "https://partnerize.com/wp-content/uploads/2021/03/PartnerizeLogo2021-RaisinBlue.png" },
   { title: "Awin", src: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Logo-awin-black.svg" },

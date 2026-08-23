@@ -259,10 +259,11 @@ transform: translate(-50%, -50%); border-radius: 50%; pointer-events: none; z-in
 .network-logo-img {
     filter: none !important;
     mix-blend-mode: normal !important;
-    max-height: 26px;
+    height: 26px;
     width: auto;
     max-width: 100%;
     object-fit: contain;
+    display: block;
 }
 .network-logo-tile:hover .network-logo-img { filter: none !important; }
 

@@ -133,4 +133,60 @@ export const FORMINATOR_FRAME_STYLES = `
   .select2-results__option--highlighted[aria-selected] {
     background: rgba(63, 139, 249, 0.35) !important;
   }
+
+
+/* Clean Forminator validation messages */
+.forminator-error-message,
+.forminator-error,
+.forminator-field .forminator-error-message {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: #fda4af !important;
+    padding: 5px 0 !important;
+    margin: 4px 0 0 !important;
+    min-height: 0 !important;
+    height: auto !important;
+    width: auto !important;
+    border-radius: 0 !important;
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+}
+
+/* Don't let validation create a large coloured block */
+.forminator-field {
+    background: transparent !important;
+}
+
+.forminator-field.forminator-has_error .forminator-select--field,
+.forminator-field.forminator-has_error select {
+    border-color: rgba(253, 164, 175, 0.55) !important;
+}
+
+
+
+  /* Form submission fallback */
+  .form-submission-fallback {
+    margin: 1.25rem 0 0;
+    padding: 0.25rem 0 0.5rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  .form-submission-fallback a {
+    color: #7fb3ff;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+  }
+
+  .form-submission-fallback a:hover {
+    color: #ab57f3;
+  }
+
 `;

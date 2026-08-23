@@ -268,6 +268,10 @@ function buildFrameDocument(formId: string, parsed: ReturnType<typeof parseFormi
 </head>
 <body>
   ${formHtml}
+  <div class="form-submission-fallback">
+    Having trouble submitting the form? Email us at
+    <a href="mailto:contact@ascendiaprime.com">contact@ascendiaprime.com</a>
+  </div>
   ${scriptTags}
   ${inlineScriptTags}
   <style>${FORMINATOR_FRAME_STYLES}</style>

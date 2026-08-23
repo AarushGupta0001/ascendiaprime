@@ -33,7 +33,7 @@ export default function DspPage() {
       <div className="max-w-[1400px] mx-auto grid lg:grid-cols-12 gap-14 items-center w-full">
         <div className="lg:col-span-6 reveal-up">
           <h1 className="text-5xl md:text-6xl lg:text-[4.8rem] font-black leading-[1.05] text-white tracking-tight mb-6">
-            DSP-Led Media Buying With <span className="text-gradient-brand">Control and Clarity</span>
+            DSP-Led Media Buying for <span className="text-gradient-brand">Controlled Audience Reach and Scalable Programmatic Delivery</span>
           </h1>
           <p className="text-lg text-slate-300 max-w-xl mb-10 leading-relaxed">
             Ascendia Prime helps brands plan and activate programmatic media through DSP-led buying routes, audience strategy, inventory alignment, and controlled delivery across suitable digital environments where available.
@@ -271,7 +271,7 @@ export default function DspPage() {
       <div className="max-w-4xl mx-auto text-center reveal-up">
         <h2 className="text-5xl lg:text-7xl font-bold tracking-tight text-white mb-6">Ready to Bring More Control to <span className="text-gradient-brand">Programmatic Media?</span></h2>
         <p className="text-lg text-slate-300 mb-10 max-w-2xl mx-auto">Let's explore how Ascendia Prime can help your brand plan and activate DSP-led media buying with better audience alignment, inventory visibility, and delivery control.</p>
-        <button className="open-contact-modal btn-glow w-full sm:w-auto" type="button">Start a Conversation</button>
+
       </div>
     </section>
   </main>

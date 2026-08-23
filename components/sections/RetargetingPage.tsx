@@ -57,9 +57,6 @@ export default function RetargetingPage() {
           <button type="button" className="open-contact-modal btn btn-fill" data-form-id="1808">
             Submit Advertiser Enquiry
           </button>
-          <button type="button" className="open-contact-modal btn btn-ghost">
-            Start a Conversation
-          </button>
         </div>
       </div>
         

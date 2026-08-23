@@ -53,10 +53,7 @@ export default function AffiliatesPublisherMarketingPage() {
                     </p>
                     
                     <div className="flex flex-col sm:flex-row gap-4 mb-16">
-                        <button className="open-contact-modal home-gradient-btn w-full sm:w-auto" data-form-id="1808">
-                            Submit Advertiser Enquiry
-                        </button>
-                        <button className="open-contact-modal home-gradient-btn secondary w-full sm:w-auto">
+<button className="open-contact-modal home-gradient-btn secondary w-full sm:w-auto">
                             Start a Conversation
                         </button>
                     </div>

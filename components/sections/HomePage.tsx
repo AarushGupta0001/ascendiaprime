@@ -491,7 +491,7 @@ export default function HomePage() {
                             <div key={`${brand.slug}-${index}`} className="trusted-logo-tile shrink-0" title={brand.title}>
                                 <img
                                     decoding="async"
-                                    src={`https://cdn.simpleicons.org/${brand.slug}`}
+                                    src={brand.src}
                                     alt={`${brand.title} logo`}
                                     className="trusted-logo-img"
                                 />

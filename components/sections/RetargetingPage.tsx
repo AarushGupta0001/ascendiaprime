@@ -320,6 +320,7 @@ export default function RetargetingPage() {
         <h2 className="t-section">Built for Responsible Re-Engagement</h2>
         <p>Retargeting requires trust. Advertisers need confidence that audience activity is managed responsibly, delivery is controlled, and campaign visibility is not treated as a black box.</p>
         <p>Ascendia Prime supports retargeting campaigns with clear implementation, source visibility, audience rules, reporting, and optimisation review.</p>
+        <p className="mt-6 text-slate-300 leading-relaxed italic">We do not capture sensitive personal information through retargeting scripts. Audience activity is structured around behavioural signals, campaign events, and consent-aligned implementation where applicable.</p>
       </div>
       <ul className="check-list">
         <li>Pixel, tag, and event alignment</li>

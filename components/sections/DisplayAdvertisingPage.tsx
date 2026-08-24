@@ -40,7 +40,6 @@ export default function DisplayAdvertisingPage() {
             Ascendia Prime helps brands build visual presence across relevant digital environments through display campaigns planned around audience context, creative consistency, frequency control, and transparent media delivery.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="open-contact-modal btn-glow w-full sm:w-auto" type="button" data-form-id="1808">Submit Advertiser Enquiry</button>
             <button className="open-contact-modal btn-glow secondary w-full sm:w-auto" type="button">Start a Conversation</button>
           </div>
         </div>

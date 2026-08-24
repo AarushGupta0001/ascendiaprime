@@ -1,10 +1,28 @@
 /** Dark-theme overrides injected into the Forminator iframe document. */
 export const FORMINATOR_FRAME_STYLES = `
   html, body {
-    margin: 0;
-    padding: 0;
-    background: transparent;
-    color: #ffffff;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #0b142f !important;
+    color: #ffffff !important;
+  }
+
+  body {
+    padding: 6px 4px 14px !important;
+    font-family: Poppins, system-ui, sans-serif !important;
+    overflow-x: hidden !important;
+  }
+
+  .forminator-ui {
+    background: transparent !important;
+    color: #ffffff !important;
+  }
+
+  .forminator-row,
+  .forminator-field {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   body {
@@ -42,8 +60,12 @@ export const FORMINATOR_FRAME_STYLES = `
     border: 1px solid rgba(63, 139, 249, 0.3) !important;
     color: #ffffff !important;
     border-radius: 0.75rem !important;
-    padding: 1rem 1.2rem !important;
-    box-shadow: none !important;
+    padding: 0.78rem 1rem !important;
+    min-height: 48px !important;
+    box-sizing: border-box !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.04), 0 8px 20px rgba(0,0,0,.16) !important;
+    font-family: inherit !important;
+    font-size: 0.92rem !important;
   }
 
   .forminator-input::placeholder,
@@ -86,7 +108,7 @@ export const FORMINATOR_FRAME_STYLES = `
   }
 
   .forminator-response-message.forminator-success {
-    margin-bottom: 1rem !important;
+    margin-bottom: 0.78rem !important;
     border: 1px solid rgba(63, 139, 249, 0.45) !important;
     border-radius: 0.75rem !important;
     background: rgba(63, 139, 249, 0.12) !important;
@@ -96,7 +118,7 @@ export const FORMINATOR_FRAME_STYLES = `
 
   .forminator-row,
   .forminator-field {
-    margin-bottom: 1rem !important;
+    margin-bottom: 0.78rem !important;
   }
 
   .iti__selected-dial-code,

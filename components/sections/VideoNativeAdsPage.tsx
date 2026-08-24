@@ -39,7 +39,6 @@ export default function VideoNativeAdsPage() {
             Ascendia Prime helps brands build awareness and engagement through video and native ad formats designed to fit naturally within content environments, audience journeys, and media moments that matter.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="open-contact-modal btn-glow w-full sm:w-auto" type="button" data-form-id="1808">Submit Advertiser Enquiry</button>
             <button className="open-contact-modal btn-glow secondary w-full sm:w-auto" type="button">Start a Conversation</button>
           </div>
         </div>

@@ -47,8 +47,7 @@ export default function ConnectedTvPage() {
             Ascendia Prime helps brands explore and activate Connected TV opportunities through partner-led media access, audience planning, creative alignment, and controlled delivery across suitable streaming-led environments where available.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="open-contact-modal btn-glow w-full sm:w-auto" type="button" data-form-id="1808">Submit Advertiser Enquiry</button>
-            <button className="open-contact-modal btn-glow secondary w-full sm:w-auto" type="button">Start a Conversation</button>
+<button className="open-contact-modal btn-glow secondary w-full sm:w-auto" type="button">Start a Conversation</button>
           </div>
         </div>
 

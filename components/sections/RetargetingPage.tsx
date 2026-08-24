@@ -408,7 +408,7 @@ export default function RetargetingPage() {
     {
       question: "Is retargeting compliant with privacy expectations?",
       answer:
-        "Retargeting should be implemented with proper tracking alignment, platform policies, consent requirements where applicable, and agreed campaign guidelines. Ascendia Prime works with advertisers to align setup and execution responsibly.",
+        "We do not capture sensitive personal information through retargeting scripts. Audience activity is structured around behavioural signals, campaign events, and consent-aligned implementation where applicable.",
     },
   ]}
 />

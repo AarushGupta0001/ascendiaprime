@@ -39,9 +39,6 @@ export default function PpcPage() {
                     We help advertisers plan, launch, and optimize Google, Meta, and PPC campaigns with a clear focus on audience intent, spend efficiency, conversion quality, and measurable business outcomes.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                    <button type="button" className="open-contact-modal btn-glow cursor-pointer w-full sm:w-auto" data-form-id="1808">
-                       Submit Advertiser Enquiry
-                    </button>
                     <button type="button" className="open-contact-modal btn-glow btn-glow-secondary w-full sm:w-auto">
                        Start a Conversation
                     </button>

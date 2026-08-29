@@ -62,7 +62,7 @@ export const megaMenuColumns: MegaMenuColumn[] = [
     items: [
       { href: "/affiliates-publisher-marketing", label: "Affiliate & Publisher Marketing", icon: "users" },
       { href: "/ppc", label: "Google, Meta & PPC Ads", icon: "globe" },
-      { href: "/retargeting", label: "Retargeting Campaigns", icon: "target" },
+      { href: "/retargeting-campaigns", label: "Retargeting Campaigns", icon: "target" },
       { href: "/conversion-led-growth", label: "Conversion-Led Growth", icon: "trend" },
     ],
   },

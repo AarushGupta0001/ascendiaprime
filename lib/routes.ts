@@ -7,7 +7,7 @@ export const SITE_ROUTES = {
   ourPartners: "/our-partners",
   ppc: "/ppc",
   seo: "/seo",
-  retargeting: "/retargeting",
+  retargeting: "/retargeting-campaigns",
   displayAdvertising: "/display-advertising",
   connectedTv: "/connected-tv",
   dsp: "/dsp",

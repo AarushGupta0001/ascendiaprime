@@ -673,141 +673,127 @@
   }
 }
 
-/* =========================================================
-   PPC AUCTION CHECKPOINTS & LABELS
-   ========================================================= */
-
 .ppc-auction-steps {
   position: absolute;
-  left: 18px;
-  right: 18px;
-  top: 13px;
-  height: 2px;
-  pointer-events: none;
-  z-index: 50;
-  margin: 0;
-  padding: 0;
-  display: block;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 .ppc-auction-steps > span {
-  position: absolute;
-  top: 50%;
-  width: 0;
-  height: 0;
-  margin: 0;
-  padding: 0;
-  display: block;
-  overflow: visible;
-  pointer-events: none;
+  width: 98px;
+  position: relative;
+  padding-top: 23px;
   opacity: .35;
   animation: ppc-step-on .35s ease forwards;
 }
 
-/* Match = 0% */
-.ppc-step-one,
-.ppc-auction-steps > span:first-child {
-  left: 0%;
-  animation-delay: 1.2s !important;
-}
-
-/* Bid = 50% */
-.ppc-step-two,
-.ppc-auction-steps > span.ppc-step-two {
-  left: 50%;
-  animation-delay: 1.65s !important;
-}
-
-/* Serve = 100% */
-.ppc-step-three,
-.ppc-auction-steps > span.ppc-step-three {
-  left: 100%;
-  animation-delay: 2.05s !important;
-}
-
-/* Checkpoint Circle - Centered ON TOP OF the auction line */
 .ppc-auction-steps > span:before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 10px;
-  height: 10px;
-  box-sizing: border-box;
+  left: 8px;
+  top: 8px;
+  width: 11px;
+  height: 11px;
+  border: 2px solid #3b496b;
   border-radius: 50%;
-  background: #071126;
-  border: 2px solid #4da3ff;
-  box-shadow:
-    0 0 0 2px rgba(77, 163, 255, .15),
-    0 0 10px rgba(77, 163, 255, .75);
-  transform: translate(-50%, -50%);
-  z-index: 60;
+  background: #091128;
 }
 
-.ppc-step-two:before,
-.ppc-auction-steps > span.ppc-step-two:before {
-  border-color: #a855f7 !important;
-  box-shadow:
-    0 0 0 2px rgba(168, 85, 247, .15),
-    0 0 10px rgba(168, 85, 247, .75) !important;
-}
-
-.ppc-step-three:before,
-.ppc-auction-steps > span.ppc-step-three:before {
-  border-color: #ec4bd8 !important;
-  box-shadow:
-    0 0 0 2px rgba(236, 75, 216, .15),
-    0 0 10px rgba(236, 75, 216, .75) !important;
-}
-
-.ppc-auction-steps > span:after {
-  display: none !important;
-  content: none !important;
+.ppc-auction-steps i,
+.ppc-auction-steps strong,
+.ppc-auction-steps em {
+  font-style: normal;
 }
 
 .ppc-auction-steps i {
-  display: none !important;
+  margin-right: 5px;
+  color: #5f6d8b;
+  font-size: 6px;
 }
 
 .ppc-auction-steps strong {
-  position: absolute;
-  top: 9px;
-  left: 0;
-  transform: translateX(-50%);
-  margin: 0;
-  padding: 0;
-  color: #f8fafc;
-  font-size: 10px;
-  line-height: 1.1;
-  font-weight: 700;
-  font-style: normal;
-  letter-spacing: .01em;
-  white-space: nowrap;
-  text-align: center;
-  z-index: 55;
+  font-size: 8px;
 }
 
 .ppc-auction-steps em {
-  position: absolute;
-  top: 23px;
-  left: 0;
-  transform: translateX(-50%);
-  margin: 0;
-  padding: 0;
-  color: #94a3b8;
-  font-size: 7.5px;
-  line-height: 1.1;
-  font-style: normal;
-  font-weight: 400;
-  white-space: nowrap;
+  display: block;
+  margin: 2px 0 0 17px;
+  color: #71809f;
+  font-size: 6px;
+}
+
+.ppc-step-one {
+  animation-delay: 1.2s !important;
+}
+
+.ppc-step-two {
+  animation-delay: 1.65s !important;
   text-align: center;
-  z-index: 55;
+}
+
+.ppc-step-three {
+  animation-delay: 2.05s !important;
+  text-align: right;
+}
+
+.ppc-step-two:before {
+  left: 43px !important;
+}
+
+.ppc-step-three:before {
+  left: auto !important;
+  right: 8px;
+}
+
+.ppc-step-three em {
+  margin-right: 15px;
+}
+
+.ppc-auction-steps > span:after {
+  content: "";
+  position: absolute;
+  left: 11px;
+  top: 11px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--cyan);
+  opacity: 0;
+}
+
+.ppc-step-two:after {
+  left: 46px !important;
+}
+
+.ppc-step-three:after {
+  left: auto !important;
+  right: 11px;
 }
 
 @keyframes ppc-step-on {
   to {
     opacity: 1;
     color: white;
+  }
+}
+
+.ppc-step-one:after {
+  animation: ppc-node-dot .2s ease 1.2s forwards;
+}
+
+.ppc-step-two:after {
+  animation: ppc-node-dot .2s ease 1.65s forwards;
+}
+
+.ppc-step-three:after {
+  animation: ppc-node-dot .2s ease 2.05s forwards;
+}
+
+@keyframes ppc-node-dot {
+  to {
+    opacity: 1;
+    box-shadow: 0 0 9px var(--cyan);
   }
 }
 
@@ -1222,6 +1208,7 @@
     opacity: 1;
   }
 
+  .ppc-auction-steps > span:after,
   .ppc-option-b > em {
     opacity: 1;
   }
@@ -1371,7 +1358,18 @@
     0 0 18px rgba(67, 223, 207, .6) !important;
 }
 
+.ppc-auction-steps > span,
+.auction-steps > span {
+  color: #dbe5ff !important;
+}
 
+.ppc-auction-steps > span:after,
+.auction-steps > span:after {
+  background: #43dfcf !important;
+  box-shadow:
+    0 0 8px #43dfcf,
+    0 0 15px rgba(67, 223, 207, .65) !important;
+}
 
 /* Creative cards */
 .ppc-creative-option,
@@ -1515,5 +1513,94 @@
     0 30px 90px rgba(0, 0, 0, .4),
     0 0 35px rgba(77, 163, 255, .07),
     inset 0 1px rgba(255, 255, 255, .06) !important;
+}
+
+/* Stronger grid */
+.ppc-console:before,
+.decision-console:before {
+  background-image:
+    linear-gradient(
+      rgba(89, 168, 255, .08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(89, 168, 255, .08) 1px,
+      transparent 1px
+    ) !important;
+}
+
+/* Keep animation from making the completed console look washed out */
+.ppc-console .ppc-platform,
+.ppc-console .ppc-creative-option,
+.ppc-console .ppc-verification-strip article,
+.decision-console .platform,
+.decision-console .creative-option,
+.decision-console .verification-strip article {
+  filter: saturate(1.18) !important;
+}
+
+
+/* =========================================================
+   PPC AUCTION PULSE — FIX DISTORTION
+   Keep the moving signal perfectly circular.
+   ========================================================= */
+
+.ppc-auction-pulse,
+.auction-pulse {
+  width: 10px !important;
+  height: 10px !important;
+  min-width: 10px !important;
+  min-height: 10px !important;
+  max-width: 10px !important;
+  max-height: 10px !important;
+
+  aspect-ratio: 1 / 1 !important;
+  box-sizing: border-box !important;
+
+  border-radius: 50% !important;
+  transform: translateZ(0) !important;
+
+  flex: 0 0 10px !important;
+
+  border: 2px solid #43dfcf !important;
+  background: #081027 !important;
+
+  box-shadow:
+    0 0 7px rgba(67, 223, 207, .9),
+    0 0 15px rgba(67, 223, 207, .45) !important;
+
+  will-change: left !important;
+}
+
+/* Don't scale the pulse during the animation */
+@keyframes ppcAuctionPulseFixed {
+  0% {
+    left: 0;
+    opacity: 1;
+  }
+
+  100% {
+    left: calc(100% - 10px);
+    opacity: 1;
+  }
+}
+
+.ppc-auction-pulse,
+.auction-pulse {
+  animation-name: ppcAuctionPulseFixed !important;
+  animation-timing-function: linear !important;
+  animation-fill-mode: forwards !important;
+}
+
+/* Prevent the auction container from distorting the dot */
+.ppc-auction-track,
+.auction-track {
+  overflow: visible !important;
+}
+
+.ppc-auction-lane,
+.auction-lane {
+  overflow: visible !important;
 }
 

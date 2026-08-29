@@ -673,141 +673,127 @@
   }
 }
 
-/* =========================================================
-   PPC AUCTION CHECKPOINTS & LABELS
-   ========================================================= */
-
 .ppc-auction-steps {
   position: absolute;
-  left: 18px;
-  right: 18px;
-  top: 13px;
-  height: 2px;
-  pointer-events: none;
-  z-index: 50;
-  margin: 0;
-  padding: 0;
-  display: block;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 .ppc-auction-steps > span {
-  position: absolute;
-  top: 50%;
-  width: 0;
-  height: 0;
-  margin: 0;
-  padding: 0;
-  display: block;
-  overflow: visible;
-  pointer-events: none;
+  width: 98px;
+  position: relative;
+  padding-top: 23px;
   opacity: .35;
   animation: ppc-step-on .35s ease forwards;
 }
 
-/* Match = 0% */
-.ppc-step-one,
-.ppc-auction-steps > span:first-child {
-  left: 0%;
-  animation-delay: 1.2s !important;
-}
-
-/* Bid = 50% */
-.ppc-step-two,
-.ppc-auction-steps > span.ppc-step-two {
-  left: 50%;
-  animation-delay: 1.65s !important;
-}
-
-/* Serve = 100% */
-.ppc-step-three,
-.ppc-auction-steps > span.ppc-step-three {
-  left: 100%;
-  animation-delay: 2.05s !important;
-}
-
-/* Checkpoint Circle - Centered ON TOP OF the auction line */
 .ppc-auction-steps > span:before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 10px;
-  height: 10px;
-  box-sizing: border-box;
+  left: 8px;
+  top: 8px;
+  width: 11px;
+  height: 11px;
+  border: 2px solid #3b496b;
   border-radius: 50%;
-  background: #071126;
-  border: 2px solid #4da3ff;
-  box-shadow:
-    0 0 0 2px rgba(77, 163, 255, .15),
-    0 0 10px rgba(77, 163, 255, .75);
-  transform: translate(-50%, -50%);
-  z-index: 60;
+  background: #091128;
 }
 
-.ppc-step-two:before,
-.ppc-auction-steps > span.ppc-step-two:before {
-  border-color: #a855f7 !important;
-  box-shadow:
-    0 0 0 2px rgba(168, 85, 247, .15),
-    0 0 10px rgba(168, 85, 247, .75) !important;
-}
-
-.ppc-step-three:before,
-.ppc-auction-steps > span.ppc-step-three:before {
-  border-color: #ec4bd8 !important;
-  box-shadow:
-    0 0 0 2px rgba(236, 75, 216, .15),
-    0 0 10px rgba(236, 75, 216, .75) !important;
-}
-
-.ppc-auction-steps > span:after {
-  display: none !important;
-  content: none !important;
+.ppc-auction-steps i,
+.ppc-auction-steps strong,
+.ppc-auction-steps em {
+  font-style: normal;
 }
 
 .ppc-auction-steps i {
-  display: none !important;
+  margin-right: 5px;
+  color: #5f6d8b;
+  font-size: 6px;
 }
 
 .ppc-auction-steps strong {
-  position: absolute;
-  top: 9px;
-  left: 0;
-  transform: translateX(-50%);
-  margin: 0;
-  padding: 0;
-  color: #f8fafc;
-  font-size: 10px;
-  line-height: 1.1;
-  font-weight: 700;
-  font-style: normal;
-  letter-spacing: .01em;
-  white-space: nowrap;
-  text-align: center;
-  z-index: 55;
+  font-size: 8px;
 }
 
 .ppc-auction-steps em {
-  position: absolute;
-  top: 23px;
-  left: 0;
-  transform: translateX(-50%);
-  margin: 0;
-  padding: 0;
-  color: #94a3b8;
-  font-size: 7.5px;
-  line-height: 1.1;
-  font-style: normal;
-  font-weight: 400;
-  white-space: nowrap;
+  display: block;
+  margin: 2px 0 0 17px;
+  color: #71809f;
+  font-size: 6px;
+}
+
+.ppc-step-one {
+  animation-delay: 1.2s !important;
+}
+
+.ppc-step-two {
+  animation-delay: 1.65s !important;
   text-align: center;
-  z-index: 55;
+}
+
+.ppc-step-three {
+  animation-delay: 2.05s !important;
+  text-align: right;
+}
+
+.ppc-step-two:before {
+  left: 43px !important;
+}
+
+.ppc-step-three:before {
+  left: auto !important;
+  right: 8px;
+}
+
+.ppc-step-three em {
+  margin-right: 15px;
+}
+
+.ppc-auction-steps > span:after {
+  content: "";
+  position: absolute;
+  left: 11px;
+  top: 11px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--cyan);
+  opacity: 0;
+}
+
+.ppc-step-two:after {
+  left: 46px !important;
+}
+
+.ppc-step-three:after {
+  left: auto !important;
+  right: 11px;
 }
 
 @keyframes ppc-step-on {
   to {
     opacity: 1;
     color: white;
+  }
+}
+
+.ppc-step-one:after {
+  animation: ppc-node-dot .2s ease 1.2s forwards;
+}
+
+.ppc-step-two:after {
+  animation: ppc-node-dot .2s ease 1.65s forwards;
+}
+
+.ppc-step-three:after {
+  animation: ppc-node-dot .2s ease 2.05s forwards;
+}
+
+@keyframes ppc-node-dot {
+  to {
+    opacity: 1;
+    box-shadow: 0 0 9px var(--cyan);
   }
 }
 
@@ -1222,6 +1208,7 @@
     opacity: 1;
   }
 
+  .ppc-auction-steps > span:after,
   .ppc-option-b > em {
     opacity: 1;
   }
@@ -1251,269 +1238,3 @@
     width: 92%;
   }
 }
-
-/* =========================================================
-   PPC CONSOLE — ASCENDIAPRIME COLOUR RESTORATION
-   Scoped only to the PPC decision console
-   ========================================================= */
-
-.ppc-console,
-.decision-console {
-  --ppc-blue: #4da3ff;
-  --ppc-purple: #8065ff;
-  --ppc-pink: #e84fd7;
-  --ppc-cyan: #43dfcf;
-}
-
-/* Stronger console atmosphere */
-.ppc-console .ppc-console-aura,
-.decision-console .console-aura {
-  background:
-    radial-gradient(
-      circle,
-      rgba(77, 163, 255, .28) 0%,
-      rgba(128, 101, 255, .22) 32%,
-      rgba(232, 79, 215, .16) 55%,
-      transparent 76%
-    ) !important;
-  filter: blur(4px) !important;
-}
-
-/* Platform pills */
-.ppc-platform,
-.platform {
-  color: #c8d8ff !important;
-  border-color: rgba(89, 168, 255, .38) !important;
-  background: rgba(15, 27, 60, .9) !important;
-  opacity: 1 !important;
-}
-
-.ppc-platform i,
-.platform i {
-  background: rgba(77, 163, 255, .2) !important;
-  color: #65b2ff !important;
-}
-
-.ppc-p-meta i,
-.p-meta i {
-  background: rgba(232, 79, 215, .2) !important;
-  color: #f05bdf !important;
-}
-
-.ppc-p-pmax i,
-.p-pmax i {
-  background: rgba(128, 101, 255, .22) !important;
-  color: #aa91ff !important;
-}
-
-/* LIVE OPTIMISATION */
-.ppc-platform-strip > b,
-.platform-strip > b {
-  color: #67e4d6 !important;
-  text-shadow: 0 0 10px rgba(67, 223, 207, .35);
-}
-
-/* Search / demand panel */
-.ppc-query-field,
-.query-field {
-  border-color: rgba(77, 163, 255, .42) !important;
-  background: rgba(8, 18, 43, .94) !important;
-  box-shadow:
-    inset 0 0 20px rgba(77, 163, 255, .06),
-    0 0 18px rgba(77, 163, 255, .05) !important;
-}
-
-.ppc-query-field strong,
-.query-field strong {
-  color: #f0f5ff !important;
-}
-
-.ppc-query-field > span,
-.query-field > span {
-  background: rgba(77, 163, 255, .2) !important;
-  color: #65b2ff !important;
-}
-
-.ppc-query-field > i,
-.query-field > i {
-  background: #43dfcf !important;
-  box-shadow:
-    0 0 8px #43dfcf,
-    0 0 18px rgba(67, 223, 207, .65) !important;
-}
-
-/* Auction line */
-.ppc-auction-track,
-.auction-track {
-  background: rgba(58, 78, 125, .7) !important;
-}
-
-.ppc-auction-fill,
-.auction-fill {
-  background:
-    linear-gradient(
-      90deg,
-      #4da3ff 0%,
-      #8065ff 48%,
-      #e84fd7 100%
-    ) !important;
-  box-shadow:
-    0 0 8px rgba(77, 163, 255, .65),
-    0 0 14px rgba(128, 101, 255, .5),
-    0 0 18px rgba(232, 79, 215, .35) !important;
-}
-
-.ppc-auction-pulse,
-.auction-pulse {
-  border-color: #43dfcf !important;
-  box-shadow:
-    0 0 8px #43dfcf,
-    0 0 18px rgba(67, 223, 207, .6) !important;
-}
-
-
-
-/* Creative cards */
-.ppc-creative-option,
-.creative-option {
-  border-color: rgba(115, 137, 200, .28) !important;
-  background: rgba(9, 18, 42, .9) !important;
-}
-
-.ppc-option-a > span,
-.option-a > span {
-  background: rgba(128, 101, 255, .2) !important;
-  color: #ad98ff !important;
-}
-
-.ppc-option-b,
-.option-b {
-  border-color: rgba(232, 79, 215, .42) !important;
-  box-shadow:
-    inset 0 0 18px rgba(232, 79, 215, .06),
-    0 0 18px rgba(232, 79, 215, .07) !important;
-}
-
-.ppc-option-b > span,
-.option-b > span {
-  background: rgba(232, 79, 215, .2) !important;
-  color: #f05bdf !important;
-}
-
-.ppc-option-b div > i,
-.option-b div > i {
-  background:
-    linear-gradient(
-      90deg,
-      #e84fd7,
-      #8065ff
-    ) !important;
-  box-shadow:
-    0 0 8px rgba(232, 79, 215, .5),
-    0 0 15px rgba(128, 101, 255, .3) !important;
-}
-
-.ppc-option-b > em,
-.option-b > em {
-  color: #43dfcf !important;
-  text-shadow: 0 0 8px rgba(67, 223, 207, .4);
-}
-
-/* Spend control */
-.ppc-spend-console,
-.spend-console {
-  background:
-    linear-gradient(
-      145deg,
-      rgba(13, 23, 52, .96),
-      rgba(7, 14, 34, .94)
-    ) !important;
-}
-
-.ppc-explore > div i,
-.explore > div i {
-  background: #4d6c9f !important;
-}
-
-.ppc-relevant > div i,
-.relevant > div i {
-  background:
-    linear-gradient(
-      90deg,
-      #8065ff,
-      #a275ff
-    ) !important;
-  box-shadow: 0 0 8px rgba(128, 101, 255, .45);
-}
-
-.ppc-proven > div i,
-.proven > div i {
-  background:
-    linear-gradient(
-      90deg,
-      #e84fd7,
-      #8065ff,
-      #43dfcf
-    ) !important;
-  box-shadow:
-    0 0 8px rgba(232, 79, 215, .45),
-    0 0 15px rgba(67, 223, 207, .3) !important;
-}
-
-/* Verification */
-.ppc-verification-strip,
-.verification-strip {
-  background: rgba(9, 18, 42, .94) !important;
-  border-color: rgba(89, 168, 255, .25) !important;
-}
-
-.ppc-verification-strip article,
-.verification-strip article {
-  opacity: 1 !important;
-}
-
-.ppc-verification-strip article > span,
-.verification-strip article > span {
-  border-color: rgba(67, 223, 207, .55) !important;
-  color: #43dfcf !important;
-  box-shadow:
-    0 0 8px rgba(67, 223, 207, .12) !important;
-}
-
-.ppc-verify-link,
-.verify-link {
-  background:
-    linear-gradient(
-      90deg,
-      #8065ff,
-      #43dfcf
-    ) !important;
-  box-shadow:
-    0 0 8px rgba(67, 223, 207, .35) !important;
-}
-
-/* Final proposition */
-.ppc-final-message,
-.final-message {
-  color: #ffffff !important;
-  text-shadow: 0 0 12px rgba(255, 255, 255, .08);
-}
-
-.ppc-final-message span,
-.final-message span {
-  color: #43dfcf !important;
-  text-shadow:
-    0 0 8px rgba(67, 223, 207, .65),
-    0 0 18px rgba(67, 223, 207, .3) !important;
-}
-
-/* Console border / depth */
-.ppc-console,
-.decision-console {
-  border-color: rgba(89, 168, 255, .34) !important;
-  box-shadow:
-    0 30px 90px rgba(0, 0, 0, .4),
-    0 0 35px rgba(77, 163, 255, .07),
-    inset 0 1px rgba(255, 255, 255, .06) !important;
-}
-

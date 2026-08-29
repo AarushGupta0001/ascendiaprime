@@ -113,117 +113,117 @@ export default function RetargetingJourney() {
             </filter>
             <marker
               id="arrowHead"
-              viewBox="0 0 10 10"
-              refX="8"
-              refY="5"
-              markerWidth="5"
-              markerHeight="5"
+              viewBox="0 0 8 8"
+              refX="6"
+              refY="4"
+              markerWidth="4"
+              markerHeight="4"
               orient="auto-start-reverse"
             >
-              <path d="M 0 0 L 10 5 L 0 10 z" fill="rgba(63, 139, 249, 0.4)" />
+              <path d="M 1 1.5 L 7 4 L 1 6.5 z" fill="rgba(63, 139, 249, 0.45)" />
             </marker>
             <marker
               id="activeArrow"
-              viewBox="0 0 10 10"
-              refX="8"
-              refY="5"
-              markerWidth="5"
-              markerHeight="5"
+              viewBox="0 0 8 8"
+              refX="6"
+              refY="4"
+              markerWidth="4"
+              markerHeight="4"
               orient="auto-start-reverse"
             >
-              <path d="M 0 0 L 10 5 L 0 10 z" fill="#3F8BF9" />
+              <path d="M 1 1.5 L 7 4 L 1 6.5 z" fill="#3F8BF9" />
             </marker>
           </defs>
 
-          {/* Static base paths */}
+          {/* Static base paths (edge-to-edge between cards) */}
           <path
             className="connection-base"
-            d="M190 91 L224 91"
+            d="M194 91 L220 91"
             markerEnd="url(#arrowHead)"
           />
           <path
             className="connection-base"
-            d="M396 91 L430 91"
+            d="M400 91 L426 91"
             markerEnd="url(#arrowHead)"
           />
           <path
             className="connection-base"
-            d="M516 164 L516 216"
+            d="M516 168 L516 211"
             markerEnd="url(#arrowHead)"
           />
           <path
             className="connection-base"
-            d="M430 289 L396 289"
+            d="M426 289 L400 289"
             markerEnd="url(#arrowHead)"
           />
           <path
             className="connection-base"
-            d="M224 289 L190 289"
+            d="M220 289 L194 289"
             markerEnd="url(#arrowHead)"
           />
 
           {/* Active animated paths */}
           <path
             className={`connection-active ${phase >= 1 ? "complete" : ""}`}
-            d="M190 91 L224 91"
+            d="M194 91 L220 91"
             markerEnd="url(#activeArrow)"
           />
           <path
             className={`connection-active ${phase >= 2 ? "complete" : ""}`}
-            d="M396 91 L430 91"
+            d="M400 91 L426 91"
             markerEnd="url(#activeArrow)"
           />
           <path
             className={`connection-active ${phase >= 3 ? "complete" : ""}`}
-            d="M516 164 L516 216"
+            d="M516 168 L516 211"
             markerEnd="url(#activeArrow)"
           />
           <path
             className={`connection-active ${phase >= 4 ? "complete" : ""}`}
-            d="M430 289 L396 289"
+            d="M426 289 L400 289"
             markerEnd="url(#activeArrow)"
           />
           <path
             className={`connection-active ${phase >= 5 ? "complete" : ""}`}
-            d="M224 289 L190 289"
+            d="M220 289 L194 289"
             markerEnd="url(#activeArrow)"
           />
 
           {/* Traveling particle lights with PPC palette */}
           {phase === 1 && !reducedMotion && (
-            <circle key="p12" r="4" fill="#3F8BF9" filter="url(#journeyGlow)">
-              <animateMotion dur=".75s" fill="freeze" path="M190 91 L224 91" />
+            <circle key="p12" r="3.5" fill="#3F8BF9" filter="url(#journeyGlow)">
+              <animateMotion dur=".75s" fill="freeze" path="M194 91 L220 91" />
             </circle>
           )}
           {phase === 2 && !reducedMotion && (
-            <circle key="p23" r="4" fill="#7469F8" filter="url(#journeyGlow)">
-              <animateMotion dur=".75s" fill="freeze" path="M396 91 L430 91" />
+            <circle key="p23" r="3.5" fill="#7469F8" filter="url(#journeyGlow)">
+              <animateMotion dur=".75s" fill="freeze" path="M400 91 L426 91" />
             </circle>
           )}
           {phase === 3 && !reducedMotion && (
-            <circle key="p34" r="4" fill="#AB57F3" filter="url(#journeyGlow)">
+            <circle key="p34" r="3.5" fill="#AB57F3" filter="url(#journeyGlow)">
               <animateMotion
                 dur=".75s"
                 fill="freeze"
-                path="M516 164 L516 216"
+                path="M516 168 L516 211"
               />
             </circle>
           )}
           {phase === 4 && !reducedMotion && (
-            <circle key="p45" r="4" fill="#E057D8" filter="url(#journeyGlow)">
+            <circle key="p45" r="3.5" fill="#E057D8" filter="url(#journeyGlow)">
               <animateMotion
                 dur=".75s"
                 fill="freeze"
-                path="M430 289 L396 289"
+                path="M426 289 L400 289"
               />
             </circle>
           )}
           {phase === 5 && !reducedMotion && (
-            <circle key="p56" r="4" fill="#3F8BF9" filter="url(#journeyGlow)">
+            <circle key="p56" r="3.5" fill="#3F8BF9" filter="url(#journeyGlow)">
               <animateMotion
                 dur=".75s"
                 fill="freeze"
-                path="M224 289 L190 289"
+                path="M220 289 L194 289"
               />
             </circle>
           )}

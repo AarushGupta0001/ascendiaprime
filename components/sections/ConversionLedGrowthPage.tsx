@@ -621,28 +621,31 @@ export default function ConversionLedGrowthPage() {
                 </p>
               </div>
 
-              <div className="lg:col-span-7 clg-faq-list divide-y divide-slate-800/80 border-y border-slate-800/80">
+              <div className="lg:col-span-7 clg-faq-list space-y-4">
                 {faqs.map((item, index) => {
                   const isOpen = openFaq === index;
                   return (
-                    <div key={item.q} className="clg-faq-item py-6">
+                    <div
+                      key={item.q}
+                      className={`clg-faq-card ${isOpen ? "open" : ""}`}
+                    >
                       <button
                         type="button"
                         onClick={() => toggleFaq(index)}
-                        className="w-full flex items-center justify-between text-left gap-4 text-lg font-bold text-white hover:text-[#38BDF8] transition-colors"
+                        className="clg-faq-button"
                         aria-expanded={isOpen}
                       >
-                        <div className="flex items-center gap-4">
-                          <span className="text-xs font-mono font-bold text-[#7469F8]">0{index + 1}</span>
-                          <span>{item.q}</span>
+                        <div className="flex items-center gap-3.5 pr-2">
+                          <span className="clg-faq-number">0{index + 1}</span>
+                          <span className="font-bold text-white leading-snug">{item.q}</span>
                         </div>
-                        <span className={`w-7 h-7 rounded-lg border border-slate-700 bg-slate-800/80 flex items-center justify-center text-sm font-bold text-[#38BDF8] shrink-0 transition-transform ${isOpen ? "rotate-45" : ""}`}>
+                        <span className="clg-faq-icon" aria-hidden="true">
                           +
                         </span>
                       </button>
                       {isOpen && (
-                        <div className="pt-4 pl-8 sm:pl-10 pr-4 text-sm sm:text-base text-slate-300 leading-relaxed animate-fadeIn">
-                          <p className="m-0">{item.a}</p>
+                        <div className="clg-faq-answer animate-fadeIn">
+                          <p>{item.a}</p>
                         </div>
                       )}
                     </div>

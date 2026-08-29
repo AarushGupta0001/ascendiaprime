@@ -1,363 +1,703 @@
 "use client";
 
+import { useState } from "react";
 import "@/styles/conversion-led-growth.css";
 
-import ContactForm from "@/components/forms/ContactForm";
-
+import ConversionIntelligenceLoop from "@/components/conversion-led-growth/ConversionIntelligenceLoop";
 import LazyParticleCanvas from "@/components/effects/LazyParticleCanvas";
-
 import PageRevealEffects from "@/components/effects/PageRevealEffects";
-import FaqSection from "@/components/sections/FaqSection";
 
-import type { CSSProperties } from "react";
+const capabilities = [
+  {
+    number: "01",
+    title: "Landing-page alignment",
+    text: "Check whether the page continues the promise made by the advert, partner or campaign—and gives each audience a relevant reason to stay.",
+  },
+  {
+    number: "02",
+    title: "Journey and form friction",
+    text: "Find the unnecessary steps, unclear choices and reassurance gaps that make interested visitors hesitate or leave.",
+  },
+  {
+    number: "03",
+    title: "Tracking and event integrity",
+    text: "Confirm that the actions being reported are firing correctly, carrying the right values and representing a meaningful outcome.",
+  },
+  {
+    number: "04",
+    title: "Prioritised experimentation",
+    text: "Turn observations into a practical sequence of changes, with a clear hypothesis, success measure and reason for testing each one.",
+  },
+];
+
+const processSteps = [
+  {
+    number: "01",
+    title: "Define the outcome",
+    text: "Agree what a qualified action means for the campaign—not simply what is easiest to count.",
+  },
+  {
+    number: "02",
+    title: "Validate the signals",
+    text: "Review the tracking, events and available journey data before drawing conclusions.",
+  },
+  {
+    number: "03",
+    title: "Map the journey",
+    text: "Connect the campaign promise, landing experience, decision points and completion path.",
+  },
+  {
+    number: "04",
+    title: "Diagnose the friction",
+    text: "Separate message, confidence, usability and measurement issues instead of treating every drop-off alike.",
+  },
+  {
+    number: "05",
+    title: "Prioritise the change",
+    text: "Rank improvements by evidence, likely influence, effort and commercial relevance.",
+  },
+  {
+    number: "06",
+    title: "Measure and learn",
+    text: "Review the quality of the outcome and feed the evidence into the next campaign decision.",
+  },
+];
+
+const deliverables = [
+  "A focused review of the priority landing pages and conversion paths",
+  "An annotated journey map showing where intent is being weakened",
+  "Tracking and event issues that may be distorting performance",
+  "A prioritised improvement backlog with a reason behind every action",
+  "A practical measurement plan for evaluating both volume and quality",
+];
+
+const useCases = [
+  "Paid traffic is growing, but completed actions are not keeping pace.",
+  "Visitors reach the form, basket or enquiry stage and leave before finishing.",
+  "Campaign messaging performs well, but the landing experience feels disconnected.",
+  "Conversion reporting cannot be fully trusted across platforms or partners.",
+  "A new market, offer or audience requires a more relevant post-click journey.",
+  "The team has many optimisation ideas but no evidence-led order of priority.",
+];
+
+const sectors = [
+  "E-commerce & retail",
+  "Lead generation",
+  "Travel & hospitality",
+  "Subscription services",
+  "Education & lifestyle",
+  "Professional services",
+];
+
+const faqs = [
+  {
+    q: "What does conversion-led growth mean?",
+    a: "It means treating the post-click journey as part of campaign performance. We look at the connection between traffic source, landing experience, decision friction, tracking and outcome quality—then prioritise the changes most likely to improve the journey.",
+  },
+  {
+    q: "Is this the same as a general website redesign?",
+    a: "No. The work starts with a defined campaign or conversion path. A redesign may not be necessary; often the first opportunities are clearer message continuity, better reassurance, simpler actions or more reliable measurement.",
+  },
+  {
+    q: "Can AscendiaPrime work with our existing media or development partners?",
+    a: "Yes. The approach is designed to complement existing teams. We can provide the diagnosis, priorities and measurement logic, then work with the people responsible for media, content, analytics, design or development.",
+  },
+  {
+    q: "What information is needed to begin?",
+    a: "Usually the priority campaign, target audience, landing pages, desired actions and available performance or analytics information. We first confirm what can be assessed reliably and identify any measurement gaps.",
+  },
+  {
+    q: "Do you guarantee a conversion uplift?",
+    a: "No responsible optimisation programme should guarantee a fixed uplift before the journey and data have been reviewed. We provide clear hypotheses, controlled priorities and transparent measurement so decisions are based on evidence rather than assumptions.",
+  },
+];
+
+function ArrowIcon() {
+  return (
+    <svg viewBox="0 0 20 20" aria-hidden="true" className="w-4 h-4 shrink-0">
+      <path
+        d="M4 10h11M11 5l5 5-5 5"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function CheckIcon() {
+  return (
+    <svg viewBox="0 0 20 20" aria-hidden="true" className="w-4 h-4 shrink-0">
+      <path
+        d="m4 10 4 4 8-9"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
 
 export default function ConversionLedGrowthPage() {
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaq((prev) => (prev === index ? null : index));
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+
   return (
     <PageRevealEffects>
-      <div style={{ position: "fixed", top: "0", left: "0", width: "100vw", height: "100vh", backgroundColor: "#020617", zIndex: "-9999", pointerEvents: "none" }}></div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <div
+        style={{
+          position: "fixed",
+          top: "0",
+          left: "0",
+          width: "100vw",
+          height: "100vh",
+          backgroundColor: "#020617",
+          zIndex: "-9999",
+          pointerEvents: "none",
+        }}
+      />
 
-<div id="cro-master" className="page-master antialiased text-white bg-[#020617] font-sans selection:bg-[#3F8BF9] selection:text-white" style={{ width: "100%", position: "relative", overflowX: "hidden" }}>
-
-    
-
-    
-
-    
-
-    <LazyParticleCanvas id="warp-canvas" className="fixed top-0 left-0 w-screen h-screen z-0 pointer-events-none opacity-50" />
-
-    <div className="relative z-10 w-full text-slate-300" style={{ perspective: "2000px" }}>
-        
-        <section className="min-h-[90vh] flex flex-col justify-center pb-12 pt-24 px-6 lg:px-12 relative">
-            <div className="grid lg:grid-cols-12 gap-12 items-center max-w-[1400px] mx-auto w-full">
-                
-                <div className="lg:col-span-6 relative z-20">
-                    <h1 className="hero-animate text-5xl md:text-6xl lg:text-[4.5rem] font-black leading-[1.05] text-white tracking-tight mb-6" style={{ animationDelay: "0.1s" }}>
-                        Conversion-Led Growth for <br/>
-                        <span className="text-gradient-smm drop-shadow-[0_0_15px_rgba(63,139,249,0.3)]">Stronger Campaign Outcomes</span>
-                    </h1>
-                    <p className="hero-animate text-lg text-slate-200 max-w-lg mb-10 leading-relaxed" style={{ animationDelay: "0.3s" }}>
-                        Ascendia Prime helps advertisers improve the journey from click to conversion by aligning landing pages, messaging, tracking, and user experience with clear performance objectives.
-                    </p>
-                    <div className="hero-animate flex flex-col sm:flex-row gap-5 mb-16" style={{ animationDelay: "0.4s" }}>
-                        <button className="open-contact-modal w-full sm:w-auto text-white border border-[#AB57F3]/30 bg-gradient-to-r from-[#7469F8] via-[#AB57F3] to-[#E057D8] px-8 py-4 rounded-2xl font-bold text-lg shadow-[0_0_20px_rgba(171,87,243,0.4)] hover:shadow-[0_0_30px_rgba(171,87,243,0.6)] hover:-translate-y-0.5 transition-all" type="button">
-                            Start a Conversation
-                        </button>
-                    </div>
-                </div>
-
-                <div className="hero-animate lg:col-span-6 relative w-full h-[680px] lg:h-[740px] flex items-center justify-center" style={{ animationDelay: "0.5s" }}>
-                    <div className="neon-funnel-visual">
-                        <div className="funnel-orbit"></div>
-                        <div className="funnel-user" style={{ left: "18%", top: "18px", animationDelay: "0s" }}></div>
-                        <div className="funnel-user" style={{ left: "30%", top: "42px", animationDelay: "0.7s" }}></div>
-                        <div className="funnel-user" style={{ left: "43%", top: "8px", animationDelay: "1.3s" }}></div>
-                        <div className="funnel-user" style={{ left: "55%", top: "38px", animationDelay: "2s" }}></div>
-                        <div className="funnel-user" style={{ left: "68%", top: "16px", animationDelay: "2.6s" }}></div>
-                        <div className="funnel-user" style={{ left: "79%", top: "48px", animationDelay: "3.2s" }}></div>
-                        <div className="funnel-user" style={{ left: "37%", top: "72px", animationDelay: "3.8s" }}></div>
-                        <div className="funnel-user" style={{ left: "62%", top: "78px", animationDelay: "4.4s" }}></div>
-                        <div className="funnel-user" style={{ left: "24%", top: "88px", animationDelay: "1.8s" }}></div>
-                        <div className="funnel-user" style={{ left: "50%", top: "104px", animationDelay: "2.9s" }}></div>
-                        <div className="funnel-user" style={{ left: "72%", top: "96px", animationDelay: "4.9s" }}></div>
-                        <div className="funnel-user" style={{ left: "86%", top: "72px", animationDelay: "5.4s" }}></div>
-
-                        <div className="neon-stage stage-1" style={{ "--top": "96px", "--w": "90%", "--h": "138px", "--rgb": "63,139,249", "--delay": "0s", "--z": "5" } as CSSProperties}>
-                            <div className="stage-content">
-                                <div className="stage-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M17 20h5v-2a4 4 0 00-4-4h-1M9 20H4v-2a4 4 0 014-4h1m6-6a4 4 0 11-8 0 4 4 0 018 0zm6 2a3 3 0 11-6 0 3 3 0 016 0z"></path></svg></div>
-                                <div className="stage-label"><strong>1.</strong><span>Campaign Traffic</span></div>
-                            </div>
-                        </div>
-
-                        <div className="neon-stage stage-2" style={{ "--top": "260px", "--w": "70%", "--h": "116px", "--rgb": "63,139,249", "--delay": "0.45s", "--z": "4" } as CSSProperties}>
-                            <div className="stage-content">
-                                <div className="stage-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M4 5h16v14H4zM4 9h16M8 13h3m3 0h2m-8 3h8"></path></svg></div>
-                                <div className="stage-label"><strong>2.</strong><span>Landing<br/>Experience</span></div>
-                            </div>
-                        </div>
-
-                        <div className="neon-stage stage-3" style={{ "--top": "402px", "--w": "54%", "--h": "104px", "--rgb": "116,105,248", "--delay": "0.9s", "--z": "3" } as CSSProperties}>
-                            <div className="stage-content">
-                                <div className="stage-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zm-3-10l2 2 4-4"></path></svg></div>
-                                <div className="stage-label"><strong>3.</strong><span>User<br/>Confidence</span></div>
-                            </div>
-                        </div>
-
-                        <div className="neon-stage stage-4" style={{ "--top": "528px", "--w": "40%", "--h": "92px", "--rgb": "171,87,243", "--delay": "1.35s", "--z": "2" } as CSSProperties}>
-                            <div className="stage-content">
-                                <div className="stage-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M4 19V5m0 14h16M8 16l3-3 3 2 5-7"></path></svg></div>
-                                <div className="stage-label"><strong>4.</strong><span>Action<br/>Intent</span></div>
-                            </div>
-                        </div>
-
-                        <div className="neon-stage stage-5" style={{ "--top": "638px", "--w": "32%", "--h": "82px", "--rgb": "34,197,94", "--delay": "1.8s", "--z": "1" } as CSSProperties}>
-                            <div className="stage-content">
-                                <div className="stage-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M9 12l2 2 4-4m5-5l-2 7-6 6-4-4 6-6 6-3z"></path></svg></div>
-                                <div className="stage-label"><strong>5.</strong><span>Conversion</span></div>
-                            </div>
-                        </div>
-
-                        <div className="funnel-callout right" style={{ "--top": "154px", "--right": "-34px", "--rgb": "63,139,249", "--delay": "0.2s" } as CSSProperties}>
-                            <svg className="callout-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M12 8v4l3 3m6-3a9 9 0 11-6.22-8.56M21 3l-5 5m0 0h4m-4 0V4"></path></svg>
-                            Message<br/>Alignment
-                        </div>
-                        <div className="funnel-callout left" style={{ "--top": "306px", "--left": "-34px", "--rgb": "63,139,249", "--delay": "0.8s" } as CSSProperties}>
-                            <svg className="callout-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M15 15l-3 6-3-12 12 3-6 3zm0 0l5 5"></path></svg>
-                            CTA<br/>Clarity
-                        </div>
-                        <div className="funnel-callout right" style={{ "--top": "440px", "--right": "-20px", "--rgb": "116,105,248", "--delay": "1.4s" } as CSSProperties}>
-                            <svg className="callout-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zm-3-10l2 2 4-4"></path></svg>
-                            Trust<br/>Signals
-                        </div>
-                        <div className="funnel-callout left" style={{ "--top": "562px", "--left": "-10px", "--rgb": "171,87,243", "--delay": "2s" } as CSSProperties}>
-                            <svg className="callout-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M4 19V5m0 14h16M7 15l3-4 4 3 4-7"></path></svg>
-                            Funnel<br/>Friction
-                        </div>
-
-                        <div className="conversion-beam"></div>
-                        <div className="conversion-target"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section className="pb-20 px-6 lg:px-12 relative z-10">
-            <div className="max-w-[1200px] mx-auto grid md:grid-cols-3 gap-5 smm-reveal">
-                <div className="proof-card rounded-3xl p-6">
-                    <div className="text-[#3F8BF9] font-bold tracking-widest text-xs uppercase mb-3">Post-Click Alignment</div>
-                    <p className="text-slate-200 leading-relaxed">Connect campaign messaging, landing pages, CTAs, and user intent.</p>
-                </div>
-                <div className="proof-card rounded-3xl p-6">
-                    <div className="text-[#AB57F3] font-bold tracking-widest text-xs uppercase mb-3">Funnel Clarity</div>
-                    <p className="text-slate-200 leading-relaxed">Identify where users hesitate, drop off, or fail to complete the action.</p>
-                </div>
-                <div className="proof-card rounded-3xl p-6">
-                    <div className="text-[#E057D8] font-bold tracking-widest text-xs uppercase mb-3">Conversion Quality Focus</div>
-                    <p className="text-slate-200 leading-relaxed">Optimize toward actions that create real value, not just traffic volume.</p>
-                </div>
-            </div>
-        </section>
-
-        <section className="py-24 px-6 lg:px-12 relative z-10">
-            <div className="max-w-[1400px] mx-auto w-full">
-                <div className="grid lg:grid-cols-12 gap-12 items-start mb-20 smm-reveal">
-                    <div className="lg:col-span-5">
-                        <div className="text-[#3F8BF9] font-bold tracking-widest text-sm uppercase mb-4">Strategic Conversion Review</div>
-                        <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">Performance Does Not End at the <span className="text-gradient-smm">Click</span></h2>
-                    </div>
-                    <div className="lg:col-span-7 text-slate-200 text-lg leading-relaxed space-y-5">
-                        <p>A click creates the opportunity, but the post-click journey decides whether that opportunity becomes a lead, sale, sign-up, or enquiry.</p>
-                        <p>When messaging, page experience, trust signals, and tracking are not aligned, even quality traffic can lose momentum. Ascendia Prime helps advertisers review and improve the journey after the click, so campaigns can work harder with the traffic already being generated.</p>
-                    </div>
-                </div>
-
-                <div className="text-center mb-14 max-w-4xl mx-auto smm-reveal">
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Conversion Growth <span className="text-gradient-dark">Capabilities</span></h2>
-                    <p className="text-[#AB57F3] text-lg leading-relaxed">A focused approach to improving post-click journeys, reducing friction, and strengthening campaign outcomes.</p>
-                </div>
-
-                <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6 smm-reveal" style={{ transitionDelay: "0.2s" }}>
-                    <div className="capability-card rounded-3xl p-7">
-                        <div className="w-12 h-12 rounded-2xl bg-[#3F8BF9]/10 border border-[#3F8BF9]/30 flex items-center justify-center mb-6 text-[#3F8BF9]">
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>
-                        </div>
-                        <h3 className="text-2xl font-bold text-white mb-3">Landing Page Alignment</h3>
-                        <p className="text-slate-300 leading-relaxed">Match campaign messaging, offers, visuals, and CTAs with user intent.</p>
-                    </div>
-                    <div className="capability-card rounded-3xl p-7">
-                        <div className="w-12 h-12 rounded-2xl bg-[#7469F8]/10 border border-[#7469F8]/30 flex items-center justify-center mb-6 text-[#7469F8]">
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                        </div>
-                        <h3 className="text-2xl font-bold text-white mb-3">Funnel & Journey Review</h3>
-                        <p className="text-slate-300 leading-relaxed">Identify drop-off points across landing pages, forms, carts, and checkout flows.</p>
-                    </div>
-                    <div className="capability-card rounded-3xl p-7">
-                        <div className="w-12 h-12 rounded-2xl bg-[#AB57F3]/10 border border-[#AB57F3]/30 flex items-center justify-center mb-6 text-[#AB57F3]">
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
-                        </div>
-                        <h3 className="text-2xl font-bold text-white mb-3">CTA & Message Testing</h3>
-                        <p className="text-slate-300 leading-relaxed">Review headlines, value propositions, CTAs, and page sections for clearer action.</p>
-                    </div>
-                    <div className="capability-card rounded-3xl p-7">
-                        <div className="w-12 h-12 rounded-2xl bg-[#E057D8]/10 border border-[#E057D8]/30 flex items-center justify-center mb-6 text-[#E057D8]">
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                        </div>
-                        <h3 className="text-2xl font-bold text-white mb-3">Trust Signal Optimisation</h3>
-                        <p className="text-slate-300 leading-relaxed">Strengthen confidence with reviews, proof points, security cues, and reassurance messaging.</p>
-                    </div>
-                    <div className="capability-card rounded-3xl p-7">
-                        <div className="w-12 h-12 rounded-2xl bg-[#E057D8]/10 border border-[#E057D8]/30 flex items-center justify-center mb-6 text-[#E057D8]">
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                        </div>
-                        <h3 className="text-2xl font-bold text-white mb-3">Tracking Event Alignment</h3>
-                        <p className="text-slate-300 leading-relaxed">Ensure key actions and conversion events are properly connected for reporting visibility.</p>
-                    </div>
-                    <div className="capability-card rounded-3xl p-7">
-                        <div className="w-12 h-12 rounded-2xl bg-[#3F8BF9]/10 border border-[#3F8BF9]/30 flex items-center justify-center mb-6 text-[#3F8BF9]">
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-                        </div>
-                        <h3 className="text-2xl font-bold text-white mb-3">Conversion Quality Insights</h3>
-                        <p className="text-slate-300 leading-relaxed">Review user behaviour and campaign data to understand which actions create real value.</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section className="py-24 px-6 lg:px-12 relative">
-            <div className="max-w-[1200px] mx-auto w-full relative">
-                <div className="text-center mb-12 max-w-4xl mx-auto smm-reveal">
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Post-Click Signals <span className="text-gradient-dark">We Review</span></h2>
-                    <p className="text-[#7469F8] text-lg">Conversion improvement starts by understanding how users behave once they land on the page.</p>
-                </div>
-
-                <div className="flex flex-wrap justify-center gap-3 mb-24 smm-reveal" style={{ transitionDelay: "0.15s" }}>
-                    <span className="signal-chip rounded-full px-5 py-3 text-sm font-semibold">Landing Page Relevance</span>
-                    <span className="signal-chip rounded-full px-5 py-3 text-sm font-semibold">Bounce Behaviour</span>
-                    <span className="signal-chip rounded-full px-5 py-3 text-sm font-semibold">Scroll Depth</span>
-                    <span className="signal-chip rounded-full px-5 py-3 text-sm font-semibold">CTA Interaction</span>
-                    <span className="signal-chip rounded-full px-5 py-3 text-sm font-semibold">Form Starts</span>
-                    <span className="signal-chip rounded-full px-5 py-3 text-sm font-semibold">Form Abandonment</span>
-                    <span className="signal-chip rounded-full px-5 py-3 text-sm font-semibold">Cart Activity</span>
-                    <span className="signal-chip rounded-full px-5 py-3 text-sm font-semibold">Checkout Drop-Offs</span>
-                    <span className="signal-chip rounded-full px-5 py-3 text-sm font-semibold">Page Speed</span>
-                    <span className="signal-chip rounded-full px-5 py-3 text-sm font-semibold">Device Experience</span>
-                    <span className="signal-chip rounded-full px-5 py-3 text-sm font-semibold">Traffic Source Quality</span>
-                    <span className="signal-chip rounded-full px-5 py-3 text-sm font-semibold">Conversion Events</span>
-                </div>
-
-                <div className="text-center mb-24 max-w-4xl mx-auto smm-reveal">
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">How We Improve the <span className="text-gradient-dark">Conversion Journey</span></h2>
-                    <p className="text-[#7469F8] text-lg">A practical process to understand friction, improve clarity, and strengthen measurable outcomes.</p>
-                </div>
-
-                <div className="vertical-timeline smm-reveal">
-                    <div className="vertical-timeline-item">
-                        <div className="timeline-content left">
-                            <h3>Review Campaign Objective</h3>
-                            <p>Understand the campaign goal, traffic source, target audience, offer, and desired conversion action.</p>
-                        </div>
-                        <div className="timeline-number">01</div>
-                    </div>
-                    
-                    <div className="vertical-timeline-item">
-                        <div className="timeline-number">02</div>
-                        <div className="timeline-content right">
-                            <h3>Map the Post-Click Journey</h3>
-                            <p>Review how users move from ad click to landing page, form, product page, cart, checkout, or enquiry.</p>
-                        </div>
-                    </div>
-
-                    <div className="vertical-timeline-item">
-                        <div className="timeline-content left">
-                            <h3>Identify Friction Points</h3>
-                            <p>Find where users hesitate, exit, abandon forms, drop from carts, or fail to complete the action.</p>
-                        </div>
-                        <div className="timeline-number">03</div>
-                    </div>
-
-                    <div className="vertical-timeline-item">
-                        <div className="timeline-number">04</div>
-                        <div className="timeline-content right">
-                            <h3>Align Message and Experience</h3>
-                            <p>Improve page relevance, CTA clarity, offer visibility, trust signals, and user flow.</p>
-                        </div>
-                    </div>
-
-                    <div className="vertical-timeline-item">
-                        <div className="timeline-content left">
-                            <h3>Test and Validate Improvements</h3>
-                            <p>Review changes through campaign data, user behaviour, A/B testing, or performance insights.</p>
-                        </div>
-                        <div className="timeline-number">05</div>
-                    </div>
-
-                    <div className="vertical-timeline-item">
-                        <div className="timeline-number">06</div>
-                        <div className="timeline-content right">
-                            <h3>Optimize Toward Quality Outcomes</h3>
-                            <p>Refine the journey based on conversion quality, CPA, ROAS, lead quality, or sales value.</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section className="py-24 px-6 lg:px-12 relative z-10">
-            <div className="max-w-[1400px] mx-auto w-full">
-                <div className="trust-panel trust-section-panel smm-reveal">
-                    <div className="trust-copy">
-                        <div className="trust-eyebrow">Experience, Trust & Measurement</div>
-                        <h2>Built Around Clarity, Trust, and <span className="text-gradient-smm">Measurable Action</span></h2>
-                        <div className="trust-body">
-                            <p>Conversion-led growth is not only about changing page elements. It is about understanding how users experience the journey, where confidence is lost, and which improvements can create a measurable lift in campaign performance.</p>
-                            <p>Our platform connects campaign data, landing page experience, tracking events, and user behaviour insights to help advertisers make better post-click decisions.</p>
-                        </div>
-                    </div>
-                    <div className="trust-chip-grid">
-                        <div className="trust-chip">Landing page and offer alignment</div>
-                        <div className="trust-chip">Funnel friction review</div>
-                        <div className="trust-chip">CTA and message clarity</div>
-                        <div className="trust-chip">Trust and reassurance signals</div>
-                        <div className="trust-chip">Tracking and event validation</div>
-                        <div className="trust-chip">Lead and conversion quality review</div>
-                        <div className="trust-chip">Campaign performance insights</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <FaqSection
-          items={[
-            {
-              question: "What is conversion-led growth?",
-              answer:
-                "Conversion-led growth focuses on improving the journey after a user clicks, helping more visitors complete meaningful actions such as purchases, leads, sign-ups, enquiries, or other campaign goals.",
-            },
-            {
-              question: "How is this different from simply driving more traffic?",
-              answer:
-                "Driving traffic increases volume. Conversion-led growth improves the experience after users arrive, helping advertisers make better use of existing campaign traffic.",
-            },
-            {
-              question: "What areas do you review for conversion improvement?",
-              answer:
-                "We review landing pages, forms, product pages, carts, checkout flows, CTAs, messaging, trust signals, tracking events, and user behaviour across the post-click journey.",
-            },
-            {
-              question: "Can this support both e-commerce and lead generation campaigns?",
-              answer:
-                "Yes. It can support e-commerce sales, cart recovery, lead form completion, enquiry generation, sign-ups, subscriptions, and other measurable actions.",
-            },
-            {
-              question: "Do advertisers get visibility into conversion performance?",
-              answer:
-                "Yes. Advertisers can receive reporting visibility across traffic sources, user actions, conversion events, campaign movement, and optimisation insights based on the campaign setup.",
-            },
-            {
-              question: "Do you redesign the full website or only campaign pages?",
-              answer:
-                "This depends on the requirement. In many cases, we focus first on campaign landing pages, forms, product pages, checkout flows, or key conversion paths before recommending wider website improvements.",
-            },
-          ]}
+      <div
+        id="cro-master"
+        className="page-master antialiased text-white bg-[#020617] font-sans selection:bg-[#3F8BF9] selection:text-white"
+        style={{ width: "100%", position: "relative", overflowX: "hidden" }}
+      >
+        <LazyParticleCanvas
+          id="warp-canvas"
+          className="fixed top-0 left-0 w-screen h-screen z-0 pointer-events-none opacity-40"
         />
 
-    </div> 
+        <div className="relative z-10 w-full text-slate-300">
+          {/* =================================================================
+              1. HERO SECTION
+              ================================================================= */}
+          <section className="clg-hero-section relative min-h-[90vh] flex flex-col justify-center pb-16 pt-24 px-6 lg:px-12 overflow-hidden" id="top">
+            <div className="clg-hero-glow glow-one" aria-hidden="true" />
+            <div className="clg-hero-glow glow-two" aria-hidden="true" />
 
-    <div id="conversation-modal" className="conversation-modal hidden opacity-0" aria-hidden="true">
-        <div className="absolute inset-0 bg-[#020617]/80 backdrop-blur-md modal-close-overlay cursor-pointer"></div>
-        <div className="conversation-modal-panel popup-content modern-form-wrapper scale-95" role="dialog" aria-modal="true" aria-labelledby="conversation-modal-title" style={{ boxShadow: "0 0 40px rgba(171,87,243,0.25)" }}>
-            <button className="modal-close-btn js-close-conversation" type="button" aria-label="Close conversation form">&times;</button>
-            <h3 id="conversation-modal-title" className="text-3xl font-bold text-white mb-8 pr-10">Lets talk growth</h3>
-            <div className="contact-form-shell relative p-6 md:p-10 rounded-[1.75rem]">
-            <ContactForm variant="homepage" />
+            <div className="max-w-[1400px] mx-auto w-full grid lg:grid-cols-12 gap-12 lg:gap-14 items-center relative z-10">
+              <div className="lg:col-span-6 clg-hero-copy">
+                <div className="clg-eyebrow hero-animate" style={{ animationDelay: "0.1s" }}>
+                  <span />
+                  Post-click conversion &amp; journey optimisation
+                </div>
+
+                <h1 className="hero-animate text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] font-extrabold leading-[1.06] text-white tracking-tight mb-6" style={{ animationDelay: "0.2s" }}>
+                  Turn more of the traffic you already pay for into{" "}
+                  <span className="text-gradient-brand">qualified action.</span>
+                </h1>
+
+                <p className="hero-animate text-base sm:text-lg text-slate-300 max-w-xl mb-8 leading-relaxed font-normal" style={{ animationDelay: "0.3s" }}>
+                  AscendiaPrime identifies where campaign journeys lose intent—from message mismatch and weak reassurance to form friction and broken tracking—then helps teams prioritise, implement and measure the improvements that matter.
+                </p>
+
+                <div className="hero-animate flex flex-wrap gap-4 items-center mb-8" style={{ animationDelay: "0.4s" }}>
+                  <button
+                    className="open-contact-modal clg-btn-primary inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-bold text-base text-white bg-gradient-to-r from-[#7469F8] via-[#AB57F3] to-[#E057D8] border border-[#AB57F3]/30 shadow-[0_0_20px_rgba(171,87,243,0.4)] hover:shadow-[0_0_30px_rgba(171,87,243,0.6)] hover:-translate-y-0.5 transition-all cursor-pointer"
+                    type="button"
+                  >
+                    Request a Conversion Review
+                    <ArrowIcon />
+                  </button>
+
+                  <a
+                    href="#capabilities"
+                    className="clg-btn-secondary inline-flex items-center gap-2 px-7 py-4 rounded-2xl font-semibold text-base text-slate-200 border border-slate-700/80 bg-slate-900/60 hover:bg-slate-800 hover:text-white transition-all"
+                  >
+                    See What We Assess
+                  </a>
+                </div>
+
+                <ul className="hero-animate flex flex-wrap gap-4 sm:gap-6 text-xs sm:text-sm text-slate-300 font-medium" style={{ animationDelay: "0.5s" }}>
+                  <li className="flex items-center gap-2">
+                    <span className="clg-trust-icon"><CheckIcon /></span>
+                    Landing and funnel review
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="clg-trust-icon"><CheckIcon /></span>
+                    Tracking and event validation
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="clg-trust-icon"><CheckIcon /></span>
+                    Testable optimisation roadmap
+                  </li>
+                </ul>
+              </div>
+
+              <div className="lg:col-span-6 relative w-full flex flex-col items-center lg:items-end justify-center hero-animate" style={{ animationDelay: "0.55s" }}>
+                <ConversionIntelligenceLoop />
+                <p className="clg-disclaimer text-right text-xs text-slate-500 mt-2.5 w-full max-w-[735px]">
+                  Illustrative diagnostic logic. Campaign setup, available signals and outcomes vary by advertiser.
+                </p>
+              </div>
             </div>
-        </div>
-    </div>
+          </section>
 
-    
-</div>
+          {/* =================================================================
+              2. ASSURANCE RAIL / ENGAGEMENT PRINCIPLES
+              ================================================================= */}
+          <section className="clg-assurance-rail relative z-10" aria-label="Engagement principles">
+            <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-5">
+              <div className="clg-rail-grid">
+                <span className="rail-label">Every engagement is built around</span>
+                <div className="rail-item">
+                  <span className="rail-dot" />
+                  <b>Journey evidence</b>
+                </div>
+                <div className="rail-item">
+                  <span className="rail-dot" />
+                  <b>Verified tracking</b>
+                </div>
+                <div className="rail-item">
+                  <span className="rail-dot" />
+                  <b>Prioritised action</b>
+                </div>
+                <div className="rail-item">
+                  <span className="rail-dot" />
+                  <b>Commercial quality</b>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* =================================================================
+              3. STRATEGIC INTRODUCTION (THE POST-CLICK PERFORMANCE LAYER)
+              ================================================================= */}
+          <section className="clg-section clg-why-section py-24 px-6 lg:px-12 relative z-10" id="why">
+            <div className="max-w-[1240px] mx-auto w-full grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+              <div className="lg:col-span-5 clg-sticky-heading">
+                <div className="clg-eyebrow">
+                  <span />
+                  The post-click performance layer
+                </div>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.12] text-white tracking-tight">
+                  The click creates an opportunity. The journey decides what happens next.
+                </h2>
+              </div>
+
+              <div className="lg:col-span-7 space-y-6 text-slate-300 text-base sm:text-lg leading-relaxed">
+                <p className="text-xl sm:text-2xl font-semibold text-white leading-snug">
+                  A campaign can reach the right audience and still lose the outcome after the click.
+                </p>
+
+                <p>
+                  Sometimes the landing page makes a different promise. Sometimes the visitor cannot find enough reassurance to move forward. Sometimes the form asks for too much, too soon. And sometimes the action happens but the tracking does not record it correctly.
+                </p>
+
+                <p>
+                  Conversion-led growth brings those moments into the performance conversation. It helps marketing, affiliate and commercial teams understand where intent is weakening—and what deserves attention first.
+                </p>
+
+                <div className="clg-human-note mt-8 p-6 rounded-2xl border-l-4 border-[#AB57F3] bg-gradient-to-r from-[#AB57F3]/15 to-slate-900/60 backdrop-blur-md">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#E057D8] block mb-2">Our view</span>
+                  <strong className="text-base sm:text-lg text-white font-semibold leading-snug block">
+                    Improvement starts by diagnosing the reason for friction, not by changing everything at once.
+                  </strong>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* =================================================================
+              4. WHAT WE ASSESS (CAPABILITIES)
+              ================================================================= */}
+          <section className="clg-section py-24 px-6 lg:px-12 relative z-10 border-t border-slate-800/80 bg-slate-950/40" id="capabilities">
+            <div className="max-w-[1240px] mx-auto w-full">
+              <div className="grid lg:grid-cols-12 gap-8 items-end mb-14">
+                <div className="lg:col-span-8">
+                  <div className="clg-eyebrow">
+                    <span />
+                    What we assess
+                  </div>
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.12] text-white tracking-tight">
+                    Four connected areas behind stronger conversion journeys.
+                  </h2>
+                </div>
+                <div className="lg:col-span-4">
+                  <p className="text-base text-slate-400 leading-relaxed">
+                    We look beyond isolated page elements to understand how acquisition, experience and measurement work together.
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {capabilities.map((item) => (
+                  <article key={item.number} className="clg-capability-card group p-7 rounded-2xl border border-slate-800/90 bg-slate-900/70 backdrop-blur-md hover:border-[#7469F8]/60 hover:bg-slate-800/90 transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+                    <div>
+                      <span className="text-xs font-mono font-bold text-slate-500 block mb-6">{item.number}</span>
+                      <div className="clg-card-icon w-12 h-12 rounded-xl mb-6 flex items-center justify-center text-[#3F8BF9] border border-[#3F8BF9]/30 bg-[#3F8BF9]/10">
+                        <span className="w-2.5 h-2.5 rounded-full bg-[#3F8BF9] shadow-[0_0_8px_#3F8BF9]" />
+                      </div>
+                      <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#38BDF8] transition-colors">{item.title}</h3>
+                      <p className="text-sm text-slate-400 leading-relaxed">{item.text}</p>
+                    </div>
+                    <div className="clg-card-accent-line" />
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* =================================================================
+              5. SIGNAL MAP (CAMPAIGN PROMISE TO QUALIFIED OUTCOME)
+              ================================================================= */}
+          <section className="clg-section clg-signals-section py-24 px-6 lg:px-12 relative z-10 overflow-hidden" id="signals">
+            <div className="max-w-[1240px] mx-auto w-full grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+              <div className="lg:col-span-5">
+                <div className="clg-eyebrow">
+                  <span />
+                  Read the journey as one system
+                </div>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.12] text-white tracking-tight mb-6">
+                  Connect the campaign promise to the quality of the outcome.
+                </h2>
+                <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-8">
+                  Individual metrics rarely explain the whole problem. We bring the important signals into one decision path so teams can see what is happening before, during and after the conversion.
+                </p>
+                <a
+                  href="#approach"
+                  className="inline-flex items-center gap-2 text-[#38BDF8] font-bold text-base hover:text-white transition-colors group"
+                >
+                  See how the review works
+                  <span className="group-hover:translate-x-1 transition-transform">
+                    <ArrowIcon />
+                  </span>
+                </a>
+              </div>
+
+              <div className="lg:col-span-7 relative">
+                <div className="clg-signal-map relative pl-10 sm:pl-12 py-3" aria-label="Campaign promise to qualified outcome">
+                  <div className="clg-signal-spine" aria-hidden="true">
+                    <i style={{ top: "0%" }} />
+                    <i style={{ top: "33%" }} />
+                    <i style={{ top: "66%" }} />
+                    <i style={{ top: "100%" }} />
+                  </div>
+
+                  <div className="space-y-4">
+                    <article className="clg-signal-card p-5 sm:p-6 rounded-xl border border-slate-800/90 bg-slate-900/80 backdrop-blur-md flex items-center gap-5">
+                      <span className="clg-signal-badge badge-1">01</span>
+                      <div>
+                        <small className="text-[10px] font-bold uppercase tracking-widest text-[#3F8BF9] block mb-1">Before the click</small>
+                        <h3 className="text-lg font-bold text-white mb-1">Campaign promise</h3>
+                        <p className="text-sm text-slate-400">Audience, source, offer and message.</p>
+                      </div>
+                    </article>
+
+                    <article className="clg-signal-card p-5 sm:p-6 rounded-xl border border-slate-800/90 bg-slate-900/80 backdrop-blur-md flex items-center gap-5">
+                      <span className="clg-signal-badge badge-2">02</span>
+                      <div>
+                        <small className="text-[10px] font-bold uppercase tracking-widest text-[#7469F8] block mb-1">After the click</small>
+                        <h3 className="text-lg font-bold text-white mb-1">Visitor behaviour</h3>
+                        <p className="text-sm text-slate-400">Attention, progression, hesitation and exit.</p>
+                      </div>
+                    </article>
+
+                    <article className="clg-signal-card p-5 sm:p-6 rounded-xl border border-slate-800/90 bg-slate-900/80 backdrop-blur-md flex items-center gap-5">
+                      <span className="clg-signal-badge badge-3">03</span>
+                      <div>
+                        <small className="text-[10px] font-bold uppercase tracking-widest text-[#AB57F3] block mb-1">At the decision</small>
+                        <h3 className="text-lg font-bold text-white mb-1">Conversion friction</h3>
+                        <p className="text-sm text-slate-400">Relevance, reassurance, usability and effort.</p>
+                      </div>
+                    </article>
+
+                    <article className="clg-signal-card p-5 sm:p-6 rounded-xl border border-slate-800/90 bg-slate-900/80 backdrop-blur-md flex items-center gap-5">
+                      <span className="clg-signal-badge badge-4">04</span>
+                      <div>
+                        <small className="text-[10px] font-bold uppercase tracking-widest text-[#10B981] block mb-1">After the action</small>
+                        <h3 className="text-lg font-bold text-white mb-1">Measured quality</h3>
+                        <p className="text-sm text-slate-400">Event accuracy and commercial relevance.</p>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* =================================================================
+              6. HOW ASCENDIAPRIME WORKS (APPROACH)
+              ================================================================= */}
+          <section className="clg-section py-24 px-6 lg:px-12 relative z-10 border-t border-slate-800/80 bg-slate-950/40" id="approach">
+            <div className="max-w-[1240px] mx-auto w-full">
+              <div className="grid lg:grid-cols-12 gap-8 items-end mb-14">
+                <div className="lg:col-span-8">
+                  <div className="clg-eyebrow">
+                    <span />
+                    How AscendiaPrime works
+                  </div>
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.12] text-white tracking-tight">
+                    A clear route from observation to action.
+                  </h2>
+                </div>
+                <div className="lg:col-span-4">
+                  <p className="text-base text-slate-400 leading-relaxed">
+                    The aim is not to produce a long list of opinions. It is to give your team a defensible order of priority.
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {processSteps.map((item) => (
+                  <article key={item.number} className="clg-process-card p-8 rounded-2xl border border-slate-800/90 bg-slate-900/70 backdrop-blur-md hover:border-[#7469F8]/60 hover:bg-slate-800/90 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                      <span className="clg-process-badge">{item.number}</span>
+                      <h3 className="text-xl font-bold text-white mt-4 mb-3">{item.title}</h3>
+                      <p className="text-sm text-slate-400 leading-relaxed">{item.text}</p>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* =================================================================
+              7. DELIVERABLES (WHAT YOUR TEAM RECEIVES)
+              ================================================================= */}
+          <section className="clg-section clg-deliverables-section py-24 px-6 lg:px-12 relative z-10" id="deliverables">
+            <div className="max-w-[1240px] mx-auto w-full grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+              <div className="lg:col-span-5">
+                <div className="clg-eyebrow">
+                  <span />
+                  A useful output—not a generic audit
+                </div>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.12] text-white tracking-tight mb-6">
+                  What your team receives.
+                </h2>
+                <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-8">
+                  The review is designed to support decisions across marketing, analytics, content, design and development. Every recommendation is connected to an observed issue and a measurable next step.
+                </p>
+
+                <div className="clg-deliverable-tag flex items-center gap-4 p-5 rounded-xl border border-[#10B981]/30 bg-[#10B981]/10 backdrop-blur-md">
+                  <span className="clg-tag-icon text-[#10B981]">
+                    <CheckIcon />
+                  </span>
+                  <span className="text-sm text-slate-300">
+                    Clear enough to act on.<br />
+                    <b className="text-white font-bold">Specific enough to brief.</b>
+                  </span>
+                </div>
+              </div>
+
+              <div className="lg:col-span-7">
+                <ol className="clg-deliverable-list space-y-4">
+                  {deliverables.map((item, index) => (
+                    <li key={item} className="p-5 sm:p-6 rounded-xl border border-slate-800/90 bg-slate-900/60 backdrop-blur-md flex items-center gap-5">
+                      <span className="text-xs font-mono font-bold text-[#3F8BF9]">0{index + 1}</span>
+                      <p className="text-base sm:text-lg text-slate-200 font-medium m-0">{item}</p>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </div>
+          </section>
+
+          {/* =================================================================
+              8. QUALITY & MEASUREMENT SAFEGUARDS
+              ================================================================= */}
+          <section className="clg-section py-24 px-6 lg:px-12 relative z-10 border-t border-slate-800/80 bg-slate-950/40" id="quality">
+            <div className="max-w-[1240px] mx-auto w-full grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+              <div className="lg:col-span-5">
+                <div className="clg-eyebrow">
+                  <span />
+                  Measurement with commercial context
+                </div>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.12] text-white tracking-tight mb-6">
+                  More conversions only matter when they are meaningful.
+                </h2>
+                <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+                  Volume alone can hide poor-quality leads, low-value orders, duplicate events or attribution problems. We therefore assess the measurement behind the outcome—not only the number shown in a dashboard.
+                </p>
+              </div>
+
+              <div className="lg:col-span-7 space-y-4">
+                <article className="clg-quality-card p-6 rounded-xl border border-slate-800/90 bg-slate-900/80 backdrop-blur-md flex items-start gap-5">
+                  <span className="clg-quality-icon text-[#10B981]"><CheckIcon /></span>
+                  <div>
+                    <h3 className="text-lg font-bold text-white mb-1.5">Event verified</h3>
+                    <p className="text-sm text-slate-400">The action fires where expected and carries the required information.</p>
+                  </div>
+                </article>
+
+                <article className="clg-quality-card p-6 rounded-xl border border-slate-800/90 bg-slate-900/80 backdrop-blur-md flex items-start gap-5">
+                  <span className="clg-quality-icon text-[#10B981]"><CheckIcon /></span>
+                  <div>
+                    <h3 className="text-lg font-bold text-white mb-1.5">Quality reviewed</h3>
+                    <p className="text-sm text-slate-400">The result reflects the lead, order or action the business actually values.</p>
+                  </div>
+                </article>
+
+                <article className="clg-quality-card p-6 rounded-xl border border-slate-800/90 bg-slate-900/80 backdrop-blur-md flex items-start gap-5">
+                  <span className="clg-quality-icon text-[#10B981]"><CheckIcon /></span>
+                  <div>
+                    <h3 className="text-lg font-bold text-white mb-1.5">Decision informed</h3>
+                    <p className="text-sm text-slate-400">The evidence is clear enough to guide the next campaign or journey change.</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          {/* =================================================================
+              9. WHEN THIS IS USEFUL (USE CASES & SECTORS)
+              ================================================================= */}
+          <section className="clg-section py-24 px-6 lg:px-12 relative z-10" id="fit">
+            <div className="max-w-[1240px] mx-auto w-full grid lg:grid-cols-12 gap-12 lg:gap-14 items-start">
+              <div className="lg:col-span-7">
+                <div className="clg-eyebrow">
+                  <span />
+                  When this is useful
+                </div>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.12] text-white tracking-tight mb-8">
+                  Built for moments where traffic and outcomes stop moving together.
+                </h2>
+
+                <ul className="grid sm:grid-cols-2 gap-4">
+                  {useCases.map((item) => (
+                    <li key={item} className="p-4 rounded-xl border border-slate-800/80 bg-slate-900/60 flex items-start gap-3 text-sm text-slate-300 leading-relaxed">
+                      <span className="text-[#AB57F3] mt-0.5"><ArrowIcon /></span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <aside className="lg:col-span-5 p-8 rounded-2xl border border-slate-800/90 bg-slate-900/80 backdrop-blur-md">
+                <small className="text-xs font-bold uppercase tracking-widest text-[#E057D8] block mb-2">Relevant across</small>
+                <h3 className="text-2xl font-bold text-white mb-6">Different journeys. The same need for clarity.</h3>
+
+                <div className="flex flex-wrap gap-2.5 mb-6">
+                  {sectors.map((item) => (
+                    <span key={item} className="clg-sector-badge">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+
+                <p className="text-sm text-slate-400 pt-5 border-t border-slate-800 leading-relaxed">
+                  Scope is shaped around the campaign, available data and action that matters to your business.
+                </p>
+              </aside>
+            </div>
+          </section>
+
+          {/* =================================================================
+              10. FREQUENTLY ASKED QUESTIONS
+              ================================================================= */}
+          <section className="clg-section clg-faq-section py-24 px-6 lg:px-12 relative z-10 border-t border-slate-800/80 bg-slate-950/50" id="faq">
+            <div className="max-w-[1240px] mx-auto w-full grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+              <div className="lg:col-span-5 clg-sticky-heading">
+                <div className="clg-eyebrow">
+                  <span />
+                  Frequently asked questions
+                </div>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.12] text-white tracking-tight mb-6">
+                  Useful answers before we begin.
+                </h2>
+                <p className="text-base sm:text-lg text-slate-400 leading-relaxed">
+                  Conversion work is most effective when the objective, evidence and responsibilities are clear from the outset.
+                </p>
+              </div>
+
+              <div className="lg:col-span-7 clg-faq-list divide-y divide-slate-800/80 border-y border-slate-800/80">
+                {faqs.map((item, index) => {
+                  const isOpen = openFaq === index;
+                  return (
+                    <div key={item.q} className="clg-faq-item py-6">
+                      <button
+                        type="button"
+                        onClick={() => toggleFaq(index)}
+                        className="w-full flex items-center justify-between text-left gap-4 text-lg font-bold text-white hover:text-[#38BDF8] transition-colors"
+                        aria-expanded={isOpen}
+                      >
+                        <div className="flex items-center gap-4">
+                          <span className="text-xs font-mono font-bold text-[#7469F8]">0{index + 1}</span>
+                          <span>{item.q}</span>
+                        </div>
+                        <span className={`w-7 h-7 rounded-lg border border-slate-700 bg-slate-800/80 flex items-center justify-center text-sm font-bold text-[#38BDF8] shrink-0 transition-transform ${isOpen ? "rotate-45" : ""}`}>
+                          +
+                        </span>
+                      </button>
+                      {isOpen && (
+                        <div className="pt-4 pl-8 sm:pl-10 pr-4 text-sm sm:text-base text-slate-300 leading-relaxed animate-fadeIn">
+                          <p className="m-0">{item.a}</p>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+
+          {/* =================================================================
+              11. FINAL CTA SECTION
+              ================================================================= */}
+          <section className="clg-final-cta-section relative py-28 px-6 lg:px-12 overflow-hidden text-center" id="contact">
+            <div className="cta-orbit orbit-one" aria-hidden="true" />
+            <div className="cta-orbit orbit-two" aria-hidden="true" />
+
+            <div className="max-w-[920px] mx-auto relative z-10">
+              <div className="clg-eyebrow justify-center mb-4">
+                <span />
+                Where intent becomes measurable growth
+                <span />
+              </div>
+
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-[1.08] tracking-tight mb-6">
+                Find out where valuable campaign intent is being lost.
+              </h2>
+
+              <p className="text-base sm:text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto mb-10">
+                Start with one priority campaign, landing page or conversion path. We will help you establish what can be assessed, where the evidence points and what the next useful action should be.
+              </p>
+
+              <div className="flex flex-wrap gap-4 items-center justify-center mb-8">
+                <button
+                  type="button"
+                  className="open-contact-modal inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-bold text-base text-white bg-gradient-to-r from-[#7469F8] via-[#AB57F3] to-[#E057D8] border border-[#AB57F3]/30 shadow-[0_0_20px_rgba(171,87,243,0.4)] hover:shadow-[0_0_30px_rgba(171,87,243,0.6)] hover:-translate-y-0.5 transition-all cursor-pointer"
+                >
+                  Request a Conversion Review
+                  <ArrowIcon />
+                </button>
+
+                <a
+                  href="#capabilities"
+                  className="inline-flex items-center gap-2 px-7 py-4 rounded-2xl font-semibold text-base text-slate-200 border border-slate-700 bg-slate-900/80 hover:bg-slate-800 hover:text-white transition-all"
+                >
+                  Review the scope
+                </a>
+              </div>
+
+              <small className="text-xs text-slate-400 block">
+                No fixed uplift promises. No generic checklist. A focused, evidence-led conversation.
+              </small>
+            </div>
+          </section>
+        </div>
+      </div>
     </PageRevealEffects>
   );
 }

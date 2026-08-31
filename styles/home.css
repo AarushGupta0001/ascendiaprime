@@ -475,19 +475,7 @@ select {
 
     /* Giant faint background text */
     .bg-watermark {
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        font-size: 18vw;
-        color: rgba(255, 255, 255, 0.02);
-        font-weight: 800;
-        line-height: 1;
-        pointer-events: none;
-        z-index: 0;
-        user-select: none;
-        letter-spacing: -0.02em;
+        display: none !important;
     }
 
     /* Main Flex Layout */

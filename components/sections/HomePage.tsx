@@ -33,10 +33,12 @@ export default function HomePage() {
 
                     <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative w-full pt-20 pb-12 md:pt-24 md:pb-16 z-10">
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center min-h-[calc(100vh-140px)]">
-                            <div id="hero-content-left" className="lg:col-span-5 relative z-30">
+                            <div id="hero-content-left" className="lg:col-span-6 relative z-30">
 
-                                <h1 className="fade-in-up text-[2.5rem] md:text-5xl lg:text-[3.5rem] font-bold tracking-tight leading-[1.1] mb-6 text-white" style={{ animationDelay: "0.1s" }}>
-                                    Connecting Intent, <br />Media & Technology <br />to Power Growth
+                                <h1 className="fade-in-up text-[2.25rem] sm:text-5xl lg:text-[3.1rem] xl:text-[3.5rem] font-bold tracking-tight leading-[1.1] mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400" style={{ animationDelay: "0.1s" }}>
+                                    Connecting Intent, <br />
+                                    <span className="whitespace-nowrap">Media & Technology</span> <br />
+                                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#3F8BF9] to-[#AB57F3] whitespace-nowrap">to Power Growth</span>
                                 </h1>
                                 <p className="fade-in-up text-[1.1rem] text-slate-300 leading-relaxed mb-10 font-light max-w-md" style={{ animationDelay: "0.2s" }}>
                                     We bring together data, media, technology, and customer experience to create a performance-led growth ecosystem designed for scale, clarity, and measurable outcomes.
@@ -54,7 +56,7 @@ export default function HomePage() {
                                 </div>
                             </div>
 
-                            <div id="hero-visuals-right" className="lg:col-span-7 relative w-full flex justify-center items-center fade-in-up hover-target" style={{ animationDelay: "0.4s", willChange: "transform, opacity, filter", transition: "all 0ms ease-linear" }}>
+                            <div id="hero-visuals-right" className="lg:col-span-6 relative w-full flex justify-center items-center fade-in-up hover-target" style={{ animationDelay: "0.4s", willChange: "transform, opacity, filter", transition: "all 0ms ease-linear" }}>
                                 <div className="hero-animation-model relative w-full flex justify-center items-center">
                                     <svg viewBox="0 0 1200 1200" className="absolute inset-0 w-full h-full overflow-visible pointer-events-none z-10">
                                         <defs>
@@ -222,7 +224,7 @@ export default function HomePage() {
                             <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg width=\\'60\\' height=\\'60\\' viewBox=\\'0 0 60 60\\' xmlns=\\'http://www.w3.org/2000/svg\\'%3E%3Cg fill=\\'none\\' fill-rule=\\'evenodd\\'%3E%3Cg fill=\\'%23ffffff\\' fill-opacity=\\'1\\'%3E%3Cpath d=\\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')" }}></div>
 
                             <div className="relative z-10 max-w-2xl text-left">
-                                <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400 mb-6 tracking-tight leading-tight">
+                                <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400 mb-3 tracking-tight leading-tight">
                                     Scale Customer Acquisition <br className="hidden md:block" />
                                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#3F8BF9] to-[#AB57F3]">With Clarity and Control.</span>
                                 </h2>
@@ -245,12 +247,10 @@ export default function HomePage() {
 
                 <div id="split-services-wrapper" className="scroll-mt-20 md:scroll-mt-24">
 
-                    <div className="bg-watermark">SERVICES</div>
-
-                    <div className="w-full max-w-[1400px] mx-auto mb-12 md:mb-16 relative z-10 px-0 text-left">
-                        <h2 className="text-5xl md:text-7xl font-bold tracking-tight text-white drop-shadow-[0_0_30px_rgba(0,0,0,1)]">Our Growth
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3F8BF9] to-[#AB57F3]">Framework</span></h2>
-                        <p className="text-slate-400 mt-4 text-lg max-w-2xl">Three connected pillars that organise our capabilities across customer acquisition, brand visibility, and digital presence — helping brands grow across the full customer journey.
+                    <div className="w-full max-w-[1400px] mx-auto mb-10 md:mb-12 relative z-10 px-0 text-left">
+                        <h2 className="text-5xl md:text-7xl font-bold tracking-tight text-white drop-shadow-[0_0_30px_rgba(0,0,0,1)] leading-none m-0">Our Growth
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3F8BF9] to-[#AB57F3]"> Framework</span></h2>
+                        <p className="text-slate-400 mt-2 text-base md:text-lg max-w-2xl leading-relaxed">Three connected pillars that organise our capabilities across customer acquisition, brand visibility, and digital presence — helping brands grow across the full customer journey.
                         </p>
                     </div>
 
@@ -479,7 +479,7 @@ export default function HomePage() {
 
                         <div>
                             <div className="container mx-auto px-6 md:px-12 flex flex-col items-center text-center scale-in mb-8" style={{ animationDelay: "0.2s" }}>
-                                <h2 className="mb-3 text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white">Brands in Our Growth Ecosystem</h2>
+                                <h2 className="mb-1.5 text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white">Brands in Our Growth Ecosystem</h2>
                                 <p className="mb-2 max-w-3xl text-base leading-relaxed text-slate-300 md:text-lg">
                                     A selection of advertiser brands and campaign opportunities available through our direct and partner-led performance ecosystem.
                                 </p>
@@ -504,7 +504,7 @@ export default function HomePage() {
 
                         <div>
                             <div className="container mx-auto px-6 md:px-12 flex flex-col items-center text-center scale-in mb-8" style={{ animationDelay: "0.3s" }}>
-                                <h2 className="mb-3 text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white">Partner Network Ecosystem</h2>
+                                <h2 className="mb-1.5 text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white">Partner Network Ecosystem</h2>
                                 <p className="mb-2 max-w-3xl text-base leading-relaxed text-slate-300 md:text-lg">
                                     We work across leading affiliate, performance and technology platforms to access campaign opportunities, manage partnerships and support scalable growth.
                                 </p>
@@ -530,11 +530,11 @@ export default function HomePage() {
                 </section>
 
                 <section id="case-studies" className="relative py-20 md:py-24 w-full bg-[#050b21] z-10 overflow-hidden scroll-mt-20 md:scroll-mt-24">
-                    <div className="max-w-[1400px] mx-auto px-6 md:px-12 mb-12 md:mb-16 relative z-40 text-left">
-                        <h2 className="text-5xl md:text-7xl font-bold tracking-tight text-white drop-shadow-[0_0_30px_rgba(0,0,0,1)]">
+                    <div className="max-w-[1400px] mx-auto px-6 md:px-12 mb-10 md:mb-12 relative z-40 text-left">
+                        <h2 className="text-5xl md:text-7xl font-bold tracking-tight text-white drop-shadow-[0_0_30px_rgba(0,0,0,1)] leading-none m-0">
                             Case <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3F8BF9] to-[#AB57F3]">Studies</span>
                         </h2>
-                        <p className="text-slate-400 mt-4 text-lg max-w-2xl">Explore our high-impact growth campaigns across major global verticals.</p>
+                        <p className="text-slate-400 mt-2 text-base md:text-lg max-w-2xl leading-relaxed">Explore our high-impact growth campaigns across major global verticals.</p>
                     </div>
 
                     <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-20 scale-in">
@@ -637,7 +637,7 @@ export default function HomePage() {
 
                     <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
                         <div className="mb-12 md:mb-16 text-center max-w-3xl mx-auto">
-                            <h2 className="scale-in text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-tight" style={{ animationDelay: "0.1s" }}>
+                            <h2 className="scale-in text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-2.5 leading-tight" style={{ animationDelay: "0.1s" }}>
                                 Why Brands Choose <span className="text-[#3F8BF9]">Ascendia Prime</span>
                             </h2>
                             <p className="scale-in text-slate-300 text-lg leading-relaxed" style={{ animationDelay: "0.3s" }}>We don't just follow industry standards—we set them. Here's what makes us stand out from the crowd in driving actual, scalable growth.</p>
@@ -759,8 +759,8 @@ export default function HomePage() {
                         <div className="fade-in-up w-full max-w-[580px] z-20 mx-auto flex-shrink-0" style={{ animationDelay: "0.1s" }}>
                             <div id="contact-form-container" className="relative z-10 p-6 md:p-10 rounded-[1.75rem] w-full backdrop-blur-xl">
 
-                                <div className="mb-10 text-center flex flex-col items-center">
-                                    <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">Ready to Scale?</h2>
+                                <div className="mb-8 text-center flex flex-col items-center">
+                                    <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-2">Ready to Scale?</h2>
                                     <p className="text-slate-200 text-lg leading-relaxed max-w-md mx-auto">Let's discuss how our team can integrate performance, brand, and technology into your growth ecosystem.</p>
                                 </div>
 

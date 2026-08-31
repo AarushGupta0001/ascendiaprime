@@ -265,7 +265,7 @@ transform: translate(-50%, -50%); border-radius: 50%; pointer-events: none; z-in
     background: #ffffff;
     border-radius: 14px;
     border: 1px solid rgba(255, 255, 255, 0.6);
-    padding: 0 32px;
+    padding: 0 24px;
     height: 62px;
     box-shadow: 0 6px 22px rgba(0, 0, 0, 0.28);
     display: flex;
@@ -275,18 +275,35 @@ transform: translate(-50%, -50%); border-radius: 50%; pointer-events: none; z-in
     min-width: 160px;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.network-logo-tile.logo-icon { padding: 0 24px; min-width: 90px; }
+.network-logo-tile.logo-icon { 
+    padding: 0 16px; 
+    min-width: 76px; 
+    width: 76px;
+}
 .network-logo-img {
     filter: none !important;
     mix-blend-mode: normal !important;
-    height: 30px;
+    height: 34px;
     width: auto;
-    max-width: 130px;
+    max-width: 155px;
     object-fit: contain;
     display: block;
 }
+.network-logo-img[src*="partnerize"] {
+    height: 34px;
+    max-width: 165px;
+}
+.network-logo-img[src*="awin"] {
+    height: 40px;
+    max-width: 145px;
+}
+.network-logo-tile.logo-icon .network-logo-img {
+    height: 40px;
+    width: 40px;
+    max-width: 40px;
+}
 .network-logo-tile:hover {
-    transform: translateY(-4px) scale(1.03);
+    transform: translateY(-4px) scale(1.04);
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
 }
 

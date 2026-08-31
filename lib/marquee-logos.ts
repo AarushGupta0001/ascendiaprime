@@ -20,8 +20,8 @@ export const trustedBrands = [
 
 export const networkPartners = [
   { title: "FlexOffers", src: "/images/partners/flexoffers.svg" },
-  { title: "impact", src: "/images/partners/impact.svg" },
-  { title: "Partnerize", src: "/images/partners/partnerize.svg" },
+  { title: "impact", src: "/images/partners/impact.png" },
+  { title: "Partnerize", src: "/images/partners/partnerize.png" },
   { title: "Awin", src: "/images/partners/awin.svg" },
-  { title: "CJ.com", src: "/images/partners/cj.svg" },
+  { title: "CJ.com", src: "/images/partners/cj.png", icon: true },
 ] as const;

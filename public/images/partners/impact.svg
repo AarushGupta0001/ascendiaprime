@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 32" width="130" height="32">
-  <!-- impact colon icon on i -->
-  <circle cx="16" cy="9" r="2.8" fill="#e11d48" />
-  <circle cx="16" cy="16.5" r="2.8" fill="#e11d48" />
-  <rect x="13.6" y="21.5" width="4.8" height="8.5" rx="0.5" fill="#0f172a" />
-  <!-- text impact -->
-  <text x="26" y="30" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="700" fill="#0f172a" letter-spacing="-0.4">impact</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 135 34" width="135" height="34">
+  <!-- 3 signal dots -->
+  <circle cx="10" cy="7" r="4.2" fill="#E5233D"/>
+  <circle cx="10" cy="17" r="4.2" fill="#94A3B8"/>
+  <circle cx="10" cy="27" r="4.2" fill="#334155"/>
+  <!-- impact typography calibrated to match FlexOffers, Partnerize and AWIN font size -->
+  <text x="24" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="700" fill="#1E293B" letter-spacing="-0.3">impact</text>
 </svg>

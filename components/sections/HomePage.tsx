@@ -523,12 +523,12 @@ export default function HomePage() {
                                     We work across leading affiliate, performance and technology platforms to access campaign opportunities, manage partnerships and support scalable growth.
                                 </p>
                             </div>
-                            <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 relative scale-in z-10" style={{ animationDelay: "0.5s" }}>
-                                <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 md:gap-10 lg:gap-12 w-full">
+                            <div className="w-full max-w-[1200px] mx-auto px-6 md:px-12 relative scale-in z-10" style={{ animationDelay: "0.5s" }}>
+                                <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-7 w-full">
                                     {networkPartners.map((partner, index) => (
                                         <div
                                             key={`${partner.title}-${index}`}
-                                            className={`network-logo-tile${"icon" in partner && partner.icon ? " logo-icon" : ""}`}
+                                            className={`network-logo-tile shrink-0${"icon" in partner && partner.icon ? " logo-icon" : ""}`}
                                             title={partner.title}
                                         >
                                             <img decoding="async" src={partner.src} alt={`${partner.title} logo`} className="network-logo-img" />

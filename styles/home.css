@@ -57,6 +57,25 @@ will-change: transform;
   max-width: 780px;
   aspect-ratio: 1;
   margin: 0 auto;
+  transform: translateY(-20px);
+}
+
+@media (min-width: 1280px) {
+  .hero-animation-model {
+    transform: translateY(-24px);
+  }
+}
+
+@media (max-width: 1023px) {
+  .hero-animation-model {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-animation-model {
+    transform: translateY(0);
+  }
 }
 
 /* --- Advanced Sci-Fi Glass Metrics --- */
@@ -144,15 +163,13 @@ padding: 10px;
 #different .bento-performance .bento-content {
   height: 100%;
   min-height: 0;
-  overflow: hidden;
 }
 
 #different .bento-performance .bento-chart-area {
   flex: 0 0 auto;
-  height: 160px;
-  min-height: 160px;
-  max-height: 160px;
-  overflow: hidden;
+  height: 150px;
+  min-height: 150px;
+  overflow: visible;
 }
 
 /* Micro Animations */
@@ -436,13 +453,20 @@ select {
         background-color: #050b21; 
         color: #ffffff;
         font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        padding: 100px 20px;
+        padding: 5rem 1.5rem;
         width: 100%;
         position: relative;
         overflow: hidden;
         box-sizing: border-box;
         z-index: 10;
         min-height: 800px;
+        scroll-margin-top: 80px;
+    }
+
+    @media (min-width: 768px) {
+        #split-services-wrapper {
+            padding: 6rem 3rem;
+        }
     }
 
     #split-services-wrapper * {
@@ -468,7 +492,7 @@ select {
 
     /* Main Flex Layout */
     .split-services-container {
-        max-width: 1200px; 
+        max-width: 1400px; 
         margin: 0 auto;
         display: flex;
         flex-direction: column;
@@ -815,7 +839,7 @@ select {
     }
 
     #split-services-wrapper {
-        padding: 50px 16px !important;
+        padding: 3.5rem 1.5rem !important;
         min-height: auto !important;
     }
 

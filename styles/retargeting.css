@@ -313,7 +313,7 @@
 
 #retargeting-master .hero-visual {
   width: 100%;
-  max-width: 680px;
+  max-width: 760px;
   justify-self: end;
 }
 
@@ -364,41 +364,34 @@
 #retargeting-master .journey-panel {
   position: relative;
   width: 100%;
-  min-height: 520px;
-  overflow: hidden;
-  border: 1px solid rgba(63, 139, 249, 0.28);
-  border-radius: 28px;
-  background:
-    linear-gradient(rgba(63, 139, 249, .03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(63, 139, 249, .03) 1px, transparent 1px),
-    radial-gradient(circle at 50% 42%, rgba(116, 105, 248, .12), transparent 36%),
-    linear-gradient(145deg, rgba(15, 23, 42, 0.98), rgba(2, 6, 23, 0.98));
-  background-size: 28px 28px, 28px 28px, auto, auto;
-  box-shadow: 0 35px 90px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  min-height: 440px;
+  overflow: visible;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+@media (min-width: 1160px) {
+  #retargeting-master .journey-panel {
+    transform: scale(1.14);
+    transform-origin: center center;
+  }
+}
+
+@media (min-width: 1360px) {
+  #retargeting-master .journey-panel {
+    transform: scale(1.2);
+    transform-origin: center center;
+  }
 }
 
 #retargeting-master .journey-panel::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle, rgba(63, 139, 249, .15) 1px, transparent 1px);
-  background-size: 39px 39px;
-  mask-image: linear-gradient(to bottom, black, transparent 70%);
-  -webkit-mask-image: linear-gradient(to bottom, black, transparent 70%);
-  opacity: .45;
-  pointer-events: none;
+  display: none;
 }
 
 #retargeting-master .journey-topbar {
-  position: relative;
-  z-index: 5;
-  height: 54px;
-  padding: 0 18px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid rgba(63, 139, 249, 0.18);
-  background: rgba(2, 6, 23, 0.85);
+  display: none;
 }
 
 #retargeting-master .journey-topbar > div {

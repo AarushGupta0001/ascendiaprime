@@ -156,46 +156,46 @@
 #cro-master .loop-panel {
   position: relative;
   width: 100%;
-  max-width: 735px;
-  min-height: 608px;
-  overflow: hidden;
-  border: 1px solid var(--card-border);
-  border-radius: 24px;
-  background:
-    linear-gradient(rgba(63, 139, 249, .03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(63, 139, 249, .03) 1px, transparent 1px),
-    radial-gradient(circle at 49% 40%, rgba(116, 105, 248, .14), transparent 40%),
-    linear-gradient(145deg, rgba(15, 23, 42, 0.98), rgba(2, 6, 23, 0.99));
-  background-size: 28px 28px, 28px 28px, auto, auto;
-  box-shadow: 0 35px 90px rgba(0, 0, 0, .45), inset 0 1px 0 rgba(255, 255, 255, .04);
+  max-width: 780px;
+  min-height: 520px;
+  overflow: visible;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+@media (min-width: 1160px) {
+  #cro-master .loop-panel {
+    transform: scale(1.12);
+    transform-origin: center center;
+  }
+}
+
+@media (min-width: 1360px) {
+  #cro-master .loop-panel {
+    transform: scale(1.18);
+    transform-origin: center center;
+  }
 }
 
 #cro-master .loop-panel::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image: radial-gradient(circle, rgba(63, 139, 249, .15) 1px, transparent 1px);
-  background-size: 39px 39px;
-  mask-image: linear-gradient(to bottom, #000, transparent 70%);
-  -webkit-mask-image: linear-gradient(to bottom, #000, transparent 70%);
-  opacity: .35;
-}
-
-#cro-master .panel-head,
-#cro-master .panel-foot {
-  position: relative;
-  z-index: 12;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: rgba(2, 6, 23, 0.88);
+  display: none;
 }
 
 #cro-master .panel-head {
-  height: 52px;
-  padding: 0 16px;
-  border-bottom: 1px solid rgba(63, 139, 249, 0.18);
+  display: none;
+}
+
+#cro-master .panel-foot {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 61px;
+  padding: 0 18px;
+  border-top: none;
+  background: transparent;
 }
 
 #cro-master .panel-head > div:first-child {

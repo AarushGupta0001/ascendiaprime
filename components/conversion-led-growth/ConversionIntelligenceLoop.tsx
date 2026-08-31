@@ -68,7 +68,6 @@ function CheckIcon() {
 
 export default function ConversionIntelligenceLoop() {
   const [phase, setPhase] = useState(0);
-  const [paused, setPaused] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
 
   useEffect(() => {
@@ -80,19 +79,14 @@ export default function ConversionIntelligenceLoop() {
   }, []);
 
   useEffect(() => {
-    if (paused || reducedMotion) return;
+    if (reducedMotion) return;
     const timer = window.setInterval(() => {
       setPhase((current) => (current + 1) % phases.length);
     }, 1700);
     return () => window.clearInterval(timer);
-  }, [paused, reducedMotion]);
+  }, [reducedMotion]);
 
   const improved = phase >= 2;
-
-  const replay = () => {
-    setPhase(0);
-    setPaused(false);
-  };
 
   return (
     <div
@@ -106,32 +100,6 @@ export default function ConversionIntelligenceLoop() {
         qualified outcome is verified, and the evidence informs the next campaign
         decision.
       </p>
-
-      <div className="panel-head">
-        <div>
-          <span className="live-dot" aria-hidden="true" />
-          <b>Conversion intelligence loop</b>
-        </div>
-        <div className="panel-actions">
-          <span>Illustrative</span>
-          <button
-            type="button"
-            onClick={() => setPaused((value) => !value)}
-            aria-label={paused ? "Resume animation" : "Pause animation"}
-            title={paused ? "Resume" : "Pause"}
-          >
-            {paused ? "▶" : "Ⅱ"}
-          </button>
-          <button
-            type="button"
-            onClick={replay}
-            aria-label="Replay animation"
-            title="Replay"
-          >
-            ↻
-          </button>
-        </div>
-      </div>
 
       <div className="loop-stage">
         <div className="signal-row">

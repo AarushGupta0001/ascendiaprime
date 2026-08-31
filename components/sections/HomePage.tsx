@@ -504,9 +504,9 @@ export default function HomePage() {
 
                         <div>
                             <div className="container mx-auto px-6 md:px-12 flex flex-col items-center text-center scale-in mb-8" style={{ animationDelay: "0.3s" }}>
-                                <h2 className="mb-3 text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white">Partner Network Ecosystems</h2>
+                                <h2 className="mb-3 text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white">Partner Network Ecosystem</h2>
                                 <p className="mb-2 max-w-3xl text-base leading-relaxed text-slate-300 md:text-lg">
-                                    We work across leading affiliate, performance and technology platforms to access campaigns opportunities, manage partnerships and support scalable growth.
+                                    We work across leading affiliate, performance and technology platforms to access campaign opportunities, manage partnerships and support scalable growth.
                                 </p>
                             </div>
                             <div className="w-full relative scale-in hover-target z-10" style={{ animationDelay: "0.5s" }}>

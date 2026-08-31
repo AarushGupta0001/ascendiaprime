@@ -95,9 +95,8 @@ function Icon({ name }: { name: string }) {
 }
 
 function GrowthEngine() {
-  const [run, setRun] = useState(0);
   return <div className="engine-wrap">
-    <div key={run} className="growth-engine is-playing" aria-hidden="true">
+    <div className="growth-engine is-playing" aria-hidden="true">
       <span className="engine-label engine-label-left">Publisher signals</span><span className="engine-label engine-label-right">Advertiser outcomes</span>
       <svg className="network-lines" viewBox="0 0 800 690" preserveAspectRatio="none">
         <g className="source-lines">{["M175 145 C260 145,285 250,355 318","M175 255 C260 255,290 285,355 325","M175 365 C255 365,295 350,355 340","M175 475 C260 475,292 405,355 355","M175 585 C255 585,290 445,355 365"].map((d,i)=><g key={d}><path className="network-base" d={d}/><path className="network-flow source-flow" d={d} pathLength="100" style={{"--delay":`${1.7+i*.32}s`} as React.CSSProperties}/></g>)}</g>
@@ -109,7 +108,6 @@ function GrowthEngine() {
       <div className="outcome-column">{outcomes.map((item,index)=><div className="engine-node outcome-node" key={item.key} style={{"--delay":`${7+index*.24}s`} as React.CSSProperties}><span className="node-icon"><Icon name={item.icon}/></span><span><small>{item.label}</small><strong>{item.value}</strong></span></div>)}</div>
       <p className="engine-message">Trusted partners. Validated performance. <b>Scalable growth.</b></p>
     </div>
-    <button className="replay-button" type="button" aria-label="Replay growth animation" onClick={()=>setRun(value=>value+1)}>↻</button>
     <div className="mobile-engine" aria-label="Publisher signals are validated by AscendiaPrime and converted into measurable advertiser outcomes.">
       <div><strong>Publisher signals</strong><span>Trusted content, comparison, coupon, creator and email partners</span></div><b>↓</b><div><strong>AscendiaPrime validation</strong><span>Source approved · Tracking verified · Conversion validated</span></div><b>↓</b><div><strong>Measurable outcomes</strong><span>Qualified leads, verified sales and scalable customer growth</span></div>
     </div>

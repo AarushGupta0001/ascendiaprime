@@ -13,7 +13,6 @@ const steps = [
 
 export default function RetargetingJourney() {
   const [phase, setPhase] = useState(0);
-  const [paused, setPaused] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
 
   useEffect(() => {
@@ -29,7 +28,6 @@ export default function RetargetingJourney() {
       setPhase(5);
       return;
     }
-    if (paused) return;
     const timer = window.setTimeout(
       () => {
         setPhase((current) => (current === 5 ? 0 : current + 1));
@@ -37,13 +35,9 @@ export default function RetargetingJourney() {
       phase === 5 ? 1700 : 1050
     );
     return () => window.clearTimeout(timer);
-  }, [phase, paused, reducedMotion]);
+  }, [phase, reducedMotion]);
 
   const status = useMemo(() => steps[phase], [phase]);
-  const replay = () => {
-    setPhase(reducedMotion ? 5 : 0);
-    setPaused(false);
-  };
 
   return (
     <div
@@ -56,34 +50,6 @@ export default function RetargetingJourney() {
         interpreted, checked against campaign controls, matched with a relevant
         message and measured when the visitor returns.
       </p>
-
-      <div className="journey-topbar">
-        <div>
-          <span className="live-pulse" aria-hidden="true" />
-          <span className="topbar-label">Unified intent recovery journey</span>
-        </div>
-        <div className="journey-actions">
-          <span className="illustrative">Illustrative</span>
-          <button
-            type="button"
-            className="icon-button"
-            onClick={() => setPaused((value) => !value)}
-            aria-label={paused ? "Resume animation" : "Pause animation"}
-            title={paused ? "Resume" : "Pause"}
-          >
-            {paused ? "▶" : "Ⅱ"}
-          </button>
-          <button
-            type="button"
-            className="icon-button"
-            onClick={replay}
-            aria-label="Replay animation"
-            title="Replay"
-          >
-            ↻
-          </button>
-        </div>
-      </div>
 
       <div className="structured-stage">
         <svg

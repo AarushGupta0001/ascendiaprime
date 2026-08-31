@@ -45,37 +45,13 @@ export default function PpcDecisionConsole() {
 
   return (
     <div className="ppc-console-wrap">
-      <button
-        className="ppc-console-replay"
-        onClick={() => {
-          setVisible(false);
-          setRun((value) => value + 1);
-          requestAnimationFrame(() => setVisible(true));
-        }}
-        aria-label="Replay PPC decision animation"
-      >
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M20 11a8 8 0 1 1-2.4-5.7L20 7M20 3v4h-4" />
-        </svg>
-        <span>Replay</span>
-      </button>
-
       <section
         ref={consoleRef}
         key={run}
         className={`ppc-decision-console ${visible ? "is-visible" : ""}`}
-        aria-label="AscendiaPrime PPC live decision console"
+        aria-label="PPC live animation"
       >
         <div className="ppc-console-aura" aria-hidden="true" />
-        <div className="ppc-scan-line" aria-hidden="true" />
-
-        <div className="ppc-console-head">
-          <span>
-            <i />
-            PPC LIVE DECISION CONSOLE
-          </span>
-          <strong>CONTROL · TEST · SCALE</strong>
-        </div>
 
         <div className="ppc-platform-strip">
           <span className="ppc-platform ppc-google">

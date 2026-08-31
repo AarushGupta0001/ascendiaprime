@@ -320,28 +320,44 @@
 
 .ppc-decision-console {
   position: absolute;
-  left: 0;
-  bottom: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1.16);
+  transform-origin: center center;
   width: 620px;
-  height: 500px;
-  overflow: hidden;
-  border: 1px solid rgba(120,143,207,.26);
-  border-radius: 24px;
-  background: linear-gradient(180deg,rgba(9,17,41,.98),rgba(5,10,25,.99));
-  box-shadow: 0 30px 90px rgba(0,0,0,.34), inset 0 1px rgba(255,255,255,.03);
+  height: 480px;
+  overflow: visible;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
   isolation: isolate;
 }
 
+@media (min-width: 1360px) {
+  .ppc-console-wrap {
+    width: 760px;
+    height: 570px;
+  }
+
+  .ppc-decision-console {
+    transform: translate(-50%, -50%) scale(1.22);
+  }
+}
+
+@media (max-width: 1024px) {
+  .ppc-console-wrap {
+    width: 620px;
+    height: 480px;
+  }
+
+  .ppc-decision-console {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
 .ppc-decision-console:before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -3;
-  background-image:
-    linear-gradient(rgba(104,129,190,.055) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(104,129,190,.055) 1px,transparent 1px);
-  background-size: 28px 28px;
-  mask-image: linear-gradient(to bottom,black 40%,transparent);
+  display: none;
 }
 
 .ppc-console-aura {
@@ -400,7 +416,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(134,154,211,.13);
+  border-bottom: none;
   color: #74809f;
   font-size: 7px;
   letter-spacing: .14em;
@@ -437,7 +453,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  border-bottom: 1px solid rgba(133,154,211,.1);
+  border-bottom: none;
 }
 
 .ppc-platform {
@@ -529,7 +545,7 @@
 .ppc-demand-panel {
   left: 17px;
   right: 17px;
-  top: 94px;
+  top: 48px;
   height: 129px;
   padding: 8px 13px;
 }
@@ -813,7 +829,7 @@
 
 .ppc-creative-lab {
   left: 17px;
-  top: 235px;
+  top: 189px;
   width: 343px;
   height: 125px;
   padding: 8px 11px;
@@ -952,7 +968,7 @@
 
 .ppc-spend-console {
   right: 17px;
-  top: 235px;
+  top: 189px;
   width: 230px;
   height: 125px;
   padding: 8px 11px;
@@ -1044,7 +1060,7 @@
   position: absolute;
   left: 17px;
   right: 17px;
-  top: 372px;
+  top: 326px;
   height: 66px;
   padding: 10px 12px;
   display: grid;
@@ -1169,8 +1185,8 @@
   .ppc-decision-console {
     left: 50%;
     bottom: auto;
-    top: 37px;
-    transform: translateX(-50%) scale(.56);
+    top: 10px;
+    transform: translateX(-50%) scale(.62);
     transform-origin: top center;
   }
 }
@@ -1181,7 +1197,7 @@
   }
 
   .ppc-decision-console {
-    transform: translateX(-50%) scale(.5);
+    transform: translateX(-50%) scale(.53);
   }
 }
 

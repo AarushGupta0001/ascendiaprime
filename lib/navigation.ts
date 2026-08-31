@@ -101,11 +101,11 @@ export const footerCompanyLinks: NavItem[] = [
 ];
 
 export const footerLegalLinks: NavItem[] = [
-  { href: "/gdpr-data-protection", label: "GDPR & Data Protection Commitment" },
+  { href: "/gdpr-data-protection", label: "GDPR & Data Protection" },
   { href: "/privacy-cookies-policy", label: "Privacy & Cookies Policy" },
   { href: "/modern-slavery-statement", label: "Modern Slavery Statement" },
-  { href: "/legal-notice-website-terms", label: "Legal Notice website terms" },
-  { href: "/code-of-conduct", label: "Code of conduct" },
+  { href: "/legal-notice-website-terms", label: "Legal Notice & Website Terms" },
+  { href: "/code-of-conduct", label: "Code of Conduct" },
   { href: "/complaints-policy", label: "Complaints Policy" },
 ];
 

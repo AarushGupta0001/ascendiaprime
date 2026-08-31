@@ -11,7 +11,7 @@ export const trustedBrands = [
   { title: "Airalo", slug: "airalo", src: "/images/brands/airalo.svg" },
   { title: "Alipay", slug: "alipay", src: "/images/brands/alipay.png" },
   { title: "Wayfair", slug: "wayfair", src: "/images/brands/wayfair.svg" },
-  { title: "Charles & Keith", slug: "charles-keith", src: "/images/brands/charles-keith.svg" },
+  { title: "Charles & Keith", slug: "charles-keith", src: "/images/brands/charles-keith.png" },
   { title: "Dyson", slug: "dyson", src: "/images/brands/dyson.svg" },
   { title: "Etihad Airways", slug: "etihad-airways", src: "/images/brands/etihad-airways.svg" },
   { title: "HUGO BOSS", slug: "hugo-boss", src: "/images/brands/hugo-boss.svg" },

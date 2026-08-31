@@ -1,112 +1,93 @@
 "use client";
 
-import "@/styles/complaints-policy.css";
-
-import LazyParticleCanvas from "@/components/effects/LazyParticleCanvas";
-
-import PageRevealEffects from "@/components/effects/PageRevealEffects";
+import "@/styles/legal-document.css";
 
 export default function ComplaintsPolicyPage() {
   return (
-    <PageRevealEffects>
-      <div id="complaints_policy" className="page-master antialiased text-white bg-[#020617] font-sans selection:bg-[#3F8BF9] selection:text-white">
-    <LazyParticleCanvas id="nexus-canvas" className="fixed top-0 left-0 w-screen h-screen z-0 pointer-events-none opacity-50" />
-
-    <div className="relative z-10 w-full">
-        <header className="policy-hero fade-up-element">
-            <div className="ambient-glow"></div>
-            <h1 className="policy-main-title text-shimmer">Complaints Policy</h1>
-            <p className="policy-hero-meta">Last updated: 10 June 2026 · Ascendia Prime Media Ltd</p>
+    <div id="complaints_policy" className="legal-page-master">
+      <div className="legal-container">
+        <header className="legal-header">
+          <span className="legal-kicker">Dispute Resolution &amp; Governance</span>
+          <h1 className="legal-title">Complaints Policy &amp; Procedure</h1>
+          <div className="legal-meta">
+            <span className="legal-meta-badge">Last Updated: 10 June 2026</span>
+            <span>Ascendia Prime Media Ltd · Company No. 16296718</span>
+          </div>
         </header>
 
-        <main className="policy-document">
-            
-        <article id="section-3-1" className="policy-section fade-up-element">
-            <h2 className="policy-section-title text-shimmer">Purpose</h2>
-            <div className="policy-section-body">
-                <p className="policy-paragraph">Ascendia Prime is committed to professionalism, transparency and accountability. We take complaints seriously and aim to resolve concerns fairly, promptly and constructively.</p><p className="policy-paragraph">This Complaints Policy explains how advertisers, publishers, partners, suppliers, consumers or other affected parties may raise a concern.</p>
-            </div>
-        </article>
+        <main className="legal-document">
+          <section className="legal-section">
+            <h2 className="legal-section-title">1. Purpose &amp; Commitment</h2>
+            <p className="legal-paragraph">
+              Ascendia Prime Media Ltd is committed to delivering exceptional performance marketing solutions while upholding the highest standards of integrity, transparency, and client satisfaction.
+            </p>
+            <p className="legal-paragraph">
+              We recognize that concerns or disputes may occasionally arise. This policy outlines our transparent, formal process for submitting, investigating, and resolving complaints.
+            </p>
+          </section>
 
-        <article id="section-3-2" className="policy-section fade-up-element" style={{ transitionDelay: "0.04s" }}>
-            <h2 className="policy-section-title text-shimmer">What This Policy Covers</h2>
-            <div className="policy-section-body">
-                <p className="policy-paragraph">This policy covers complaints relating to:</p><ul className="policy-list"><li className="policy-list-item"><span className="policy-bullet">▹</span>Affiliate marketing activity.</li><li className="policy-list-item"><span className="policy-bullet">▹</span>Publisher conduct.</li><li className="policy-list-item"><span className="policy-bullet">▹</span>Advertiser or campaign management.</li><li className="policy-list-item"><span className="policy-bullet">▹</span>Tracking, attribution or commission disputes.</li><li className="policy-list-item"><span className="policy-bullet">▹</span>Retargeting, remarketing or advertising activity.</li><li className="policy-list-item"><span className="policy-bullet">▹</span>Misleading advertising or disclosure concerns.</li><li className="policy-list-item"><span className="policy-bullet">▹</span>Data protection or privacy concerns.</li><li className="policy-list-item"><span className="policy-bullet">▹</span>Cookie or consent concerns.</li><li className="policy-list-item"><span className="policy-bullet">▹</span>Brand safety concerns.</li><li className="policy-list-item"><span className="policy-bullet">▹</span>Fraud, invalid traffic or suspicious activity.</li><li className="policy-list-item"><span className="policy-bullet">▹</span>Service quality or communication issues.</li><li className="policy-list-item"><span className="policy-bullet">▹</span>Breach of Ascendia Prime policies or partner standards.</li></ul>
-            </div>
-        </article>
+          <section className="legal-section">
+            <h2 className="legal-section-title">2. Scope of Complaints Covered</h2>
+            <p className="legal-paragraph">
+              This procedure applies to concerns raised by clients, advertisers, publishers, consumers, and partners regarding:
+            </p>
+            <ul className="legal-list">
+              <li className="legal-list-item">Campaign attribution, tracking discrepancies, or commission validations.</li>
+              <li className="legal-list-item">Publisher promotional conduct, traffic quality, or brand safety compliance.</li>
+              <li className="legal-list-item">Data privacy, GDPR compliance, or cookie consent matters.</li>
+              <li className="legal-list-item">Commercial service delivery, communications, or contractual execution.</li>
+            </ul>
+          </section>
 
-        <article id="section-3-3" className="policy-section fade-up-element" style={{ transitionDelay: "0.08s" }}>
-            <h2 className="policy-section-title text-shimmer">How to Submit a Complaint</h2>
-            <div className="policy-section-body">
-                <div className="policy-card-grid"><div className="policy-highlight-card"><p className="policy-card-label">Complaints should be sent to</p><div className="policy-card-body"></div></div><div className="policy-highlight-card"><div className="policy-card-body">Email: <a href="mailto:contact@ascendiaprime.com" className="policy-link">contact@ascendiaprime.com</a>  Postal address: Ascendia Prime Media Ltd,<br />Unit 13e, First Floor Office,<br />27 Town Square,<br />Erith, Kent,<br />United Kingdom,<br />DA8 1SE.</div></div></div><p className="policy-paragraph">Please include:</p><ul className="policy-list"><li className="policy-list-item"><span className="policy-bullet">▹</span>Your name and contact details.</li><li className="policy-list-item"><span className="policy-bullet">▹</span>Company name, if applicable.</li><li className="policy-list-item"><span className="policy-bullet">▹</span>Details of the complaint.</li><li className="policy-list-item"><span className="policy-bullet">▹</span>Relevant dates.</li><li className="policy-list-item"><span className="policy-bullet">▹</span>Campaign, advertiser, publisher or transaction references, if available.</li><li className="policy-list-item"><span className="policy-bullet">▹</span>Screenshots, links, emails or supporting evidence.</li><li className="policy-list-item"><span className="policy-bullet">▹</span>The outcome you are seeking.</li></ul>
+          <section className="legal-section">
+            <h2 className="legal-section-title">3. How to Submit a Formal Complaint</h2>
+            <p className="legal-paragraph">
+              Complaints must be submitted in writing to our designated complaints handling desk to ensure full documentation and prompt assignment.
+            </p>
+            <div className="legal-card-grid">
+              <div className="legal-callout-card">
+                <div className="legal-card-label">Submission Details</div>
+                <div className="legal-card-body">
+                  Email: <a href="mailto:contact@ascendiaprime.com" className="legal-link">contact@ascendiaprime.com</a><br />
+                  Subject: Formal Complaint — [Company / Account Name]<br />
+                  Postal: Ascendia Prime Media Ltd, Unit 13e, First Floor Office, 27 Town Square, Erith, Kent, United Kingdom, DA8 1SE.
+                </div>
+              </div>
             </div>
-        </article>
+            <p className="legal-paragraph">
+              To assist our investigation, please provide:
+            </p>
+            <ul className="legal-list">
+              <li className="legal-list-item">Your full name, contact information, and organisation name.</li>
+              <li className="legal-list-item">Relevant campaign IDs, publisher links, transaction references, or dates.</li>
+              <li className="legal-list-item">A clear explanation of the issue with supporting screenshots or records.</li>
+              <li className="legal-list-item">The specific resolution or outcome sought.</li>
+            </ul>
+          </section>
 
-        <article id="section-3-4" className="policy-section fade-up-element" style={{ transitionDelay: "0.12s" }}>
-            <h2 className="policy-section-title text-shimmer">Acknowledgement</h2>
-            <div className="policy-section-body">
-                <p className="policy-paragraph">We aim to acknowledge complaints within 5 business days.</p><p className="policy-paragraph">If the complaint is urgent, relates to suspected fraud, unlawful advertising, data misuse or consumer harm, we may prioritise it for faster review.</p>
-            </div>
-        </article>
+          <section className="legal-section">
+            <h2 className="legal-section-title">4. Resolution Procedure &amp; Service Standards</h2>
+            <p className="legal-paragraph">
+              We adhere to the following procedural timelines:
+            </p>
+            <ul className="legal-list">
+              <li className="legal-list-item"><strong>Stage 1 — Formal Acknowledgement:</strong> Within 5 business days of receipt.</li>
+              <li className="legal-list-item"><strong>Stage 2 — Impartial Investigation:</strong> Review of system logs, traffic telemetry, and relevant contractual terms by an independent manager.</li>
+              <li className="legal-list-item"><strong>Stage 3 — Written Determination:</strong> A comprehensive written findings report provided within 20 business days.</li>
+            </ul>
+          </section>
 
-        <article id="section-3-5" className="policy-section fade-up-element" style={{ transitionDelay: "0.16s" }}>
-            <h2 className="policy-section-title text-shimmer">Investigation</h2>
-            <div className="policy-section-body">
-                <p className="policy-paragraph">We will review the complaint fairly and may:</p><ul className="policy-list"><li className="policy-list-item"><span className="policy-bullet">▹</span>Request further information.</li><li className="policy-list-item"><span className="policy-bullet">▹</span>Review tracking records, campaign data or communication history.</li><li className="policy-list-item"><span className="policy-bullet">▹</span>Contact relevant advertisers, publishers, platforms or suppliers.</li><li className="policy-list-item"><span className="policy-bullet">▹</span>Suspend activity while concerns are investigated.</li><li className="policy-list-item"><span className="policy-bullet">▹</span>Assess whether policies, agreements or laws may have been breached.</li><li className="policy-list-item"><span className="policy-bullet">▹</span>Take corrective action where appropriate.</li></ul>
-            </div>
-        </article>
-
-        <article id="section-3-6" className="policy-section fade-up-element" style={{ transitionDelay: "0.2s" }}>
-            <h2 className="policy-section-title text-shimmer">Response Times</h2>
-            <div className="policy-section-body">
-                <p className="policy-paragraph">We aim to provide a substantive response within 20 business days where possible.</p><p className="policy-paragraph">Complex matters, data protection issues, fraud investigations, cross-party disputes or technical investigations may take longer. If so, we will provide an update where appropriate.</p>
-            </div>
-        </article>
-
-        <article id="section-3-7" className="policy-section fade-up-element" style={{ transitionDelay: "0.24s" }}>
-            <h2 className="policy-section-title text-shimmer">Possible Outcomes</h2>
-            <div className="policy-section-body">
-                <p className="policy-paragraph">Depending on the circumstances, outcomes may include:</p><ul className="policy-list"><li className="policy-list-item"><span className="policy-bullet">▹</span>Explanation or clarification.</li><li className="policy-list-item"><span className="policy-bullet">▹</span>Correction of an error.</li><li className="policy-list-item"><span className="policy-bullet">▹</span>Removal or amendment of marketing content.</li><li className="policy-list-item"><span className="policy-bullet">▹</span>Tracking or reporting review.</li><li className="policy-list-item"><span className="policy-bullet">▹</span>Commission validation or reversal review.</li><li className="policy-list-item"><span className="policy-bullet">▹</span>Publisher warning, suspension or removal.</li><li className="policy-list-item"><span className="policy-bullet">▹</span>Advertiser or campaign adjustment.</li><li className="policy-list-item"><span className="policy-bullet">▹</span>Data protection response.</li><li className="policy-list-item"><span className="policy-bullet">▹</span>Process improvement.</li><li className="policy-list-item"><span className="policy-bullet">▹</span>No further action where the complaint is not upheld.</li></ul>
-            </div>
-        </article>
-
-        <article id="section-3-8" className="policy-section fade-up-element" style={{ transitionDelay: "0.28s" }}>
-            <h2 className="policy-section-title text-shimmer">Escalation</h2>
-            <div className="policy-section-body">
-                <p className="policy-paragraph">If you are not satisfied with our response, you may request escalation by replying to our decision and explaining why you disagree.</p><p className="policy-paragraph">Escalated complaints will be reviewed by a senior member of the team where appropriate.</p>
-            </div>
-        </article>
-
-        <article id="section-3-9" className="policy-section fade-up-element" style={{ transitionDelay: "0.32s" }}>
-            <h2 className="policy-section-title text-shimmer">Data Protection Complaints</h2>
-            <div className="policy-section-body">
-                <p className="policy-paragraph">If your complaint relates to personal data, privacy or cookies, you may also contact our privacy team at:</p><ul className="policy-list"><li className="policy-list-item"><span className="policy-bullet">▹</span><a href="mailto:privacy@ascendiaprime.com" className="policy-link">privacy@ascendiaprime.com</a></li><li className="policy-list-item"><span className="policy-bullet">▹</span>You may also have the right to complain to the UK Information Commissioner’s Office or another relevant authority.</li></ul>
-            </div>
-        </article>
-
-        <article id="section-3-10" className="policy-section fade-up-element" style={{ transitionDelay: "0.35s" }}>
-            <h2 className="policy-section-title text-shimmer">Advertising Complaints</h2>
-            <div className="policy-section-body">
-                <p className="policy-paragraph">If your complaint relates to advertising content, affiliate disclosure or marketing transparency, you may also have the right to contact the relevant advertising regulator.</p><p className="policy-paragraph">We encourage complainants to contact us first so we can investigate and resolve concerns directly where possible.</p>
-            </div>
-        </article>
-
-        <article id="section-3-11" className="policy-section fade-up-element" style={{ transitionDelay: "0.35s" }}>
-            <h2 className="policy-section-title text-shimmer">No Retaliation</h2>
-            <div className="policy-section-body">
-                <p className="policy-paragraph">Ascendia Prime does not tolerate retaliation against anyone who raises a genuine concern in good faith.</p>
-            </div>
-        </article>
-
-            <div className="policy-footer-note fade-up-element">
-                <p>Questions about this policy? Contact our team for clarification or to raise a concern.</p>
-                <a href="mailto:contact@ascendiaprime.com" className="policy-contact-btn">contact@ascendiaprime.com</a>
-            </div>
+          <section className="legal-section">
+            <h2 className="legal-section-title">5. Escalation &amp; Non-Retaliation</h2>
+            <p className="legal-paragraph">
+              If you remain dissatisfied with our determination, you may request an executive review by a director of Ascendia Prime Media Ltd.
+            </p>
+            <p className="legal-paragraph">
+              Ascendia Prime strictly prohibits any form of retaliation or commercial prejudice against any party raising a genuine complaint in good faith.
+            </p>
+          </section>
         </main>
+      </div>
     </div>
-
-    
-</div>
-    </PageRevealEffects>
   );
 }

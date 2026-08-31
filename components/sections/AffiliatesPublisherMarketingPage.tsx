@@ -166,7 +166,7 @@ export default function Home() {
         <div className="faq-list">{faqs.map(([question,answer],index)=><details key={question} open={index===0}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div>
       </section>
 
-      <section id="contact" className="contact-section"><div><p className="section-kicker">Start with campaign fit</p><h2>Tell us what you need the channel to achieve</h2><p>Share your target customer, markets, conversion event and commercial model. We will review the opportunity and tell you where AscendiaPrime—and our publisher base—can add value.</p></div><div className="contact-actions"><button type="button" className="button button-primary open-contact-modal">Discuss your campaign <span aria-hidden="true">→</span></button><small>Contact@ascendiaprime.com</small></div></section>
+      <section id="contact" className="contact-section"><div><p className="section-kicker">Start with campaign fit</p><h2>Tell us what you need the channel to achieve</h2><p>Share your target customer, markets, conversion event and commercial model. We will review the opportunity and tell you where AscendiaPrime—and our publisher base—can add value.</p></div><div className="contact-actions"><button type="button" className="button button-primary open-contact-modal">Discuss your campaign <span aria-hidden="true">→</span></button><small>contact@ascendiaprime.com</small></div></section>
     </main>
   </>;
 }

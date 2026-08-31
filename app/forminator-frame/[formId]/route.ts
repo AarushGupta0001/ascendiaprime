@@ -1,9 +1,13 @@
 import { NextResponse } from "next/server";
+import fs from "fs";
+import path from "path";
 
 import { parseForminatorHtml } from "@/lib/forminator-parser";
 import { FORMINATOR_FRAME_STYLES } from "@/lib/forminator-frame-styles";
 import { getForminatorParseId, getForminatorSourceUrl } from "@/lib/forminator";
 import { formSuccessMessage } from "@/lib/navigation";
+
+const frameDocCache = new Map<string, { doc: string; timestamp: number }>();
 
 type RouteContext = {
   params: Promise<{ formId: string }>;
@@ -341,12 +345,50 @@ export async function GET(_request: Request, context: RouteContext) {
     return new NextResponse("Invalid form id", { status: 400 });
   }
 
+  // 1. In-memory cache hit (< 1ms)
+  const cached = frameDocCache.get(formId);
+  if (cached && Date.now() - cached.timestamp < 3600000) {
+    return new NextResponse(cached.doc, {
+      headers: {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800",
+      },
+    });
+  }
+
+  // 2. Prebuilt local disk snapshot (< 2ms)
+  const diskCacheFile = path.join(process.cwd(), "lib", `forminator-cache-${formId}.html`);
+  if (fs.existsSync(diskCacheFile)) {
+    try {
+      const localHtml = fs.readFileSync(diskCacheFile, "utf-8");
+      const parseId = getForminatorParseId(formId);
+      const parsed = parseForminatorHtml(localHtml, parseId);
+      if (parsed) {
+        const doc = buildFrameDocument(formId, parsed);
+        frameDocCache.set(formId, { doc, timestamp: Date.now() });
+        return new NextResponse(doc, {
+          headers: {
+            "Content-Type": "text/html; charset=utf-8",
+            "Cache-Control": "public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800",
+          },
+        });
+      }
+    } catch (e) {
+      console.warn(`Failed reading local form cache for ${formId}:`, e);
+    }
+  }
+
+  // 3. Fallback: Network fetch with timeout
   try {
     const sourceUrl = getForminatorSourceUrl(formId);
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 4000);
+
     const response = await fetch(sourceUrl, {
       headers: { "User-Agent": "AscendiaPrime-NextJS/1.0" },
-      cache: "no-store",
-    });
+      signal: controller.signal,
+      next: { revalidate: 3600 },
+    }).finally(() => clearTimeout(timeout));
 
     if (!response.ok) {
       return new NextResponse("Unable to load form", { status: response.status });
@@ -360,10 +402,19 @@ export async function GET(_request: Request, context: RouteContext) {
       return new NextResponse("Form not found", { status: 404 });
     }
 
-    return new NextResponse(buildFrameDocument(formId, parsed), {
+    const doc = buildFrameDocument(formId, parsed);
+    frameDocCache.set(formId, { doc, timestamp: Date.now() });
+
+    try {
+      fs.writeFileSync(diskCacheFile, html, "utf-8");
+    } catch {
+      // ignore write error
+    }
+
+    return new NextResponse(doc, {
       headers: {
         "Content-Type": "text/html; charset=utf-8",
-        "Cache-Control": "no-store, no-cache, must-revalidate",
+        "Cache-Control": "public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800",
       },
     });
   } catch {

@@ -1,0 +1,194 @@
+/* ==========================================================================
+   Ascendia Prime — Corporate Legal Document Design System
+   Clean, authoritative, formal legal presentation for all compliance policies
+   ========================================================================== */
+
+.legal-page-master {
+    background-color: #030712;
+    min-height: 100vh;
+    color: #cbd5e1;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    padding-top: 6rem;
+    padding-bottom: 7rem;
+    position: relative;
+}
+
+.legal-container {
+    max-width: 880px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+/* Formal Header */
+.legal-header {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.legal-kicker {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #3F8BF9;
+    margin-bottom: 0.75rem;
+}
+
+.legal-title {
+    font-size: clamp(2.25rem, 5vw, 3rem);
+    font-weight: 800;
+    line-height: 1.18;
+    color: #ffffff;
+    letter-spacing: -0.025em;
+    margin-bottom: 1.25rem;
+}
+
+.legal-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+    color: #94a3b8;
+    line-height: 1.5;
+}
+
+.legal-meta-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #e2e8f0;
+}
+
+/* Document Body */
+.legal-document {
+    display: flex;
+    flex-direction: column;
+    gap: 2.75rem;
+}
+
+.legal-section {
+    position: relative;
+}
+
+.legal-section-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.015em;
+    margin-bottom: 1.15rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.legal-paragraph {
+    color: #cbd5e1;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1.15rem;
+}
+
+.legal-paragraph:last-child {
+    margin-bottom: 0;
+}
+
+/* Lists */
+.legal-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 1.15rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.legal-list-item {
+    position: relative;
+    padding-left: 1.5rem;
+    color: #cbd5e1;
+    font-size: 0.975rem;
+    line-height: 1.75;
+}
+
+.legal-list-item::before {
+    content: "";
+    position: absolute;
+    left: 0.35rem;
+    top: 0.65rem;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #3F8BF9;
+}
+
+/* Callout Cards & Information Grids */
+.legal-card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+@media (min-width: 640px) {
+    .legal-card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.legal-card-grid-2x2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+}
+
+@media (min-width: 640px) {
+    .legal-card-grid-2x2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.legal-callout-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+}
+
+.legal-card-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #94a3b8;
+    margin-bottom: 0.5rem;
+}
+
+.legal-card-body {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #e2e8f0;
+}
+
+.legal-link {
+    color: #3F8BF9;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease;
+}
+
+.legal-link:hover {
+    color: #60a5fa;
+}

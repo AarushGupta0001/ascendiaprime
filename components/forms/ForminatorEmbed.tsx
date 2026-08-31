@@ -43,22 +43,33 @@ export default function ForminatorEmbed({
 
   return (
     <div
-      className={`forminator-embed-shell contact-custom-form ${isHomepage ? "contact-form" : ""} ${className}`.trim()}
+      className={`forminator-embed-shell contact-custom-form relative ${isHomepage ? "contact-form" : ""} ${className}`.trim()}
       data-form-id={resolvedFormId}
     >
       {status === "loading" && (
-        <p className="text-center text-sm text-slate-400 py-8">Loading form...</p>
+        <div className="w-full space-y-4 py-4 animate-pulse">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="h-12 bg-white/5 border border-white/10 rounded-xl"></div>
+            <div className="h-12 bg-white/5 border border-white/10 rounded-xl"></div>
+          </div>
+          <div className="h-12 bg-white/5 border border-white/10 rounded-xl"></div>
+          <div className="h-28 bg-white/5 border border-white/10 rounded-xl"></div>
+          <div className="h-12 w-40 bg-gradient-to-r from-blue-600/40 to-purple-600/40 rounded-full"></div>
+        </div>
       )}
       {status === "error" && (
-        <p className="contact-error-message text-center py-4">
-          Unable to load contact form. Please try again later.
+        <p className="contact-error-message text-center py-4 text-slate-300">
+          Unable to load contact form. Please email us directly at{" "}
+          <a href="mailto:contact@ascendiaprime.com" className="text-[#3F8BF9] underline">
+            contact@ascendiaprime.com
+          </a>
         </p>
       )}
       <iframe
         ref={iframeRef}
         src={`/forminator-frame/${resolvedFormId}`}
         title="Contact form"
-        className={`forminator-embed-frame ${status === "error" ? "hidden" : ""} ${status === "loading" ? "opacity-0 absolute pointer-events-none" : ""}`.trim()}
+        className={`forminator-embed-frame transition-opacity duration-300 ${status === "error" ? "hidden" : ""} ${status === "loading" ? "opacity-0 absolute top-0 left-0 pointer-events-none" : "opacity-100"}`.trim()}
         style={{
           width: "100%",
           border: "none",

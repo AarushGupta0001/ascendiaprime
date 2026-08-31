@@ -471,16 +471,16 @@ export default function HomePage() {
 
 
 
-                <section id="ecosystem" className="w-full relative z-10 py-20 md:py-24 bg-gradient-to-b from-[#050b21] via-[#3F8BF9]/10 to-[#050b21] overflow-hidden flex flex-col justify-center items-center scroll-mt-20 md:scroll-mt-24">
+                <section id="ecosystem" className="w-full relative z-10 pt-4 md:pt-6 pb-16 md:pb-20 bg-gradient-to-b from-[#050b21] via-[#3F8BF9]/10 to-[#050b21] overflow-hidden flex flex-col justify-center items-center scroll-mt-20 md:scroll-mt-24">
 
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-white/5 blur-[120px] pointer-events-none"></div>
 
-                    <div className="relative z-10 w-full flex flex-col gap-12 md:gap-14">
+                    <div className="relative z-10 w-full flex flex-col gap-10 md:gap-12">
 
                         <div>
-                            <div className="container mx-auto px-6 md:px-12 flex flex-col items-center text-center scale-in mb-8" style={{ animationDelay: "0.2s" }}>
+                            <div className="container mx-auto px-6 md:px-12 flex flex-col items-center text-center scale-in mb-5 md:mb-6" style={{ animationDelay: "0.2s" }}>
                                 <h2 className="mb-1.5 text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white">Brands in Our Growth Ecosystem</h2>
-                                <p className="mb-2 max-w-3xl text-base leading-relaxed text-slate-300 md:text-lg">
+                                <p className="mb-1 max-w-3xl text-base leading-relaxed text-slate-300 md:text-lg">
                                     A selection of advertiser brands and campaign opportunities available through our direct and partner-led performance ecosystem.
                                 </p>
                             </div>

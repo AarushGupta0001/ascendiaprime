@@ -260,6 +260,10 @@ transform: translate(-50%, -50%); border-radius: 50%; pointer-events: none; z-in
     filter: none;
     mix-blend-mode: normal;
 }
+#trusted-advertiser-marquee .trusted-logo-img[src*="charles-keith"] {
+    max-width: 175px;
+    height: 18px;
+}
 
 .network-logo-tile {
     background: #ffffff;
@@ -476,19 +480,19 @@ select {
         background-color: #050b21; 
         color: #ffffff;
         font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        padding: 5rem 1.5rem;
+        padding: 4rem 1.5rem 1.5rem 1.5rem;
         width: 100%;
         position: relative;
         overflow: hidden;
         box-sizing: border-box;
         z-index: 10;
-        min-height: 800px;
+        min-height: auto;
         scroll-margin-top: 80px;
     }
 
     @media (min-width: 768px) {
         #split-services-wrapper {
-            padding: 6rem 3rem;
+            padding: 4.5rem 3rem 2rem 3rem;
         }
     }
 

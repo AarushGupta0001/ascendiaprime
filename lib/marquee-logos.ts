@@ -20,12 +20,8 @@ export const trustedBrands = [
 
 export const networkPartners = [
   { title: "FlexOffers", src: "/images/partners/flexoffers.svg" },
-  { title: "impact", src: "/images/partners/impact.png" },
-  { title: "Partnerize", src: "https://partnerize.com/wp-content/uploads/2021/03/PartnerizeLogo2021-RaisinBlue.png" },
-  { title: "Awin", src: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Logo-awin-black.svg" },
-  {
-    title: "CJ.com",
-    src: "https://www.cj.com/hubfs/_branding/logos_to_download/cj_logo_outline_green_rgb.svg",
-    icon: true,
-  },
+  { title: "impact", src: "/images/partners/impact.svg" },
+  { title: "Partnerize", src: "/images/partners/partnerize.svg" },
+  { title: "Awin", src: "/images/partners/awin.svg" },
+  { title: "CJ.com", src: "/images/partners/cj.svg" },
 ] as const;

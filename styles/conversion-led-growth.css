@@ -188,14 +188,7 @@
 }
 
 #cro-master .panel-foot {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 61px;
-  padding: 0 18px;
-  border-top: none;
-  background: transparent;
+  display: none;
 }
 
 #cro-master .panel-head > div:first-child {

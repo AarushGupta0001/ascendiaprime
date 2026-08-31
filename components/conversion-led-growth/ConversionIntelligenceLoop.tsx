@@ -258,23 +258,6 @@ export default function ConversionIntelligenceLoop() {
           </span>
         </div>
       </div>
-
-      <div className="panel-foot" aria-live="polite">
-        <div>
-          <span className="status-dot" aria-hidden="true" />
-          <b>{phases[phase].label}</b>
-          <p>{phases[phase].detail}</p>
-        </div>
-        <div className="phase-nav" aria-hidden="true">
-          {phases.map((item, index) => (
-            <i
-              key={item.short}
-              className={index <= phase ? "complete" : ""}
-            />
-          ))}
-        </div>
-        <code>0{phase + 1} / 05</code>
-      </div>
     </div>
   );
 }

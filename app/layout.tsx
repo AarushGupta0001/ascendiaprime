@@ -7,7 +7,9 @@ import HashScrollHandler from "@/components/navigation/HashScrollHandler";
 import "@/styles/layout.css";
 import "@/styles/contact-form.css";
 import "@/styles/faq.css";
+import "@/styles/cookie-consent.css";
 import "./globals.css";
+import CookieConsentBanner from "@/components/cookies/CookieConsentBanner";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -54,6 +56,7 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <Footer />
+          <CookieConsentBanner />
         </ContactModalProvider>
       </body>
     </html>

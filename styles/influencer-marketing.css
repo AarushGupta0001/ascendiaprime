@@ -122,33 +122,35 @@
            DYNAMIC GLASS CARDS
            ========================================================================== */
         .glass-card {
-            background: var(--card-bg, rgba(46, 16, 101, 0.9)) !important;
+            background: var(--card-bg, linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(10, 18, 38, 0.85) 100%)) !important;
             backdrop-filter: blur(24px) !important;
             -webkit-backdrop-filter: blur(24px) !important;
-            border: 1px solid var(--card-border, rgba(116, 105, 248, 0.3)) !important;
-            border-top: 1px solid var(--card-border-hi, rgba(116, 105, 248, 0.5)) !important;
-            border-left: 1px solid var(--card-border-hi, rgba(116, 105, 248, 0.5)) !important;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), inset 0 0 20px var(--card-inset, rgba(116, 105, 248, 0.15)) !important;
+            border: 1px solid var(--card-border, rgba(63, 139, 249, 0.18)) !important;
+            border-top: 1px solid var(--card-border-hi, rgba(63, 139, 249, 0.25)) !important;
+            border-left: 1px solid var(--card-border-hi, rgba(63, 139, 249, 0.25)) !important;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), inset 0 0 20px var(--card-inset, rgba(63, 139, 249, 0.1)) !important;
             border-radius: 1.5rem !important; overflow: hidden;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
         }
         .glass-card:hover {
-            background: var(--card-bg-hover, rgba(76, 29, 149, 0.95)) !important;
-            border-color: var(--card-border-hover, rgba(116, 105, 248, 0.8)) !important;
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6), 0 0 30px var(--card-glow, rgba(116, 105, 248, 0.5)), inset 0 0 25px rgba(255, 255, 255, 0.1) !important;
+            background: var(--card-bg-hover, linear-gradient(135deg, rgba(26, 43, 85, 0.85) 0%, rgba(14, 25, 52, 0.95) 100%)) !important;
+            border-color: var(--card-border-hover, rgba(63, 139, 249, 0.6)) !important;
+            box-shadow: 0 20px 40px -15px rgba(63, 139, 249, 0.25), 0 0 25px rgba(63, 139, 249, 0.1) !important;
             transform: translateY(-8px) !important;
         }
 
         .theme-cosmic {
-            --card-bg: rgba(10, 10, 18, 0.9); --card-bg-hover: rgba(30, 27, 75, 0.95);
-            --card-border: rgba(63, 139, 249, 0.3); --card-border-hi: rgba(63, 139, 249, 0.5);
-            --card-inset: rgba(63, 139, 249, 0.1); --card-border-hover: rgba(63, 139, 249, 0.8);
+            --card-bg: linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(10, 18, 38, 0.85) 100%);
+            --card-bg-hover: linear-gradient(135deg, rgba(26, 43, 85, 0.85) 0%, rgba(14, 25, 52, 0.95) 100%);
+            --card-border: rgba(63, 139, 249, 0.18); --card-border-hi: rgba(63, 139, 249, 0.25);
+            --card-inset: rgba(63, 139, 249, 0.05); --card-border-hover: rgba(63, 139, 249, 0.6);
             --card-glow: rgba(63, 139, 249, 0.4);
         }
         .theme-creator {
-            --card-bg: rgba(46, 16, 101, 0.9); --card-bg-hover: rgba(76, 29, 149, 0.95);
-            --card-border: rgba(116, 105, 248, 0.3); --card-border-hi: rgba(116, 105, 248, 0.5);
-            --card-inset: rgba(116, 105, 248, 0.1); --card-border-hover: rgba(116, 105, 248, 0.8);
+            --card-bg: linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(10, 18, 38, 0.85) 100%);
+            --card-bg-hover: linear-gradient(135deg, rgba(26, 43, 85, 0.85) 0%, rgba(14, 25, 52, 0.95) 100%);
+            --card-border: rgba(63, 139, 249, 0.18); --card-border-hi: rgba(63, 139, 249, 0.25);
+            --card-inset: rgba(63, 139, 249, 0.05); --card-border-hover: rgba(63, 139, 249, 0.6);
             --card-glow: rgba(116, 105, 248, 0.4);
         }
 
@@ -457,11 +459,11 @@
         .timeline-content,
         .faq-box,
         #campaign-form-section .contact-ui {
-            background: rgba(30, 41, 59, 0.8) !important;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(10, 18, 38, 0.85) 100%) !important;
             border-radius: 1.5rem !important;
-            border: 1px solid rgba(63, 139, 249, 0.3) !important;
-            border-top: 1px solid rgba(63, 139, 249, 0.3) !important;
-            border-left: 1px solid rgba(63, 139, 249, 0.3) !important;
+            border: 1px solid rgba(63, 139, 249, 0.18) !important;
+            border-top: 1px solid rgba(63, 139, 249, 0.18) !important;
+            border-left: 1px solid rgba(63, 139, 249, 0.18) !important;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25) !important;
             backdrop-filter: blur(24px) !important;
             -webkit-backdrop-filter: blur(24px) !important;
@@ -471,22 +473,22 @@
         .glass-card:hover,
         .timeline-content:hover,
         .faq-box:hover {
-            background: rgba(51, 65, 85, 0.95) !important;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5) !important;
-            border-color: rgba(116, 105, 248, 0.6) !important;
+            background: linear-gradient(135deg, rgba(26, 43, 85, 0.85) 0%, rgba(14, 25, 52, 0.95) 100%) !important;
+            box-shadow: 0 20px 40px -15px rgba(63, 139, 249, 0.25), 0 0 25px rgba(63, 139, 249, 0.1) !important;
+            border-color: rgba(63, 139, 249, 0.6) !important;
         }
         .theme-cosmic {
-            --card-bg: rgba(30, 41, 59, 0.8);
-            --card-bg-hover: rgba(51, 65, 85, 0.95);
-            --card-border: rgba(63, 139, 249, 0.3);
+            --card-bg: linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(10, 18, 38, 0.85) 100%);
+            --card-bg-hover: linear-gradient(135deg, rgba(26, 43, 85, 0.85) 0%, rgba(14, 25, 52, 0.95) 100%);
+            --card-border: rgba(63, 139, 249, 0.18);
             --card-border-hover: rgba(63, 139, 249, 0.6);
             --card-glow: rgba(63, 139, 249, 0.4);
         }
         .theme-creator {
-            --card-bg: rgba(30, 41, 59, 0.8);
-            --card-bg-hover: rgba(51, 65, 85, 0.95);
-            --card-border: rgba(116, 105, 248, 0.3);
-            --card-border-hover: rgba(116, 105, 248, 0.6);
+            --card-bg: linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(10, 18, 38, 0.85) 100%);
+            --card-bg-hover: linear-gradient(135deg, rgba(26, 43, 85, 0.85) 0%, rgba(14, 25, 52, 0.95) 100%);
+            --card-border: rgba(63, 139, 249, 0.18);
+            --card-border-hover: rgba(63, 139, 249, 0.6);
             --card-glow: rgba(116, 105, 248, 0.4);
         }
         .btn-glow,

@@ -192,23 +192,23 @@ export default function ConversionLedGrowthPage() {
           {/* =================================================================
               1. HERO SECTION
               ================================================================= */}
-          <section className="clg-hero-section relative min-h-[90vh] flex flex-col justify-center pb-16 pt-24 px-6 lg:px-12 overflow-hidden" id="top">
+          <section className="clg-hero-section relative min-h-screen flex flex-col justify-center px-6 lg:px-12 overflow-hidden" id="top">
             <div className="clg-hero-glow glow-one" aria-hidden="true" />
             <div className="clg-hero-glow glow-two" aria-hidden="true" />
 
-            <div className="max-w-[1400px] mx-auto w-full grid lg:grid-cols-12 gap-12 lg:gap-14 items-center relative z-10">
+            <div className="max-w-[1400px] mx-auto w-full grid lg:grid-cols-12 gap-10 xl:gap-14 items-center relative z-10 py-6 lg:py-8">
               <div className="lg:col-span-6 clg-hero-copy">
                 <div className="clg-eyebrow hero-animate" style={{ animationDelay: "0.1s" }}>
                   <span />
                   Post-click conversion &amp; journey optimisation
                 </div>
 
-                <h1 className="hero-animate text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] font-extrabold leading-[1.06] text-white tracking-tight mb-6" style={{ animationDelay: "0.2s" }}>
+                <h1 className="hero-animate text-[2.25rem] sm:text-5xl lg:text-[3.1rem] xl:text-[3.5rem] font-bold leading-[1.1] text-white tracking-tight mb-6" style={{ animationDelay: "0.2s" }}>
                   Turn more of the traffic you already pay for into{" "}
                   <span className="text-gradient-brand">qualified action.</span>
                 </h1>
 
-                <p className="hero-animate text-base sm:text-lg text-slate-300 max-w-xl mb-8 leading-relaxed font-normal" style={{ animationDelay: "0.3s" }}>
+                <p className="hero-animate text-[1.05rem] md:text-[1.1rem] text-slate-300 max-w-xl mb-8 leading-relaxed font-light" style={{ animationDelay: "0.3s" }}>
                   AscendiaPrime identifies where campaign journeys lose intent—from message mismatch and weak reassurance to form friction and broken tracking—then helps teams prioritise, implement and measure the improvements that matter.
                 </p>
 
@@ -343,7 +343,7 @@ export default function ConversionLedGrowthPage() {
 
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {capabilities.map((item) => (
-                  <article key={item.number} className="clg-capability-card group p-7 rounded-2xl border border-slate-800/90 bg-slate-900/70 backdrop-blur-md hover:border-[#7469F8]/60 hover:bg-slate-800/90 transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+                  <article key={item.number} className="clg-capability-card group p-7 rounded-2xl flex flex-col justify-between relative overflow-hidden">
                     <div>
                       <span className="text-xs font-mono font-bold text-slate-500 block mb-6">{item.number}</span>
                       <div className="clg-card-icon w-12 h-12 rounded-xl mb-6 flex items-center justify-center text-[#3F8BF9] border border-[#3F8BF9]/30 bg-[#3F8BF9]/10">
@@ -396,7 +396,7 @@ export default function ConversionLedGrowthPage() {
                   </div>
 
                   <div className="space-y-4">
-                    <article className="clg-signal-card p-5 sm:p-6 rounded-xl border border-slate-800/90 bg-slate-900/80 backdrop-blur-md flex items-center gap-5">
+                    <article className="clg-signal-card p-5 sm:p-6 rounded-xl flex items-center gap-5">
                       <span className="clg-signal-badge badge-1">01</span>
                       <div>
                         <small className="text-[10px] font-bold uppercase tracking-widest text-[#3F8BF9] block mb-1">Before the click</small>
@@ -405,7 +405,7 @@ export default function ConversionLedGrowthPage() {
                       </div>
                     </article>
 
-                    <article className="clg-signal-card p-5 sm:p-6 rounded-xl border border-slate-800/90 bg-slate-900/80 backdrop-blur-md flex items-center gap-5">
+                    <article className="clg-signal-card p-5 sm:p-6 rounded-xl flex items-center gap-5">
                       <span className="clg-signal-badge badge-2">02</span>
                       <div>
                         <small className="text-[10px] font-bold uppercase tracking-widest text-[#7469F8] block mb-1">After the click</small>
@@ -414,7 +414,7 @@ export default function ConversionLedGrowthPage() {
                       </div>
                     </article>
 
-                    <article className="clg-signal-card p-5 sm:p-6 rounded-xl border border-slate-800/90 bg-slate-900/80 backdrop-blur-md flex items-center gap-5">
+                    <article className="clg-signal-card p-5 sm:p-6 rounded-xl flex items-center gap-5">
                       <span className="clg-signal-badge badge-3">03</span>
                       <div>
                         <small className="text-[10px] font-bold uppercase tracking-widest text-[#AB57F3] block mb-1">At the decision</small>
@@ -423,7 +423,7 @@ export default function ConversionLedGrowthPage() {
                       </div>
                     </article>
 
-                    <article className="clg-signal-card p-5 sm:p-6 rounded-xl border border-slate-800/90 bg-slate-900/80 backdrop-blur-md flex items-center gap-5">
+                    <article className="clg-signal-card p-5 sm:p-6 rounded-xl flex items-center gap-5">
                       <span className="clg-signal-badge badge-4">04</span>
                       <div>
                         <small className="text-[10px] font-bold uppercase tracking-widest text-[#10B981] block mb-1">After the action</small>
@@ -461,7 +461,7 @@ export default function ConversionLedGrowthPage() {
 
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {processSteps.map((item) => (
-                  <article key={item.number} className="clg-process-card p-8 rounded-2xl border border-slate-800/90 bg-slate-900/70 backdrop-blur-md hover:border-[#7469F8]/60 hover:bg-slate-800/90 transition-all duration-300 flex flex-col justify-between">
+                  <article key={item.number} className="clg-process-card p-8 rounded-2xl flex flex-col justify-between">
                     <div>
                       <span className="clg-process-badge">{item.number}</span>
                       <h3 className="text-xl font-bold text-white mt-4 mb-3">{item.title}</h3>
@@ -504,7 +504,7 @@ export default function ConversionLedGrowthPage() {
               <div className="lg:col-span-7">
                 <ol className="clg-deliverable-list space-y-4">
                   {deliverables.map((item, index) => (
-                    <li key={item} className="p-5 sm:p-6 rounded-xl border border-slate-800/90 bg-slate-900/60 backdrop-blur-md flex items-center gap-5">
+                    <li key={item} className="p-5 sm:p-6 rounded-xl flex items-center gap-5">
                       <span className="text-xs font-mono font-bold text-[#3F8BF9]">0{index + 1}</span>
                       <p className="text-base sm:text-lg text-slate-200 font-medium m-0">{item}</p>
                     </li>
@@ -533,7 +533,7 @@ export default function ConversionLedGrowthPage() {
               </div>
 
               <div className="lg:col-span-7 space-y-4">
-                <article className="clg-quality-card p-6 rounded-xl border border-slate-800/90 bg-slate-900/80 backdrop-blur-md flex items-start gap-5">
+                <article className="clg-quality-card p-6 rounded-xl flex items-start gap-5">
                   <span className="clg-quality-icon text-[#10B981]"><CheckIcon /></span>
                   <div>
                     <h3 className="text-lg font-bold text-white mb-1.5">Event verified</h3>
@@ -541,7 +541,7 @@ export default function ConversionLedGrowthPage() {
                   </div>
                 </article>
 
-                <article className="clg-quality-card p-6 rounded-xl border border-slate-800/90 bg-slate-900/80 backdrop-blur-md flex items-start gap-5">
+                <article className="clg-quality-card p-6 rounded-xl flex items-start gap-5">
                   <span className="clg-quality-icon text-[#10B981]"><CheckIcon /></span>
                   <div>
                     <h3 className="text-lg font-bold text-white mb-1.5">Quality reviewed</h3>
@@ -549,7 +549,7 @@ export default function ConversionLedGrowthPage() {
                   </div>
                 </article>
 
-                <article className="clg-quality-card p-6 rounded-xl border border-slate-800/90 bg-slate-900/80 backdrop-blur-md flex items-start gap-5">
+                <article className="clg-quality-card p-6 rounded-xl flex items-start gap-5">
                   <span className="clg-quality-icon text-[#10B981]"><CheckIcon /></span>
                   <div>
                     <h3 className="text-lg font-bold text-white mb-1.5">Decision informed</h3>

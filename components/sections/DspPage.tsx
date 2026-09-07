@@ -32,10 +32,10 @@ export default function DspPage() {
     <section className="min-h-[90vh] flex items-center py-28 px-6 lg:px-12">
       <div className="max-w-[1400px] mx-auto grid lg:grid-cols-12 gap-14 items-center w-full">
         <div className="lg:col-span-6 reveal-up">
-          <h1 className="text-5xl md:text-6xl lg:text-[4.8rem] font-black leading-[1.05] text-white tracking-tight mb-6">
+          <h1 className="text-[2.25rem] sm:text-5xl lg:text-[3.1rem] xl:text-[3.5rem] font-bold leading-[1.1] text-white tracking-tight mb-6">
             DSP-Led Media Buying for <span className="text-gradient-brand">Controlled Audience Reach and Scalable Programmatic Delivery</span>
           </h1>
-          <p className="text-lg text-slate-300 max-w-xl mb-10 leading-relaxed">
+          <p className="text-[1.05rem] md:text-[1.1rem] text-slate-300 max-w-xl mb-10 leading-relaxed font-light">
             Ascendia Prime helps brands plan and activate programmatic media through DSP-led buying routes, audience strategy, inventory alignment, and controlled delivery across suitable digital environments where available.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">

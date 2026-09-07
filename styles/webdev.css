@@ -65,10 +65,10 @@ svg { display: block; flex-shrink: 0; }
 ═══════════════════════════════════════════════════ */
 .t-mega {
   font-family: var(--fd);
-  font-size: clamp(3.6rem, 8vw, 8.5rem);
+  font-size: clamp(2.25rem, 3.8vw, 3.5rem);
   font-weight: 700;
-  line-height: 0.92;
-  letter-spacing: -0.035em;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
   color: #ffffff;
 }
 
@@ -1235,7 +1235,7 @@ body::before {
   color: #94a3b8 !important;
 }
 .hero-headline.t-mega {
-  font-size: clamp(2.25rem, 5vw, 3.75rem) !important;
+  font-size: clamp(2.25rem, 3.8vw, 3.5rem) !important;
   font-weight: 800 !important;
   line-height: 1.12 !important;
   letter-spacing: -0.04em !important;
@@ -1305,9 +1305,9 @@ body::before {
 .why-card,
 .fq,
 .contact-form-wrap {
-  background: rgba(30, 41, 59, 0.8) !important;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(10, 18, 38, 0.85) 100%) !important;
   border-radius: 1.5rem !important;
-  border: 1px solid rgba(63, 139, 249, 0.3) !important;
+  border: 1px solid rgba(63, 139, 249, 0.18) !important;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25) !important;
   backdrop-filter: blur(24px) !important;
   -webkit-backdrop-filter: blur(24px) !important;
@@ -1320,29 +1320,29 @@ body::before {
 .why-card:hover,
 .fq:hover,
 .contact-form-wrap:hover {
-  background: rgba(51, 65, 85, 0.95) !important;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5) !important;
-  border-color: rgba(116, 105, 248, 0.6) !important;
+  background: linear-gradient(135deg, rgba(26, 43, 85, 0.85) 0%, rgba(14, 25, 52, 0.95) 100%) !important;
+  box-shadow: 0 20px 40px -15px rgba(63, 139, 249, 0.25), 0 0 25px rgba(63, 139, 249, 0.1) !important;
+  border-color: rgba(63, 139, 249, 0.6) !important;
 }
 .sv-item:nth-child(4n + 1),
 .why-card:nth-child(4n + 1),
 .fq:nth-child(4n + 1) {
-  border-color: rgba(63, 139, 249, 0.3) !important;
+  border-color: rgba(63, 139, 249, 0.18) !important;
 }
 .sv-item:nth-child(4n + 2),
 .why-card:nth-child(4n + 2),
 .fq:nth-child(4n + 2) {
-  border-color: rgba(116, 105, 248, 0.3) !important;
+  border-color: rgba(63, 139, 249, 0.18) !important;
 }
 .sv-item:nth-child(4n + 3),
 .why-card:nth-child(4n + 3),
 .fq:nth-child(4n + 3) {
-  border-color: rgba(171, 87, 243, 0.3) !important;
+  border-color: rgba(63, 139, 249, 0.18) !important;
 }
 .sv-item:nth-child(4n),
 .why-card:nth-child(4n),
 .fq:nth-child(4n) {
-  border-color: rgba(224, 87, 216, 0.3) !important;
+  border-color: rgba(63, 139, 249, 0.18) !important;
 }
 .faq-list {
   background: transparent !important;
@@ -1430,7 +1430,7 @@ body::before {
   color: #94a3b8 !important;
 }
 .hero-headline.t-mega {
-  font-size: clamp(2.25rem, 5vw, 3.75rem) !important;
+  font-size: clamp(2.25rem, 3.8vw, 3.5rem) !important;
   font-weight: 800 !important;
   line-height: 1.12 !important;
   letter-spacing: -0.04em !important;

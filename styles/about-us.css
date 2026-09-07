@@ -203,8 +203,8 @@
         .interactive-card,
         #about-us-master .rounded-3xl,
         .popup-content {
-            background: rgba(30, 41, 59, 0.8) !important;
-            border: 1px solid rgba(63, 139, 249, 0.3) !important;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(10, 18, 38, 0.85) 100%) !important;
+            border: 1px solid rgba(63, 139, 249, 0.18) !important;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25) !important;
             backdrop-filter: blur(24px) !important;
             -webkit-backdrop-filter: blur(24px) !important;
@@ -213,9 +213,9 @@
         .interactive-card:hover,
         #about-us-master .rounded-3xl:hover,
         .popup-content:hover {
-            background: rgba(51, 65, 85, 0.95) !important;
-            border-color: rgba(116, 105, 248, 0.6) !important;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5) !important;
+            background: linear-gradient(135deg, rgba(26, 43, 85, 0.85) 0%, rgba(14, 25, 52, 0.95) 100%) !important;
+            border-color: rgba(63, 139, 249, 0.6) !important;
+            box-shadow: 0 20px 40px -15px rgba(63, 139, 249, 0.25), 0 0 25px rgba(63, 139, 249, 0.1) !important;
         }
         .card-icon-box {
             background: rgba(63, 139, 249, 0.10) !important;

@@ -60,10 +60,10 @@ export default function CaseStudiesPage() {
       <div className="relative z-10 mx-auto max-w-[1400px]">
         <header className="mb-16 max-w-3xl">
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[#3F8BF9]">Ascendia Prime</p>
-          <h1 className="text-5xl font-bold tracking-tight text-white md:text-7xl">
+          <h1 className="text-[2.25rem] sm:text-5xl lg:text-[3.1rem] xl:text-[3.5rem] font-bold leading-[1.1] tracking-tight text-white">
             Case <span className="bg-gradient-to-r from-[#3F8BF9] to-[#AB57F3] bg-clip-text text-transparent">Studies</span>
           </h1>
-          <p className="mt-4 text-lg text-slate-400">
+          <p className="mt-4 text-[1.05rem] md:text-[1.1rem] text-slate-300 font-light leading-relaxed">
             Explore our high-impact growth campaigns across major global verticals.
           </p>
         </header>
@@ -73,7 +73,7 @@ export default function CaseStudiesPage() {
             <Link
               key={caseStudy.slug}
               href={`/${caseStudy.slug}`}
-              className="group flex flex-col justify-between rounded-2xl border border-slate-800/80 bg-[#0b111d] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#3F8BF9]/50 hover:shadow-2xl md:p-8"
+              className="case-study-card group flex flex-col justify-between rounded-2xl p-6 md:p-8"
             >
               <div>
                 <h2 className="mb-4 text-xl font-bold leading-snug text-white transition-colors duration-300 group-hover:text-[#3F8BF9]">

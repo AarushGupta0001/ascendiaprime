@@ -27,11 +27,11 @@ export default function CaseStudyPage({ caseStudy }: Props) {
               Case Study
             </p>
 
-            <h1 className="max-w-3xl text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl">
+            <h1 className="max-w-3xl text-[2.25rem] sm:text-5xl lg:text-[3.1rem] xl:text-[3.5rem] font-bold leading-[1.1] tracking-tight">
               {caseStudy.title}
             </h1>
 
-            <p className="mt-7 max-w-2xl text-lg leading-relaxed text-slate-400 md:text-xl">
+            <p className="mt-7 max-w-2xl text-[1.05rem] md:text-[1.1rem] leading-relaxed text-slate-300 font-light">
               {caseStudy.description}
             </p>
           </div>

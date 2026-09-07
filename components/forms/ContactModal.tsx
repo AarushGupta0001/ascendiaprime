@@ -71,7 +71,7 @@ export default function ContactModal({
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
-        <h2 id="contact-modal-title" className="mb-6 text-2xl font-bold text-white">
+        <h2 id="contact-modal-title" className="mb-6 text-2xl font-bold text-white text-center">
           {title}
         </h2>
         {children ?? <ContactForm variant="modal" formId={formId} />}

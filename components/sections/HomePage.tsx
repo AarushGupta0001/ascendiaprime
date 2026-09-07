@@ -132,7 +132,7 @@ export default function HomePage() {
                                                     <div className="metric-container sci-fi-glass shape-square hover-target">
                                                         <span className="metric-title">ROAS</span>
                                                         <span className="metric-value"><span id="val-roas">0.00</span>x</span>
-                                                        <svg width="45" height="12" viewBox="0 0 60 15" className="mt-2">
+                                                        <svg width="36" height="10" viewBox="0 0 60 15" className="mt-1">
                                                             <path d="M0 10 L 15 8 L 25 12 L 40 4 L 60 2" fill="none" stroke="#AB57F3" strokeWidth="3" className="animate-sparkline" />
                                                         </svg>
                                                     </div>
@@ -144,14 +144,14 @@ export default function HomePage() {
                                                 <div className="floating-anim float-d2">
                                                     <div className="metric-container sci-fi-glass shape-square metric-conversion relative hover-target">
                                                         <svg className="metric-conversion-ring absolute inset-0 w-full h-full -rotate-90 pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
-                                                            <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="3" />
-                                                            <circle cx="50" cy="50" r="40" fill="none" stroke="#E057D8" strokeWidth="3" strokeDasharray="251" strokeDashoffset="70" style={{ transition: "stroke-dashoffset 2s ease-out" }} />
+                                                            <circle cx="50" cy="50" r="38" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="3" />
+                                                            <circle cx="50" cy="50" r="38" fill="none" stroke="#E057D8" strokeWidth="3" strokeDasharray="239" strokeDashoffset="65" style={{ transition: "stroke-dashoffset 2s ease-out" }} />
                                                         </svg>
                                                         <div className="metric-conversion-content">
-                                                            <span className="metric-title !mb-0">Conversion</span>
+                                                            <span className="metric-title !mb-0 !text-[0.45rem]">Conversion</span>
                                                             <div className="metric-value-row">
-                                                                <span className="metric-value text-[#E057D8] !text-[0.75rem]">+<span id="val-conv">0.0</span>%</span>
-                                                                <span className="text-[#E057D8] font-bold text-[0.55rem] leading-none">↗</span>
+                                                                <span className="metric-value text-[#E057D8] !text-[0.7rem]">+<span id="val-conv">0.0</span>%</span>
+                                                                <span className="text-[#E057D8] font-bold text-[0.5rem] leading-none">↗</span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -162,12 +162,12 @@ export default function HomePage() {
                                             <div className="counter-rotate" style={{ animationDelay: "-22s" }}>
                                                 <div className="floating-anim float-d3">
                                                     <div className="metric-container sci-fi-glass shape-square hover-target">
-                                                        <div className="flex items-center justify-center gap-1 mb-2">
-                                                            <div className="relative flex h-[6px] w-[6px]">
+                                                        <div className="flex items-center justify-center gap-1 mb-1">
+                                                            <div className="relative flex h-[5px] w-[5px]">
                                                                 <span className="ping-ring absolute inline-flex h-full w-full rounded-full bg-[#E057D8]"></span>
-                                                                <span className="relative inline-flex rounded-full h-[6px] w-[6px] bg-[#E057D8]"></span>
+                                                                <span className="relative inline-flex rounded-full h-[5px] w-[5px] bg-[#E057D8]"></span>
                                                             </div>
-                                                            <span className="text-[0.5rem] text-[#E057D8] uppercase font-bold tracking-widest">Ping</span>
+                                                            <span className="text-[0.45rem] text-[#E057D8] uppercase font-bold tracking-widest">Ping</span>
                                                         </div>
                                                         <span className="metric-title">Live Traffic</span>
                                                         <span className="metric-value" id="val-traffic">0</span>
@@ -179,10 +179,10 @@ export default function HomePage() {
                                             <div className="counter-rotate" style={{ animationDelay: "-33s" }}>
                                                 <div className="floating-anim float-d4">
                                                     <div className="metric-container sci-fi-glass shape-square hover-target">
-                                                        <div className="flex items-end justify-center gap-[2px] h-[12px] mb-2">
-                                                            <div className="w-[3px] bg-[#3F8BF9] rounded-t bar-1"></div>
-                                                            <div className="w-[3px] bg-[#7469F8] rounded-t bar-2"></div>
-                                                            <div className="w-[3px] bg-[#AB57F3] rounded-t bar-3"></div>
+                                                        <div className="flex items-end justify-center gap-[2px] h-[10px] mb-1">
+                                                            <div className="w-[2.5px] bg-[#3F8BF9] rounded-t bar-1"></div>
+                                                            <div className="w-[2.5px] bg-[#7469F8] rounded-t bar-2"></div>
+                                                            <div className="w-[2.5px] bg-[#AB57F3] rounded-t bar-3"></div>
                                                         </div>
                                                         <span className="metric-title">Intent Signals</span>
                                                         <span className="metric-value" id="val-signals">0</span>
@@ -195,8 +195,8 @@ export default function HomePage() {
                                             <div className="counter-rotate" style={{ animationDelay: "-44s" }}>
                                                 <div className="floating-anim float-d5">
                                                     <div className="metric-container sci-fi-glass shape-square hover-target">
-                                                        <div className="flex justify-center mb-2">
-                                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7469F8" strokeWidth="1.5">
+                                                        <div className="flex justify-center mb-1">
+                                                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7469F8" strokeWidth="1.5">
                                                                 <circle cx="12" cy="12" r="3" className="gear-spin" />
                                                                 <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" className="gear-spin" />
                                                             </svg>
@@ -215,14 +215,8 @@ export default function HomePage() {
                 </section>
 
                 <div className="w-full bg-gradient-to-b from-[#050a18] to-[#050b21]">
-                    <section className="relative w-full max-w-[1400px] mx-auto px-6 md:px-12 py-20 md:py-24 z-20 fade-in-up scroll-mt-20 md:scroll-mt-24">
-                        <div className="adv-card bg-[#0b111d] rounded-[2rem] p-10 md:p-16 border border-slate-800 hover:border-slate-700 transition-colors duration-500 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-12">
-
-                            <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-gradient-to-br from-[#3F8BF9]/20 to-[#AB57F3]/20 rounded-full blur-[80px] animate-[pulse-ring_8s_infinite] pointer-events-none"></div>
-                            <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-gradient-to-tr from-[#E057D8]/20 to-[#7469F8]/20 rounded-full blur-[80px] animate-[pulse-ring_10s_infinite_reverse] pointer-events-none"></div>
-
-                            <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg width=\\'60\\' height=\\'60\\' viewBox=\\'0 0 60 60\\' xmlns=\\'http://www.w3.org/2000/svg\\'%3E%3Cg fill=\\'none\\' fill-rule=\\'evenodd\\'%3E%3Cg fill=\\'%23ffffff\\' fill-opacity=\\'1\\'%3E%3Cpath d=\\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')" }}></div>
-
+                    <section className="relative w-full max-w-[1400px] mx-auto px-6 md:px-12 py-16 md:py-20 z-20 fade-in-up scroll-mt-20 md:scroll-mt-24">
+                        <div className="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-12 relative z-10">
                             <div className="relative z-10 max-w-2xl text-left">
                                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400 mb-3 tracking-tight leading-tight">
                                     Scale Customer Acquisition <br className="hidden md:block" />
@@ -236,7 +230,7 @@ export default function HomePage() {
                             <div className="relative z-10 flex-shrink-0 group/btn">
                                 <div className="absolute -inset-1.5 bg-gradient-to-r from-[#3F8BF9] via-[#AB57F3] to-[#E057D8] rounded-full blur opacity-60 group-hover/btn:opacity-100 transition duration-500 animate-gradient-xy"></div>
 
-                                <Link href="/advertisers" className="relative inline-flex items-center gap-3 bg-[#050b21] text-white font-semibold text-lg px-10 py-5 rounded-full transition-all duration-300 transform group-hover/btn:scale-[1.02] shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] no-underline">
+                                <Link href="/advertisers" className="relative inline-flex items-center gap-3 bg-[#050b21] text-white font-semibold text-base md:text-lg px-8 md:px-10 py-4 md:py-5 rounded-full transition-all duration-300 transform group-hover/btn:scale-[1.02] shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] no-underline border border-white/10 hover:border-white/20">
                                     Explore Advertiser Solutions
                                     <svg className="w-5 h-5 transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                 </Link>
@@ -471,11 +465,11 @@ export default function HomePage() {
 
 
 
-                <section id="ecosystem" className="w-full relative z-10 pt-4 md:pt-6 pb-16 md:pb-20 bg-gradient-to-b from-[#050b21] via-[#3F8BF9]/10 to-[#050b21] overflow-hidden flex flex-col justify-center items-center scroll-mt-20 md:scroll-mt-24">
+                <section id="ecosystem" className="w-full relative z-10 py-16 md:py-20 bg-gradient-to-b from-[#050b21] via-[#3F8BF9]/10 to-[#050b21] overflow-hidden flex flex-col justify-center items-center scroll-mt-20 md:scroll-mt-24">
 
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-white/5 blur-[120px] pointer-events-none"></div>
 
-                    <div className="relative z-10 w-full flex flex-col gap-10 md:gap-12">
+                    <div className="relative z-10 w-full flex flex-col gap-12 md:gap-14">
 
                         <div>
                             <div className="container mx-auto px-6 md:px-12 flex flex-col items-center text-center scale-in mb-5 md:mb-6" style={{ animationDelay: "0.2s" }}>
@@ -541,7 +535,7 @@ export default function HomePage() {
                     </div>
                 </section>
 
-                <section id="case-studies" className="relative py-20 md:py-24 w-full bg-[#050b21] z-10 overflow-hidden scroll-mt-20 md:scroll-mt-24">
+                <section id="case-studies" className="relative py-16 md:py-20 w-full bg-[#050b21] z-10 overflow-hidden scroll-mt-20 md:scroll-mt-24">
                     <div className="max-w-[1400px] mx-auto px-6 md:px-12 mb-10 md:mb-12 relative z-40 text-left">
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold tracking-tight text-white drop-shadow-[0_0_30px_rgba(0,0,0,1)] leading-tight m-0">
                             Case <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3F8BF9] to-[#AB57F3]">Studies</span>
@@ -552,7 +546,7 @@ export default function HomePage() {
                     <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-20 scale-in">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-                            <div className="bg-[#0b111d] border border-slate-800/80 rounded-2xl p-6 md:p-8 hover:border-slate-700 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+                            <div className="case-study-card rounded-2xl p-6 md:p-8 flex flex-col justify-between group">
                                 <div>
                                     <h3 className="text-xl font-bold text-white mb-4 line-clamp-3 leading-snug group-hover:text-[#3F8BF9] transition-colors duration-300">Transforming a Mid-Sized Insurance Firm with Data-Driven Digital Marketing</h3>
                                     <p className="text-slate-400 text-sm md:text-base font-light leading-relaxed">Discover how a data-focused approach revitalized a mid-sized insurance provider's digital presence and acquisition strategy.</p>
@@ -563,7 +557,7 @@ export default function HomePage() {
                                 </Link>
                             </div>
 
-                            <div className="bg-[#0b111d] border border-slate-800/80 rounded-2xl p-6 md:p-8 hover:border-slate-700 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+                            <div className="case-study-card rounded-2xl p-6 md:p-8 flex flex-col justify-between group">
                                 <div>
                                     <h3 className="text-xl font-bold text-white mb-4 line-clamp-3 leading-snug group-hover:text-[#3F8BF9] transition-colors duration-300">Customised Strategy Boosted a Global Antivirus Company's Sales by Over 7:1</h3>
                                     <p className="text-slate-400 text-sm md:text-base font-light leading-relaxed">Learn the precise strategies used to generate an impressive 7:1 return for a global cybersecurity and antivirus brand.</p>
@@ -574,7 +568,7 @@ export default function HomePage() {
                                 </Link>
                             </div>
 
-                            <div className="bg-[#0b111d] border border-slate-800/80 rounded-2xl p-6 md:p-8 hover:border-slate-700 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+                            <div className="case-study-card rounded-2xl p-6 md:p-8 flex flex-col justify-between group">
                                 <div>
                                     <h3 className="text-xl font-bold text-white mb-4 line-clamp-3 leading-snug group-hover:text-[#3F8BF9] transition-colors duration-300">Scaling a Family Law Firm with No-Win-No-Fee Growth in 6 Months</h3>
                                     <p className="text-slate-400 text-sm md:text-base font-light leading-relaxed">A look at how targeted campaigns rapidly scaled a family law firm over a 6-month period using a "no win, no fee" angle.</p>
@@ -585,7 +579,7 @@ export default function HomePage() {
                                 </Link>
                             </div>
 
-                            <div className="bg-[#0b111d] border border-slate-800/80 rounded-2xl p-6 md:p-8 hover:border-slate-700 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+                            <div className="case-study-card rounded-2xl p-6 md:p-8 flex flex-col justify-between group">
                                 <div>
                                     <h3 className="text-xl font-bold text-white mb-4 line-clamp-3 leading-snug group-hover:text-[#3F8BF9] transition-colors duration-300">Travel Company Packs a 98% Sales Surge in 45 Days</h3>
                                     <p className="text-slate-400 text-sm md:text-base font-light leading-relaxed">How our team identified the perfect client profile to nearly double sales for a travel agency in just one month and a half.</p>
@@ -612,7 +606,7 @@ export default function HomePage() {
                     </div>
                 </section>
 
-                <section id="different" className="relative z-10 w-full bg-[#050b21] overflow-hidden py-20 md:py-24 scroll-mt-20 md:scroll-mt-24">
+                <section id="different" className="relative z-10 w-full bg-[#050b21] overflow-hidden py-16 md:py-20 scroll-mt-20 md:scroll-mt-24">
                     <canvas className="network-canvas absolute top-0 left-0 w-full h-full pointer-events-none z-0"></canvas>
 
                     <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
@@ -857,7 +851,7 @@ export default function HomePage() {
                     </div>
                 </section>
 
-                <section id="contact" className="py-20 md:py-24 relative z-10 w-full bg-[#050b21] overflow-hidden flex items-center justify-center min-h-[calc(100vh-80px)] scroll-mt-20 md:scroll-mt-24">
+                <section id="contact" className="py-16 md:py-20 relative z-10 w-full bg-[#050b21] overflow-hidden flex items-center justify-center min-h-[calc(100vh-80px)] scroll-mt-20 md:scroll-mt-24">
 
                     <div className="absolute inset-0 z-0 flex items-center justify-center opacity-90 pointer-events-none">
                         <div className="absolute w-[600px] h-[600px] border border-[#3F8BF9]/20 rounded-full ping-ring" style={{ animationDuration: "4s" }}></div>

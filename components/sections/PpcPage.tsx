@@ -31,12 +31,12 @@ export default function PpcPage() {
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 min-h-[75vh] flex flex-col lg:flex-row items-center justify-between mb-12">
             
             <div className="w-full lg:w-5/12 text-center lg:text-left z-20 reveal-up mb-16 lg:mb-0">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-8 leading-tight">
+                <h1 className="text-[2.25rem] sm:text-5xl lg:text-[3.1rem] xl:text-[3.5rem] font-bold text-white tracking-tight mb-8 leading-[1.1]">
                     Paid Media Built Around Intent,
                     <br className="hidden md:block" />
                     <span className="text-gradient-brand">Efficiency and Scale</span>
                 </h1>
-                <p className="text-lg text-[#94a3b8] max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed">
+                <p className="text-[1.05rem] md:text-[1.1rem] text-[#94a3b8] max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed font-light">
                     We help advertisers plan, launch, and optimize Google, Meta, and PPC campaigns with a clear focus on audience intent, spend efficiency, conversion quality, and measurable business outcomes.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">

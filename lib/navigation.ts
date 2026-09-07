@@ -31,7 +31,7 @@ export const headerNavItems: NavItem[] = [
   { href: "/about-us", label: "About Us" },
   { href: "/advertisers", label: "For Advertisers" },
   { href: "/our-partners", label: "Our Partner Ecosystem" },
-  { href: "/case-studies", label: "Case Studies" },
+  { href: "/news-and-events", label: "News and Events" },
 ];
 
 export const solutionsTrigger: NavItem = {
@@ -50,7 +50,7 @@ export const mobileNavLinks: NavItem[] = [
   { href: solutionsTrigger.href, label: "Solutions" },
   { href: "/advertisers", label: "For Advertisers" },
   { href: "/our-partners", label: "Our Partners" },
-  { href: "/case-studies", label: "Case Studies" },
+  { href: "/news-and-events", label: "News and Events" },
 ];
 
 export const megaMenuColumns: MegaMenuColumn[] = [
@@ -93,7 +93,8 @@ export const megaMenuColumns: MegaMenuColumn[] = [
 
 export const footerCompanyLinks: NavItem[] = [
   { href: "/about-us", label: "About Us" },
-  { href: "/case-studies", label: "Case Studies" },
+  { href: homeAnchors.caseStudies, label: "Case Studies" },
+  { href: "/news-and-events", label: "News and Events" },
   { href: "/coming-soon", label: "Testimonials" },
   { href: homeAnchors.different, label: "How are we different?" },
   { href: "/contact-us", label: "Contact" },

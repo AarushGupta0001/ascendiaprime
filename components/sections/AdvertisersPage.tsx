@@ -26,11 +26,11 @@ export default function AdvertisersPage() {
         
         <section className="min-h-[85vh] flex flex-col justify-center pt-32 pb-20 px-6 lg:px-12 relative z-10">
             <div className="max-w-[1400px] mx-auto w-full text-center">
-                <h1 className="hero-animate text-5xl md:text-7xl font-black leading-[1.1] text-white tracking-tight mb-8">
+                <h1 className="hero-animate text-[2.25rem] sm:text-5xl lg:text-[3.1rem] xl:text-[3.5rem] font-bold leading-[1.1] text-white tracking-tight mb-8">
                     Advertiser Growth, Built Around{" "}
                     <span className="text-gradient-smm drop-shadow-[0_0_15px_rgba(63,139,249,0.15)]">Performance and Clarity</span>
                 </h1>
-                <p className="hero-animate text-xl text-slate-300 max-w-4xl mx-auto mb-12 leading-relaxed">
+                <p className="hero-animate text-[1.05rem] md:text-[1.1rem] text-slate-300 max-w-4xl mx-auto mb-12 leading-relaxed font-light">
                     We help advertisers scale through a connected mix of performance marketing, publisher partnerships, programmatic media, retargeting, and digital growth solutions — built around audience intent, transparent execution, and measurable outcomes.
                 </p>
                 <div className="hero-animate flex flex-col sm:flex-row justify-center gap-6">
@@ -321,7 +321,7 @@ export default function AdvertisersPage() {
     <div id="partner-modal" className="partner-popup-overlay">
         <div className="partner-popup-content">
             <button id="close-modal" className="popup-close-btn">&times;</button>
-            <h3 className="text-3xl font-bold text-white mb-8">Advertiser Inquiry</h3>
+            <h3 className="text-3xl font-bold text-white mb-8 text-center">Advertiser Inquiry</h3>
             <div className="relative z-20 contact-form-shell p-6 md:p-10 rounded-[1.75rem]">
                 <ContactForm variant="homepage" formId="1808" />
             </div>

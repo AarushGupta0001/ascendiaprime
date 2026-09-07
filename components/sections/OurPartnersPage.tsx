@@ -27,11 +27,11 @@ export default function OurPartnersPage() {
             <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center max-w-[1600px] mx-auto w-full">
                 
                 <div className="lg:col-span-5 relative z-20 pr-4 lg:pr-8">
-                    <h1 className="hero-animate text-5xl md:text-5xl lg:text-6xl font-black leading-[1.05] text-white tracking-tight mb-6" style={{ animationDelay: "0.1s" }}>
+                    <h1 className="hero-animate text-[2.25rem] sm:text-5xl lg:text-[3.1rem] xl:text-[3.5rem] font-bold leading-[1.1] text-white tracking-tight mb-6" style={{ animationDelay: "0.1s" }}>
                         Built to Connect Brands With the<br/>
                         <span className="text-gradient-smm drop-shadow-[0_0_15px_rgba(63,139,249,0.15)]">Right Growth Partners</span>
                     </h1>
-                    <p className="hero-animate text-lg text-slate-300 w-full mb-10 leading-relaxed" style={{ animationDelay: "0.3s" }}>
+                    <p className="hero-animate text-[1.05rem] md:text-[1.1rem] text-slate-300 w-full mb-10 leading-relaxed font-light" style={{ animationDelay: "0.3s" }}>
                         Ascendia Prime works with a connected ecosystem of publishers, affiliates, creators, agencies, and sub-networks to help brands reach relevant audiences, drive measurable actions, and scale with transparency.
                     </p>
                     <div className="hero-animate flex flex-col sm:flex-row gap-5 mb-8 lg:mb-0" style={{ animationDelay: "0.4s" }}>
@@ -375,7 +375,7 @@ export default function OurPartnersPage() {
     <div id="partner-modal" className="partner-popup-overlay">
         <div className="partner-popup-content">
             <button id="close-modal" className="popup-close-btn">&times;</button>
-            <h3 className="text-3xl font-bold text-white mb-8">Partnership Inquiry</h3>
+            <h3 className="text-3xl font-bold text-white mb-8 text-center">Partnership Inquiry</h3>
             <div className="relative z-20 contact-form-shell p-6 md:p-10 rounded-[1.75rem]">
                 <ContactForm variant="homepage" formId="2081" />
             </div>

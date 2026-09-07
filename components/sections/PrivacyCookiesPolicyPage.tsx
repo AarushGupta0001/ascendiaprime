@@ -99,8 +99,34 @@ export default function PrivacyCookiesPolicyPage() {
               Cookies are small text files placed on your device to enhance navigation, remember preferences, and measure performance. We classify cookies into strictly necessary (essential for core website functionality) and analytical/performance cookies (used solely with user consent).
             </p>
             <p className="legal-paragraph">
-              You can modify or withdraw your cookie preferences at any time via your browser settings.
+              You can modify or withdraw your cookie preferences at any time by clicking the button below or via your browser settings.
             </p>
+            <div style={{ marginTop: "1rem" }}>
+              <button
+                type="button"
+                onClick={() => {
+                  if (typeof window !== "undefined") {
+                    window.dispatchEvent(new CustomEvent("open_cookie_preferences"));
+                  }
+                }}
+                className="cookie-btn-primary"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "0.5rem",
+                  fontSize: "0.85rem",
+                  padding: "0.65rem 1.25rem",
+                  borderRadius: "12px",
+                  cursor: "pointer",
+                }}
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ width: "16px", height: "16px" }}>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                Manage Cookie Preferences
+              </button>
+            </div>
           </section>
 
           <section className="legal-section">

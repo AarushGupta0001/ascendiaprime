@@ -60,10 +60,10 @@
 ═══════════════════════════════════════════════════ */
 .t-mega {
   font-family: var(--fd);
-  font-size: clamp(3.2rem, 7vw, 6.5rem);
+  font-size: clamp(2.25rem, 3.8vw, 3.5rem);
   font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -0.04em;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
   color: #ffffff;
 }
 .t-mega span.grad-text {
@@ -226,10 +226,10 @@
 @media (max-width: 768px) { .showcase-row-block { flex-direction: column; } }
 
 .showcase-modular-card {
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(10, 18, 38, 0.85) 100%) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border: 1px solid rgba(63, 139, 249, 0.18) !important;
   border-radius: 20px;
   padding: 2.5rem;
   transition: all 0.5s var(--ease);
@@ -242,10 +242,10 @@
 @media (max-width: 768px) { .w-35, .w-65 { width: 100%; } }
 
 .showcase-modular-card:hover {
-  background: rgba(4, 4, 8, 0.6);
-  border-color: rgba(116, 105, 248, 0.3);
+  background: linear-gradient(135deg, rgba(26, 43, 85, 0.85) 0%, rgba(14, 25, 52, 0.95) 100%) !important;
+  border-color: rgba(63, 139, 249, 0.6) !important;
   transform: scale(1.01) translateY(-2px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+  box-shadow: 0 20px 40px -15px rgba(63, 139, 249, 0.25), 0 0 25px rgba(63, 139, 249, 0.1) !important;
 }
 
 .card-icon-node {
@@ -556,12 +556,12 @@
 .form-container-panel {
   max-width: 540px;
   margin: 4rem auto 0 auto;
-  background: rgba(4, 4, 8, 0.4);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(10, 18, 38, 0.85) 100%) !important;
+  border: 1px solid rgba(63, 139, 249, 0.18) !important;
   border-radius: 24px;
   padding: 3rem;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   text-align: left;
 }
 

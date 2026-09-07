@@ -2,6 +2,7 @@ import Link from "next/link";
 import SocialIcons from "@/components/ui/SocialIcons";
 import FooterMap from "@/components/layout/FooterMap";
 import { footerCompanyLinks, footerLegalLinks } from "@/lib/navigation";
+import CookieSettingsButton from "@/components/cookies/CookieSettingsButton";
 
 export default function Footer() {
   return (
@@ -64,6 +65,7 @@ export default function Footer() {
                   {link.label}
                 </Link>
               ))}
+              <CookieSettingsButton />
             </div>
           </div>
         </div>

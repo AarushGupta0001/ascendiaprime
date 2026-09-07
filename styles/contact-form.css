@@ -1,4 +1,19 @@
-/* Shared contact form shell — home page reference styling */
+/* Ensure modal / popup form headings are centered across all forms */
+.contact-modal-overlay h2,
+.contact-modal-overlay h3,
+#contact-modal-title,
+.popup-content > h2,
+.popup-content > h3,
+.popup-content .text-center h3,
+.partner-popup-content h2,
+.partner-popup-content h3,
+#partner-modal h2,
+#partner-modal h3,
+#contact-modal h2,
+#contact-modal h3 {
+  text-align: center !important;
+}
+
 #contact-form-container,
 .contact-form-shell {
   isolation: isolate;

@@ -44,12 +44,12 @@ export default function SeoPage() {
         <div className="min-h-[85vh] flex flex-col justify-center mb-12 relative md:mt-10 max-w-[1400px] mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="hero-animate text-5xl md:text-6xl lg:text-[4.5rem] font-bold leading-[1.1] text-white tracking-tight mb-6" style={{ animationDelay: "0.1s" }}>
+              <h1 className="hero-animate text-[2.25rem] sm:text-5xl lg:text-[3.1rem] xl:text-[3.5rem] font-bold leading-[1.1] text-white tracking-tight mb-6" style={{ animationDelay: "0.1s" }}>
                 Search Visibility<br/>
                 Built to <span className="text-gradient-growth drop-shadow-[0_0_15px_rgba(63,139,249,0.4)]">Grow</span><br/>
                 with Ascendia Prime.
               </h1>
-              <p className="hero-animate text-lg text-slate-300 opacity-90 max-w-lg mb-10 leading-relaxed" style={{ animationDelay: "0.3s" }}>
+              <p className="hero-animate text-[1.05rem] md:text-[1.1rem] text-slate-300 opacity-90 max-w-lg mb-10 leading-relaxed font-light" style={{ animationDelay: "0.3s" }}>
                 Ascendia Prime helps brands turn search demand into qualified traffic, stronger visibility, and measurable organic growth.
               </p>
               <div className="hero-animate flex flex-col sm:flex-row gap-5 mb-16" style={{ animationDelay: "0.4s" }}>

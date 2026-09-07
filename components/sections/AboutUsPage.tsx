@@ -44,13 +44,13 @@ export default function AboutUsPage() {
             
             <div className="max-w-[1400px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-20">
                 <div className="fade-up-element text-left">
-                    <h1 className="text-4xl md:text-6xl lg:text-[4.5rem] font-black leading-[1.1] text-white tracking-tight mb-8">
+                    <h1 className="text-[2.25rem] sm:text-5xl lg:text-[3.1rem] xl:text-[3.5rem] font-bold leading-[1.1] text-white tracking-tight mb-8">
                         Built on Experience.<br/>
                         Driven by <span className="text-shimmer">Transparency.</span><br/>
                         Focused on Growth.
                     </h1>
                     
-                    <p className="text-lg md:text-xl text-slate-300 mb-10 leading-relaxed font-light max-w-2xl">
+                    <p className="text-[1.05rem] md:text-[1.1rem] text-slate-300 mb-10 leading-relaxed font-light max-w-2xl">
                         Ascendia Prime was founded in January 2025 with a clear objective: to bring more transparency, accountability, and ethical business practices into performance marketing.<br /><br />
                         Built by experienced professionals with over 20 years of collective industry expertise across marketing, advertising, media, and performance-led growth, we help brands and partners scale through clear strategy, transparent execution, and measurable outcomes across global markets.
                     </p>

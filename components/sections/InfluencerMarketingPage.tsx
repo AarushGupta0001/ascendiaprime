@@ -34,12 +34,12 @@ export default function InfluencerMarketingPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-[1400px] mx-auto w-full">
             
             <div className="inf-reveal z-20 text-center lg:text-left">
-                <h1 className="text-4xl md:text-5xl xl:text-6xl font-extrabold text-white tracking-tight mb-8 leading-tight">
+                <h1 className="text-[2.25rem] sm:text-5xl lg:text-[3.1rem] xl:text-[3.5rem] font-bold text-white tracking-tight mb-8 leading-[1.1]">
                     Creator Partnerships<br />
                     Built to <span className="text-gradient-social drop-shadow-[0_0_15px_rgba(116,105,248,0.4)]">Grow</span><br />
                     with Ascendia Prime
                 </h1>
-                <p className="text-lg text-[#d8b4fe] max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed opacity-90">
+                <p className="text-[1.05rem] md:text-[1.1rem] text-[#d8b4fe] max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed font-light opacity-90">
                     Ascendia Prime connects brands with the right creators to build trust, expand reach, and turn social attention into measurable campaign growth.
                 </p>
                 <div className="magnetic-btn hover-target">

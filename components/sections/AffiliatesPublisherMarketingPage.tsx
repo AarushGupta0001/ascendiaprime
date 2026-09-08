@@ -94,47 +94,307 @@ function Icon({ name }: { name: string }) {
   </svg>;
 }
 
+const sourceLines = [
+  { key: "content", path: "M175 145 C260 145,285 250,355 318", color: "#e057d8", dur: "4.2s", delay: "0s" },
+  { key: "comparison", path: "M175 255 C260 255,290 285,355 325", color: "#ab57f3", dur: "3.9s", delay: "1.4s" },
+  { key: "coupon", path: "M175 365 C255 365,295 350,355 340", color: "#e057d8", dur: "3.7s", delay: "0.7s" },
+  { key: "creator", path: "M175 475 C260 475,292 405,355 355", color: "#7469f8", dur: "4.4s", delay: "2.1s" },
+  { key: "email", path: "M175 585 C255 585,290 445,355 365", color: "#3f8bf9", dur: "4.0s", delay: "1.1s" },
+] as const;
+
+const outcomeLines = [
+  { key: "lead", path: "M445 325 C520 270,555 175,625 175", color: "#38bdf8", dur: "4.0s", delay: "0.5s" },
+  { key: "sale", path: "M445 338 C525 315,560 300,625 300", color: "#3f8bf9", dur: "4.3s", delay: "1.8s" },
+  { key: "customer", path: "M445 350 C525 365,560 425,625 425", color: "#7469f8", dur: "3.8s", delay: "1.2s" },
+  { key: "roas", path: "M445 362 C520 425,560 550,625 550", color: "#38bdf8", dur: "4.2s", delay: "2.3s" },
+] as const;
+
+// The ONLY 3 scrolling text badges on the lines:
+const scrollingBadges = [
+  { key: "content", path: "M175 145 C260 145,285 250,355 318", text: "High-intent visitor", width: 114, dur: "4.2s", delay: "0s", color: "#e057d8" },
+  { key: "comparison", path: "M175 255 C260 255,290 285,355 325", text: "Qualified click", width: 96, dur: "3.9s", delay: "1.4s", color: "#ab57f3" },
+  { key: "coupon", path: "M175 365 C255 365,295 350,355 340", text: "Purchase intent", width: 98, dur: "3.7s", delay: "0.7s", color: "#e057d8" },
+] as const;
+
 function GrowthEngine() {
-  return <div className="engine-wrap">
-    <div className="growth-engine is-playing" aria-hidden="true">
-      <span className="engine-label engine-label-left">Publisher signals</span><span className="engine-label engine-label-right">Advertiser outcomes</span>
-      <svg className="network-lines" viewBox="0 0 800 690" preserveAspectRatio="none">
-        <g className="source-lines">{["M175 145 C260 145,285 250,355 318","M175 255 C260 255,290 285,355 325","M175 365 C255 365,295 350,355 340","M175 475 C260 475,292 405,355 355","M175 585 C255 585,290 445,355 365"].map((d,i)=><g key={d}><path className="network-base" d={d}/><path className="network-flow source-flow" d={d} pathLength="100" style={{"--delay":`${1.7+i*.32}s`} as React.CSSProperties}/></g>)}</g>
-        <g className="outcome-lines">{["M445 325 C520 270,555 175,625 175","M445 338 C525 315,560 300,625 300","M445 350 C525 365,560 425,625 425","M445 362 C520 425,560 550,625 550"].map((d,i)=><g key={d}><path className="network-base" d={d}/><path className="network-flow outcome-flow" d={d} pathLength="100" style={{"--delay":`${5.85+i*.3}s`} as React.CSSProperties}/></g>)}</g>
-      </svg>
-      <div className="source-column">{sources.map((item,index)=><div className="engine-node source-node" key={item.key} style={{"--delay":`${.45+index*.24}s`} as React.CSSProperties}><span className="node-icon"><Icon name={item.icon}/></span><span><small>{item.label}</small><strong>{item.value}</strong></span></div>)}</div>
-      <div className="engine-core"><span className="core-ring ring-one"/><span className="core-ring ring-two"/><img className="engine-core-image" src="https://ascendiaprime.com/wp-content/uploads/2026/05/13-removebg-preview-e1787582061522.png" alt="AscendiaPrime" /></div>
-      <div className="validation-list">{["Source approved","Tracking verified","Conversion validated"].map((text,index)=><div className="validation-pill" key={text} style={{"--delay":`${4.25+index*.55}s`} as React.CSSProperties}><span>✓</span>{text}</div>)}</div>
-      <div className="outcome-column">{outcomes.map((item,index)=><div className="engine-node outcome-node" key={item.key} style={{"--delay":`${7+index*.24}s`} as React.CSSProperties}><span className="node-icon"><Icon name={item.icon}/></span><span><small>{item.label}</small><strong>{item.value}</strong></span></div>)}</div>
-      <p className="engine-message">Trusted partners. Validated performance. <b>Scalable growth.</b></p>
+  return (
+    <div className="engine-wrap">
+      <div className="growth-engine is-playing" aria-hidden="true">
+        <span className="engine-label engine-label-left">Publisher signals</span>
+        <span className="engine-label engine-label-right">Advertiser outcomes</span>
+
+        <svg className="network-lines" viewBox="0 0 800 690" preserveAspectRatio="none">
+          <defs>
+            <filter id="glow-purple" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="3" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <filter id="glow-blue" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="3" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <filter id="badge-shadow" x="-30%" y="-30%" width="160%" height="160%">
+              <feDropShadow dx="0" dy="2" stdDeviation="4" floodColor="#000000" floodOpacity="0.75" />
+            </filter>
+          </defs>
+
+          {/* Base connector lines */}
+          <g className="source-lines">
+            {sourceLines.map((item) => (
+              <path key={`base-${item.key}`} className="network-base" d={item.path} />
+            ))}
+          </g>
+          <g className="outcome-lines">
+            {outcomeLines.map((item) => (
+              <path key={`base-${item.key}`} className="network-base" d={item.path} />
+            ))}
+          </g>
+
+          {/* Flow pulses moving along lines */}
+          <g className="source-pulses">
+            {sourceLines.map((item) => (
+              <path
+                key={`pulse-${item.key}`}
+                d={item.path}
+                fill="none"
+                stroke={item.color}
+                strokeWidth="2.4"
+                strokeLinecap="round"
+                strokeDasharray="40 600"
+                filter="url(#glow-purple)"
+                className="signal-flow-line"
+              >
+                <animate
+                  attributeName="stroke-dashoffset"
+                  values="350; -350"
+                  dur={item.dur}
+                  begin={item.delay}
+                  repeatCount="indefinite"
+                />
+                <animate
+                  attributeName="opacity"
+                  values="0; 0.9; 0.9; 0"
+                  keyTimes="0; 0.15; 0.85; 1"
+                  dur={item.dur}
+                  begin={item.delay}
+                  repeatCount="indefinite"
+                />
+              </path>
+            ))}
+          </g>
+          <g className="outcome-pulses">
+            {outcomeLines.map((item) => (
+              <path
+                key={`pulse-${item.key}`}
+                d={item.path}
+                fill="none"
+                stroke={item.color}
+                strokeWidth="2.4"
+                strokeLinecap="round"
+                strokeDasharray="40 600"
+                filter="url(#glow-blue)"
+                className="signal-flow-line"
+              >
+                <animate
+                  attributeName="stroke-dashoffset"
+                  values="350; -350"
+                  dur={item.dur}
+                  begin={item.delay}
+                  repeatCount="indefinite"
+                />
+                <animate
+                  attributeName="opacity"
+                  values="0; 0.9; 0.9; 0"
+                  keyTimes="0; 0.15; 0.85; 1"
+                  dur={item.dur}
+                  begin={item.delay}
+                  repeatCount="indefinite"
+                />
+              </path>
+            ))}
+          </g>
+
+          {/* ONLY the 3 scrolling text badges on the line */}
+          <g className="signal-badges">
+            {scrollingBadges.map((item) => (
+              <g key={`badge-${item.key}`} className="scrolling-pill-group">
+                <animateMotion
+                  path={item.path}
+                  dur={item.dur}
+                  begin={item.delay}
+                  repeatCount="indefinite"
+                  calcMode="linear"
+                  keyPoints="0; 1"
+                  keyTimes="0; 1"
+                />
+                <animate
+                  attributeName="opacity"
+                  values="0; 0.3; 1; 1; 0.3; 0"
+                  keyTimes="0; 0.08; 0.2; 0.82; 0.94; 1"
+                  dur={item.dur}
+                  begin={item.delay}
+                  repeatCount="indefinite"
+                />
+                <rect
+                  x={-item.width / 2}
+                  y="-11"
+                  width={item.width}
+                  height="22"
+                  rx="11"
+                  fill="rgba(6, 11, 28, 0.92)"
+                  stroke={item.color}
+                  strokeWidth="1.2"
+                  strokeOpacity="0.55"
+                  filter="url(#badge-shadow)"
+                />
+                <text
+                  x="0"
+                  y="3.5"
+                  textAnchor="middle"
+                  fill="#ffffff"
+                  fontSize="9.5"
+                  fontWeight="600"
+                  fontFamily="var(--font-poppins), 'Poppins', sans-serif"
+                  letterSpacing="0.01em"
+                >
+                  {item.text}
+                </text>
+              </g>
+            ))}
+          </g>
+        </svg>
+
+        {/* Publisher Signals column */}
+        <div className="source-column">
+          {sources.map((item, index) => (
+            <div
+              className="engine-node source-node"
+              key={item.key}
+              style={{ "--delay": `${0.45 + index * 0.24}s` } as React.CSSProperties}
+            >
+              <span className="node-icon">
+                <Icon name={item.icon} />
+              </span>
+              <span>
+                <small>{item.label}</small>
+                <strong>{item.value}</strong>
+              </span>
+            </div>
+          ))}
+        </div>
+
+        {/* Central Brand Core Orb */}
+        <div className="engine-core">
+          <span className="core-ring ring-one" />
+          <span className="core-ring ring-two" />
+          <div className="engine-core-inner">
+            <img
+              src="https://ascendiaprime.com/wp-content/uploads/2026/05/13-removebg-preview-e1787582061522.png"
+              alt="Ascendia Prime"
+              className="w-12 h-12 object-contain filter drop-shadow-[0_0_12px_rgba(63,139,249,0.7)]"
+              onError={(e) => {
+                e.currentTarget.src = "/images/logos/ascendia-core-icon.png";
+              }}
+            />
+          </div>
+        </div>
+
+        {/* The 3 validation texts below the core */}
+        <div className="validation-list">
+          {["Source approved", "Tracking verified", "Conversion validated"].map((text, index) => (
+            <div
+              className="validation-pill"
+              key={text}
+              style={{ "--delay": `${2.8 + index * 0.45}s` } as React.CSSProperties}
+            >
+              <span>✓</span>
+              {text}
+            </div>
+          ))}
+        </div>
+
+        {/* Advertiser Outcomes column */}
+        <div className="outcome-column">
+          {outcomes.map((item, index) => (
+            <div
+              className="engine-node outcome-node"
+              key={item.key}
+              style={{ "--delay": `${0.8 + index * 0.24}s` } as React.CSSProperties}
+            >
+              <span className="node-icon">
+                <Icon name={item.icon} />
+              </span>
+              <span>
+                <small>{item.label}</small>
+                <strong>{item.value}</strong>
+              </span>
+            </div>
+          ))}
+        </div>
+
+        <p className="engine-message">
+          Trusted partners. Validated performance. <b>Scalable growth.</b>
+        </p>
+      </div>
+
+      <div
+        className="mobile-engine"
+        aria-label="Publisher signals are validated by AscendiaPrime and converted into measurable advertiser outcomes."
+      >
+        <div>
+          <strong>Publisher signals</strong>
+          <span>Trusted content, comparison, coupon, creator and email partners</span>
+        </div>
+        <b>↓</b>
+        <div>
+          <strong>AscendiaPrime validation</strong>
+          <span>Source approved · Tracking verified · Conversion validated</span>
+        </div>
+        <b>↓</b>
+        <div>
+          <strong>Measurable outcomes</strong>
+          <span>Qualified leads, verified sales and scalable customer growth</span>
+        </div>
+      </div>
     </div>
-    <div className="mobile-engine" aria-label="Publisher signals are validated by AscendiaPrime and converted into measurable advertiser outcomes.">
-      <div><strong>Publisher signals</strong><span>Trusted content, comparison, coupon, creator and email partners</span></div><b>↓</b><div><strong>AscendiaPrime validation</strong><span>Source approved · Tracking verified · Conversion validated</span></div><b>↓</b><div><strong>Measurable outcomes</strong><span>Qualified leads, verified sales and scalable customer growth</span></div>
-    </div>
-  </div>;
+  );
 }
 
 export default function AffiliatesPublisherMarketingPage() {
   const { openContactModal } = useContactModal();
 
   return (
-    <div id="affiliate-master" className="antialiased text-white bg-[#020617] font-sans selection:bg-[#3F8BF9] selection:text-white" style={{ width: "100%", position: "relative", overflowX: "hidden" }}>
+    <div id="affiliate-master" className="antialiased text-white bg-[#020617] font-sans selection:bg-[#3F8BF9] selection:text-white" style={{ width: "100%", position: "relative", overflowX: "clip" }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(structuredData)}} />
       <section id="top" className="hero-section">
         <div className="hero-copy">
-          <p className="eyebrow">Affiliate growth for performance teams</p>
-          <h1>Affiliate Growth Built on the Right Publishers—<span>Not Simply More of Them</span></h1>
-          <p className="hero-lede">AscendiaPrime helps performance and affiliate teams recruit, approve and manage publishers across the UK and international markets. You get hands-on campaign support, visible traffic sources and commercial flexibility—without handing quality control to a black box.</p>
+          <p className="eyebrow">Performance Marketing &amp; Partner Growth</p>
+          <h1>
+            Affiliate &amp;
+            <br />
+            Publisher Growth,
+            <br />
+            <span className="hero-gradient-blue">Built for</span>{" "}
+            <span className="hero-gradient-pink">Measurable Scale</span>
+          </h1>
+          <p className="hero-lede">
+            Connect with trusted publisher partners, validate every performance signal and scale customer acquisition with transparent tracking and control.
+          </p>
           <div className="hero-actions">
             <button className="button button-primary" type="button" onClick={() => openContactModal()}>
-              Discuss your campaign <span aria-hidden="true">→</span>
+              Discuss Your Campaign <span aria-hidden="true">→</span>
             </button>
-            <a className="button button-secondary" href="#case-study">See a client result</a>
           </div>
           <div className="assurances">
-            <span>Selective publisher approval</span>
-            <span>Traffic-quality controls</span>
-            <span>Hands-on campaign management</span>
+            <span>Approved traffic sources</span>
+            <span>Transparent attribution</span>
+            <span>Dedicated campaign support</span>
           </div>
         </div>
         <GrowthEngine/>
@@ -281,7 +541,7 @@ export default function AffiliatesPublisherMarketingPage() {
       </section>
 
       <section id="contact" className="contact-section">
-        <div>
+        <div className="contact-content">
           <p className="section-kicker">Start with campaign fit</p>
           <h2>Tell us what you need the channel to achieve</h2>
           <p>Share your target customer, markets, conversion event and commercial model. We will review the opportunity and tell you where AscendiaPrime—and our publisher base—can add value.</p>

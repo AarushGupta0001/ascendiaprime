@@ -1,348 +1,379 @@
 "use client";
 
+import { useContactModal } from "@/components/forms/ContactModalProvider";
+import PpcDecisionConsole from "@/components/PpcDecisionConsole";
 import "@/styles/ppc.css";
 
-import HeroCenterLogo from "@/components/HeroCenterLogo";
-import PpcDecisionConsole from "@/components/PpcDecisionConsole";
-import PageRevealEffects from "@/components/effects/PageRevealEffects";
-import FaqSection from "@/components/sections/FaqSection";
+const proofPoints = [
+  { metric: "Intent-Led Targeting", label: "Search behaviour, audience signals & platform intent" },
+  { metric: "Spend Efficiency", label: "Budget control & wasted spend elimination" },
+  { metric: "Performance Visibility", label: "Attribution across spend, CPA, ROAS & conversions" },
+  { metric: "Cross-Platform Scale", label: "Google Ads, Meta, YouTube & retargeting growth" },
+] as const;
+
+const principles = [
+  ["01", "Start with intent", "Match keyword intent, search behaviour, audience segmentation, and channel mechanics before ad spend begins."],
+  ["02", "Align pages & tracking", "Connect ad messaging, landing page experience, conversion events, and server-side attribution before scaling spend."],
+  ["03", "Put budget behind what works", "Scale top-performing ad groups, creatives, and bidding strategies while actively eliminating underperforming placements."],
+] as const;
+
+const capabilities = [
+  ["search", "Google Ads Management", "Capture high-intent searchers across Google Search, Shopping, Performance Max, Display, and YouTube campaigns aligned with business goals."],
+  ["grid", "Meta Ads Management", "Run Facebook and Instagram campaigns built around audience segmentation, creative angle testing, funnel strategy, and conversion-led growth."],
+  ["target", "Paid Search Strategy", "Build keyword, intent, and competitor-led search campaigns designed to reach users actively looking for relevant products or services."],
+  ["social", "Paid Social Campaigns", "Engage audiences across social platforms through creative-led campaigns focused on awareness, traffic, qualified leads, and sales."],
+  ["shield", "Tracking & Landing Page Alignment", "Connect ad messaging, landing page experience, conversion events, and reporting visibility so campaign performance can be measured properly."],
+  ["chart", "Continuous Optimization", "Continuously optimize audiences, keywords, creatives, bids, budgets, placements, CPA, ROAS, and conversion quality."],
+] as const;
+
+const bestFitCampaigns = [
+  "Lead Generation",
+  "E-commerce Sales",
+  "Brand Search Protection",
+  "Competitor Keyword Targeting",
+  "Product Launches",
+  "Geo-Specific Acquisition",
+  "High-Ticket Inquiries",
+  "Retargeting & Reactivation",
+] as const;
+
+const channels = [
+  "Google Search Ads",
+  "Google Shopping",
+  "Performance Max",
+  "YouTube Ads",
+  "Meta Ads",
+  "Facebook & Instagram",
+  "Microsoft Ads",
+  "Display Retargeting",
+  "Lead Gen Campaigns",
+  "Paid Social",
+] as const;
+
+const processSteps = [
+  ["01", "Understand the growth objective", "We begin by analyzing your business model, target customer profile, unit economics, conversion goals, and target CAC/ROAS."],
+  ["02", "Map audience and intent", "We define high-converting search keywords, audience segments, funnel stages, and platform behaviours that guide campaign architecture."],
+  ["03", "Structure campaign setup", "We build tight campaign hierarchies, responsive ad creatives, tracking pixels, conversion actions, and landing page flows before launch."],
+  ["04", "Launch with controlled spend", "Campaigns go live with deliberate budget allocation, allowing early conversion and cost signals to be verified before scaling."],
+  ["05", "Review performance signals", "We monitor search terms, CTR, CPC, CPA, ROAS, creative performance, and audience response to identify high-leverage opportunities."],
+  ["06", "Optimize and scale", "We expand budget into top-performing keywords, audiences, and ad formats while systematically trimming wasted spend."],
+] as const;
+
+const faqs = [
+  ["What are Google, Meta and PPC ads?", "Google, Meta and PPC ads are paid media campaigns that help advertisers reach relevant audiences across search, social, display, shopping, video, and retargeting placements."],
+  ["How do you plan paid media campaigns?", "We begin with the advertiser’s objectives, audience profile, target market, budget, campaign model, conversion goals, and tracking requirements before building the campaign structure."],
+  ["Can paid media campaigns support both leads and sales?", "Yes. Paid media campaigns can be structured for lead generation, e-commerce sales, product promotion, sign-ups, retargeting, or other measurable actions depending on the campaign objective."],
+  ["Do advertisers get visibility into campaign performance?", "Yes. Advertisers can get reporting visibility across spend, clicks, conversions, CPA, ROAS, audience response, and optimization insights."],
+  ["How do you reduce wasted spend in PPC campaigns?", "We focus on audience relevance, keyword quality, negative targeting, creative testing, landing page alignment, budget monitoring, and continuous optimization."],
+  ["How quickly can a PPC campaign be launched?", "Depending on account readiness, tracking setup, and creative assets, campaigns can typically be configured, tested, and launched within 5 to 10 business days."],
+] as const;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://ascendiaprime.com/#organization",
+      name: "Ascendia Prime Media Ltd",
+      url: "https://ascendiaprime.com/",
+    },
+    {
+      "@type": "Service",
+      "@id": "https://ascendiaprime.com/ppc/#service",
+      name: "Google, Meta & PPC Management Services",
+      serviceType: "Paid media & search advertising",
+      provider: { "@id": "https://ascendiaprime.com/#organization" },
+      areaServed: "Worldwide",
+      description: "Performance-led Google Ads, Meta Ads, and PPC campaign management focused on audience intent, spend efficiency, and measurable ROI.",
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://ascendiaprime.com/" },
+        { "@type": "ListItem", position: 2, name: "PPC Management", item: "https://ascendiaprime.com/ppc/" },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqs.map(([question, answer]) => ({
+        "@type": "Question",
+        name: question,
+        acceptedAnswer: { "@type": "Answer", text: answer },
+      })),
+    },
+  ],
+};
+
+function Icon({ name }: { name: string }) {
+  const common = {
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 1.8,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+  };
+
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" {...common}>
+      {name === "search" && (
+        <>
+          <circle cx="11" cy="11" r="7" />
+          <path d="m20 20-3.5-3.5" />
+        </>
+      )}
+      {name === "grid" && (
+        <>
+          <rect x="3" y="3" width="7" height="7" rx="1.5" />
+          <rect x="14" y="3" width="7" height="7" rx="1.5" />
+          <rect x="3" y="14" width="7" height="7" rx="1.5" />
+          <rect x="14" y="14" width="7" height="7" rx="1.5" />
+        </>
+      )}
+      {name === "target" && (
+        <>
+          <circle cx="12" cy="12" r="8" />
+          <circle cx="12" cy="12" r="3.5" />
+          <path d="M12 2v3M22 12h-3M12 22v-3M2 12h3" />
+        </>
+      )}
+      {name === "social" && (
+        <>
+          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+        </>
+      )}
+      {name === "shield" && (
+        <>
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          <path d="m9 12 2 2 4-4" />
+        </>
+      )}
+      {name === "chart" && (
+        <>
+          <path d="M4 19.5h16M5.5 17l4.2-5 3.2 2.5L19 7" />
+          <path d="M15.5 7H19v3.5" />
+        </>
+      )}
+    </svg>
+  );
+}
 
 export default function PpcPage() {
+  const { openContactModal } = useContactModal();
+
   return (
-    <PageRevealEffects>
-      <div style={{ position: "fixed", top: "0", left: "0", width: "100vw", height: "100vh", backgroundColor: "#020617", zIndex: "-9999", pointerEvents: "none" }}></div>
+    <div
+      id="ppc-master"
+      className="antialiased text-white bg-[#020617] font-sans selection:bg-[#3F8BF9] selection:text-white"
+      style={{ width: "100%", position: "relative", overflowX: "clip" }}
+    >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
 
-
-<div id="ppc-master" className="page-master antialiased text-white bg-[#020617] font-sans selection:bg-[#3F8BF9] selection:text-white" style={{ width: "100%", position: "relative", overflowX: "hidden" }}>
-
-    
-    
-
-    
-
-    
-
-    
-    <div className="absolute border-radius-full filter blur-[140px] opacity-10 w-[800px] h-[800px] bg-[#3F8BF9] top-[10%] left-[-200px] animate-pulse pointer-events-none"></div>
-    <div className="absolute border-radius-full filter blur-[140px] opacity-10 w-[600px] h-[600px] bg-[#E057D8] top-[40%] right-[-150px] animate-pulse pointer-events-none" style={{ animationDelay: "1s" }}></div>
-
-    
-    <section className="relative z-10 pt-24 pb-12 overflow-hidden" style={{ background: "rgba(2, 6, 23, 0.9)" }}>
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 min-h-[75vh] flex flex-col lg:flex-row items-center justify-between mb-12">
-            
-            <div className="w-full lg:w-5/12 text-center lg:text-left z-20 reveal-up mb-16 lg:mb-0">
-                <h1 className="text-[2.25rem] sm:text-5xl lg:text-[3.1rem] xl:text-[3.5rem] font-bold text-white tracking-tight mb-8 leading-[1.1]">
-                    Paid Media Built Around Intent,
-                    <br className="hidden md:block" />
-                    <span className="text-gradient-brand">Efficiency and Scale</span>
-                </h1>
-                <p className="text-[1.05rem] md:text-[1.1rem] text-[#94a3b8] max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed font-light">
-                    We help advertisers plan, launch, and optimize Google, Meta, and PPC campaigns with a clear focus on audience intent, spend efficiency, conversion quality, and measurable business outcomes.
-                </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                    <button type="button" className="open-contact-modal btn-glow btn-glow-secondary w-full sm:w-auto">
-                       Start a Conversation
-                    </button>
-                </div>
-            </div>
-
-            
-            <div className="w-full lg:w-7/12 relative flex items-center justify-center z-10 reveal-up mt-12 lg:mt-0">
-                <PpcDecisionConsole />
-            </div>
-
+      {/* ── Hero Section ── */}
+      <section id="top" className="hero-section">
+        <div className="hero-copy">
+          <p className="eyebrow">Paid Media &amp; Performance Advertising</p>
+          <h1>
+            Paid Media Built Around Intent,
+            <br />
+            <span className="hero-gradient-blue">Efficiency</span> and{" "}
+            <span className="hero-gradient-pink">Scale</span>
+          </h1>
+          <p className="hero-lede">
+            We help advertisers plan, launch, and optimize Google, Meta, and PPC campaigns with a clear focus on audience intent, spend efficiency, conversion quality, and measurable business outcomes.
+          </p>
+          <div className="hero-actions">
+            <button
+              className="button button-primary cursor-pointer"
+              type="button"
+              onClick={() => openContactModal()}
+              style={{ cursor: "pointer" }}
+            >
+              Start a Conversation <span aria-hidden="true">→</span>
+            </button>
+          </div>
+          <div className="assurances">
+            <span>High-intent targeting</span>
+            <span>Spend efficiency</span>
+            <span>Dedicated campaign management</span>
+          </div>
         </div>
-    </section>
 
-    
-    <section className="relative z-10 pb-16" style={{ background: "rgba(2, 6, 23, 0.9)" }}>
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 reveal-up">
-                
-                <div className="trace-card theme-blue p-6 text-center md:text-left">
-                    <h3 className="text-lg font-bold text-white mb-2">Intent-Led Targeting</h3>
-                    <p className="text-sm text-slate-300">Campaigns structured around search behaviour, audience signals, and platform-level intent.</p>
-                </div>
-                
-                <div className="trace-card theme-purple p-6 text-center md:text-left">
-                    <h3 className="text-lg font-bold text-white mb-2">Spend Efficiency</h3>
-                    <p className="text-sm text-slate-300">Media activity planned with clear budget control, campaign objectives, and optimization priorities.</p>
-                </div>
-                
-                <div className="trace-card theme-pink p-6 text-center md:text-left">
-                    <h3 className="text-lg font-bold text-white mb-2">Performance Visibility</h3>
-                    <p className="text-sm text-slate-300">Reporting visibility across spend, clicks, conversions, CPA, ROAS, and campaign movement.</p>
-                </div>
+        <PpcDecisionConsole />
+      </section>
 
-            </div>
+      {/* ── Proof Strip ── */}
+      <section className="proof-strip" aria-label="AscendiaPrime PPC proof points">
+        {proofPoints.map((item) => (
+          <div key={item.metric}>
+            <strong>{item.metric}</strong>
+            <span>{item.label}</span>
+          </div>
+        ))}
+      </section>
+
+      {/* ── Value Proposition (Fit Section) ── */}
+      <section className="content-section fit-section">
+        <div className="section-heading">
+          <p className="section-kicker">Performance-First Paid Media</p>
+          <h2>Paid media works best when every click has a purpose</h2>
+          <p>
+            Paid media is not just about increasing traffic. It is about reaching users with the right intent, placing the right message in front of them, and ensuring every campaign is connected to a measurable business objective.
+          </p>
         </div>
-    </section>
-
-    
-    <section className="relative z-10 py-24" style={{ background: "linear-gradient(to bottom, rgba(2, 6, 23, 0.9) 0%, rgba(15, 23, 42, 0.9) 100%)" }}>
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-            <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-start reveal-up">
-                
-                <div className="w-full lg:w-5/12">
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                        Paid Media Works Best When <span className="text-gradient-brand">Every Click Has a Purpose</span>
-                    </h2>
-                </div>
-
-                <div className="w-full lg:w-7/12 space-y-6 text-[#cbd5e1] text-lg leading-relaxed">
-                    <p>Paid media is not just about increasing traffic. It is about reaching users with the right intent, placing the right message in front of them, and ensuring every campaign is connected to a measurable business objective.</p>
-                    <p>At our agency, we approach Google, Meta, and PPC campaigns with a performance-first mindset. From campaign structure and audience planning to tracking, landing page alignment, and ongoing optimization, our focus is to help advertisers reduce wasted spend and scale what is actually working.</p>
-                </div>
-
-            </div>
+        <div className="fit-grid">
+          {principles.map(([number, title, copy]) => (
+            <article key={number}>
+              <span>{number}</span>
+              <h3>{title}</h3>
+              <p>{copy}</p>
+            </article>
+          ))}
         </div>
-    </section>
+      </section>
 
-    
-    <section className="relative z-10 py-24" style={{ background: "linear-gradient(to bottom, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.9) 100%)" }}>
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-            <div className="text-center max-w-3xl mx-auto mb-16 reveal-up">
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Google, Meta & PPC Growth Capabilities</h2>
-                <p className="text-[#cbd5e1] text-lg">A structured paid media approach designed to help advertisers capture demand, create engagement, and improve conversion outcomes.</p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                <div className="trace-card theme-blue p-8 text-left reveal-up">
-                    <div className="w-10 h-10 mb-4 rounded-lg bg-[#3F8BF9]/10 flex items-center justify-center text-[#3F8BF9]">
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                    </div>
-                    <h3 className="text-xl font-bold text-white mb-3">Google Ads Management</h3>
-                    <p className="text-sm text-slate-300 leading-relaxed">Capture high-intent users through search, shopping, display, YouTube, and performance-led Google Ads campaigns aligned with business goals.</p>
-                </div>
-
-                <div className="trace-card theme-indigo p-8 text-left reveal-up" style={{ transitionDelay: "100ms" }}>
-                    <div className="w-10 h-10 mb-4 rounded-lg bg-[#7469F8]/10 flex items-center justify-center text-[#7469F8]">
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path></svg>
-                    </div>
-                    <h3 className="text-xl font-bold text-white mb-3">Meta Ads Management</h3>
-                    <p className="text-sm text-slate-300 leading-relaxed">Run Facebook and Instagram campaigns built around audience segmentation, creative testing, funnel strategy, and conversion-led growth.</p>
-                </div>
-
-                <div className="trace-card theme-purple p-8 text-left reveal-up" style={{ transitionDelay: "200ms" }}>
-                    <div className="w-10 h-10 mb-4 rounded-lg bg-[#AB57F3]/10 flex items-center justify-center text-[#AB57F3]">
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
-                    </div>
-                    <h3 className="text-xl font-bold text-white mb-3">Paid Search Strategy</h3>
-                    <p className="text-sm text-slate-300 leading-relaxed">Build keyword, intent, and competitor-led search campaigns designed to reach users actively looking for relevant products or services.</p>
-                </div>
-
-                <div className="trace-card theme-pink p-8 text-left reveal-up">
-                    <div className="w-10 h-10 mb-4 rounded-lg bg-[#E057D8]/10 flex items-center justify-center text-[#E057D8]">
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path></svg>
-                    </div>
-                    <h3 className="text-xl font-bold text-white mb-3">Paid Social Campaigns</h3>
-                    <p className="text-sm text-slate-300 leading-relaxed">Engage audiences across social platforms through creative-led campaigns focused on awareness, traffic, leads, and conversions.</p>
-                </div>
-
-                <div className="trace-card theme-blue p-8 text-left reveal-up" style={{ transitionDelay: "100ms" }}>
-                    <div className="w-10 h-10 mb-4 rounded-lg bg-[#3F8BF9]/10 flex items-center justify-center text-[#3F8BF9]">
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                    </div>
-                    <h3 className="text-xl font-bold text-white mb-3">Tracking & Landing Page Alignment</h3>
-                    <p className="text-sm text-slate-300 leading-relaxed">Connect ad messaging, landing page experience, conversion events, and reporting visibility so campaign performance can be measured properly.</p>
-                </div>
-
-                <div className="trace-card theme-indigo p-8 text-left reveal-up" style={{ transitionDelay: "200ms" }}>
-                    <div className="w-10 h-10 mb-4 rounded-lg bg-[#7469F8]/10 flex items-center justify-center text-[#7469F8]">
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                    </div>
-                    <h3 className="text-xl font-bold text-white mb-3">Campaign Optimization</h3>
-                    <p className="text-sm text-slate-300 leading-relaxed">Continuously optimize audiences, keywords, creatives, bids, budgets, placements, CPA, ROAS, and conversion quality.</p>
-                </div>
-
-            </div>
+      {/* ── Capabilities Grid (6 Cards) ── */}
+      <section id="capabilities" className="content-section">
+        <div className="section-heading centered">
+          <p className="section-kicker">Full-Funnel Paid Advertising</p>
+          <h2>Google, Meta &amp; PPC Growth Capabilities</h2>
+          <p>
+            A structured paid media approach designed to help advertisers capture demand, create engagement, and improve conversion outcomes.
+          </p>
         </div>
-    </section>
-
-    {/* ── Best-Fit Campaigns ── */}
-    <section className="relative z-10 py-16" style={{ background: "linear-gradient(to bottom, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%)" }}>
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-            <div className="text-center max-w-2xl mx-auto mb-10 reveal-up">
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
-                    Best-Fit <span className="text-gradient-brand">Campaigns</span>
-                </h2>
-                <p className="text-[#94a3b8] text-base">Campaign types where paid media delivers the strongest results.</p>
-            </div>
-            <div className="flex flex-wrap justify-center gap-4 reveal-up">
-                <span className="best-fit-badge">Lead Generation</span>
-                <span className="best-fit-badge">E-commerce Sales</span>
-                <span className="best-fit-badge">Brand Search Protection</span>
-                <span className="best-fit-badge">Competitor Keyword Targeting</span>
-                <span className="best-fit-badge">Product Launches</span>
-                <span className="best-fit-badge">Geo-Specific Acquisition</span>
-            </div>
+        <div className="capability-grid">
+          {capabilities.map(([icon, title, copy]) => (
+            <article key={title}>
+              <span className="feature-icon">
+                <Icon name={icon} />
+              </span>
+              <div>
+                <h3>{title}</h3>
+                <p>{copy}</p>
+              </div>
+            </article>
+          ))}
         </div>
-    </section>
+      </section>
 
-    
-    <section className="relative z-10 py-24" style={{ background: "linear-gradient(to bottom, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%)" }}>
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 text-center reveal-up">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Channels and Campaign Formats</h2>
-            <p className="text-[#cbd5e1] text-lg max-w-3xl mx-auto mb-12">We support paid media activity across platforms and formats depending on the advertiser’s goals, audience behaviour, and market opportunity.</p>
-            
-            <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-                <span className="px-5 py-2.5 bg-slate-800/80 border border-slate-700 rounded-full text-slate-200 text-sm font-medium hover:bg-slate-700 hover:text-white transition-colors">Google Search Ads</span>
-                <span className="px-5 py-2.5 bg-slate-800/80 border border-slate-700 rounded-full text-slate-200 text-sm font-medium hover:bg-slate-700 hover:text-white transition-colors">Google Display Ads</span>
-                <span className="px-5 py-2.5 bg-slate-800/80 border border-slate-700 rounded-full text-slate-200 text-sm font-medium hover:bg-slate-700 hover:text-white transition-colors">Google Shopping Ads</span>
-                <span className="px-5 py-2.5 bg-slate-800/80 border border-slate-700 rounded-full text-slate-200 text-sm font-medium hover:bg-slate-700 hover:text-white transition-colors">Performance Max</span>
-                <span className="px-5 py-2.5 bg-slate-800/80 border border-slate-700 rounded-full text-slate-200 text-sm font-medium hover:bg-slate-700 hover:text-white transition-colors">YouTube Ads</span>
-                <span className="px-5 py-2.5 bg-slate-800/80 border border-slate-700 rounded-full text-slate-200 text-sm font-medium hover:bg-slate-700 hover:text-white transition-colors">Meta Ads</span>
-                <span className="px-5 py-2.5 bg-slate-800/80 border border-slate-700 rounded-full text-slate-200 text-sm font-medium hover:bg-slate-700 hover:text-white transition-colors">Facebook Ads</span>
-                <span className="px-5 py-2.5 bg-slate-800/80 border border-slate-700 rounded-full text-slate-200 text-sm font-medium hover:bg-slate-700 hover:text-white transition-colors">Instagram Ads</span>
-                <span className="px-5 py-2.5 bg-slate-800/80 border border-slate-700 rounded-full text-slate-200 text-sm font-medium hover:bg-slate-700 hover:text-white transition-colors">Microsoft Ads</span>
-                <span className="px-5 py-2.5 bg-slate-800/80 border border-slate-700 rounded-full text-slate-200 text-sm font-medium hover:bg-slate-700 hover:text-white transition-colors">Paid Social Campaigns</span>
-                <span className="px-5 py-2.5 bg-slate-800/80 border border-slate-700 rounded-full text-slate-200 text-sm font-medium hover:bg-slate-700 hover:text-white transition-colors">Lead Generation Campaigns</span>
-                <span className="px-5 py-2.5 bg-slate-800/80 border border-slate-700 rounded-full text-slate-200 text-sm font-medium hover:bg-slate-700 hover:text-white transition-colors">Retargeting Campaigns</span>
-            </div>
+      {/* ── Best-Fit Campaigns & Formats ── */}
+      <section className="content-section capability-section">
+        <div className="capability-card">
+          <p className="section-kicker">High-Impact Objectives</p>
+          <h2>Best-Fit Campaigns</h2>
+          <div className="tag-list">
+            {bestFitCampaigns.map((item) => (
+              <span key={item}>{item}</span>
+            ))}
+          </div>
         </div>
-    </section>
-
-    
-    <section className="relative z-10 py-24" style={{ background: "linear-gradient(to bottom, rgba(15, 23, 42, 0.95) 0%, rgba(2, 6, 23, 0.9) 100%)", overflow: "hidden" }}>
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-            <div className="text-center max-w-3xl mx-auto mb-16 reveal-up">
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">How We Build Paid Media Campaigns</h2>
-                <p className="text-[#cbd5e1] text-lg">A structured process to plan, launch, monitor, and improve campaigns with greater clarity.</p>
-            </div>
-
-            <div className="vertical-timeline reveal-up">
-                <div className="vertical-timeline-item">
-                    <div className="timeline-content left">
-                        <h3>Understand the Growth Objective</h3>
-                        <p>We begin by understanding the advertiser’s business model, target audience, market, budget, KPI expectations, and conversion goals.</p>
-                    </div>
-                    <div className="timeline-number">01</div>
-                </div>
-                
-                <div className="vertical-timeline-item">
-                    <div className="timeline-number">02</div>
-                    <div className="timeline-content right">
-                        <h3>Map Audience and Intent</h3>
-                        <p>We define the audience segments, search intent, funnel stage, and platform behaviour that should guide campaign planning.</p>
-                    </div>
-                </div>
-
-                <div className="vertical-timeline-item">
-                    <div className="timeline-content left">
-                        <h3>Structure the Campaign Setup</h3>
-                        <p>We align campaigns, ad groups, targeting, creatives, tracking, conversion events, and landing page flow before going live.</p>
-                    </div>
-                    <div className="timeline-number">03</div>
-                </div>
-
-                <div className="vertical-timeline-item">
-                    <div className="timeline-number">04</div>
-                    <div className="timeline-content right">
-                        <h3>Launch With Controlled Spend</h3>
-                        <p>Campaigns are launched with a structured budget approach, allowing early signals to be reviewed before scaling.</p>
-                    </div>
-                </div>
-
-                <div className="vertical-timeline-item">
-                    <div className="timeline-content left">
-                        <h3>Review Performance Signals</h3>
-                        <p>We monitor spend, CTR, CPC, CPA, ROAS, conversion quality, search terms, audience response, and creative performance.</p>
-                    </div>
-                    <div className="timeline-number">05</div>
-                </div>
-
-                <div className="vertical-timeline-item">
-                    <div className="timeline-number">06</div>
-                    <div className="timeline-content right">
-                        <h3>Optimize and Scale</h3>
-                        <p>We scale campaigns based on proven performance signals, improving budget allocation, audience quality, creative direction, and conversion efficiency.</p>
-                    </div>
-                </div>
-            </div>
+        <div className="capability-card">
+          <p className="section-kicker">Multi-Platform Reach</p>
+          <h2>Channels &amp; Formats</h2>
+          <div className="tag-list vertical-tags">
+            {channels.map((channel) => (
+              <span key={channel}>{channel}</span>
+            ))}
+          </div>
         </div>
-    </section>
+      </section>
 
-    
-    <section className="relative z-10 py-24" style={{ background: "rgba(2, 6, 23, 1)" }}>
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
-            <div className="trace-card theme-indigo p-8 lg:p-16 flex flex-col lg:flex-row gap-12 items-center reveal-up">
-                
-                <div className="w-full lg:w-1/2">
-                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Designed for Smarter Spend Decisions</h2>
-                    <p className="text-[#cbd5e1] text-base leading-relaxed mb-4">
-                        Paid media can scale quickly, but without the right structure it can also create wasted spend. Advertisers need clarity on where the budget is going, which audiences are responding, and which campaign elements are contributing to growth.
-                    </p>
-                    <p className="text-[#cbd5e1] text-base leading-relaxed">
-                        We support paid media campaigns with clear monitoring, performance review, and optimization insights, helping advertisers make more informed decisions across Google, Meta, and PPC activity.
-                    </p>
-                </div>
-
-                <div className="w-full lg:w-1/2">
-                    <ul className="space-y-4">
-                        <li className="flex items-start gap-3">
-                            <span className="mt-1 w-2 h-2 rounded-full bg-[#E057D8] flex-shrink-0"></span>
-                            <span className="text-slate-200 font-medium">Budget and spend monitoring</span>
-                        </li>
-                        <li className="flex items-start gap-3">
-                            <span className="mt-1 w-2 h-2 rounded-full bg-[#E057D8] flex-shrink-0"></span>
-                            <span className="text-slate-200 font-medium">Campaign-level performance review</span>
-                        </li>
-                        <li className="flex items-start gap-3">
-                            <span className="mt-1 w-2 h-2 rounded-full bg-[#E057D8] flex-shrink-0"></span>
-                            <span className="text-slate-200 font-medium">Audience and keyword analysis</span>
-                        </li>
-                        <li className="flex items-start gap-3">
-                            <span className="mt-1 w-2 h-2 rounded-full bg-[#E057D8] flex-shrink-0"></span>
-                            <span className="text-slate-200 font-medium">Creative and message testing</span>
-                        </li>
-                        <li className="flex items-start gap-3">
-                            <span className="mt-1 w-2 h-2 rounded-full bg-[#E057D8] flex-shrink-0"></span>
-                            <span className="text-slate-200 font-medium">Landing page and conversion event alignment</span>
-                        </li>
-                        <li className="flex items-start gap-3">
-                            <span className="mt-1 w-2 h-2 rounded-full bg-[#E057D8] flex-shrink-0"></span>
-                            <span className="text-slate-200 font-medium">CPA, ROAS, and conversion quality optimization</span>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
+      {/* ── Process Section (6 Steps) ── */}
+      <section id="how-it-works" className="content-section process-section">
+        <div className="section-heading centered">
+          <p className="section-kicker">Structured Execution</p>
+          <h2>How We Build Paid Media Campaigns</h2>
+          <p>
+            A structured process to plan, launch, monitor, and improve campaigns with greater clarity and cost efficiency.
+          </p>
         </div>
-    </section>
+        <div className="process-grid">
+          {processSteps.map(([number, title, copy]) => (
+            <article key={number}>
+              <span className="step-number">{number}</span>
+              <h3>{title}</h3>
+              <p>{copy}</p>
+            </article>
+          ))}
+        </div>
+      </section>
 
-    <FaqSection
-      items={[
-        {
-          question: "What are Google, Meta and PPC ads?",
-          answer:
-            "Google, Meta and PPC ads are paid media campaigns that help advertisers reach relevant audiences across search, social, display, shopping, video, and retargeting placements.",
-        },
-        {
-          question: "How do you plan paid media campaigns?",
-          answer:
-            "We begin with the advertiser’s objectives, audience profile, target market, budget, campaign model, conversion goals, and tracking requirements before building the campaign structure.",
-        },
-        {
-          question: "Can paid media campaigns support both leads and sales?",
-          answer:
-            "Yes. Paid media campaigns can be structured for lead generation, e-commerce sales, product promotion, sign-ups, retargeting, or other measurable actions depending on the campaign objective.",
-        },
-        {
-          question: "Do advertisers get visibility into campaign performance?",
-          answer:
-            "Yes. Advertisers can get reporting visibility across spend, clicks, conversions, CPA, ROAS, audience response, and optimization insights.",
-        },
-        {
-          question: "How do you reduce wasted spend in PPC campaigns?",
-          answer:
-            "We focus on audience relevance, keyword quality, negative targeting, creative testing, landing page alignment, budget monitoring, and continuous optimization.",
-        },
-      ]}
-    />
+      {/* ── Governance & Controls ── */}
+      <section className="content-section control-section">
+        <div>
+          <p className="section-kicker">Campaign Governance</p>
+          <h2>Designed for Smarter Spend Decisions</h2>
+          <p>
+            Paid media can scale quickly, but without the right structure it can also create wasted spend. We support paid media campaigns with clear monitoring, performance review, and optimization insights.
+          </p>
+        </div>
+        <ul>
+          <li>
+            <span>✓</span> Budget and spend monitoring with pace tracking
+          </li>
+          <li>
+            <span>✓</span> Campaign-level performance and search term reviews
+          </li>
+          <li>
+            <span>✓</span> Audience and keyword negative matching
+          </li>
+          <li>
+            <span>✓</span> Creative variation and messaging testing
+          </li>
+          <li>
+            <span>✓</span> Landing page and conversion event alignment
+          </li>
+          <li>
+            <span>✓</span> CPA, ROAS, and conversion quality optimization
+          </li>
+        </ul>
+      </section>
 
-    
-</div>
-    </PageRevealEffects>
+      {/* ── FAQ Section (2-Column Sticky Accordion Matching Affiliate) ── */}
+      <section id="faq" className="content-section faq-section">
+        <div className="section-heading">
+          <p className="section-kicker">Commercial Questions</p>
+          <h2>What advertisers usually need to know</h2>
+          <p>
+            Clear answers before activation help create stronger campaign setups and better long-term performance.
+          </p>
+        </div>
+        <div className="faq-list">
+          {faqs.map(([question, answer], index) => (
+            <details key={question} open={index === 0}>
+              <summary>
+                {question}
+                <span aria-hidden="true">+</span>
+              </summary>
+              <p>{answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Contact / CTA Section (Centered Card Matching Affiliate) ── */}
+      <section id="contact" className="contact-section">
+        <div className="contact-content">
+          <p className="section-kicker">Start with campaign fit</p>
+          <h2>Tell us what you need your paid media to achieve</h2>
+          <p>
+            Share your target audience, platforms, monthly budget, and growth targets. We will review your current setup and outline actionable opportunities.
+          </p>
+        </div>
+        <div className="contact-actions">
+          <button
+            type="button"
+            className="button button-primary cursor-pointer"
+            onClick={() => openContactModal()}
+            style={{ cursor: "pointer" }}
+          >
+            Discuss your campaign <span aria-hidden="true">→</span>
+          </button>
+          <small>contact@ascendiaprime.com</small>
+        </div>
+      </section>
+    </div>
   );
 }

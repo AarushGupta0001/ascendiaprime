@@ -8,7 +8,7 @@ type Props = {
 
 export default function CaseStudyPage({ caseStudy }: Props) {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#050b21] text-white">
+    <main className="min-h-screen overflow-hidden bg-[#020617] text-white">
       {/* Hero */}
       <section className="relative px-6 pb-20 pt-36 md:px-12 md:pb-28 md:pt-44">
         <div className="pointer-events-none absolute left-1/4 top-20 h-96 w-96 rounded-full bg-[#3F8BF9]/10 blur-[120px]" />
@@ -55,7 +55,7 @@ export default function CaseStudyPage({ caseStudy }: Props) {
 
       {/* Metrics */}
       {caseStudy.metrics.length > 0 && (
-        <section className="relative border-y border-white/10 bg-[#070e27] px-6 py-12 md:px-12">
+        <section className="relative border-y border-white/10 bg-[#050a18] px-6 py-12 md:px-12">
           <div className="mx-auto grid max-w-[1200px] grid-cols-2 gap-6 md:grid-cols-4">
             {caseStudy.metrics.map((metric) => (
               <div
@@ -95,7 +95,7 @@ export default function CaseStudyPage({ caseStudy }: Props) {
       </section>
 
       {/* Strategy */}
-      <section className="relative bg-[#070e27] px-6 py-24 md:px-12 md:py-32">
+      <section className="relative bg-[#050a18] px-6 py-24 md:px-12 md:py-32">
         <div className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#7469F8]/5 blur-[120px]" />
 
         <div className="relative z-10 mx-auto max-w-[1200px]">

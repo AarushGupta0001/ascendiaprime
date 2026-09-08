@@ -53,7 +53,7 @@ const CASE_STUDIES = [
 
 export default function CaseStudiesPage() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#050b21] px-6 pb-24 pt-36 text-white md:px-12">
+    <section className="relative min-h-screen overflow-hidden bg-[#020617] px-6 pb-24 pt-36 text-white md:px-12">
       <div className="pointer-events-none absolute left-1/4 top-1/3 h-96 w-96 -translate-x-1/2 rounded-full bg-[#3F8BF9]/10 blur-[120px]" />
       <div className="pointer-events-none absolute bottom-0 right-1/4 h-96 w-96 translate-x-1/2 rounded-full bg-[#AB57F3]/10 blur-[120px]" />
 

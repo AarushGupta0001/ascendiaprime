@@ -4,10 +4,14 @@
    ========================================================================== */
 
 .legal-page-master {
-    background-color: #030712;
+    background-color: #020617;
+    background-image: 
+        radial-gradient(circle at 15% 20%, rgba(63, 139, 249, 0.08) 0%, transparent 35%),
+        radial-gradient(circle at 85% 50%, rgba(171, 87, 243, 0.06) 0%, transparent 35%),
+        linear-gradient(#020617, #020617);
     min-height: 100vh;
     color: #cbd5e1;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: var(--font-poppins), 'Poppins', sans-serif;
     padding-top: 6rem;
     padding-bottom: 7rem;
     position: relative;

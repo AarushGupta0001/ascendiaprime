@@ -44,7 +44,7 @@
   background:
     radial-gradient(circle at 15% 20%, rgba(63, 139, 249, 0.12) 0%, transparent 35%),
     radial-gradient(circle at 85% 50%, rgba(224, 87, 216, 0.10) 0%, transparent 35%),
-    linear-gradient(to bottom, #020617 0%, #0b111d 30%, #0b111d 50%, #0b111d 75%, #020617 100%);
+    linear-gradient(to bottom, #020617 0%, #050a18 30%, #050b21 50%, #050a18 75%, #020617 100%);
   background-attachment: fixed;
   min-height: 100vh;
 }

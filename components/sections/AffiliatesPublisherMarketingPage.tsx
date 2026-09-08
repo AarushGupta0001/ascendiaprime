@@ -114,59 +114,185 @@ function GrowthEngine() {
   </div>;
 }
 
-export default function Home() {
+export default function AffiliatesPublisherMarketingPage() {
   const { openContactModal } = useContactModal();
 
-  return <>
-    <a className="skip-link" href="#main-content">Skip to main content</a>
-    <header className="site-header"><a className="brand" href="#top" aria-label="AscendiaPrime home"><BrandMark/><span>ascendia<small>prime</small></span></a><nav aria-label="Primary navigation"><a href="#how-it-works">How it works</a><a href="#channels">Partner channels</a><a href="#why-us">Why AscendiaPrime</a><a href="#faq">FAQs</a></nav><a className="header-cta" href="#contact">Discuss your campaign</a></header>
-    <main id="main-content">
+  return (
+    <div id="affiliate-master" className="antialiased text-white bg-[#020617] font-sans selection:bg-[#3F8BF9] selection:text-white" style={{ width: "100%", position: "relative", overflowX: "hidden" }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(structuredData)}} />
-      <section id="top" className="hero-section"><div className="hero-copy"><p className="eyebrow">Affiliate growth for performance teams</p><h1>Affiliate Growth Built on the Right Publishers—<span>Not Simply More of Them</span></h1><p className="hero-lede">AscendiaPrime helps performance and affiliate teams recruit, approve and manage publishers across the UK and international markets. You get hands-on campaign support, visible traffic sources and commercial flexibility—without handing quality control to a black box.</p><div className="hero-actions"><button className="button button-primary" type="button" onClick={() => openContactModal()}>Discuss your campaign <span aria-hidden="true">→</span></button><a className="button button-secondary" href="#case-study">See a client result</a></div><div className="assurances"><span>Selective publisher approval</span><span>Traffic-quality controls</span><span>Hands-on campaign management</span></div></div><GrowthEngine/></section>
-      <section className="proof-strip" aria-label="AscendiaPrime proof points"><div><strong>20+ years</strong><span>Team and founder experience</span></div><div><strong>17K+ publishers</strong><span>Across the UK and worldwide</span></div><div><strong>International reach</strong><span>Local and cross-market activation</span></div><div><strong>Flexible models</strong><span>CPA, CPL, CPS and hybrid</span></div></section>
+      <section id="top" className="hero-section">
+        <div className="hero-copy">
+          <p className="eyebrow">Affiliate growth for performance teams</p>
+          <h1>Affiliate Growth Built on the Right Publishers—<span>Not Simply More of Them</span></h1>
+          <p className="hero-lede">AscendiaPrime helps performance and affiliate teams recruit, approve and manage publishers across the UK and international markets. You get hands-on campaign support, visible traffic sources and commercial flexibility—without handing quality control to a black box.</p>
+          <div className="hero-actions">
+            <button className="button button-primary" type="button" onClick={() => openContactModal()}>
+              Discuss your campaign <span aria-hidden="true">→</span>
+            </button>
+            <a className="button button-secondary" href="#case-study">See a client result</a>
+          </div>
+          <div className="assurances">
+            <span>Selective publisher approval</span>
+            <span>Traffic-quality controls</span>
+            <span>Hands-on campaign management</span>
+          </div>
+        </div>
+        <GrowthEngine/>
+      </section>
+
+      <section className="proof-strip" aria-label="AscendiaPrime proof points">
+        <div><strong>20+ years</strong><span>Team and founder experience</span></div>
+        <div><strong>17K+ publishers</strong><span>Across the UK and worldwide</span></div>
+        <div><strong>International reach</strong><span>Local and cross-market activation</span></div>
+        <div><strong>Flexible models</strong><span>CPA, CPL, CPS and hybrid</span></div>
+      </section>
 
       <section className="content-section fit-section">
-        <div className="section-heading"><p className="section-kicker">For teams accountable for the number</p><h2>More publishers are not the answer. Better-fit publishers are.</h2><p>A large network means little if you cannot see where the traffic came from or why it converted. We help you build a partner mix that matches the brief, then stay close enough to the campaign to act on what the data shows.</p></div>
-        <div className="fit-grid"><article><span>01</span><h3>Start with fit</h3><p>Match partner type, audience, geography and promotional method to the campaign before invitations go out.</p></article><article><span>02</span><h3>See what is happening</h3><p>Keep traffic rules, attribution and partner contribution visible enough for your team to question and verify.</p></article><article><span>03</span><h3>Put budget behind what works</h3><p>Grow the partners producing useful outcomes and take action when activity does not meet the agreed standard.</p></article></div>
+        <div className="section-heading">
+          <p className="section-kicker">For teams accountable for the number</p>
+          <h2>More publishers are not the answer. Better-fit publishers are.</h2>
+          <p>A large network means little if you cannot see where the traffic came from or why it converted. We help you build a partner mix that matches the brief, then stay close enough to the campaign to act on what the data shows.</p>
+        </div>
+        <div className="fit-grid">
+          <article><span>01</span><h3>Start with fit</h3><p>Match partner type, audience, geography and promotional method to the campaign before invitations go out.</p></article>
+          <article><span>02</span><h3>See what is happening</h3><p>Keep traffic rules, attribution and partner contribution visible enough for your team to question and verify.</p></article>
+          <article><span>03</span><h3>Put budget behind what works</h3><p>Grow the partners producing useful outcomes and take action when activity does not meet the agreed standard.</p></article>
+        </div>
       </section>
 
       <section id="how-it-works" className="content-section process-section">
-        <div className="section-heading centered"><p className="section-kicker">The Transparent Growth Engine</p><h2>What hands-on campaign management looks like</h2><p>Six practical stages keep the commercial goal, partner activity and performance decisions connected from the outset.</p></div>
-        <div className="process-grid">{processSteps.map(([number,title,copy])=><article key={number}><span className="step-number">{number}</span><h3>{title}</h3><p>{copy}</p></article>)}</div>
+        <div className="section-heading centered">
+          <p className="section-kicker">The Transparent Growth Engine</p>
+          <h2>What hands-on campaign management looks like</h2>
+          <p>Six practical stages keep the commercial goal, partner activity and performance decisions connected from the outset.</p>
+        </div>
+        <div className="process-grid">
+          {processSteps.map(([number,title,copy])=>(
+            <article key={number}>
+              <span className="step-number">{number}</span>
+              <h3>{title}</h3>
+              <p>{copy}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section id="channels" className="content-section channels-section">
-        <div className="section-heading"><p className="section-kicker">Partner channels</p><h2>Different partners for different moments in the customer journey</h2><p>The channel mix is selected around the campaign—not applied as a generic publisher list.</p></div>
-        <div className="channel-grid">{channels.map(([icon,title,copy])=><article key={title}><span className="feature-icon"><Icon name={icon}/></span><div><h3>{title}</h3><p>{copy}</p></div></article>)}</div>
+        <div className="section-heading">
+          <p className="section-kicker">Partner channels</p>
+          <h2>Different partners for different moments in the customer journey</h2>
+          <p>The channel mix is selected around the campaign—not applied as a generic publisher list.</p>
+        </div>
+        <div className="channel-grid">
+          {channels.map(([icon,title,copy])=>(
+            <article key={title}>
+              <span className="feature-icon"><Icon name={icon}/></span>
+              <div>
+                <h3>{title}</h3>
+                <p>{copy}</p>
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section id="why-us" className="content-section why-section">
-        <div className="why-intro"><p className="section-kicker">Why AscendiaPrime</p><h2>You should know who is driving each result and why</h2><p>Our team and founders bring more than 20 years of advertising and digital-media experience. That experience shapes a deliberately hands-on approach: choose partners carefully, make the rules explicit and stay involved after the campaign goes live.</p><div className="experience-card"><strong>17K+</strong><span>publisher relationships spanning the UK and markets around the world.</span></div></div>
-        <div className="advantage-grid">{advantages.map(([title,copy],index)=><article key={title}><span>0{index+1}</span><div><h3>{title}</h3><p>{copy}</p></div></article>)}</div>
+        <div className="why-intro">
+          <p className="section-kicker">Why AscendiaPrime</p>
+          <h2>You should know who is driving each result and why</h2>
+          <p>Our team and founders bring more than 20 years of advertising and digital-media experience. That experience shapes a deliberately hands-on approach: choose partners carefully, make the rules explicit and stay involved after the campaign goes live.</p>
+          <div className="experience-card">
+            <strong>17K+</strong>
+            <span>publisher relationships spanning the UK and markets around the world.</span>
+          </div>
+        </div>
+        <div className="advantage-grid">
+          {advantages.map(([title,copy],index)=>(
+            <article key={title}>
+              <span>0{index+1}</span>
+              <div>
+                <h3>{title}</h3>
+                <p>{copy}</p>
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section id="case-study" className="content-section case-study-section">
-        <div className="case-study-label"><p className="section-kicker">Anonymised client result</p><span>Beauty &amp; personal care</span></div>
-        <div className="case-study-copy"><h2>More conversions and revenue that nearly doubled in two months</h2><p>After joining AscendiaPrime, one beauty and personal care brand recorded <strong>up to 51% growth in conversions</strong> and <strong>almost 100% growth in sales revenue</strong> within two months.</p><small>Results relate to one client engagement and are not a guarantee of future performance. Outcomes vary by offer, market, commercial terms and campaign readiness.</small></div>
-        <div className="result-cards"><article><strong>Up to 51%</strong><span>growth in conversions</span></article><article><strong>Almost 100%</strong><span>growth in sales revenue</span></article><p>Measured after the brand joined AscendiaPrime.</p></div>
+        <div className="case-study-label">
+          <p className="section-kicker">Anonymised client result</p>
+          <span>Beauty &amp; personal care</span>
+        </div>
+        <div className="case-study-copy">
+          <h2>More conversions and revenue that nearly doubled in two months</h2>
+          <p>After joining AscendiaPrime, one beauty and personal care brand recorded <strong>up to 51% growth in conversions</strong> and <strong>almost 100% growth in sales revenue</strong> within two months.</p>
+          <small>Results relate to one client engagement and are not a guarantee of future performance. Outcomes vary by offer, market, commercial terms and campaign readiness.</small>
+        </div>
+        <div className="result-cards">
+          <article><strong>Up to 51%</strong><span>growth in conversions</span></article>
+          <article><strong>Almost 100%</strong><span>growth in sales revenue</span></article>
+          <p>Measured after the brand joined AscendiaPrime.</p>
+        </div>
       </section>
 
       <section className="content-section capability-section">
-        <div className="capability-card"><p className="section-kicker">Flexible commercial structures</p><h2>Campaign models</h2><div className="tag-list">{models.map(model=><span key={model}>{model}</span>)}</div></div>
-        <div className="capability-card"><p className="section-kicker">Vertical-aware activation</p><h2>Supported sectors</h2><div className="tag-list vertical-tags">{verticals.map(vertical=><span key={vertical}>{vertical}</span>)}</div></div>
+        <div className="capability-card">
+          <p className="section-kicker">Flexible commercial structures</p>
+          <h2>Campaign models</h2>
+          <div className="tag-list">{models.map(model=><span key={model}>{model}</span>)}</div>
+        </div>
+        <div className="capability-card">
+          <p className="section-kicker">Vertical-aware activation</p>
+          <h2>Supported sectors</h2>
+          <div className="tag-list vertical-tags">{verticals.map(vertical=><span key={vertical}>{vertical}</span>)}</div>
+        </div>
       </section>
 
       <section className="content-section control-section">
-        <div><p className="section-kicker">Campaign governance</p><h2>Controls advertisers can verify</h2><p>Every activation should begin with a shared understanding of where traffic can come from, how results will be measured and how exceptions will be handled.</p></div>
-        <ul><li><span>✓</span> Documented allowed and restricted traffic sources</li><li><span>✓</span> Agreed tracking and attribution requirements</li><li><span>✓</span> Campaign-level reporting and partner review</li><li><span>✓</span> Conversion validation and quality feedback</li><li><span>✓</span> Clear communication across advertiser and partner teams</li></ul>
+        <div>
+          <p className="section-kicker">Campaign governance</p>
+          <h2>Controls advertisers can verify</h2>
+          <p>Every activation should begin with a shared understanding of where traffic can come from, how results will be measured and how exceptions will be handled.</p>
+        </div>
+        <ul>
+          <li><span>✓</span> Documented allowed and restricted traffic sources</li>
+          <li><span>✓</span> Agreed tracking and attribution requirements</li>
+          <li><span>✓</span> Campaign-level reporting and partner review</li>
+          <li><span>✓</span> Conversion validation and quality feedback</li>
+          <li><span>✓</span> Clear communication across advertiser and partner teams</li>
+        </ul>
       </section>
 
       <section id="faq" className="content-section faq-section">
-        <div className="section-heading"><p className="section-kicker">Commercial questions</p><h2>What advertisers usually need to know</h2><p>Clear answers before activation help create stronger campaign terms and better long-term partnerships.</p></div>
-        <div className="faq-list">{faqs.map(([question,answer],index)=><details key={question} open={index===0}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div>
+        <div className="section-heading">
+          <p className="section-kicker">Commercial questions</p>
+          <h2>What advertisers usually need to know</h2>
+          <p>Clear answers before activation help create stronger campaign terms and better long-term partnerships.</p>
+        </div>
+        <div className="faq-list">
+          {faqs.map(([question,answer],index)=>(
+            <details key={question} open={index===0}>
+              <summary>{question}<span aria-hidden="true">+</span></summary>
+              <p>{answer}</p>
+            </details>
+          ))}
+        </div>
       </section>
 
-      <section id="contact" className="contact-section"><div><p className="section-kicker">Start with campaign fit</p><h2>Tell us what you need the channel to achieve</h2><p>Share your target customer, markets, conversion event and commercial model. We will review the opportunity and tell you where AscendiaPrime—and our publisher base—can add value.</p></div><div className="contact-actions"><button type="button" className="button button-primary open-contact-modal">Discuss your campaign <span aria-hidden="true">→</span></button><small>contact@ascendiaprime.com</small></div></section>
-    </main>
-  </>;
+      <section id="contact" className="contact-section">
+        <div>
+          <p className="section-kicker">Start with campaign fit</p>
+          <h2>Tell us what you need the channel to achieve</h2>
+          <p>Share your target customer, markets, conversion event and commercial model. We will review the opportunity and tell you where AscendiaPrime—and our publisher base—can add value.</p>
+        </div>
+        <div className="contact-actions">
+          <button type="button" className="button button-primary" onClick={() => openContactModal()}>
+            Discuss your campaign <span aria-hidden="true">→</span>
+          </button>
+          <small>contact@ascendiaprime.com</small>
+        </div>
+      </section>
+    </div>
+  );
 }

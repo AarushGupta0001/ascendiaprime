@@ -424,14 +424,13 @@ export default function AffiliatesPublisherMarketingPage() {
       </section>
 
       <section id="case-study" className="content-section case-study-section">
-        <div className="case-study-label">
-          <p className="section-kicker">Anonymised client result</p>
-          <span>Beauty &amp; personal care</span>
-        </div>
         <div className="case-study-copy">
+          <div className="case-study-header-tags">
+            <p className="section-kicker">Anonymised client result</p>
+            <span className="case-study-tag">Beauty &amp; personal care</span>
+          </div>
           <h2>More conversions and revenue that nearly doubled in two months</h2>
           <p>After joining AscendiaPrime, one beauty and personal care brand recorded <strong>up to 51% growth in conversions</strong> and <strong>almost 100% growth in sales revenue</strong> within two months.</p>
-          <small>Results relate to one client engagement and are not a guarantee of future performance. Outcomes vary by offer, market, commercial terms and campaign readiness.</small>
         </div>
         <div className="result-cards">
           <article><strong>Up to 51%</strong><span>growth in conversions</span></article>

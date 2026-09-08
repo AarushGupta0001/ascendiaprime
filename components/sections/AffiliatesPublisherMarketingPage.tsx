@@ -109,13 +109,6 @@ const outcomeLines = [
   { key: "roas", path: "M445 362 C520 425,560 550,625 550", color: "#38bdf8", dur: "4.2s", delay: "2.3s" },
 ] as const;
 
-// The ONLY 3 scrolling text badges on the lines:
-const scrollingBadges = [
-  { key: "content", path: "M175 145 C260 145,285 250,355 318", text: "High-intent visitor", width: 114, dur: "4.2s", delay: "0s", color: "#e057d8" },
-  { key: "comparison", path: "M175 255 C260 255,290 285,355 325", text: "Qualified click", width: 96, dur: "3.9s", delay: "1.4s", color: "#ab57f3" },
-  { key: "coupon", path: "M175 365 C255 365,295 350,355 340", text: "Purchase intent", width: 98, dur: "3.7s", delay: "0.7s", color: "#e057d8" },
-] as const;
-
 function GrowthEngine() {
   return (
     <div className="engine-wrap">
@@ -217,55 +210,6 @@ function GrowthEngine() {
                   repeatCount="indefinite"
                 />
               </path>
-            ))}
-          </g>
-
-          {/* ONLY the 3 scrolling text badges on the line */}
-          <g className="signal-badges">
-            {scrollingBadges.map((item) => (
-              <g key={`badge-${item.key}`} className="scrolling-pill-group">
-                <animateMotion
-                  path={item.path}
-                  dur={item.dur}
-                  begin={item.delay}
-                  repeatCount="indefinite"
-                  calcMode="linear"
-                  keyPoints="0; 1"
-                  keyTimes="0; 1"
-                />
-                <animate
-                  attributeName="opacity"
-                  values="0; 0.3; 1; 1; 0.3; 0"
-                  keyTimes="0; 0.08; 0.2; 0.82; 0.94; 1"
-                  dur={item.dur}
-                  begin={item.delay}
-                  repeatCount="indefinite"
-                />
-                <rect
-                  x={-item.width / 2}
-                  y="-11"
-                  width={item.width}
-                  height="22"
-                  rx="11"
-                  fill="rgba(6, 11, 28, 0.92)"
-                  stroke={item.color}
-                  strokeWidth="1.2"
-                  strokeOpacity="0.55"
-                  filter="url(#badge-shadow)"
-                />
-                <text
-                  x="0"
-                  y="3.5"
-                  textAnchor="middle"
-                  fill="#ffffff"
-                  fontSize="9.5"
-                  fontWeight="600"
-                  fontFamily="var(--font-poppins), 'Poppins', sans-serif"
-                  letterSpacing="0.01em"
-                >
-                  {item.text}
-                </text>
-              </g>
             ))}
           </g>
         </svg>

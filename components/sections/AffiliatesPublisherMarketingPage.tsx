@@ -331,7 +331,7 @@ export default function AffiliatesPublisherMarketingPage() {
             Connect with trusted publisher partners, validate every performance signal and scale customer acquisition with transparent tracking and control.
           </p>
           <div className="hero-actions">
-            <button className="button button-primary" type="button" onClick={() => openContactModal()}>
+            <button className="button button-primary cursor-pointer" type="button" onClick={() => openContactModal()} style={{ cursor: "pointer" }}>
               Discuss Your Campaign <span aria-hidden="true">→</span>
             </button>
           </div>
@@ -490,7 +490,7 @@ export default function AffiliatesPublisherMarketingPage() {
           <p>Share your target customer, markets, conversion event and commercial model. We will review the opportunity and tell you where AscendiaPrime—and our publisher base—can add value.</p>
         </div>
         <div className="contact-actions">
-          <button type="button" className="button button-primary" onClick={() => openContactModal()}>
+          <button type="button" className="button button-primary cursor-pointer" onClick={() => openContactModal()} style={{ cursor: "pointer" }}>
             Discuss your campaign <span aria-hidden="true">→</span>
           </button>
           <small>contact@ascendiaprime.com</small>

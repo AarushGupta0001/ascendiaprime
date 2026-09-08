@@ -218,11 +218,11 @@ export default function HomePage() {
                     <section className="relative w-full max-w-[1400px] mx-auto px-6 md:px-12 py-16 md:py-20 z-20 fade-in-up scroll-mt-20 md:scroll-mt-24">
                         <div className="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-12 relative z-10">
                             <div className="relative z-10 max-w-2xl text-left">
-                                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400 mb-3 tracking-tight leading-tight">
+                                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400 mb-3 tracking-tight leading-tight">
                                     Scale Customer Acquisition <br className="hidden md:block" />
                                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#3F8BF9] to-[#AB57F3]">With Clarity and Control.</span>
                                 </h2>
-                                <p className="text-slate-400 text-lg md:text-xl leading-relaxed font-light">
+                                <p className="text-slate-400 text-base md:text-lg leading-relaxed font-light">
                                     We help brands reach relevant audiences, drive measurable actions, and scale performance through publisher partnerships, affiliate marketing, retargeting, and programmatic media supported by transparent tracking and reporting.
                                 </p>
                             </div>

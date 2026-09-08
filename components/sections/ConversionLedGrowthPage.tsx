@@ -221,7 +221,7 @@ export default function ConversionLedGrowthPage() {
                   </button>
                 </div>
 
-                <ul className="hero-animate flex flex-nowrap items-center gap-3 sm:gap-4 lg:gap-3 xl:gap-5 text-[11px] sm:text-xs xl:text-[13px] text-slate-300 font-medium whitespace-nowrap overflow-x-auto" style={{ animationDelay: "0.5s" }}>
+                <ul className="hero-animate p-0 m-0 list-none flex flex-nowrap items-center gap-3 sm:gap-4 lg:gap-2.5 xl:gap-4 text-[11px] sm:text-xs md:text-[12px] lg:text-[11px] xl:text-[12.5px] text-slate-300 font-medium whitespace-nowrap" style={{ animationDelay: "0.5s" }}>
                   <li className="flex items-center gap-1.5 sm:gap-2 shrink-0">
                     <span className="clg-trust-icon shrink-0"><CheckIcon /></span>
                     Landing and funnel review

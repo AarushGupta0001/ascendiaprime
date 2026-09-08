@@ -849,7 +849,7 @@ export default function HomePage() {
                     </div>
                 </section>
 
-                <section id="contact" className="py-16 md:py-20 relative z-10 w-full bg-[#050b21] overflow-hidden flex items-center justify-center min-h-[calc(100vh-80px)] scroll-mt-20 md:scroll-mt-24">
+                <section id="contact" className="py-20 md:py-28 relative z-10 w-full bg-[#050b21] overflow-hidden flex items-center justify-center scroll-mt-20 md:scroll-mt-24">
 
                     <div className="absolute inset-0 z-0 flex items-center justify-center opacity-90 pointer-events-none">
                         <div className="absolute w-[600px] h-[600px] border border-[#3F8BF9]/20 rounded-full ping-ring" style={{ animationDuration: "4s" }}></div>
@@ -859,88 +859,99 @@ export default function HomePage() {
                     <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-[#3F8BF9]/10 rounded-full blur-[120px] pointer-events-none transform -translate-y-1/2 -translate-x-1/2"></div>
                     <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-[#AB57F3]/10 rounded-full blur-[120px] pointer-events-none transform -translate-y-1/2 translate-x-1/2"></div>
 
-                    <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10 w-full flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-12">
+                    <div className="max-w-[1050px] mx-auto px-6 md:px-12 relative z-10 w-full flex justify-center items-center">
 
-                        <div className="hidden lg:flex w-full lg:w-[300px] items-center justify-center fade-in-left flex-shrink-0" style={{ animationDelay: "0.2s" }}>
-                            <div className="relative w-64 h-64 flex items-end justify-between gap-3 opacity-80 pl-4">
-                                <div className="w-8 bg-[#3F8BF9]/20 border border-[#3F8BF9]/40 rounded-t-sm h-12 animate-bar-pulse"></div>
-                                <div className="w-8 bg-[#3F8BF9]/20 border border-[#3F8BF9]/40 rounded-t-sm h-24 animate-bar-pulse" style={{ animationDelay: "0.5s" }}></div>
-                                <div className="w-8 bg-[#3F8BF9]/20 border border-[#3F8BF9]/40 rounded-t-sm h-40 animate-bar-pulse" style={{ animationDelay: "1s" }}></div>
-                                <div className="w-8 bg-[#3F8BF9]/20 border border-[#3F8BF9]/40 rounded-t-sm h-32 animate-bar-pulse" style={{ animationDelay: "1.5s" }}></div>
-                                <svg className="absolute inset-0 w-full h-full pointer-events-none z-10" viewBox="0 0 256 256">
-                                    <path d="M 16 208 L 72 160 L 128 96 L 184 128 L 240 32" fill="none" stroke="#3F8BF9" strokeWidth="3" className="animate-trend" />
-                                    <circle cx="240" cy="32" r="6" fill="#fff" className="animate-pulse" style={{ animationDelay: "2.5s" }} />
-                                    <circle cx="240" cy="32" r="4" fill="#3F8BF9" />
-                                </svg>
-                            </div>
-                        </div>
+                        {/* Main Box Container */}
+                        <div className="fade-in-up w-full z-20 mx-auto" style={{ animationDelay: "0.1s" }}>
+                            <div id="contact-cta-master-box" className="relative z-10 p-6 sm:p-10 md:p-12 rounded-[2.25rem] w-full backdrop-blur-2xl bg-[#080f28]/85 border border-white/10 shadow-[0_25px_60px_rgba(0,0,0,0.6)] overflow-hidden">
+                                
+                                {/* Top subtle glow line */}
+                                <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#3F8BF9]/50 to-transparent pointer-events-none"></div>
 
-                        <div className="fade-in-up w-full max-w-[680px] z-20 mx-auto flex-shrink-0 text-center" style={{ animationDelay: "0.1s" }}>
-                            <div id="contact-cta-container" className="relative z-10 p-8 sm:p-12 rounded-[2rem] w-full backdrop-blur-xl">
-
-                                <div className="mb-6 text-center flex flex-col items-center">
-                                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">
+                                {/* Header */}
+                                <div className="mb-10 text-center flex flex-col items-center">
+                                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold tracking-tight text-white mb-4 leading-tight">
                                         Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3F8BF9] via-[#7469F8] to-[#AB57F3]">Scale?</span>
                                     </h2>
-                                    <p className="text-slate-200 text-lg md:text-xl leading-relaxed max-w-lg mx-auto">
+                                    <p className="text-slate-300 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto font-light">
                                         Let's discuss how our team can integrate performance, brand, and technology into your growth ecosystem.
                                     </p>
                                 </div>
 
-                                <div className="flex items-center justify-center gap-3 mb-10">
-                                    <div className="w-10 h-10 rounded-full bg-[#3F8BF9]/10 border border-[#3F8BF9]/20 flex items-center justify-center">
-                                        <svg className="w-5 h-5 text-[#3F8BF9]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                {/* 2 Inner Boxes */}
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-stretch w-full">
+                                    
+                                    {/* Left Box: Start a Conversation */}
+                                    <div className="group relative rounded-2xl p-6 sm:p-8 bg-[#0b1330]/80 hover:bg-[#0d173d]/90 border border-[#7469F8]/25 hover:border-[#7469F8]/60 transition-all duration-300 flex flex-col justify-between shadow-[0_10px_30px_rgba(0,0,0,0.25)] hover:shadow-[0_15px_40px_rgba(116,105,248,0.2)]">
+                                        <div>
+                                            <div className="w-12 h-12 rounded-xl bg-[#7469F8]/10 border border-[#7469F8]/30 flex items-center justify-center text-[#7469F8] mb-5 group-hover:scale-110 transition-transform duration-300">
+                                                <svg className="w-6 h-6 text-[#7469F8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                                </svg>
+                                            </div>
+                                            <h3 className="text-2xl font-bold text-white mb-3 tracking-tight group-hover:text-[#7469F8] transition-colors text-left">
+                                                Start a Conversation
+                                            </h3>
+                                            <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-6 font-light text-left">
+                                                Connect with our performance strategists to explore custom campaign opportunities, advertiser solutions, and growth plans.
+                                            </p>
+                                        </div>
+                                        <div className="pt-2">
+                                            <button
+                                                type="button"
+                                                className="open-contact-modal w-full glow-btn bg-transparent border-2 border-[#7469F8]/50 text-white hover:bg-[#7469F8]/15 px-6 py-3.5 rounded-full font-bold text-base flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(116,105,248,0.2)] hover:shadow-[0_0_25px_rgba(116,105,248,0.4)] transition-all cursor-pointer"
+                                            >
+                                                <span>Start a Conversation</span>
+                                                <svg className="w-4 h-4 text-white transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    {/* Right Box: Sign Up as a Partner */}
+                                    <div className="group relative rounded-2xl p-6 sm:p-8 bg-[#0b1330]/80 hover:bg-[#0d173d]/90 border border-[#3F8BF9]/30 hover:border-[#3F8BF9]/70 transition-all duration-300 flex flex-col justify-between shadow-[0_10px_30px_rgba(0,0,0,0.25)] hover:shadow-[0_15px_40px_rgba(63,139,249,0.2)]">
+                                        <div>
+                                            <div className="w-12 h-12 rounded-xl bg-[#3F8BF9]/10 border border-[#3F8BF9]/30 flex items-center justify-center text-[#3F8BF9] mb-5 group-hover:scale-110 transition-transform duration-300">
+                                                <svg className="w-6 h-6 text-[#3F8BF9]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                </svg>
+                                            </div>
+                                            <h3 className="text-2xl font-bold text-white mb-3 tracking-tight group-hover:text-[#3F8BF9] transition-colors text-left">
+                                                Partner Network
+                                            </h3>
+                                            <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-6 font-light text-left">
+                                                Join our global ecosystem of publishers, creators, affiliates, and media partners with direct access to verified brand campaigns.
+                                            </p>
+                                        </div>
+                                        <div className="pt-2">
+                                            <a
+                                                href="https://partners.ascendiamedia.co.uk/registration"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="w-full glow-btn bg-gradient-to-r from-[#3F8BF9] to-[#AB57F3] text-white px-6 py-3.5 rounded-full font-bold text-base flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(63,139,249,0.3)] hover:shadow-[0_0_35px_rgba(171,87,243,0.5)] transition-all no-underline"
+                                            >
+                                                <span>Sign Up as a Partner</span>
+                                                <svg className="w-4 h-4 text-white transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                {/* Bottom email badge */}
+                                <div className="mt-10 flex items-center justify-center gap-2 text-slate-400 text-sm font-light">
+                                    <span>Prefer direct email?</span>
+                                    <a href="mailto:contact@ascendiaprime.com" className="text-[#3F8BF9] hover:text-white transition-colors font-medium no-underline inline-flex items-center gap-1.5">
+                                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                         </svg>
-                                    </div>
-                                    <a href="mailto:contact@ascendiaprime.com" className="text-[#3F8BF9] hover:text-white transition-colors font-medium text-base md:text-lg no-underline">
                                         contact@ascendiaprime.com
                                     </a>
                                 </div>
 
-                                <div className="flex flex-col sm:flex-row items-center justify-center gap-5 w-full">
-                                    <a
-                                        href="https://partners.ascendiamedia.co.uk/registration"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="w-full sm:w-auto glow-btn bg-gradient-to-r from-[#3F8BF9] to-[#AB57F3] text-white px-8 md:px-10 py-4 rounded-full font-bold text-base md:text-lg flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(63,139,249,0.3)] hover:shadow-[0_0_40px_rgba(171,87,243,0.5)] transition-all no-underline"
-                                    >
-                                        Sign Up as a Partner
-                                    </a>
-
-                                    <button
-                                        type="button"
-                                        className="open-contact-modal w-full sm:w-auto glow-btn bg-transparent border-2 border-[#7469F8]/50 text-white hover:bg-[#7469F8]/10 px-8 md:px-10 py-4 rounded-full font-bold text-base md:text-lg flex items-center justify-center gap-2 transition-all cursor-pointer"
-                                    >
-                                        Start a Conversation
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="hidden lg:flex w-full lg:w-[300px] items-center justify-center fade-in-right flex-shrink-0" style={{ animationDelay: "0.3s" }}>
-                            <div className="relative w-64 h-64 opacity-90 flex items-center justify-center pr-4">
-                                <div className="absolute w-[240px] h-[240px] border-[2px] border-[#AB57F3]/30 rounded-full border-dashed animate-[spin-slow_20s_linear_infinite]"></div>
-                                <div className="absolute w-[160px] h-[160px] border-[2px] border-[#3F8BF9]/40 rounded-full border-dotted animate-[spin-slow_15s_linear_infinite_reverse]"></div>
-                                <div className="absolute w-[80px] h-[80px] border-[1.5px] border-[#E057D8]/50 rounded-full border-dashed animate-[spin-slow_10s_linear_infinite]"></div>
-
-                                <div className="absolute w-12 h-12 bg-[#050b21] border-2 border-[#3F8BF9] rounded-full shadow-[0_0_25px_rgba(63,139,249,0.7)] z-10 flex items-center justify-center animate-pulse">
-                                    <div className="w-3 h-3 bg-white rounded-full"></div>
-                                </div>
-
-                                <div className="absolute w-[240px] h-[240px] animate-[spin-slow_20s_linear_infinite]">
-                                    <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#050b21] border-2 border-[#AB57F3] rounded-full shadow-[0_0_15px_#AB57F3]"></div>
-                                    <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-[#AB57F3] rounded-full shadow-[0_0_15px_#AB57F3]"></div>
-                                </div>
-                                <div className="absolute w-[160px] h-[160px] animate-[spin-slow_15s_linear_infinite_reverse]">
-                                    <div className="absolute top-1/2 -right-2 transform -translate-y-1/2 w-3 h-3 bg-[#3F8BF9] rounded-full shadow-[0_0_15px_#3F8BF9]"></div>
-                                    <div className="absolute top-1/2 -left-2 transform -translate-y-1/2 w-2 h-2 bg-white rounded-full shadow-[0_0_15px_#ffffff]"></div>
-                                </div>
-
-                                <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 256 256">
-                                    <line x1="128" y1="128" x2="128" y2="8" stroke="rgba(171, 87, 243, 0.4)" strokeWidth="1.5" strokeDasharray="4 4" />
-                                    <line x1="128" y1="128" x2="248" y2="128" stroke="rgba(224, 87, 216, 0.4)" strokeWidth="1.5" strokeDasharray="4 4" />
-                                </svg>
                             </div>
                         </div>
 

@@ -143,7 +143,7 @@
             max-height: 85vh; overflow-y: auto;
         }
         .popup-close-btn {
-            position: absolute; top: 1.5rem; right: 1.5rem; color: #fff; background: transparent; border: none; font-size: 2.5rem; cursor: pointer;
+            position: absolute; top: 1.5rem; right: 1.5rem;
         }
 
         /* CONTACT FORM FORM LABEL OVERRIDES */

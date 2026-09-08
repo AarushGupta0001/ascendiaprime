@@ -280,7 +280,7 @@ export default function PpcPage() {
         </div>
       </section>
 
-      {/* ── Process Section (6 Steps) ── */}
+      {/* ── Process Section (6 Steps Flowchart) ── */}
       <section id="how-it-works" className="content-section process-section">
         <div className="section-heading centered">
           <p className="section-kicker">Structured Execution</p>
@@ -289,14 +289,31 @@ export default function PpcPage() {
             A structured process to plan, launch, monitor, and improve campaigns with greater clarity and cost efficiency.
           </p>
         </div>
-        <div className="process-grid">
-          {processSteps.map(([number, title, copy]) => (
-            <article key={number}>
-              <span className="step-number">{number}</span>
-              <h3>{title}</h3>
-              <p>{copy}</p>
-            </article>
-          ))}
+        <div className="vertical-timeline">
+          {processSteps.map(([number, title, copy], index) => {
+            const isLeft = index % 2 === 0;
+            return (
+              <div className="vertical-timeline-item" key={number}>
+                {isLeft ? (
+                  <>
+                    <div className="timeline-content left">
+                      <h3>{title}</h3>
+                      <p>{copy}</p>
+                    </div>
+                    <div className="timeline-number">{number}</div>
+                  </>
+                ) : (
+                  <>
+                    <div className="timeline-number">{number}</div>
+                    <div className="timeline-content right">
+                      <h3>{title}</h3>
+                      <p>{copy}</p>
+                    </div>
+                  </>
+                )}
+              </div>
+            );
+          })}
         </div>
       </section>
 

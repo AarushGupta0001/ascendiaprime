@@ -374,7 +374,11 @@ export default function OurPartnersPage() {
     
     <div id="partner-modal" className="partner-popup-overlay">
         <div className="partner-popup-content">
-            <button id="close-modal" className="popup-close-btn">&times;</button>
+            <button id="close-modal" className="popup-close-btn modal-close-btn absolute right-5 top-5 z-50 flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full border border-white/15 bg-white/10 text-slate-300 shadow-lg backdrop-blur-md transition-all duration-200 hover:scale-105 hover:border-white/30 hover:bg-white/20 hover:text-white active:scale-95 cursor-pointer" type="button" aria-label="Close modal">
+              <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
             <h3 className="text-3xl font-bold text-white mb-8 text-center">Partnership Inquiry</h3>
             <div className="relative z-20 contact-form-shell p-6 md:p-10 rounded-[1.75rem]">
                 <ContactForm variant="homepage" formId="2081" />

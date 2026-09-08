@@ -6,6 +6,7 @@ import "@/styles/conversion-led-growth.css";
 import ConversionIntelligenceLoop from "@/components/conversion-led-growth/ConversionIntelligenceLoop";
 import LazyParticleCanvas from "@/components/effects/LazyParticleCanvas";
 import PageRevealEffects from "@/components/effects/PageRevealEffects";
+import { useContactModal } from "@/components/forms/ContactModalProvider";
 
 const capabilities = [
   {
@@ -143,6 +144,7 @@ function CheckIcon() {
 }
 
 export default function ConversionLedGrowthPage() {
+  const { openContactModal } = useContactModal();
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const toggleFaq = (index: number) => {
@@ -181,7 +183,7 @@ export default function ConversionLedGrowthPage() {
       <div
         id="cro-master"
         className="page-master antialiased text-white bg-[#020617] font-sans selection:bg-[#3F8BF9] selection:text-white"
-        style={{ width: "100%", position: "relative", overflowX: "hidden" }}
+        style={{ width: "100%", position: "relative", overflowX: "clip" }}
       >
         <LazyParticleCanvas
           id="warp-canvas"
@@ -193,13 +195,9 @@ export default function ConversionLedGrowthPage() {
               1. HERO SECTION
               ================================================================= */}
           <section className="clg-hero-section relative min-h-screen flex flex-col justify-center px-6 lg:px-12 overflow-hidden" id="top">
-            <div className="clg-hero-glow glow-one" aria-hidden="true" />
-            <div className="clg-hero-glow glow-two" aria-hidden="true" />
-
             <div className="max-w-[1400px] mx-auto w-full grid lg:grid-cols-12 gap-10 xl:gap-14 items-center relative z-10 py-6 lg:py-8">
               <div className="lg:col-span-6 clg-hero-copy">
                 <div className="clg-eyebrow hero-animate" style={{ animationDelay: "0.1s" }}>
-                  <span />
                   Post-click conversion &amp; journey optimisation
                 </div>
 
@@ -214,19 +212,13 @@ export default function ConversionLedGrowthPage() {
 
                 <div className="hero-animate flex flex-wrap gap-4 items-center mb-8" style={{ animationDelay: "0.4s" }}>
                   <button
-                    className="open-contact-modal clg-btn-primary inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-bold text-base text-white bg-gradient-to-r from-[#7469F8] via-[#AB57F3] to-[#E057D8] border border-[#AB57F3]/30 shadow-[0_0_20px_rgba(171,87,243,0.4)] hover:shadow-[0_0_30px_rgba(171,87,243,0.6)] hover:-translate-y-0.5 transition-all cursor-pointer"
+                    className="clg-btn-primary button button-primary inline-flex items-center justify-center gap-3 px-8 py-3.5 sm:py-4 rounded-full font-bold text-base text-white transition-all shadow-[0_10px_25px_-5px_rgba(116,105,248,0.5)] hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
                     type="button"
+                    onClick={() => openContactModal()}
                   >
-                    Request a Conversion Review
+                    Start a Conversation
                     <ArrowIcon />
                   </button>
-
-                  <a
-                    href="#capabilities"
-                    className="clg-btn-secondary inline-flex items-center gap-2 px-7 py-4 rounded-2xl font-semibold text-base text-slate-200 border border-slate-700/80 bg-slate-900/60 hover:bg-slate-800 hover:text-white transition-all"
-                  >
-                    See What We Assess
-                  </a>
                 </div>
 
                 <ul className="hero-animate flex flex-wrap gap-4 sm:gap-6 text-xs sm:text-sm text-slate-300 font-medium" style={{ animationDelay: "0.5s" }}>
@@ -245,7 +237,7 @@ export default function ConversionLedGrowthPage() {
                 </ul>
               </div>
 
-              <div className="lg:col-span-6 relative w-full flex flex-col items-center lg:items-end justify-center hero-animate" style={{ animationDelay: "0.55s" }}>
+              <div className="lg:col-span-6 relative w-full flex flex-col items-center lg:items-end justify-center hero-animate lg:-mt-6 xl:-mt-10" style={{ animationDelay: "0.55s" }}>
                 <ConversionIntelligenceLoop />
                 <p className="clg-disclaimer text-right text-xs text-slate-500 mt-2.5 w-full max-w-[735px]">
                   Illustrative diagnostic logic. Campaign setup, available signals and outcomes vary by advertiser.
@@ -285,35 +277,36 @@ export default function ConversionLedGrowthPage() {
               3. STRATEGIC INTRODUCTION (THE POST-CLICK PERFORMANCE LAYER)
               ================================================================= */}
           <section className="clg-section clg-why-section py-24 px-6 lg:px-12 relative z-10" id="why">
-            <div className="max-w-[1240px] mx-auto w-full grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-              <div className="lg:col-span-5 clg-sticky-heading">
-                <div className="clg-eyebrow">
-                  <span />
-                  The post-click performance layer
-                </div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.12] text-white tracking-tight">
-                  The click creates an opportunity. The journey decides what happens next.
-                </h2>
+            <div className="max-w-[1240px] mx-auto w-full">
+              <div className="clg-eyebrow mb-4">
+                The post-click performance layer
               </div>
+              <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div className="lg:col-span-5 clg-sticky-heading">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.12] text-white tracking-tight m-0">
+                    The click creates an opportunity. The journey decides what happens next.
+                  </h2>
+                </div>
 
-              <div className="lg:col-span-7 space-y-6 text-slate-300 text-base sm:text-lg leading-relaxed">
-                <p className="text-xl sm:text-2xl font-semibold text-white leading-snug">
-                  A campaign can reach the right audience and still lose the outcome after the click.
-                </p>
+                <div className="lg:col-span-7 space-y-6 text-slate-300 text-base sm:text-lg leading-relaxed">
+                  <p className="text-xl sm:text-2xl font-semibold text-white leading-snug m-0">
+                    A campaign can reach the right audience and still lose the outcome after the click.
+                  </p>
 
-                <p>
-                  Sometimes the landing page makes a different promise. Sometimes the visitor cannot find enough reassurance to move forward. Sometimes the form asks for too much, too soon. And sometimes the action happens but the tracking does not record it correctly.
-                </p>
+                  <p>
+                    Sometimes the landing page makes a different promise. Sometimes the visitor cannot find enough reassurance to move forward. Sometimes the form asks for too much, too soon. And sometimes the action happens but the tracking does not record it correctly.
+                  </p>
 
-                <p>
-                  Conversion-led growth brings those moments into the performance conversation. It helps marketing, affiliate and commercial teams understand where intent is weakening—and what deserves attention first.
-                </p>
+                  <p>
+                    Conversion-led growth brings those moments into the performance conversation. It helps marketing, affiliate and commercial teams understand where intent is weakening—and what deserves attention first.
+                  </p>
 
-                <div className="clg-human-note mt-8 p-6 rounded-2xl border-l-4 border-[#AB57F3] bg-gradient-to-r from-[#AB57F3]/15 to-slate-900/60 backdrop-blur-md">
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#E057D8] block mb-2">Our view</span>
-                  <strong className="text-base sm:text-lg text-white font-semibold leading-snug block">
-                    Improvement starts by diagnosing the reason for friction, not by changing everything at once.
-                  </strong>
+                  <div className="clg-human-note mt-8 p-6 rounded-2xl border-l-4 border-[#AB57F3] bg-gradient-to-r from-[#AB57F3]/15 to-slate-900/60 backdrop-blur-md">
+                    <span className="text-xs font-bold uppercase tracking-widest text-[#E057D8] block mb-2">Our view</span>
+                    <strong className="text-base sm:text-lg text-white font-semibold leading-snug block">
+                      Improvement starts by diagnosing the reason for friction, not by changing everything at once.
+                    </strong>
+                  </div>
                 </div>
               </div>
             </div>
@@ -322,20 +315,17 @@ export default function ConversionLedGrowthPage() {
           {/* =================================================================
               4. WHAT WE ASSESS (CAPABILITIES)
               ================================================================= */}
-          <section className="clg-section py-24 px-6 lg:px-12 relative z-10 border-t border-slate-800/80 bg-slate-950/40" id="capabilities">
+          <section className="clg-section py-24 px-6 lg:px-12 relative z-10" id="capabilities">
             <div className="max-w-[1240px] mx-auto w-full">
-              <div className="grid lg:grid-cols-12 gap-8 items-end mb-14">
-                <div className="lg:col-span-8">
-                  <div className="clg-eyebrow">
-                    <span />
-                    What we assess
-                  </div>
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.12] text-white tracking-tight">
+              <div className="mb-14">
+                <div className="clg-eyebrow mb-4">
+                  What we assess
+                </div>
+                <div className="grid lg:grid-cols-12 gap-8 items-start">
+                  <h2 className="lg:col-span-7 text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.12] text-white tracking-tight m-0">
                     Four connected areas behind stronger conversion journeys.
                   </h2>
-                </div>
-                <div className="lg:col-span-4">
-                  <p className="text-base text-slate-400 leading-relaxed">
+                  <p className="lg:col-span-5 text-base sm:text-lg text-slate-300 leading-relaxed font-light m-0">
                     We look beyond isolated page elements to understand how acquisition, experience and measurement work together.
                   </p>
                 </div>
@@ -350,7 +340,7 @@ export default function ConversionLedGrowthPage() {
                         <span className="w-2.5 h-2.5 rounded-full bg-[#3F8BF9] shadow-[0_0_8px_#3F8BF9]" />
                       </div>
                       <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#38BDF8] transition-colors">{item.title}</h3>
-                      <p className="text-sm text-slate-400 leading-relaxed">{item.text}</p>
+                      <p className="text-sm text-slate-400 leading-relaxed font-light">{item.text}</p>
                     </div>
                     <div className="clg-card-accent-line" />
                   </article>
@@ -360,21 +350,65 @@ export default function ConversionLedGrowthPage() {
           </section>
 
           {/* =================================================================
-              5. SIGNAL MAP (CAMPAIGN PROMISE TO QUALIFIED OUTCOME)
+              5. SIGNAL MAP / FLOWCHART (CAMPAIGN PROMISE TO QUALIFIED OUTCOME)
               ================================================================= */}
-          <section className="clg-section clg-signals-section py-24 px-6 lg:px-12 relative z-10 overflow-hidden" id="signals">
-            <div className="max-w-[1240px] mx-auto w-full grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-              <div className="lg:col-span-5">
-                <div className="clg-eyebrow">
-                  <span />
+          <section className="clg-section clg-signals-section py-24 px-6 lg:px-12 relative z-10" id="signals">
+            <div className="max-w-[1240px] mx-auto w-full">
+              <div className="text-center max-w-3xl mx-auto mb-16">
+                <div className="clg-eyebrow justify-center mb-4">
                   Read the journey as one system
                 </div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.12] text-white tracking-tight mb-6">
                   Connect the campaign promise to the quality of the outcome.
                 </h2>
-                <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-8">
+                <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-light">
                   Individual metrics rarely explain the whole problem. We bring the important signals into one decision path so teams can see what is happening before, during and after the conversion.
                 </p>
+              </div>
+
+              <div className="vertical-timeline" aria-label="Campaign promise to qualified outcome flowchart">
+                <div className="vertical-timeline-item">
+                  <div className="timeline-content left">
+                    <small className="text-[11px] font-bold uppercase tracking-widest text-[#3F8BF9] block mb-1.5">Before the click</small>
+                    <h3>Campaign promise</h3>
+                    <p>Audience, source, offer and message.</p>
+                  </div>
+                  <div className="timeline-number">01</div>
+                  <div className="hidden lg:block" />
+                </div>
+
+                <div className="vertical-timeline-item">
+                  <div className="hidden lg:block" />
+                  <div className="timeline-number">02</div>
+                  <div className="timeline-content right">
+                    <small className="text-[11px] font-bold uppercase tracking-widest text-[#7469F8] block mb-1.5">After the click</small>
+                    <h3>Visitor behaviour</h3>
+                    <p>Attention, progression, hesitation and exit.</p>
+                  </div>
+                </div>
+
+                <div className="vertical-timeline-item">
+                  <div className="timeline-content left">
+                    <small className="text-[11px] font-bold uppercase tracking-widest text-[#AB57F3] block mb-1.5">At the decision</small>
+                    <h3>Conversion friction</h3>
+                    <p>Relevance, reassurance, usability and effort.</p>
+                  </div>
+                  <div className="timeline-number">03</div>
+                  <div className="hidden lg:block" />
+                </div>
+
+                <div className="vertical-timeline-item">
+                  <div className="hidden lg:block" />
+                  <div className="timeline-number">04</div>
+                  <div className="timeline-content right">
+                    <small className="text-[11px] font-bold uppercase tracking-widest text-[#10B981] block mb-1.5">After the action</small>
+                    <h3>Measured quality</h3>
+                    <p>Event accuracy and commercial relevance.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="text-center mt-12">
                 <a
                   href="#approach"
                   className="inline-flex items-center gap-2 text-[#38BDF8] font-bold text-base hover:text-white transition-colors group"
@@ -385,90 +419,38 @@ export default function ConversionLedGrowthPage() {
                   </span>
                 </a>
               </div>
-
-              <div className="lg:col-span-7 relative">
-                <div className="clg-signal-map relative pl-10 sm:pl-12 py-3" aria-label="Campaign promise to qualified outcome">
-                  <div className="clg-signal-spine" aria-hidden="true">
-                    <i style={{ top: "0%" }} />
-                    <i style={{ top: "33%" }} />
-                    <i style={{ top: "66%" }} />
-                    <i style={{ top: "100%" }} />
-                  </div>
-
-                  <div className="space-y-4">
-                    <article className="clg-signal-card p-5 sm:p-6 rounded-xl flex items-center gap-5">
-                      <span className="clg-signal-badge badge-1">01</span>
-                      <div>
-                        <small className="text-[10px] font-bold uppercase tracking-widest text-[#3F8BF9] block mb-1">Before the click</small>
-                        <h3 className="text-lg font-bold text-white mb-1">Campaign promise</h3>
-                        <p className="text-sm text-slate-400">Audience, source, offer and message.</p>
-                      </div>
-                    </article>
-
-                    <article className="clg-signal-card p-5 sm:p-6 rounded-xl flex items-center gap-5">
-                      <span className="clg-signal-badge badge-2">02</span>
-                      <div>
-                        <small className="text-[10px] font-bold uppercase tracking-widest text-[#7469F8] block mb-1">After the click</small>
-                        <h3 className="text-lg font-bold text-white mb-1">Visitor behaviour</h3>
-                        <p className="text-sm text-slate-400">Attention, progression, hesitation and exit.</p>
-                      </div>
-                    </article>
-
-                    <article className="clg-signal-card p-5 sm:p-6 rounded-xl flex items-center gap-5">
-                      <span className="clg-signal-badge badge-3">03</span>
-                      <div>
-                        <small className="text-[10px] font-bold uppercase tracking-widest text-[#AB57F3] block mb-1">At the decision</small>
-                        <h3 className="text-lg font-bold text-white mb-1">Conversion friction</h3>
-                        <p className="text-sm text-slate-400">Relevance, reassurance, usability and effort.</p>
-                      </div>
-                    </article>
-
-                    <article className="clg-signal-card p-5 sm:p-6 rounded-xl flex items-center gap-5">
-                      <span className="clg-signal-badge badge-4">04</span>
-                      <div>
-                        <small className="text-[10px] font-bold uppercase tracking-widest text-[#10B981] block mb-1">After the action</small>
-                        <h3 className="text-lg font-bold text-white mb-1">Measured quality</h3>
-                        <p className="text-sm text-slate-400">Event accuracy and commercial relevance.</p>
-                      </div>
-                    </article>
-                  </div>
-                </div>
-              </div>
             </div>
           </section>
 
           {/* =================================================================
-              6. HOW ASCENDIAPRIME WORKS (APPROACH)
+              6. HOW ASCENDIAPRIME WORKS (APPROACH — 2-COLUMN STICKY SCROLLING LAYOUT MATCHING AFFILIATE)
               ================================================================= */}
-          <section className="clg-section py-24 px-6 lg:px-12 relative z-10 border-t border-slate-800/80 bg-slate-950/40" id="approach">
+          <section className="clg-section clg-approach-section py-24 px-6 lg:px-12 relative z-10" id="approach">
             <div className="max-w-[1240px] mx-auto w-full">
-              <div className="grid lg:grid-cols-12 gap-8 items-end mb-14">
-                <div className="lg:col-span-8">
+              <div className="clg-approach-layout">
+                <div className="clg-approach-sticky">
                   <div className="clg-eyebrow">
-                    <span />
                     How AscendiaPrime works
                   </div>
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.12] text-white tracking-tight">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.12] text-white tracking-tight mb-6">
                     A clear route from observation to action.
                   </h2>
-                </div>
-                <div className="lg:col-span-4">
-                  <p className="text-base text-slate-400 leading-relaxed">
+                  <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-light mb-6">
                     The aim is not to produce a long list of opinions. It is to give your team a defensible order of priority.
                   </p>
                 </div>
-              </div>
 
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {processSteps.map((item) => (
-                  <article key={item.number} className="clg-process-card p-8 rounded-2xl flex flex-col justify-between">
-                    <div>
+                <div className="clg-approach-cards">
+                  {processSteps.map((item) => (
+                    <article key={item.number} className="clg-approach-card">
                       <span className="clg-process-badge">{item.number}</span>
-                      <h3 className="text-xl font-bold text-white mt-4 mb-3">{item.title}</h3>
-                      <p className="text-sm text-slate-400 leading-relaxed">{item.text}</p>
-                    </div>
-                  </article>
-                ))}
+                      <div>
+                        <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                        <p className="text-sm text-slate-300 leading-relaxed font-light">{item.text}</p>
+                      </div>
+                    </article>
+                  ))}
+                </div>
               </div>
             </div>
           </section>
@@ -477,39 +459,37 @@ export default function ConversionLedGrowthPage() {
               7. DELIVERABLES (WHAT YOUR TEAM RECEIVES)
               ================================================================= */}
           <section className="clg-section clg-deliverables-section py-24 px-6 lg:px-12 relative z-10" id="deliverables">
-            <div className="max-w-[1240px] mx-auto w-full grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-              <div className="lg:col-span-5">
-                <div className="clg-eyebrow">
-                  <span />
-                  A useful output—not a generic audit
-                </div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.12] text-white tracking-tight mb-6">
-                  What your team receives.
-                </h2>
-                <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-8">
-                  The review is designed to support decisions across marketing, analytics, content, design and development. Every recommendation is connected to an observed issue and a measurable next step.
-                </p>
-
-                <div className="clg-deliverable-tag flex items-center gap-4 p-5 rounded-xl border border-[#10B981]/30 bg-[#10B981]/10 backdrop-blur-md">
-                  <span className="clg-tag-icon text-[#10B981]">
-                    <CheckIcon />
-                  </span>
-                  <span className="text-sm text-slate-300">
-                    Clear enough to act on.<br />
-                    <b className="text-white font-bold">Specific enough to brief.</b>
-                  </span>
-                </div>
+            <div className="max-w-[1240px] mx-auto w-full">
+              <div className="clg-eyebrow mb-4">
+                A useful output—not a generic audit
               </div>
+              <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div className="lg:col-span-5">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.12] text-white tracking-tight mb-6 m-0">
+                    What your team receives.
+                  </h2>
+                  <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-8 font-light">
+                    The review is designed to support decisions across marketing, analytics, content, design and development. Every recommendation is connected to an observed issue and a measurable next step.
+                  </p>
 
-              <div className="lg:col-span-7">
-                <ol className="clg-deliverable-list space-y-4">
-                  {deliverables.map((item, index) => (
-                    <li key={item} className="p-5 sm:p-6 rounded-xl flex items-center gap-5">
-                      <span className="text-xs font-mono font-bold text-[#3F8BF9]">0{index + 1}</span>
-                      <p className="text-base sm:text-lg text-slate-200 font-medium m-0">{item}</p>
-                    </li>
-                  ))}
-                </ol>
+                  <div className="p-6 rounded-2xl border border-slate-800 bg-slate-900/50">
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#38BDF8] block mb-1">Collaborative format</span>
+                    <p className="text-sm text-slate-300 font-light leading-relaxed">
+                      Delivered as working documentation, prioritised tickets or direct working sessions with your team and partners.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="lg:col-span-7">
+                  <ol className="clg-deliverables-list space-y-4">
+                    {deliverables.map((item, index) => (
+                      <li key={item} className="clg-deliverable-item p-5 rounded-2xl flex items-start gap-4">
+                        <span className="clg-deliverable-index">0{index + 1}</span>
+                        <span className="text-base text-slate-200 font-medium leading-relaxed">{item}</span>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
               </div>
             </div>
           </section>
@@ -517,88 +497,93 @@ export default function ConversionLedGrowthPage() {
           {/* =================================================================
               8. QUALITY & MEASUREMENT SAFEGUARDS
               ================================================================= */}
-          <section className="clg-section py-24 px-6 lg:px-12 relative z-10 border-t border-slate-800/80 bg-slate-950/40" id="quality">
-            <div className="max-w-[1240px] mx-auto w-full grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-              <div className="lg:col-span-5">
-                <div className="clg-eyebrow">
-                  <span />
-                  Measurement with commercial context
-                </div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.12] text-white tracking-tight mb-6">
-                  More conversions only matter when they are meaningful.
-                </h2>
-                <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-                  Volume alone can hide poor-quality leads, low-value orders, duplicate events or attribution problems. We therefore assess the measurement behind the outcome—not only the number shown in a dashboard.
-                </p>
+          <section className="clg-section py-24 px-6 lg:px-12 relative z-10" id="quality">
+            <div className="max-w-[1240px] mx-auto w-full">
+              <div className="clg-eyebrow mb-4">
+                Measurement with commercial context
               </div>
+              <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div className="lg:col-span-5">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.12] text-white tracking-tight mb-6 m-0">
+                    More conversions only matter when they are meaningful.
+                  </h2>
+                  <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-light">
+                    Volume alone can hide poor-quality leads, low-value orders, duplicate events or attribution problems. We therefore assess the measurement behind the outcome—not only the number shown in a dashboard.
+                  </p>
+                </div>
 
-              <div className="lg:col-span-7 space-y-4">
-                <article className="clg-quality-card p-6 rounded-xl flex items-start gap-5">
-                  <span className="clg-quality-icon text-[#10B981]"><CheckIcon /></span>
-                  <div>
-                    <h3 className="text-lg font-bold text-white mb-1.5">Event verified</h3>
-                    <p className="text-sm text-slate-400">The action fires where expected and carries the required information.</p>
-                  </div>
-                </article>
+                <div className="lg:col-span-7 space-y-4">
+                  <article className="clg-quality-card p-6 rounded-xl flex items-start gap-5">
+                    <span className="clg-quality-icon text-[#10B981]"><CheckIcon /></span>
+                    <div>
+                      <h3 className="text-lg font-bold text-white mb-1.5">Event verified</h3>
+                      <p className="text-sm text-slate-400 font-light">The action fires where expected and carries the required information.</p>
+                    </div>
+                  </article>
 
-                <article className="clg-quality-card p-6 rounded-xl flex items-start gap-5">
-                  <span className="clg-quality-icon text-[#10B981]"><CheckIcon /></span>
-                  <div>
-                    <h3 className="text-lg font-bold text-white mb-1.5">Quality reviewed</h3>
-                    <p className="text-sm text-slate-400">The result reflects the lead, order or action the business actually values.</p>
-                  </div>
-                </article>
+                  <article className="clg-quality-card p-6 rounded-xl flex items-start gap-5">
+                    <span className="clg-quality-icon text-[#10B981]"><CheckIcon /></span>
+                    <div>
+                      <h3 className="text-lg font-bold text-white mb-1.5">Quality reviewed</h3>
+                      <p className="text-sm text-slate-400 font-light">The result reflects the lead, order or action the business actually values.</p>
+                    </div>
+                  </article>
 
-                <article className="clg-quality-card p-6 rounded-xl flex items-start gap-5">
-                  <span className="clg-quality-icon text-[#10B981]"><CheckIcon /></span>
-                  <div>
-                    <h3 className="text-lg font-bold text-white mb-1.5">Decision informed</h3>
-                    <p className="text-sm text-slate-400">The evidence is clear enough to guide the next campaign or journey change.</p>
-                  </div>
-                </article>
+                  <article className="clg-quality-card p-6 rounded-xl flex items-start gap-5">
+                    <span className="clg-quality-icon text-[#10B981]"><CheckIcon /></span>
+                    <div>
+                      <h3 className="text-lg font-bold text-white mb-1.5">Decision informed</h3>
+                      <p className="text-sm text-slate-400 font-light">The evidence is clear enough to guide the next campaign or journey change.</p>
+                    </div>
+                  </article>
+                </div>
               </div>
             </div>
           </section>
 
           {/* =================================================================
-              9. WHEN THIS IS USEFUL (USE CASES & SECTORS)
+              9. WHEN THIS IS USEFUL (CENTERED HEADER & FULL-WIDTH ALIGNED LAYOUT)
               ================================================================= */}
           <section className="clg-section py-24 px-6 lg:px-12 relative z-10" id="fit">
-            <div className="max-w-[1240px] mx-auto w-full grid lg:grid-cols-12 gap-12 lg:gap-14 items-start">
-              <div className="lg:col-span-7">
-                <div className="clg-eyebrow">
-                  <span />
+            <div className="max-w-[1240px] mx-auto w-full">
+              <div className="text-center max-w-3xl mx-auto mb-14">
+                <div className="clg-eyebrow justify-center mb-4">
                   When this is useful
                 </div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.12] text-white tracking-tight mb-8">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.12] text-white tracking-tight">
                   Built for moments where traffic and outcomes stop moving together.
                 </h2>
-
-                <ul className="grid sm:grid-cols-2 gap-4">
-                  {useCases.map((item) => (
-                    <li key={item} className="p-4 rounded-xl border border-slate-800/80 bg-slate-900/60 flex items-start gap-3 text-sm text-slate-300 leading-relaxed">
-                      <span className="text-[#AB57F3] mt-0.5"><ArrowIcon /></span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
 
-              <aside className="lg:col-span-5 p-8 rounded-2xl border border-slate-800/90 bg-slate-900/80 backdrop-blur-md">
-                <small className="text-xs font-bold uppercase tracking-widest text-[#E057D8] block mb-2">Relevant across</small>
-                <h3 className="text-2xl font-bold text-white mb-6">Different journeys. The same need for clarity.</h3>
+              {/* Use Cases Grid */}
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4.5 mb-8">
+                {useCases.map((item) => (
+                  <div key={item} className="p-5 sm:p-6 rounded-2xl border border-slate-800/90 bg-gradient-to-br from-slate-900/80 to-slate-950/90 backdrop-blur-xl flex items-start gap-3.5 hover:border-slate-700 transition-all">
+                    <span className="text-[#AB57F3] mt-1 shrink-0"><ArrowIcon /></span>
+                    <span className="text-sm sm:text-[0.95rem] text-slate-300 leading-relaxed font-light">{item}</span>
+                  </div>
+                ))}
+              </div>
 
-                <div className="flex flex-wrap gap-2.5 mb-6">
-                  {sectors.map((item) => (
-                    <span key={item} className="clg-sector-badge">
-                      {item}
-                    </span>
-                  ))}
+              {/* Sectors Box Below — Matching Alignment */}
+              <aside className="p-8 sm:p-10 rounded-2xl border border-slate-800/90 bg-slate-900/80 backdrop-blur-md">
+                <div className="grid lg:grid-cols-12 gap-8 items-center">
+                  <div className="lg:col-span-5">
+                    <small className="text-xs font-bold uppercase tracking-widest text-[#E057D8] block mb-2">Relevant across</small>
+                    <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">Different journeys. The same need for clarity.</h3>
+                    <p className="text-sm text-slate-400 leading-relaxed font-light">
+                      Scope is shaped around the campaign, available data and action that matters to your business.
+                    </p>
+                  </div>
+
+                  <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-3">
+                    {sectors.map((item) => (
+                      <span key={item} className="clg-sector-badge justify-center text-center w-full">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-
-                <p className="text-sm text-slate-400 pt-5 border-t border-slate-800 leading-relaxed">
-                  Scope is shaped around the campaign, available data and action that matters to your business.
-                </p>
               </aside>
             </div>
           </section>
@@ -606,95 +591,85 @@ export default function ConversionLedGrowthPage() {
           {/* =================================================================
               10. FREQUENTLY ASKED QUESTIONS
               ================================================================= */}
-          <section className="clg-section clg-faq-section py-24 px-6 lg:px-12 relative z-10 border-t border-slate-800/80 bg-slate-950/50" id="faq">
-            <div className="max-w-[1240px] mx-auto w-full grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-              <div className="lg:col-span-5 clg-sticky-heading">
-                <div className="clg-eyebrow">
-                  <span />
-                  Frequently asked questions
-                </div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.12] text-white tracking-tight mb-6">
-                  Useful answers before we begin.
-                </h2>
-                <p className="text-base sm:text-lg text-slate-400 leading-relaxed">
-                  Conversion work is most effective when the objective, evidence and responsibilities are clear from the outset.
-                </p>
+          <section className="clg-section clg-faq-section py-24 px-6 lg:px-12 relative z-10" id="faq">
+            <div className="max-w-[1240px] mx-auto w-full">
+              <div className="clg-eyebrow mb-4">
+                Frequently asked questions
               </div>
+              <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div className="lg:col-span-5 clg-sticky-heading">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.12] text-white tracking-tight mb-6 m-0">
+                    Useful answers before we begin.
+                  </h2>
+                  <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-light">
+                    Conversion work is most effective when the objective, evidence and responsibilities are clear from the outset.
+                  </p>
+                </div>
 
-              <div className="lg:col-span-7 clg-faq-list space-y-4">
-                {faqs.map((item, index) => {
-                  const isOpen = openFaq === index;
-                  return (
-                    <div
-                      key={item.q}
-                      className={`clg-faq-card ${isOpen ? "open" : ""}`}
-                    >
-                      <button
-                        type="button"
-                        onClick={() => toggleFaq(index)}
-                        className="clg-faq-button"
-                        aria-expanded={isOpen}
+                <div className="lg:col-span-7 clg-faq-list space-y-4">
+                  {faqs.map((item, index) => {
+                    const isOpen = openFaq === index;
+                    return (
+                      <div
+                        key={item.q}
+                        className={`clg-faq-card ${isOpen ? "open" : ""}`}
                       >
-                        <div className="flex items-center gap-3.5 pr-2">
-                          <span className="clg-faq-number">0{index + 1}</span>
-                          <span className="font-bold text-white leading-snug">{item.q}</span>
-                        </div>
-                        <span className="clg-faq-icon" aria-hidden="true">
-                          +
-                        </span>
-                      </button>
-                      {isOpen && (
-                        <div className="clg-faq-answer animate-fadeIn">
-                          <p>{item.a}</p>
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
+                        <button
+                          type="button"
+                          onClick={() => toggleFaq(index)}
+                          className="clg-faq-button"
+                          aria-expanded={isOpen}
+                        >
+                          <div className="flex items-center gap-3.5 pr-2">
+                            <span className="clg-faq-number">0{index + 1}</span>
+                            <span className="font-bold text-white leading-snug">{item.q}</span>
+                          </div>
+                          <span className="clg-faq-icon" aria-hidden="true">
+                            +
+                          </span>
+                        </button>
+                        {isOpen && (
+                          <div className="clg-faq-answer animate-fadeIn">
+                            <p>{item.a}</p>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </section>
 
           {/* =================================================================
-              11. FINAL CTA SECTION
+              11. FINAL CTA SECTION (CLEAN & SEAMLESS, NO BOX OR STRIP)
               ================================================================= */}
-          <section className="clg-final-cta-section relative py-28 px-6 lg:px-12 overflow-hidden text-center" id="contact">
-            <div className="cta-orbit orbit-one" aria-hidden="true" />
-            <div className="cta-orbit orbit-two" aria-hidden="true" />
-
-            <div className="max-w-[920px] mx-auto relative z-10">
+          <section className="clg-final-cta-section relative py-24 sm:py-28 px-6 lg:px-12 overflow-hidden text-center" id="contact">
+            <div className="max-w-[840px] mx-auto relative z-10">
               <div className="clg-eyebrow justify-center mb-4">
-                <span />
                 Where intent becomes measurable growth
-                <span />
               </div>
 
-              <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-[1.08] tracking-tight mb-6">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.15] tracking-tight mb-6">
                 Find out where valuable campaign intent is being lost.
               </h2>
 
-              <p className="text-base sm:text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto mb-10">
+              <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto mb-10 font-light">
                 Start with one priority campaign, landing page or conversion path. We will help you establish what can be assessed, where the evidence points and what the next useful action should be.
               </p>
 
               <div className="flex flex-wrap gap-4 items-center justify-center mb-8">
                 <button
                   type="button"
-                  className="open-contact-modal inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-bold text-base text-white bg-gradient-to-r from-[#7469F8] via-[#AB57F3] to-[#E057D8] border border-[#AB57F3]/30 shadow-[0_0_20px_rgba(171,87,243,0.4)] hover:shadow-[0_0_30px_rgba(171,87,243,0.6)] hover:-translate-y-0.5 transition-all cursor-pointer"
+                  className="clg-btn-primary button button-primary inline-flex items-center justify-center gap-3 px-8 py-3.5 sm:py-4 rounded-full font-bold text-base text-white transition-all shadow-[0_10px_25px_-5px_rgba(116,105,248,0.5)] hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                  onClick={() => openContactModal()}
                 >
-                  Request a Conversion Review
+                  Start a Conversation
                   <ArrowIcon />
                 </button>
-
-                <a
-                  href="#capabilities"
-                  className="inline-flex items-center gap-2 px-7 py-4 rounded-2xl font-semibold text-base text-slate-200 border border-slate-700 bg-slate-900/80 hover:bg-slate-800 hover:text-white transition-all"
-                >
-                  Review the scope
-                </a>
               </div>
 
-              <small className="text-xs text-slate-400 block">
+              <small className="text-xs text-slate-400 block font-light">
                 No fixed uplift promises. No generic checklist. A focused, evidence-led conversation.
               </small>
             </div>

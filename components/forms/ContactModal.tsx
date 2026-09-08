@@ -63,12 +63,12 @@ export default function ContactModal({
       <div className="popup-content relative z-10 w-full max-w-lg max-h-[calc(100vh-2rem)] sm:max-h-[calc(100vh-3rem)] overflow-y-auto overscroll-contain rounded-2xl border border-[#7469F8]/30 bg-[#0b111d]/95 p-6 shadow-2xl backdrop-blur-xl sm:p-8">
         <button
           type="button"
-          className="modal-close-btn absolute right-4 top-4 text-slate-400 transition-colors hover:text-white"
+          className="modal-close-btn absolute right-4 top-4 sm:right-5 sm:top-5 z-50 flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full border border-white/15 bg-white/10 text-slate-300 shadow-lg backdrop-blur-md transition-all duration-200 hover:scale-105 hover:border-white/30 hover:bg-white/20 hover:text-white active:scale-95 cursor-pointer"
           onClick={onClose}
-          aria-label="Close"
+          aria-label="Close modal"
         >
-          <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
         <h2 id="contact-modal-title" className="mb-6 text-2xl font-bold text-white text-center">

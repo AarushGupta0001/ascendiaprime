@@ -4,7 +4,6 @@ import "@/styles/retargeting.css";
 import RetargetingJourney from "@/components/retargeting/RetargetingJourney";
 import PageRevealEffects from "@/components/effects/PageRevealEffects";
 import { useContactModal } from "@/components/forms/ContactModalProvider";
-import ContactForm from "@/components/forms/ContactForm";
 
 const intentRows = [
   [
@@ -177,8 +176,7 @@ export default function RetargetingPage() {
               <div className="hero-ctas">
                 <button
                   type="button"
-                  className="button secondary"
-                  onClick={() => openContactModal()}
+                  className="button button-primary open-contact-modal"
                 >
                   Start a Conversation
                 </button>
@@ -374,23 +372,22 @@ export default function RetargetingPage() {
               </p>
               <button
                 type="button"
-                className="text-link"
-                onClick={() => openContactModal()}
+                className="text-link open-contact-modal"
               >
                 Talk through your journey <ArrowIcon />
               </button>
             </div>
-            <ol className="approach-list">
+            <div className="approach-list">
               {approach.map((step, i) => (
-                <li key={step[0]}>
-                  <span>0{i + 1}</span>
+                <article key={step[0]}>
+                  <span className="step-badge">0{i + 1}</span>
                   <div>
                     <h3>{step[0]}</h3>
                     <p>{step[1]}</p>
                   </div>
-                </li>
+                </article>
               ))}
-            </ol>
+            </div>
           </div>
         </section>
 
@@ -450,19 +447,6 @@ export default function RetargetingPage() {
                   level of management required.
                 </p>
               </article>
-            </div>
-          </div>
-          <div className="reach-band">
-            <div className="page-shell">
-              <strong>17,000+</strong>
-              <p>
-                <b>publisher relationships across the UK and global markets</b>
-                <span>
-                  Where publisher distribution adds value to the strategy,
-                  AscendiaPrime can draw on this reach. Availability and fit
-                  depend on the campaign.
-                </span>
-              </p>
             </div>
           </div>
         </section>
@@ -669,44 +653,34 @@ export default function RetargetingPage() {
         </section>
 
         {/* =========================================================
-            11. CONTACT / CAMPAIGN ENQUIRY
+            11. CONTACT / CAMPAIGN ENQUIRY (CENTERED CTA)
             ========================================================= */}
         <section id="contact" className="contact-section">
-          <div className="page-shell contact-grid">
-            <div>
-              <p className="eyebrow">
-                <span />
-                Start with the opportunity
-              </p>
-              <h2>
-                The visitor already showed interest. The next message has to
-                earn the return.
-              </h2>
-              <p>
-                Tell us where valuable visitors are dropping out, which channels
-                you currently use and what a successful return would mean for the
-                business. We will help you assess the audience opportunity,
-                tracking requirements and the right level of campaign control.
-              </p>
-              <ul>
-                <li>
-                  <CheckIcon />
-                  No generic media plan
-                </li>
-                <li>
-                  <CheckIcon />
-                  Clear next-step assessment
-                </li>
-                <li>
-                  <CheckIcon />
-                  Commercial fit discussed upfront
-                </li>
-              </ul>
-            </div>
-
-            <div className="contact-form-shell relative rounded-[1.75rem] p-6 md:p-10 backdrop-blur-xl">
-              <ContactForm variant="homepage" />
-            </div>
+          <div className="contact-content">
+            <p className="eyebrow">
+              <span />
+              Start with the opportunity
+            </p>
+            <h2>
+              The visitor already showed interest.
+              <br />
+              The next message has to earn the return.
+            </h2>
+            <p>
+              Tell us where valuable visitors are dropping out, which channels
+              you currently use and what a successful return would mean for the
+              business. We will help you assess the audience opportunity,
+              tracking requirements and the right level of campaign control.
+            </p>
+          </div>
+          <div className="contact-actions">
+            <button
+              type="button"
+              className="button button-primary open-contact-modal"
+            >
+              Start a Conversation <span aria-hidden="true">→</span>
+            </button>
+            <small>contact@ascendiaprime.com</small>
           </div>
         </section>
       </div>

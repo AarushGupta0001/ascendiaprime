@@ -879,14 +879,14 @@ export default function HomePage() {
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-stretch w-full">
                                     
                                     {/* Left Box: Start a Conversation */}
-                                    <div className="group relative rounded-2xl p-6 sm:p-8 md:p-9 bg-[#0b1330]/80 hover:bg-[#0d173d]/90 border border-[#7469F8]/25 hover:border-[#7469F8]/60 transition-all duration-300 flex flex-col items-center text-center justify-between shadow-[0_10px_30px_rgba(0,0,0,0.25)] hover:shadow-[0_15px_40px_rgba(116,105,248,0.2)]">
+                                    <div className="relative rounded-2xl p-6 sm:p-8 md:p-9 bg-[#0b1330]/80 border border-[#7469F8]/25 flex flex-col items-center text-center justify-between shadow-[0_10px_30px_rgba(0,0,0,0.25)]">
                                         <div className="flex-1 flex flex-col items-center text-center w-full">
-                                            <div className="w-12 h-12 rounded-xl bg-[#7469F8]/10 border border-[#7469F8]/30 flex items-center justify-center text-[#7469F8] mb-5 group-hover:scale-110 transition-transform duration-300 flex-shrink-0 mx-auto">
+                                            <div className="w-12 h-12 rounded-xl bg-[#7469F8]/10 border border-[#7469F8]/30 flex items-center justify-center text-[#7469F8] mb-5 flex-shrink-0 mx-auto">
                                                 <svg className="w-6 h-6 text-[#7469F8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                                                 </svg>
                                             </div>
-                                            <h3 className="text-2xl font-bold text-white mb-3 tracking-tight group-hover:text-[#7469F8] transition-colors text-center">
+                                            <h3 className="text-2xl font-bold text-white mb-3 tracking-tight text-center">
                                                 Start a Conversation
                                             </h3>
                                             <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-8 font-light text-center max-w-sm mx-auto flex-1">
@@ -896,7 +896,7 @@ export default function HomePage() {
                                         <div className="w-full flex justify-center pt-2">
                                             <button
                                                 type="button"
-                                                className="open-contact-modal inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full font-bold text-base text-white bg-gradient-to-r from-[#3F8BF9] via-[#7469F8] to-[#AB57F3] shadow-[0_0_20px_rgba(63,139,249,0.3)] hover:shadow-[0_0_35px_rgba(171,87,243,0.5)] hover:-translate-y-0.5 transition-all cursor-pointer border border-[#3F8BF9]/30 min-w-[260px] text-center"
+                                                className="open-contact-modal group inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full font-bold text-base text-white bg-gradient-to-r from-[#3F8BF9] via-[#7469F8] to-[#AB57F3] shadow-[0_0_20px_rgba(63,139,249,0.3)] hover:shadow-[0_0_35px_rgba(171,87,243,0.5)] hover:-translate-y-0.5 transition-all cursor-pointer border border-[#3F8BF9]/30 min-w-[260px] text-center"
                                             >
                                                 <span>Start a Conversation</span>
                                                 <svg className="w-4 h-4 text-white transition-transform group-hover:translate-x-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -907,14 +907,14 @@ export default function HomePage() {
                                     </div>
 
                                     {/* Right Box: Sign Up as a Partner */}
-                                    <div className="group relative rounded-2xl p-6 sm:p-8 md:p-9 bg-[#0b1330]/80 hover:bg-[#0d173d]/90 border border-[#3F8BF9]/30 hover:border-[#3F8BF9]/70 transition-all duration-300 flex flex-col items-center text-center justify-between shadow-[0_10px_30px_rgba(0,0,0,0.25)] hover:shadow-[0_15px_40px_rgba(63,139,249,0.2)]">
+                                    <div className="relative rounded-2xl p-6 sm:p-8 md:p-9 bg-[#0b1330]/80 border border-[#3F8BF9]/30 flex flex-col items-center text-center justify-between shadow-[0_10px_30px_rgba(0,0,0,0.25)]">
                                         <div className="flex-1 flex flex-col items-center text-center w-full">
-                                            <div className="w-12 h-12 rounded-xl bg-[#3F8BF9]/10 border border-[#3F8BF9]/30 flex items-center justify-center text-[#3F8BF9] mb-5 group-hover:scale-110 transition-transform duration-300 flex-shrink-0 mx-auto">
+                                            <div className="w-12 h-12 rounded-xl bg-[#3F8BF9]/10 border border-[#3F8BF9]/30 flex items-center justify-center text-[#3F8BF9] mb-5 flex-shrink-0 mx-auto">
                                                 <svg className="w-6 h-6 text-[#3F8BF9]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                                                 </svg>
                                             </div>
-                                            <h3 className="text-2xl font-bold text-white mb-3 tracking-tight group-hover:text-[#3F8BF9] transition-colors text-center">
+                                            <h3 className="text-2xl font-bold text-white mb-3 tracking-tight text-center">
                                                 Partner Network
                                             </h3>
                                             <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-8 font-light text-center max-w-sm mx-auto flex-1">
@@ -926,7 +926,7 @@ export default function HomePage() {
                                                 href="https://partners.ascendiamedia.co.uk/registration"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full font-bold text-base text-white bg-gradient-to-r from-[#3F8BF9] via-[#7469F8] to-[#AB57F3] shadow-[0_0_20px_rgba(63,139,249,0.3)] hover:shadow-[0_0_35px_rgba(171,87,243,0.5)] hover:-translate-y-0.5 transition-all no-underline border border-[#3F8BF9]/30 min-w-[260px] text-center"
+                                                className="group inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full font-bold text-base text-white bg-gradient-to-r from-[#3F8BF9] via-[#7469F8] to-[#AB57F3] shadow-[0_0_20px_rgba(63,139,249,0.3)] hover:shadow-[0_0_35px_rgba(171,87,243,0.5)] hover:-translate-y-0.5 transition-all no-underline border border-[#3F8BF9]/30 min-w-[260px] text-center"
                                             >
                                                 <span>Sign Up as a Partner</span>
                                                 <svg className="w-4 h-4 text-white transition-transform group-hover:translate-x-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">

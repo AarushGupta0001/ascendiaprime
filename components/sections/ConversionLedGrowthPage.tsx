@@ -401,18 +401,6 @@ export default function ConversionLedGrowthPage() {
                   </div>
                 </div>
               </div>
-
-              <div className="text-center mt-12">
-                <a
-                  href="#approach"
-                  className="inline-flex items-center gap-2 text-[#38BDF8] font-bold text-base hover:text-white transition-colors group"
-                >
-                  See how the review works
-                  <span className="group-hover:translate-x-1 transition-transform">
-                    <ArrowIcon />
-                  </span>
-                </a>
-              </div>
             </div>
           </section>
 

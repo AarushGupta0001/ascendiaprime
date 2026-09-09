@@ -16,6 +16,7 @@ export interface EventArticle {
   ctaText: string;
   isFeatured?: boolean;
   publishedDate: string;
+  image: string;
   author: {
     name: string;
     role: string;
@@ -39,6 +40,7 @@ export const EVENT_ARTICLES: EventArticle[] = [
     ctaText: "Read the Event Guide →",
     isFeatured: true,
     publishedDate: "2026",
+    image: "/images/events/dmexco.jpg",
     author: {
       name: "Ascendia Prime Strategy Team",
       role: "Global Performance & Partnerships",
@@ -138,6 +140,7 @@ export const EVENT_ARTICLES: EventArticle[] = [
     ctaText: "View the Checklist →",
     isFeatured: false,
     publishedDate: "2026",
+    image: "/images/events/affilifest-north.png",
     author: {
       name: "Ascendia Prime Strategy Team",
       role: "Conference Operations & Growth",
@@ -244,6 +247,7 @@ export const EVENT_ARTICLES: EventArticle[] = [
     ctaText: "Read the Article →",
     isFeatured: false,
     publishedDate: "2026",
+    image: "/images/events/advertising-week-ny.jpg",
     author: {
       name: "Ascendia Prime Strategy Team",
       role: "Partner Governance & Compliance",

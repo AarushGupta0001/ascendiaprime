@@ -4,8 +4,8 @@ import Link from "next/link";
 import { useState, useRef, useEffect, useCallback } from "react";
 import { UPCOMING_EVENTS, UpcomingEvent } from "@/data/upcomingEvents";
 import { EVENT_ARTICLES } from "@/data/eventArticles";
-import EventConversationModal from "@/components/news-and-events/EventConversationModal";
 import ArticleDetailsModal from "@/components/news-and-events/ArticleDetailsModal";
+import { useContactModal } from "@/components/forms/ContactModalProvider";
 
 type NewsItem = {
   id: string;
@@ -77,8 +77,11 @@ const NEWS_ITEMS: NewsItem[] = [
 ];
 
 export default function NewsAndEventsPage() {
+  const { openContactModal } = useContactModal();
+
   // Carousel State & Logic
   const carouselRef = useRef<HTMLDivElement>(null);
+  const activeIndexRef = useRef(0);
   const [activeIndex, setActiveIndex] = useState(0);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -93,27 +96,21 @@ export default function NewsAndEventsPage() {
   // Article Popup Modal State
   const [selectedArticleId, setSelectedArticleId] = useState<string | null>(null);
 
-  // Start Conversation Modal State
-  const [isConversationModalOpen, setIsConversationModalOpen] = useState(false);
-  const [conversationPreselectedEvent, setConversationPreselectedEvent] = useState<string>("Select an event");
-
-  // Lock body scroll when event modal is open
+  // Lock body scroll when event modal or article modal is open
   useEffect(() => {
-    if (selectedEvent) {
+    if (selectedEvent || selectedArticleId) {
       document.body.classList.add("modal-open");
       document.documentElement.classList.add("modal-open");
-    } else if (!selectedArticleId && !isConversationModalOpen) {
+    } else {
       document.body.classList.remove("modal-open");
       document.documentElement.classList.remove("modal-open");
     }
 
     return () => {
-      if (!selectedArticleId && !isConversationModalOpen) {
-        document.body.classList.remove("modal-open");
-        document.documentElement.classList.remove("modal-open");
-      }
+      document.body.classList.remove("modal-open");
+      document.documentElement.classList.remove("modal-open");
     };
-  }, [selectedEvent, selectedArticleId, isConversationModalOpen]);
+  }, [selectedEvent, selectedArticleId]);
 
   // Handle escape key to close event modal
   useEffect(() => {
@@ -685,10 +682,8 @@ export default function NewsAndEventsPage() {
             {/* Action Button */}
             <button
               type="button"
-              onClick={() => {
-                setConversationPreselectedEvent("Select an event");
-                setIsConversationModalOpen(true);
-              }}
+              data-form-id="3617"
+              onClick={() => openContactModal("3617")}
               className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full font-bold text-sm sm:text-base text-slate-900 bg-white shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:shadow-[0_12px_40px_rgba(255,255,255,0.4)] hover:bg-slate-100 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer border border-white/40"
             >
               <span>Start a Conversation</span>
@@ -709,22 +704,12 @@ export default function NewsAndEventsPage() {
         onClose={() => setSelectedArticleId(null)}
         onSelectArticle={(id) => setSelectedArticleId(id)}
         onOpenConversation={() => {
-          setIsConversationModalOpen(true);
-          setConversationPreselectedEvent("Select an event");
+          openContactModal("3617");
         }}
       />
 
       {/* ========================================================================= */}
-      {/* 7. EVENT CONVERSATION MODAL (START A CONVERSATION DIALOG)                  */}
-      {/* ========================================================================= */}
-      <EventConversationModal
-        isOpen={isConversationModalOpen}
-        onClose={() => setIsConversationModalOpen(false)}
-        preselectedEvent={conversationPreselectedEvent}
-      />
-
-      {/* ========================================================================= */}
-      {/* 8. SEPARATE EVENT DETAILS POPUP MODAL                                     */}
+      {/* 7. SEPARATE EVENT DETAILS POPUP MODAL                                     */}
       {/* ========================================================================= */}
       {selectedEvent && (
         <div
@@ -848,21 +833,10 @@ export default function NewsAndEventsPage() {
 
                   <button
                     type="button"
+                    data-form-id="3617"
                     onClick={() => {
-                      const eventName = selectedEvent.title;
                       setSelectedEvent(null);
-                      setConversationPreselectedEvent(
-                        [
-                          "Affilifest North 2026",
-                          "DMEXCO 2026",
-                          "Advertising Week New York 2026",
-                          "PI LIVE Europe 2026",
-                          "Affiliate World Asia 2026",
-                          "Affiliate Summit West 2027",
-                        ].find((e) => eventName.toLowerCase().includes(e.split(" ")[0].toLowerCase())) ||
-                          "Another event"
-                      );
-                      setIsConversationModalOpen(true);
+                      openContactModal("3617");
                     }}
                     className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-medium text-slate-300 border border-white/15 bg-white/5 hover:border-white/30 hover:text-white hover:bg-white/10 transition-all duration-300 cursor-pointer"
                   >

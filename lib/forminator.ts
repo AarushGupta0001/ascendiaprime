@@ -3,6 +3,7 @@ export const FORMINATOR_FORMS = {
   advertisers: "1808",
   partners: "2081",
   retargeting: "3611",
+  events: "3617",
 } as const;
 
 export type ForminatorFormId =
@@ -21,6 +22,7 @@ const WORDPRESS_BASE =
  * - [forminator_form id="1808"] — advertiser inquiry
  * - [forminator_form id="2081"] — partner ecosystem inquiry
  * - [forminator_form id="3611"] — retargeting inquiry
+ * - [forminator_form id="3617"] — news & events inquiry
  */
 const FORM_SOURCE_PATHS: Record<string, string> = {
   "2080": "/?forminator_embed=1&form_id=2080",
@@ -28,6 +30,7 @@ const FORM_SOURCE_PATHS: Record<string, string> = {
   "1808": "/advertiser/",
   "2081": "/our-partners/",
   "3611": "/?forminator_embed=1&form_id=3611",
+  "3617": "/?forminator_embed=1&form_id=3617",
 };
 
 /** When the requested id is not on the source page, parse this form id instead. */

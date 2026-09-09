@@ -197,6 +197,7 @@ export default function ArticleDetailsModal({
           <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
             <button
               type="button"
+              data-form-id="3617"
               onClick={() => {
                 onClose();
                 onOpenConversation();

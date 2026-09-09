@@ -9,11 +9,12 @@ const nonceCache = new Map<string, { nonce: string; timestamp: number }>();
 // Seed with valid active WordPress nonces
 nonceCache.set("2080", { nonce: "de034bc11e", timestamp: Date.now() });
 nonceCache.set("3611", { nonce: "de034bc11e", timestamp: Date.now() });
+nonceCache.set("3617", { nonce: "de034bc11e", timestamp: Date.now() });
 nonceCache.set("2081", { nonce: "de034bc11e", timestamp: Date.now() });
 nonceCache.set("1808", { nonce: "de034bc11e", timestamp: Date.now() });
 
 async function getOrFetchNonce(formId: string = "2080"): Promise<string> {
-  const targetId = formId === "3611" ? "2080" : formId;
+  const targetId = formId === "3611" || formId === "3617" ? "2080" : formId;
   const cached = nonceCache.get(targetId);
   if (cached && Date.now() - cached.timestamp < 1000 * 60 * 60 * 6) {
     return cached.nonce;
@@ -40,7 +41,7 @@ async function getOrFetchNonce(formId: string = "2080"): Promise<string> {
 
 async function prepareAndDispatchToWordPress(formData: FormData, requestedFormId: string) {
   try {
-    const wpFormId = requestedFormId === "3611" ? "2080" : requestedFormId;
+    const wpFormId = requestedFormId === "3611" || requestedFormId === "3617" ? "2080" : requestedFormId;
     const validNonce = await getOrFetchNonce(wpFormId);
 
     const params = new URLSearchParams();
@@ -74,6 +75,25 @@ async function prepareAndDispatchToWordPress(formData: FormData, requestedFormId
       params.set("textarea-1", notes || "Retargeting inquiry");
       params.delete("textarea-2");
       params.delete("url-1");
+    } else if (requestedFormId === "3617") {
+      const company = formData.get("text-1")?.toString()?.trim() || "";
+      const event = formData.get("select-1")?.toString()?.trim() || "";
+      const discussion = formData.get("textarea-1")?.toString()?.trim() || "";
+
+      const notes = [
+        "[News & Events Inquiry]",
+        company ? `Company: ${company}` : "",
+        event && event !== "Select an event" ? `Event Attending: ${event}` : "",
+        discussion ? `Discussion / Requirements: ${discussion}` : "",
+      ].filter(Boolean).join("\n\n");
+
+      params.set("form_id", "2080");
+      params.set("page_id", "324");
+      params.set("render_id", "0");
+      params.set("action", "forminator_submit_form_custom-forms");
+      params.set("select-1", "custom_option");
+      params.set("custom-select-1", event && event !== "Select an event" ? `Event: ${event}` : "Events Inquiry");
+      params.set("textarea-1", notes || "News & Events inquiry");
     }
 
     params.set("forminator_nonce", validNonce);

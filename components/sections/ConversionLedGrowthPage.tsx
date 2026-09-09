@@ -538,7 +538,7 @@ export default function ConversionLedGrowthPage() {
               </div>
 
               {/* Use Cases Grid */}
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4.5 mb-8">
+              <div className="clg-use-cases-grid mb-10">
                 {useCases.map((item) => (
                   <div key={item} className="clg-use-case-card group">
                     <span className="text-[#AB57F3] mt-1 shrink-0 group-hover:text-[#E057D8] group-hover:translate-x-0.5 transition-all">

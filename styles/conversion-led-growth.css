@@ -1082,8 +1082,29 @@
 }
 
 /* ==========================================================================
-   USE CASES GRID (6 CARDS) HOVER GLOW
+   USE CASES GRID (6 CARDS) & HOVER GLOW
    ========================================================================== */
+.clg-use-cases-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 1024px) {
+  .clg-use-cases-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .clg-use-cases-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
 .clg-use-case-card {
   padding: 1.35rem 1.5rem;
   border-radius: 1rem;

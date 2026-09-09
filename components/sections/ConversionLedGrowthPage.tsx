@@ -495,27 +495,27 @@ export default function ConversionLedGrowthPage() {
                 </div>
 
                 <div className="lg:col-span-7 space-y-4">
-                  <article className="clg-quality-card p-6 rounded-xl flex items-start gap-5">
+                  <article className="clg-quality-card p-6 rounded-xl flex items-center gap-5">
                     <span className="clg-quality-icon text-[#10B981]"><CheckIcon /></span>
                     <div>
                       <h3 className="text-lg font-bold text-white mb-1.5">Event verified</h3>
-                      <p className="text-sm text-slate-400 font-light">The action fires where expected and carries the required information.</p>
+                      <p className="text-sm text-slate-400 font-light m-0">The action fires where expected and carries the required information.</p>
                     </div>
                   </article>
 
-                  <article className="clg-quality-card p-6 rounded-xl flex items-start gap-5">
+                  <article className="clg-quality-card p-6 rounded-xl flex items-center gap-5">
                     <span className="clg-quality-icon text-[#10B981]"><CheckIcon /></span>
                     <div>
                       <h3 className="text-lg font-bold text-white mb-1.5">Quality reviewed</h3>
-                      <p className="text-sm text-slate-400 font-light">The result reflects the lead, order or action the business actually values.</p>
+                      <p className="text-sm text-slate-400 font-light m-0">The result reflects the lead, order or action the business actually values.</p>
                     </div>
                   </article>
 
-                  <article className="clg-quality-card p-6 rounded-xl flex items-start gap-5">
+                  <article className="clg-quality-card p-6 rounded-xl flex items-center gap-5">
                     <span className="clg-quality-icon text-[#10B981]"><CheckIcon /></span>
                     <div>
                       <h3 className="text-lg font-bold text-white mb-1.5">Decision informed</h3>
-                      <p className="text-sm text-slate-400 font-light">The evidence is clear enough to guide the next campaign or journey change.</p>
+                      <p className="text-sm text-slate-400 font-light m-0">The evidence is clear enough to guide the next campaign or journey change.</p>
                     </div>
                   </article>
                 </div>

@@ -1234,6 +1234,9 @@
   box-shadow: var(--card-shadow);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
   transition: all 0.3s ease;
 }
 

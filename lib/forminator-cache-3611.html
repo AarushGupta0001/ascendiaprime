@@ -79,14 +79,14 @@
           </label>
           <select id="forminator-form-3611__field--select-1" class="forminator-select--field forminator-select2 forminator-select2-multiple" data-required="1" name="select-1" data-default-value="" data-hidden-behavior="zero" data-placeholder="Select One" data-search="false" data-search-placeholder="Select One" data-checkbox="false" data-allow-clear="false" aria-labelledby="forminator-form-3611__field--select-1-label">
             <option value="">Select One</option>
-            <option value="Recover ecommerce sales" data-calculation="0">Recover ecommerce sales</option>
-            <option value="Increase lead completion" data-calculation="0">Increase lead completion</option>
+            <option value="one" data-calculation="0">Recover ecommerce sales</option>
+            <option value="two" data-calculation="0">Increase lead completion</option>
             <option value="Improve existing retargeting" data-calculation="0">Improve existing retargeting</option>
             <option value="Activating first-party audiences" data-calculation="0">Activating first-party audiences</option>
             <option value="custom_option" data-calculation="0">Other</option>
           </select>
-          <div class="forminator-field forminator-custom-input">
-            <input id="custom-forminator-form-3611__field--select-1" name="custom-select-1" class="forminator-input" aria-label="Other" value="" />
+          <div class="forminator-field forminator-custom-input" style="display: none; margin-top: 8px;">
+            <input id="custom-forminator-form-3611__field--select-1" name="custom-select-1" class="forminator-input" placeholder="Please specify your objective" aria-label="Other" value="" />
           </div>
         </div>
       </div>
@@ -149,6 +149,31 @@
           if (response && response.data) {
             jQuery("#forminator-module-3611 #forminator_nonce").val(response.data);
           }
+        }
+      });
+
+      // Live character counter for textarea-2
+      var $msgTextarea = jQuery("#forminator-field-textarea-2_3611");
+      var $counter = jQuery("#forminator-field-textarea-2_3611-description span[data-limit]");
+      if ($msgTextarea.length && $counter.length) {
+        $msgTextarea.on("input keyup paste change", function() {
+          var len = jQuery(this).val().length;
+          $counter.text(len + " / 180");
+        });
+      }
+
+      // Objective dropdown toggle for custom input
+      var $select = jQuery("#forminator-form-3611__field--select-1");
+      var $customWrap = jQuery(".forminator-custom-input");
+      var $customInput = jQuery("#custom-forminator-form-3611__field--select-1");
+      $select.on("change", function() {
+        var val = jQuery(this).val();
+        if (val === "custom_option" || val === "Other") {
+          $customWrap.slideDown(200);
+          $customInput.focus();
+        } else {
+          $customWrap.slideUp(200);
+          $customInput.val("");
         }
       });
     });

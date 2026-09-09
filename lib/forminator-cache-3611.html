@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Retargeting Campaign Enquiry - Ascendia Prime</title>
+	<title>Retargeting Form - Ascendia Prime</title>
 	<link rel='stylesheet' id='forminator-module-css-3611-css' href='https://ascendiaprime.com/wp-content/uploads/forminator/2080_9741c0c1ddf0a8fd9157e11a25f2a739/css/style-2080.css?ver=1787389414' media='all' />
 	<link rel='stylesheet' id='forminator-icons-css' href='https://ascendiaprime.com/wp-content/plugins/forminator/assets/forminator-ui/css/forminator-icons.min.css?ver=1.57.1' media='all' />
 	<link rel='stylesheet' id='forminator-utilities-css' href='https://ascendiaprime.com/wp-content/plugins/forminator/assets/forminator-ui/css/src/forminator-utilities.min.css?ver=1.57.1' media='all' />
@@ -13,7 +13,7 @@
 	<link rel='stylesheet' id='forminator-forms-default-full-css' href='https://ascendiaprime.com/wp-content/plugins/forminator/assets/forminator-ui/css/src/form/forminator-form-default.full.min.css?ver=1.57.1' media='all' />
 </head>
 <body class="forminator-custom-form-3611">
-  <div class="forminator-ui forminator-custom-form forminator-custom-form-3611 forminator-design--default forminator_ajax" data-forminator-render="0" data-form="forminator-module-3611" data-uid="6a993611retarget">
+  <div class="forminator-ui forminator-custom-form forminator-custom-form-3611 forminator-design--default forminator_ajax" data-forminator-render="0" data-form="forminator-module-3611" data-uid="6a92793611retarget">
     <br/>
   </div>
   <form
@@ -26,104 +26,93 @@
     data-design="default"
     data-grid="open"
     style="display: none;"
-    data-uid="6a993611retarget"
+    data-uid="6a92793611retarget"
   >
     <div role="alert" aria-live="polite" class="forminator-response-message forminator-error" aria-hidden="true"></div>
 
+    <!-- Row 1: Full Name & Email Address -->
     <div class="forminator-row">
-      <div id="name-1" class="forminator-field-name forminator-col forminator-col-12">
+      <div id="name-1" class="forminator-field-name forminator-col forminator-col-6">
         <div class="forminator-field">
           <label for="forminator-field-name-1_3611" id="forminator-field-name-1_3611-label" class="forminator-label">
             Full Name <span class="forminator-required">*</span>
           </label>
-          <input type="text" name="name-1" value="" placeholder="First & Last Name" id="forminator-field-name-1_3611" class="forminator-input forminator-name--field" aria-required="true" autocomplete="name" />
+          <input type="text" name="name-1" value="" placeholder="" id="forminator-field-name-1_3611" class="forminator-input forminator-name--field" aria-required="true" autocomplete="name" />
         </div>
       </div>
-    </div>
-
-    <div class="forminator-row">
-      <div id="name-2" class="forminator-field-name forminator-col forminator-col-12">
-        <div class="forminator-field">
-          <label for="forminator-field-name-2_3611" id="forminator-field-name-2_3611-label" class="forminator-label">
-            Company / Brand Name <span class="forminator-required">*</span>
-          </label>
-          <input type="text" name="name-2" value="" placeholder="Your company or brand" id="forminator-field-name-2_3611" class="forminator-input forminator-name--field" aria-required="true" autocomplete="organization" />
-        </div>
-      </div>
-    </div>
-
-    <div class="forminator-row">
-      <div id="email-1" class="forminator-field-email forminator-col forminator-col-12">
+      <div id="email-1" class="forminator-field-email forminator-col forminator-col-6">
         <div class="forminator-field">
           <label for="forminator-field-email-1_3611" id="forminator-field-email-1_3611-label" class="forminator-label">
-            Work Email Address <span class="forminator-required">*</span>
+            Email Address <span class="forminator-required">*</span>
           </label>
-          <input type="email" name="email-1" value="" placeholder="name@company.com" id="forminator-field-email-1_3611" class="forminator-input forminator-email--field" data-required="true" aria-required="true" autocomplete="email" />
+          <input type="email" name="email-1" value="" placeholder="" id="forminator-field-email-1_3611" class="forminator-input forminator-email--field" data-required="true" aria-required="true" autocomplete="email" />
         </div>
       </div>
     </div>
 
+    <!-- Row 2: Company Name & Website -->
     <div class="forminator-row">
-      <div id="url-1" class="forminator-field-url forminator-col forminator-col-12">
+      <div id="text-1" class="forminator-field-text forminator-col forminator-col-6">
+        <div class="forminator-field">
+          <label for="forminator-field-text-1_3611" id="forminator-field-text-1_3611-label" class="forminator-label">
+            Company Name <span class="forminator-required">*</span>
+          </label>
+          <input type="text" name="text-1" value="" placeholder="" id="forminator-field-text-1_3611" class="forminator-input forminator-name--field" data-required="1" />
+        </div>
+      </div>
+      <div id="url-1" class="forminator-field-url forminator-col forminator-col-6">
         <div class="forminator-field">
           <label for="forminator-field-url-1_3611" id="forminator-field-url-1_3611-label" class="forminator-label">
-            Website URL / Landing Page <span class="forminator-required">*</span>
+            Website <span class="forminator-required">*</span>
           </label>
-          <input type="url" name="url-1" value="" placeholder="https://yourwebsite.com" id="forminator-field-url-1_3611" class="forminator-input forminator-website--field" data-required="1" aria-required="true" />
+          <input type="url" name="url-1" value="" placeholder="" id="forminator-field-url-1_3611" class="forminator-input forminator-website--field" data-required="1" aria-required="true" />
         </div>
       </div>
     </div>
 
+    <!-- Row 3: Primary Objective & Current Channels -->
     <div class="forminator-row">
-      <div id="select-1" class="forminator-field-select forminator-col forminator-col-12">
+      <div id="select-1" class="forminator-field-select forminator-col forminator-col-6">
         <div class="forminator-field">
           <label for="forminator-form-3611__field--select-1" id="forminator-form-3611__field--select-1-label" class="forminator-label">
-            Primary Retargeting Focus <span class="forminator-required">*</span>
+            Primary Objective <span class="forminator-required">*</span>
           </label>
-          <select id="forminator-form-3611__field--select-1" class="forminator-select--field forminator-select2 forminator-select2-multiple" data-required="1" name="select-1" data-default-value="" data-hidden-behavior="zero" data-placeholder="Select Retargeting Focus" data-search="false" data-search-placeholder="Select Retargeting Focus" data-checkbox="false" data-allow-clear="false" aria-labelledby="forminator-form-3611__field--select-1-label">
-            <option value="">Select Retargeting Focus</option>
-            <option value="E-commerce Cart & Checkout Recovery" data-calculation="0">E-commerce Cart & Checkout Recovery</option>
-            <option value="Product & Category View Re-engagement" data-calculation="0">Product & Category View Re-engagement</option>
-            <option value="Lead Generation & Form Abandonment" data-calculation="0">Lead Generation & Form Abandonment</option>
-            <option value="Cross-Channel Retargeting & Sequencing" data-calculation="0">Cross-Channel Retargeting & Sequencing</option>
-            <option value="Audience Exclusion & Frequency Control" data-calculation="0">Audience Exclusion & Frequency Control</option>
-            <option value="Full Retargeting Strategy & Tracking Audit" data-calculation="0">Full Retargeting Strategy & Tracking Audit</option>
+          <select id="forminator-form-3611__field--select-1" class="forminator-select--field forminator-select2 forminator-select2-multiple" data-required="1" name="select-1" data-default-value="" data-hidden-behavior="zero" data-placeholder="Select One" data-search="false" data-search-placeholder="Select One" data-checkbox="false" data-allow-clear="false" aria-labelledby="forminator-form-3611__field--select-1-label">
+            <option value="">Select One</option>
+            <option value="Cart & Checkout Recovery" data-calculation="0">Cart &amp; Checkout Recovery</option>
+            <option value="Product / Category Re-engagement" data-calculation="0">Product / Category Re-engagement</option>
+            <option value="Lead Form Abandonment Recovery" data-calculation="0">Lead Form Abandonment Recovery</option>
+            <option value="Cross-Channel Retargeting" data-calculation="0">Cross-Channel Retargeting</option>
+            <option value="Audience Exclusion & Frequency Control" data-calculation="0">Audience Exclusion &amp; Frequency Control</option>
+            <option value="Full Retargeting Strategy Audit" data-calculation="0">Full Retargeting Strategy Audit</option>
+            <option value="Other" data-calculation="0">Other</option>
           </select>
           <div class="forminator-field forminator-custom-input">
             <input id="custom-forminator-form-3611__field--select-1" name="custom-select-1" class="forminator-input" aria-label="Other" value="" />
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="forminator-row">
-      <div id="select-2" class="forminator-field-select forminator-col forminator-col-12">
+      <div id="textarea-1" class="forminator-field-textarea forminator-col forminator-col-6">
         <div class="forminator-field">
-          <label for="forminator-form-3611__field--select-2" id="forminator-form-3611__field--select-2-label" class="forminator-label">
-            Monthly Media Budget <span class="forminator-required">*</span>
+          <label for="forminator-field-textarea-1_3611" id="forminator-field-textarea-1_3611-label" class="forminator-label">
+            Current Channels <span class="forminator-required">*</span>
           </label>
-          <select id="forminator-form-3611__field--select-2" class="forminator-select--field forminator-select2 forminator-select2-multiple" data-required="1" name="select-2" data-default-value="" data-hidden-behavior="zero" data-placeholder="Select Monthly Media Budget" data-search="false" data-search-placeholder="Select Monthly Media Budget" data-checkbox="false" data-allow-clear="false" aria-labelledby="forminator-form-3611__field--select-2-label">
-            <option value="">Select Monthly Media Budget</option>
-            <option value="Under $5,000 / month" data-calculation="0">Under $5,000 / month</option>
-            <option value="$5,000 - $15,000 / month" data-calculation="0">$5,000 - $15,000 / month</option>
-            <option value="$15,000 - $50,000 / month" data-calculation="0">$15,000 - $50,000 / month</option>
-            <option value="$50,000 - $150,000 / month" data-calculation="0">$50,000 - $150,000 / month</option>
-            <option value="$150,000+ / month" data-calculation="0">$150,000+ / month</option>
-          </select>
-          <div class="forminator-field forminator-custom-input">
-            <input id="custom-forminator-form-3611__field--select-2" name="custom-select-2" class="forminator-input" aria-label="Other" value="" />
-          </div>
+          <textarea name="textarea-1" placeholder="" id="forminator-field-textarea-1_3611" class="forminator-textarea" style="--forminator-textarea-min-height:52px; height: 52px;" data-required="1"></textarea>
         </div>
       </div>
     </div>
 
+    <!-- Row 4: How can we help you? -->
     <div class="forminator-row">
-      <div id="textarea-1" class="forminator-field-textarea forminator-col forminator-col-12">
+      <div id="textarea-2" class="forminator-field-textarea forminator-col forminator-col-12">
         <div class="forminator-field">
-          <label for="forminator-field-textarea-1_3611" id="forminator-field-textarea-1_3611-label" class="forminator-label">
-            Campaign Objectives & Drop-off Details <span class="forminator-required">*</span>
+          <label for="forminator-field-textarea-2_3611" id="forminator-field-textarea-2_3611-label" class="forminator-label">
+            How can we help you? <span class="forminator-required">*</span>
           </label>
-          <textarea name="textarea-1" placeholder="Tell us where valuable visitors are dropping off, current channels, and what a successful return would mean..." id="forminator-field-textarea-1_3611" class="forminator-textarea" style="--forminator-textarea-min-height:120px;" maxlength="500"></textarea>
+          <span id="forminator-field-textarea-2_3611-description" class="forminator-description">
+            <span data-limit="180" data-type="characters" data-editor="">0 / 180</span>
+          </span>
+          <textarea name="textarea-2" placeholder="" id="forminator-field-textarea-2_3611" class="forminator-textarea" style="--forminator-textarea-min-height:120px;" maxlength="180"></textarea>
         </div>
       </div>
     </div>
@@ -132,7 +121,7 @@
     <div class="forminator-row forminator-row-last">
       <div class="forminator-col">
         <div class="forminator-field">
-          <button class="forminator-button forminator-button-submit">Discuss Your Retargeting Campaign</button>
+          <button class="forminator-button forminator-button-submit">Submit</button>
         </div>
       </div>
     </div>

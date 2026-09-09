@@ -18,7 +18,41 @@ export const FORMINATOR_FRAME_STYLES = `
     color: #ffffff !important;
   }
 
-  .forminator-row,
+  .forminator-row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    margin-left: -8px !important;
+    margin-right: -8px !important;
+    margin-bottom: 0.5rem !important;
+    box-sizing: border-box !important;
+  }
+
+  .forminator-col {
+    box-sizing: border-box !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  .forminator-col-6 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+    width: 50% !important;
+  }
+
+  .forminator-col-12 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  @media (max-width: 600px) {
+    .forminator-col-6 {
+      flex: 0 0 100% !important;
+      max-width: 100% !important;
+      width: 100% !important;
+    }
+  }
+
   .forminator-field {
     width: 100% !important;
     max-width: 100% !important;

@@ -70,7 +70,7 @@ export default function ContactModal({
         onClick={onClose}
         aria-label="Close modal"
       />
-      <div className="popup-content relative z-10 w-full max-w-lg max-h-[calc(100vh-2rem)] sm:max-h-[calc(100vh-3rem)] overflow-y-auto overscroll-contain rounded-2xl border border-[#7469F8]/30 bg-[#0b111d]/95 p-6 shadow-2xl backdrop-blur-xl sm:p-8">
+      <div className="popup-content relative z-10 w-full max-w-xl sm:max-w-2xl max-h-[calc(100vh-2rem)] sm:max-h-[calc(100vh-3rem)] overflow-y-auto overscroll-contain rounded-2xl border border-[#7469F8]/30 bg-[#0b111d]/95 p-6 shadow-2xl backdrop-blur-xl sm:p-8">
         <button
           type="button"
           className="modal-close-btn absolute right-4 top-4 sm:right-5 sm:top-5 z-50 flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full border border-white/15 bg-white/10 text-slate-300 shadow-lg backdrop-blur-md transition-all duration-200 hover:scale-105 hover:border-white/30 hover:bg-white/20 hover:text-white active:scale-95 cursor-pointer"

@@ -540,9 +540,13 @@ export default function ConversionLedGrowthPage() {
               {/* Use Cases Grid */}
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4.5 mb-8">
                 {useCases.map((item) => (
-                  <div key={item} className="p-5 sm:p-6 rounded-2xl border border-slate-800/90 bg-gradient-to-br from-slate-900/80 to-slate-950/90 backdrop-blur-xl flex items-start gap-3.5 hover:border-slate-700 transition-all">
-                    <span className="text-[#AB57F3] mt-1 shrink-0"><ArrowIcon /></span>
-                    <span className="text-sm sm:text-[0.95rem] text-slate-300 leading-relaxed font-light">{item}</span>
+                  <div key={item} className="clg-use-case-card group">
+                    <span className="text-[#AB57F3] mt-1 shrink-0 group-hover:text-[#E057D8] group-hover:translate-x-0.5 transition-all">
+                      <ArrowIcon />
+                    </span>
+                    <span className="text-sm sm:text-[0.95rem] text-slate-300 leading-relaxed font-light group-hover:text-white transition-colors">
+                      {item}
+                    </span>
                   </div>
                 ))}
               </div>

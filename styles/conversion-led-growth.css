@@ -1081,6 +1081,36 @@
   box-shadow: 0 20px 40px -15px rgba(63, 139, 249, 0.25), 0 0 25px rgba(63, 139, 249, 0.1);
 }
 
+/* ==========================================================================
+   USE CASES GRID (6 CARDS) HOVER GLOW
+   ========================================================================== */
+.clg-use-case-card {
+  padding: 1.35rem 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(63, 139, 249, 0.18);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.82) 0%, rgba(10, 18, 38, 0.92) 100%);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
+}
+
+.clg-use-case-card:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(135deg, rgba(28, 44, 90, 0.92) 0%, rgba(16, 26, 56, 0.96) 100%);
+  border-color: rgba(171, 87, 243, 0.7);
+  box-shadow: 0 20px 45px -12px rgba(171, 87, 243, 0.35),
+              0 0 30px rgba(116, 105, 248, 0.25),
+              0 0 15px rgba(63, 139, 249, 0.2);
+}
+
 .clg-process-badge {
   width: 42px;
   height: 42px;

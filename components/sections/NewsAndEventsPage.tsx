@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { useState, useRef, useEffect, useCallback } from "react";
 import { UPCOMING_EVENTS, UpcomingEvent } from "@/data/upcomingEvents";
+import { EVENT_ARTICLES } from "@/data/eventArticles";
+import EventConversationModal from "@/components/news-and-events/EventConversationModal";
 
 type NewsItem = {
   id: string;
@@ -86,6 +88,14 @@ export default function NewsAndEventsPage() {
 
   // Event Modal Popup State
   const [selectedEvent, setSelectedEvent] = useState<UpcomingEvent | null>(null);
+
+  // Active Article Reader State (expanded article below Event Insights)
+  const [selectedArticleId, setSelectedArticleId] = useState<string | null>(null);
+  const articleReaderRef = useRef<HTMLDivElement>(null);
+
+  // Start Conversation Modal State
+  const [isConversationModalOpen, setIsConversationModalOpen] = useState(false);
+  const [conversationPreselectedEvent, setConversationPreselectedEvent] = useState<string>("Select an event");
 
   // Lock body scroll when event modal is open
   useEffect(() => {
@@ -201,7 +211,6 @@ export default function NewsAndEventsPage() {
   };
 
   const handleCardClick = (event: UpcomingEvent, e: React.MouseEvent) => {
-    // Only open modal if the user didn't perform a significant drag
     if (dragDistanceRef.current < 6) {
       setSelectedEvent(event);
     }
@@ -217,6 +226,24 @@ export default function NewsAndEventsPage() {
     }
   };
 
+  // Handle article selection & smooth scrolling
+  const handleSelectArticle = (articleId: string) => {
+    setSelectedArticleId(articleId);
+    setTimeout(() => {
+      if (articleReaderRef.current) {
+        articleReaderRef.current.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }, 80);
+  };
+
+  const featuredArticle = EVENT_ARTICLES[0];
+  const rightArticle1 = EVENT_ARTICLES[1];
+  const rightArticle2 = EVENT_ARTICLES[2];
+  const activeArticle = EVENT_ARTICLES.find((a) => a.id === selectedArticleId);
+
   return (
     <div className="relative min-h-screen bg-[#020617] text-white selection:bg-[#3F8BF9] selection:text-white overflow-x-clip">
       
@@ -226,7 +253,7 @@ export default function NewsAndEventsPage() {
         {/* ========================================================================= */}
         {/* 1. HERO SECTION                                                           */}
         {/* ========================================================================= */}
-        <header className="mb-10 sm:mb-12 md:mb-14 max-w-3xl">
+        <header className="mb-12 sm:mb-14 md:mb-16 max-w-3xl">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-tight tracking-tight text-white mb-4">
             NEWS &amp;{" "}
             <span className="bg-gradient-to-r from-[#3F8BF9] via-[#7469F8] to-[#AB57F3] bg-clip-text text-transparent">
@@ -240,7 +267,345 @@ export default function NewsAndEventsPage() {
         </header>
 
         {/* ========================================================================= */}
-        {/* 2. UPCOMING EVENTS HORIZONTAL CAROUSEL                                    */}
+        {/* 2. EVENT INSIGHTS & GUIDES SECTION (EDITORIAL 2-COLUMN LAYOUT)            */}
+        {/* ========================================================================= */}
+        <section 
+          className="mb-16 sm:mb-20 md:mb-24"
+          aria-label="Event Insights and Guides"
+        >
+          {/* Section Header */}
+          <div className="mb-8 border-b border-white/10 pb-5">
+            <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[#3F8BF9] mb-1.5">
+              FROM ASCENDIA PRIME
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight">
+              Event Insights &amp;{" "}
+              <span className="bg-gradient-to-r from-[#3F8BF9] via-[#7469F8] to-[#AB57F3] bg-clip-text text-transparent">
+                Guides
+              </span>
+            </h2>
+            <p className="text-slate-300 text-sm sm:text-base font-light mt-2 max-w-2xl leading-relaxed">
+              Practical perspectives from Ascendia Prime for advertisers, publishers and technology partners navigating the performance marketing ecosystem.
+            </p>
+          </div>
+
+          {/* 2-Column Editorial Grid: Large Featured Left Card + 2 Stacked Right Cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+            
+            {/* LEFT COLUMN: Visually Dominant Featured Article Card */}
+            <div className="lg:col-span-7 flex">
+              <article
+                onClick={() => handleSelectArticle(featuredArticle.id)}
+                className={`group relative w-full flex flex-col justify-between rounded-3xl p-6 sm:p-8 md:p-10 transition-all duration-300 cursor-pointer overflow-hidden border ${
+                  selectedArticleId === featuredArticle.id
+                    ? "bg-[#0f1d46] border-[#3F8BF9] shadow-[0_12px_40px_rgba(63,139,249,0.3)] ring-1 ring-[#3F8BF9]"
+                    : "bg-[#0b1330]/90 border-[#3F8BF9]/25 hover:border-[#3F8BF9]/60 hover:bg-[#0e1940] shadow-[0_10px_30px_rgba(0,0,0,0.35)] hover:shadow-[0_16px_44px_rgba(63,139,249,0.2)] hover:-translate-y-1"
+                }`}
+              >
+                {/* Background Glow Element */}
+                <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 rounded-full bg-[#3F8BF9]/10 blur-3xl pointer-events-none group-hover:bg-[#3F8BF9]/20 transition-all" />
+
+                <div className="relative z-10">
+                  {/* Category Pill & Read Time */}
+                  <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#3F8BF9]/15 border border-[#3F8BF9]/30 text-xs font-bold uppercase tracking-wider text-[#3F8BF9]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#3F8BF9]" />
+                      {featuredArticle.category}
+                    </span>
+                    <span className="text-xs text-slate-400 font-medium">
+                      {featuredArticle.readTime}
+                    </span>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-2xl sm:text-3xl lg:text-[2rem] font-bold text-white group-hover:text-[#3F8BF9] transition-colors leading-tight mb-3">
+                    {featuredArticle.title}
+                  </h3>
+
+                  {/* Meta */}
+                  <div className="text-xs text-slate-400 font-medium mb-4 flex items-center gap-2">
+                    <span className="text-[#AB57F3]">✦</span>
+                    <span>{featuredArticle.meta}</span>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-light mb-6">
+                    {featuredArticle.description}
+                  </p>
+                </div>
+
+                {/* Bottom CTA */}
+                <div className="relative z-10 pt-5 border-t border-white/10 flex items-center justify-between mt-auto">
+                  <span className="inline-flex items-center gap-2 text-sm sm:text-base font-bold text-[#3F8BF9] group-hover:text-white transition-colors">
+                    <span>{featuredArticle.ctaText}</span>
+                  </span>
+                  <div className="w-10 h-10 rounded-full bg-[#3F8BF9]/15 border border-[#3F8BF9]/30 flex items-center justify-center text-[#3F8BF9] group-hover:bg-[#3F8BF9] group-hover:text-white transition-all duration-300 group-hover:translate-x-1">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            {/* RIGHT COLUMN: Two Smaller Articles Stacked Vertically */}
+            <div className="lg:col-span-5 flex flex-col gap-6">
+              
+              {/* Right Card 1 */}
+              <article
+                onClick={() => handleSelectArticle(rightArticle1.id)}
+                className={`group relative flex-1 flex flex-col justify-between rounded-3xl p-6 sm:p-7 transition-all duration-300 cursor-pointer overflow-hidden border ${
+                  selectedArticleId === rightArticle1.id
+                    ? "bg-[#0f1d46] border-[#7469F8] shadow-[0_10px_35px_rgba(116,105,248,0.3)] ring-1 ring-[#7469F8]"
+                    : "bg-[#0b1330]/90 border-[#7469F8]/25 hover:border-[#7469F8]/60 hover:bg-[#0e1940] shadow-[0_8px_24px_rgba(0,0,0,0.3)] hover:shadow-[0_12px_32px_rgba(116,105,248,0.2)] hover:-translate-y-1"
+                }`}
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-3">
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-[#7469F8]/20 border border-[#7469F8]/35 text-[11px] font-bold uppercase tracking-wider text-[#AB57F3]">
+                      {rightArticle1.category}
+                    </span>
+                    <span className="text-xs text-slate-400 font-medium">
+                      {rightArticle1.readTime}
+                    </span>
+                  </div>
+
+                  <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-[#3F8BF9] transition-colors leading-snug mb-2.5">
+                    {rightArticle1.title}
+                  </h3>
+
+                  <p className="text-slate-300 text-xs sm:text-sm leading-relaxed font-light mb-4 line-clamp-3">
+                    {rightArticle1.description}
+                  </p>
+                </div>
+
+                <div className="pt-3.5 border-t border-white/10 flex items-center justify-between">
+                  <span className="text-xs sm:text-sm font-semibold text-[#3F8BF9] group-hover:text-white transition-colors">
+                    {rightArticle1.ctaText}
+                  </span>
+                  <div className="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-[#3F8BF9] group-hover:bg-[#3F8BF9] group-hover:text-white transition-all duration-300 group-hover:translate-x-1">
+                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </div>
+                </div>
+              </article>
+
+              {/* Right Card 2 */}
+              <article
+                onClick={() => handleSelectArticle(rightArticle2.id)}
+                className={`group relative flex-1 flex flex-col justify-between rounded-3xl p-6 sm:p-7 transition-all duration-300 cursor-pointer overflow-hidden border ${
+                  selectedArticleId === rightArticle2.id
+                    ? "bg-[#0f1d46] border-[#AB57F3] shadow-[0_10px_35px_rgba(171,87,243,0.3)] ring-1 ring-[#AB57F3]"
+                    : "bg-[#0b1330]/90 border-[#AB57F3]/25 hover:border-[#AB57F3]/60 hover:bg-[#0e1940] shadow-[0_8px_24px_rgba(0,0,0,0.3)] hover:shadow-[0_12px_32px_rgba(171,87,243,0.2)] hover:-translate-y-1"
+                }`}
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-3">
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-[#AB57F3]/20 border border-[#AB57F3]/35 text-[11px] font-bold uppercase tracking-wider text-[#AB57F3]">
+                      {rightArticle2.category}
+                    </span>
+                    <span className="text-xs text-slate-400 font-medium">
+                      {rightArticle2.readTime}
+                    </span>
+                  </div>
+
+                  <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-[#3F8BF9] transition-colors leading-snug mb-2.5">
+                    {rightArticle2.title}
+                  </h3>
+
+                  <p className="text-slate-300 text-xs sm:text-sm leading-relaxed font-light mb-4 line-clamp-3">
+                    {rightArticle2.description}
+                  </p>
+                </div>
+
+                <div className="pt-3.5 border-t border-white/10 flex items-center justify-between">
+                  <span className="text-xs sm:text-sm font-semibold text-[#3F8BF9] group-hover:text-white transition-colors">
+                    {rightArticle2.ctaText}
+                  </span>
+                  <div className="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-[#3F8BF9] group-hover:bg-[#3F8BF9] group-hover:text-white transition-all duration-300 group-hover:translate-x-1">
+                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+
+          </div>
+
+          {/* ======================================================================= */}
+          {/* ARTICLE CONTENT READER (EXPANDED ON CLICK BELOW EVENT INSIGHTS)         */}
+          {/* ======================================================================= */}
+          {activeArticle && (
+            <div
+              ref={articleReaderRef}
+              id="article-reader-view"
+              className="mt-10 sm:mt-12 rounded-3xl bg-[#080e22] border border-[#3F8BF9]/35 p-6 sm:p-10 md:p-12 shadow-[0_20px_60px_rgba(0,0,0,0.6)] animate-fadeIn"
+            >
+              {/* Article Top Navigation Bar */}
+              <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-6 mb-8">
+                <div className="flex items-center gap-3">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#3F8BF9]/20 text-[#3F8BF9] text-xs font-bold uppercase tracking-wider border border-[#3F8BF9]/40">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#3F8BF9]" />
+                    {activeArticle.category}
+                  </span>
+                  <span className="text-xs text-slate-400">
+                    {activeArticle.readTime}
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  {/* Switch Article Buttons */}
+                  <div className="hidden sm:flex items-center gap-1 bg-white/5 p-1 rounded-full border border-white/10 text-xs">
+                    {EVENT_ARTICLES.map((art, idx) => (
+                      <button
+                        key={art.id}
+                        type="button"
+                        onClick={() => handleSelectArticle(art.id)}
+                        className={`px-3 py-1 rounded-full transition-all cursor-pointer font-medium ${
+                          activeArticle.id === art.id
+                            ? "bg-[#3F8BF9] text-white shadow-sm"
+                            : "text-slate-400 hover:text-white"
+                        }`}
+                      >
+                        Article {idx + 1}
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Close Reader Button */}
+                  <button
+                    type="button"
+                    onClick={() => setSelectedArticleId(null)}
+                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-xs font-semibold text-slate-200 hover:text-white transition-colors cursor-pointer"
+                  >
+                    <span>Close</span>
+                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              {/* Article Header */}
+              <div className="max-w-4xl mb-10">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight mb-4">
+                  {activeArticle.title}
+                </h3>
+                <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm text-slate-400 font-medium mb-6">
+                  <span className="text-[#3F8BF9]">Ascendia Prime Insights</span>
+                  <span>·</span>
+                  <span>{activeArticle.author.name}</span>
+                  <span>·</span>
+                  <span>{activeArticle.meta}</span>
+                </div>
+                <div className="p-5 sm:p-6 rounded-2xl bg-white/[0.04] border-l-4 border-[#3F8BF9] text-slate-200 text-sm sm:text-base leading-relaxed font-light">
+                  {activeArticle.overview}
+                </div>
+              </div>
+
+              {/* Article Body Sections */}
+              <div className="max-w-4xl space-y-10">
+                {activeArticle.sections.map((sec, idx) => (
+                  <section key={idx} className="space-y-4">
+                    <h4 className="text-xl sm:text-2xl font-bold text-white flex items-start gap-3">
+                      <span className="text-[#3F8BF9] font-mono text-base sm:text-lg mt-0.5">
+                        0{idx + 1}.
+                      </span>
+                      <span>{sec.heading}</span>
+                    </h4>
+
+                    {sec.paragraphs.map((p, pIdx) => (
+                      <p key={pIdx} className="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
+                        {p}
+                      </p>
+                    ))}
+
+                    {sec.bulletPoints && sec.bulletPoints.length > 0 && (
+                      <ul className="my-4 space-y-2.5 pl-2">
+                        {sec.bulletPoints.map((bp, bIdx) => (
+                          <li key={bIdx} className="text-xs sm:text-sm text-slate-300 flex items-start gap-2.5">
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#AB57F3] mt-2 flex-shrink-0" />
+                            <span className="leading-relaxed">{bp}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+
+                    {sec.keyTakeaway && (
+                      <div className="mt-4 p-4 rounded-xl bg-gradient-to-r from-[#3F8BF9]/10 to-[#AB57F3]/10 border border-[#3F8BF9]/30 text-xs sm:text-sm text-white font-medium flex items-start gap-3">
+                        <span className="text-[#3F8BF9] text-base font-bold">💡</span>
+                        <div>
+                          <strong className="text-[#3F8BF9] uppercase tracking-wider text-[11px] block mb-0.5">
+                            Key Strategic Takeaway
+                          </strong>
+                          <span>{sec.keyTakeaway}</span>
+                        </div>
+                      </div>
+                    )}
+                  </section>
+                ))}
+
+                {/* Summary Box */}
+                {activeArticle.summaryPoints && activeArticle.summaryPoints.length > 0 && (
+                  <div className="mt-12 p-6 sm:p-8 rounded-2xl bg-[#0b1330] border border-[#7469F8]/40 shadow-xl">
+                    <div className="text-xs font-bold uppercase tracking-widest text-[#AB57F3] mb-3">
+                      EXECUTIVE SUMMARY
+                    </div>
+                    <h5 className="text-lg sm:text-xl font-bold text-white mb-4">
+                      Core Framework Recap
+                    </h5>
+                    <ul className="space-y-3">
+                      {activeArticle.summaryPoints.map((sp, sIdx) => (
+                        <li key={sIdx} className="text-xs sm:text-sm text-slate-300 flex items-start gap-3">
+                          <span className="text-[#3F8BF9] font-bold">✓</span>
+                          <span>{sp}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+
+              {/* Bottom Action inside Reader */}
+              <div className="mt-10 pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
+                <div className="text-xs text-slate-400">
+                  Published by Ascendia Prime Strategic Growth Unit
+                </div>
+                <div className="flex items-center gap-3">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setIsConversationModalOpen(true);
+                      setConversationPreselectedEvent("Select an event");
+                    }}
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#3F8BF9] via-[#7469F8] to-[#AB57F3] text-white text-xs font-bold shadow-md hover:shadow-lg transition-all cursor-pointer"
+                  >
+                    <span>Discuss Strategy With Us</span>
+                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setSelectedArticleId(null);
+                      window.scrollTo({ top: 400, behavior: "smooth" });
+                    }}
+                    className="px-4 py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/15 text-xs text-slate-300 hover:text-white transition-colors cursor-pointer"
+                  >
+                    Back to Insights
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+        </section>
+
+        {/* ========================================================================= */}
+        {/* 3. UPCOMING EVENTS HORIZONTAL CAROUSEL                                    */}
         {/* ========================================================================= */}
         <section 
           className="mb-16 sm:mb-20 md:mb-24 relative"
@@ -414,9 +779,9 @@ export default function NewsAndEventsPage() {
         </section>
 
         {/* ========================================================================= */}
-        {/* 3. LATEST NEWS & INSIGHTS (Vertical 3-Column Grid)                        */}
+        {/* 4. LATEST NEWS & INSIGHTS (Vertical 3-Column Grid)                        */}
         {/* ========================================================================= */}
-        <section aria-label="Latest News and Insights">
+        <section aria-label="Latest News and Insights" className="mb-16 sm:mb-20 md:mb-24">
           <div className="mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-white/10 pb-4">
             <div>
               <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[#3F8BF9] mb-1">
@@ -487,34 +852,57 @@ export default function NewsAndEventsPage() {
         </section>
 
         {/* ========================================================================= */}
-        {/* 4. EVENT PARTNERSHIP CTA BANNER                                           */}
+        {/* 5. "ATTENDING AN EVENT FEATURED HERE?" SECTION (GRADIENT CTA BANNER)       */}
         {/* ========================================================================= */}
-        <div className="relative mt-16 sm:mt-20 md:mt-24 rounded-2xl p-8 sm:p-10 text-center bg-[#0b1330]/80 border border-[#7469F8]/25 shadow-[0_15px_40px_rgba(0,0,0,0.3)]">
-          <div className="max-w-xl mx-auto">
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white tracking-tight mb-2.5">
-              Want to meet us at an upcoming event?
+        <section 
+          aria-label="Event Conversation CTA"
+          className="relative rounded-3xl p-8 sm:p-12 md:p-16 text-center bg-gradient-to-r from-[#1b3a8c] via-[#4338ca] to-[#6b21a8] border border-[#7469F8]/40 shadow-[0_25px_60px_rgba(0,0,0,0.5)] overflow-hidden"
+        >
+          {/* Subtle Decorative Geometric Circles */}
+          <div className="absolute -top-12 -left-12 w-48 h-48 rounded-full bg-white/10 blur-2xl pointer-events-none" />
+          <div className="absolute -bottom-16 -right-16 w-64 h-64 rounded-full bg-[#AB57F3]/25 blur-3xl pointer-events-none" />
+
+          <div className="relative z-10 max-w-2xl mx-auto">
+            {/* Heading */}
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight mb-3">
+              Attending an Event Featured Here?
             </h3>
-            
-            <p className="text-slate-300 text-xs sm:text-sm font-light leading-relaxed mb-6">
-              Our leadership team and performance strategists attend premier conferences globally. Schedule a dedicated 1-on-1 strategy meeting with our executives.
+
+            {/* Supporting Text */}
+            <p className="text-blue-100 text-sm sm:text-base font-light leading-relaxed mb-8 max-w-xl mx-auto">
+              Tell us which event you are planning to attend and what kind of partnership or growth opportunity you would like to explore.
             </p>
 
+            {/* Action Button */}
             <button
               type="button"
-              className="open-contact-modal inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full font-bold text-sm text-white bg-gradient-to-r from-[#3F8BF9] via-[#7469F8] to-[#AB57F3] shadow-[0_0_20px_rgba(63,139,249,0.3)] hover:shadow-[0_0_35px_rgba(171,87,243,0.5)] hover:-translate-y-0.5 transition-all duration-300 cursor-pointer border border-[#3F8BF9]/30"
+              onClick={() => {
+                setConversationPreselectedEvent("Select an event");
+                setIsConversationModalOpen(true);
+              }}
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full font-bold text-sm sm:text-base text-slate-900 bg-white shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:shadow-[0_12px_40px_rgba(255,255,255,0.4)] hover:bg-slate-100 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer border border-white/40"
             >
-              <span>Schedule a Meeting</span>
-              <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              <span>Start a Conversation</span>
+              <svg className="w-4 h-4 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </button>
           </div>
-        </div>
+        </section>
 
       </div>
 
       {/* ========================================================================= */}
-      {/* 5. SEPARATE EVENT DETAILS POPUP MODAL                                     */}
+      {/* 6. EVENT CONVERSATION MODAL (START A CONVERSATION DIALOG)                  */}
+      {/* ========================================================================= */}
+      <EventConversationModal
+        isOpen={isConversationModalOpen}
+        onClose={() => setIsConversationModalOpen(false)}
+        preselectedEvent={conversationPreselectedEvent}
+      />
+
+      {/* ========================================================================= */}
+      {/* 7. SEPARATE EVENT DETAILS POPUP MODAL                                     */}
       {/* ========================================================================= */}
       {selectedEvent && (
         <div
@@ -639,10 +1027,20 @@ export default function NewsAndEventsPage() {
                   <button
                     type="button"
                     onClick={() => {
+                      const eventName = selectedEvent.title;
                       setSelectedEvent(null);
-                      // Trigger contact modal if present
-                      const contactBtn = document.querySelector<HTMLButtonElement>(".open-contact-modal");
-                      if (contactBtn) contactBtn.click();
+                      setConversationPreselectedEvent(
+                        [
+                          "Affilifest North 2026",
+                          "DMEXCO 2026",
+                          "Advertising Week New York 2026",
+                          "PI LIVE Europe 2026",
+                          "Affiliate World Asia 2026",
+                          "Affiliate Summit West 2027",
+                        ].find((e) => eventName.toLowerCase().includes(e.split(" ")[0].toLowerCase())) ||
+                          "Another event"
+                      );
+                      setIsConversationModalOpen(true);
                     }}
                     className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-medium text-slate-300 border border-white/15 bg-white/5 hover:border-white/30 hover:text-white hover:bg-white/10 transition-all duration-300 cursor-pointer"
                   >

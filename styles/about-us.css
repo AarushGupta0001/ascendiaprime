@@ -16,6 +16,13 @@
   overflow-x: clip;
 }
 
+#about-us-master h1,
+#about-us-master h2,
+#about-us-master h3,
+#about-us-master p {
+  margin-top: 0;
+}
+
 #about-us-master * {
   box-sizing: border-box;
 }
@@ -25,9 +32,9 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 1rem;
+  margin: 0 0 16px;
   font-size: 0.75rem;
-  font-weight: 780;
+  font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #3F8BF9;
@@ -407,11 +414,6 @@
   transform: translateY(-3px);
   border-color: rgba(63, 139, 249, 0.5);
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35), 0 0 20px rgba(63, 139, 249, 0.12);
-}
-
-.pillar-row:first-child {
-  border-color: rgba(63, 139, 249, 0.35);
-  background: linear-gradient(110deg, rgba(18, 48, 91, 0.65), rgba(9, 19, 39, 0.8));
 }
 
 .pillar-no {

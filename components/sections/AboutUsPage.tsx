@@ -98,10 +98,10 @@ export default function AboutUsPage() {
       {/* ── 2. Who We Are Section ── */}
       <section id="who" className="py-20 lg:py-24 border-b border-white/[0.08] w-full">
         <div className="w-full max-w-[1536px] mx-auto px-6 sm:px-10 lg:px-16">
+          <p className="about-eyebrow">Who we are</p>
           <div className="editorial-grid grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             <div className="lg:col-span-5">
-              <p className="about-eyebrow">Who we are</p>
-              <h2 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-bold text-white tracking-tight leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-bold text-white tracking-tight leading-tight m-0">
                 A coordinated growth partner across the customer journey.
               </h2>
             </div>

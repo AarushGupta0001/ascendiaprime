@@ -82,7 +82,7 @@
 .clg-eyebrow,
 #cro-master .clg-eyebrow,
 #cro-master .eyebrow {
-  margin: 0 0 1rem;
+  margin: 0 0 16px !important;
   display: inline-flex !important;
   align-items: center !important;
   gap: 8px !important;
@@ -92,6 +92,11 @@
   letter-spacing: 0.14em !important;
   text-transform: uppercase !important;
   position: relative;
+}
+
+#cro-master h1,
+#cro-master h2 {
+  margin-top: 0 !important;
 }
 
 .clg-eyebrow::before,
@@ -565,10 +570,12 @@
 
 #cro-master .layer-state {
   margin-left: auto;
-  color: var(--text-slate-400);
-  font-size: 8px;
+  color: #cbd5e1;
+  font-size: 11px;
   font-style: normal;
   font-weight: 600;
+  letter-spacing: .01em;
+  white-space: nowrap;
 }
 
 #cro-master .phase-1 .layer-2,
@@ -862,13 +869,14 @@
    ========================================================================== */
 .clg-capability-card {
   position: relative;
-  min-height: 320px;
-  border-radius: 1.5rem;
+  min-height: auto;
+  border-radius: 1.25rem;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   box-shadow: var(--card-shadow);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
+  transition: all 0.3s ease;
 }
 
 .clg-capability-card:hover {
@@ -1105,18 +1113,49 @@
   background: transparent !important;
 }
 
-.clg-deliverable-list li {
-  background: rgba(11, 17, 29, 0.9);
-  border: 1px solid rgba(63, 139, 249, 0.16);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  transition: all 0.3s ease;
+.clg-deliverables-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.clg-deliverable-list li:hover {
-  background: var(--card-bg-hover);
-  border-color: var(--card-border-hover);
+.clg-deliverable-item {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  padding: 1.15rem 0;
+  border-bottom: 1px solid rgba(63, 139, 249, 0.14);
+  transition: all 0.25s ease;
+}
+
+.clg-deliverable-item:first-child {
+  padding-top: 0.15rem;
+}
+
+.clg-deliverable-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.clg-deliverable-item:hover {
+  border-bottom-color: rgba(63, 139, 249, 0.45);
   transform: translateX(4px);
+}
+
+.clg-deliverable-index {
+  font-family: ui-monospace, monospace;
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: var(--brand-blue, #3F8BF9);
+  flex-shrink: 0;
+  letter-spacing: 0.05em;
+}
+
+.clg-deliverable-text {
+  font-size: 1.05rem;
+  color: var(--text-slate-200, #e2e8f0);
+  font-weight: 500;
+  line-height: 1.6;
 }
 
 .clg-tag-icon {
@@ -1387,7 +1426,7 @@
     font-size: 10px;
   }
   #cro-master .layer-state {
-    font-size: 7.5px;
+    font-size: 9.5px;
   }
   #cro-master .friction-note {
     min-width: 0;

@@ -42,58 +42,58 @@ const capabilities = [
   [
     "01",
     "Tracking and event validation",
-    "We check that useful actions are captured correctly before media decisions depend on them.",
+    "We confirm that meaningful actions are captured correctly before campaign decisions depend on them.",
   ],
   [
     "02",
     "Intent-led audience design",
-    "Audience rules reflect behaviour, funnel stage, recency and value—not one broad list of site visitors.",
+    "Audience rules reflect behaviour, funnel stage, recency and value—not one broad list of website visitors.",
   ],
   [
     "03",
     "Message and creative sequencing",
-    "The message develops with the journey, instead of repeating the same advert until it becomes noise.",
+    "The message develops with the journey instead of repeating the same advert until it becomes noise.",
   ],
   [
     "04",
     "Dynamic product retargeting",
-    "Where the catalogue and platforms allow, products can be matched to genuine browsing or basket behaviour.",
+    "Where product feeds and activation platforms allow, relevant products can be matched to genuine browsing or basket behaviour.",
   ],
   [
     "05",
     "Cross-channel delivery",
-    "Paid social, search, display, video, programmatic or publisher activity is selected around the opportunity.",
+    "Paid social, search, display, video, programmatic and publisher activity are selected around the audience and objective.",
   ],
   [
     "06",
     "Optimisation and reporting",
-    "We connect audience, frequency, spend and outcomes so changes can be explained—not merely observed.",
+    "We connect audience, frequency, spend and outcomes so each change can be explained and reviewed.",
   ],
 ];
 
 const approach = [
   [
-    "Find the lost opportunity",
+    "Identify the drop-off opportunity",
     "Identify where valuable visitors leave and what a useful return would mean.",
   ],
   [
-    "Validate the signals",
+    "Validate the audience signals",
     "Confirm the tracking, consent position and volume available for responsible activation.",
   ],
   [
-    "Write the rules first",
+    "Define the rules before launch",
     "Set eligibility, recency, exclusions, suppression and frequency before buying media.",
   ],
   [
-    "Match the next decision",
+    "Match the message to the intent",
     "Build the message and destination around the visitor's likely question—not just the product viewed.",
   ],
   [
-    "Launch within controls",
+    "Launch within agreed controls",
     "Activate the right channels and monitor delivery, placement quality and audience health.",
   ],
   [
-    "Improve the outcome",
+    "Optimise from evidence",
     "Use the evidence to adjust audiences, creative, sequencing, bids and the landing experience.",
   ],
 ];
@@ -168,7 +168,7 @@ export default function RetargetingPage() {
                 <em>Intent and Control</em>
               </h1>
               <p className="hero-lede">
-                AscendiaPrime helps advertisers re-engage high-intent audiences
+                Ascendia Prime helps advertisers re-engage high-intent audiences
                 through structured retargeting strategies built around audience
                 behaviour, frequency control, transparent tracking and measurable
                 conversion recovery.
@@ -177,8 +177,10 @@ export default function RetargetingPage() {
                 <button
                   type="button"
                   className="button button-primary open-contact-modal"
+                  data-form-id="3611"
+                  onClick={() => openContactModal("3611")}
                 >
-                  Start a Conversation
+                  Discuss Your Retargeting Campaign
                 </button>
               </div>
               <ul className="micro-trust" aria-label="Retargeting principles">
@@ -257,12 +259,12 @@ export default function RetargetingPage() {
               <div>
                 <p className="eyebrow">
                   <span />
-                  Intent map
+                  Intent signal mapping
                 </p>
                 <h2>
-                  One visit. Different meanings.
+                  Turn Visitor Signals Into
                   <br />
-                  Different next moves.
+                  Structured Campaign Decisions
                 </h2>
               </div>
               <p>
@@ -319,9 +321,9 @@ export default function RetargetingPage() {
                   Campaign capabilities
                 </p>
                 <h2>
-                  The parts that make
+                  Strategic Capabilities Engineered
                   <br />
-                  re-engagement useful.
+                  for Retargeting Precision
                 </h2>
               </div>
               <p>
@@ -344,7 +346,8 @@ export default function RetargetingPage() {
                   <button
                     type="button"
                     className="cap-cta"
-                    onClick={() => openContactModal()}
+                    data-form-id="3611"
+                    onClick={() => openContactModal("3611")}
                   >
                     Explore the logic <ArrowIcon />
                   </button>
@@ -364,18 +367,12 @@ export default function RetargetingPage() {
                 <span />
                 Operating approach
               </p>
-              <h2>From lost visit to controlled return.</h2>
+              <h2>From Lost Visit to High-Intent Conversion</h2>
               <p>
                 The campaign is designed as a decision system. Each stage makes
                 the next one more defensible—and gives your team a clearer view
                 of what is happening.
               </p>
-              <button
-                type="button"
-                className="text-link open-contact-modal"
-              >
-                Talk through your journey <ArrowIcon />
-              </button>
             </div>
             <div className="approach-list">
               {approach.map((step, i) => (
@@ -392,14 +389,14 @@ export default function RetargetingPage() {
         </section>
 
         {/* =========================================================
-            6. WHY ASCENDIAPRIME
+            6. WHY ASCENDIA PRIME
             ========================================================= */}
         <section id="why-ascendia" className="why-section">
           <div className="page-shell why-layout">
             <div className="why-copy">
               <p className="eyebrow">
                 <span />
-                Why AscendiaPrime
+                Why Ascendia Prime
               </p>
               <h2>
                 Managed with judgement,
@@ -461,7 +458,7 @@ export default function RetargetingPage() {
                 <span />
                 Performance visibility
               </p>
-              <h2>You should not have to take “transparent” on trust.</h2>
+              <h2>Complete Visibility into Every Audience Rule and Return Visit</h2>
               <p>
                 Reporting should make the next media decision easier to
                 understand and approve—not create more dashboards for their own
@@ -591,7 +588,7 @@ export default function RetargetingPage() {
                 Responsible delivery
               </p>
               <h2>
-                Re-engagement must earn attention and respect boundaries.
+                Responsible Re-Engagement with Strict Frequency & Privacy Controls
               </h2>
             </div>
             <div>
@@ -630,13 +627,6 @@ export default function RetargetingPage() {
                 Need to discuss a specific tracking or audience setup? We can
                 work through it with you.
               </p>
-              <button
-                type="button"
-                className="text-link"
-                onClick={() => openContactModal()}
-              >
-                Ask us directly <ArrowIcon />
-              </button>
             </div>
             <div className="faq-list">
               {faqs.map((faq, i) => (
@@ -677,8 +667,10 @@ export default function RetargetingPage() {
             <button
               type="button"
               className="button button-primary open-contact-modal"
+              data-form-id="3611"
+              onClick={() => openContactModal("3611")}
             >
-              Start a Conversation <span aria-hidden="true">→</span>
+              Discuss Your Retargeting Campaign <span aria-hidden="true">→</span>
             </button>
             <small>contact@ascendiaprime.com</small>
           </div>

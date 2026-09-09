@@ -2,6 +2,7 @@
 
 import { useEffect, type ReactNode } from "react";
 import ContactForm from "@/components/forms/ContactForm";
+import { FORMINATOR_FORMS } from "@/lib/forminator";
 
 type ContactModalProps = {
   isOpen: boolean;
@@ -18,6 +19,15 @@ export default function ContactModal({
   formId,
   children,
 }: ContactModalProps) {
+  const modalTitle =
+    formId === "3611" || formId === FORMINATOR_FORMS.retargeting
+      ? "Discuss Your Retargeting Campaign"
+      : formId === "1808" || formId === FORMINATOR_FORMS.advertisers
+        ? "Advertiser Inquiry"
+        : formId === "2081" || formId === FORMINATOR_FORMS.partners
+          ? "Partner Ecosystem Inquiry"
+          : title;
+
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add("modal-open");
@@ -72,7 +82,7 @@ export default function ContactModal({
           </svg>
         </button>
         <h2 id="contact-modal-title" className="mb-6 text-2xl font-bold text-white text-center">
-          {title}
+          {modalTitle}
         </h2>
         {children ?? <ContactForm variant="modal" formId={formId} />}
       </div>

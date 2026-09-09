@@ -39,7 +39,7 @@ const processSteps = [
   },
   {
     number: "02",
-    title: "Validate the signals",
+    title: "Validate the audience signals",
     text: "Review the tracking, events and available journey data before drawing conclusions.",
   },
   {
@@ -201,7 +201,7 @@ export default function ConversionLedGrowthPage() {
                   Post-click conversion &amp; journey optimisation
                 </div>
 
-                <h1 className="hero-animate text-[2.25rem] sm:text-5xl lg:text-[3.1rem] xl:text-[3.5rem] font-bold leading-[1.1] text-white tracking-tight mb-6" style={{ animationDelay: "0.2s" }}>
+                <h1 className="hero-animate text-[2.25rem] sm:text-5xl lg:text-[3.1rem] xl:text-[3.5rem] font-bold leading-[1.1] text-white tracking-tight mb-6 m-0" style={{ animationDelay: "0.2s" }}>
                   Turn more of the traffic you already pay for into{" "}
                   <span className="text-gradient-brand">qualified action.</span>
                 </h1>
@@ -239,9 +239,6 @@ export default function ConversionLedGrowthPage() {
 
               <div className="lg:col-span-6 relative w-full flex flex-col items-center lg:items-end justify-center hero-animate lg:-mt-6 xl:-mt-10" style={{ animationDelay: "0.55s" }}>
                 <ConversionIntelligenceLoop />
-                <p className="clg-disclaimer text-right text-xs text-slate-500 mt-2.5 w-full max-w-[735px]">
-                  Illustrative diagnostic logic. Campaign setup, available signals and outcomes vary by advertiser.
-                </p>
               </div>
             </div>
           </section>
@@ -278,7 +275,7 @@ export default function ConversionLedGrowthPage() {
               ================================================================= */}
           <section className="clg-section clg-why-section py-24 px-6 lg:px-12 relative z-10" id="why">
             <div className="max-w-[1240px] mx-auto w-full">
-              <div className="clg-eyebrow mb-4">
+              <div className="clg-eyebrow">
                 The post-click performance layer
               </div>
               <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
@@ -318,7 +315,7 @@ export default function ConversionLedGrowthPage() {
           <section className="clg-section py-24 px-6 lg:px-12 relative z-10" id="capabilities">
             <div className="max-w-[1240px] mx-auto w-full">
               <div className="mb-14">
-                <div className="clg-eyebrow mb-4">
+                <div className="clg-eyebrow">
                   What we assess
                 </div>
                 <div className="grid lg:grid-cols-12 gap-8 items-start">
@@ -333,12 +330,9 @@ export default function ConversionLedGrowthPage() {
 
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {capabilities.map((item) => (
-                  <article key={item.number} className="clg-capability-card group p-7 rounded-2xl flex flex-col justify-between relative overflow-hidden">
+                  <article key={item.number} className="clg-capability-card group p-6 sm:p-7 rounded-2xl flex flex-col justify-between relative overflow-hidden">
                     <div>
-                      <span className="text-xs font-mono font-bold text-slate-500 block mb-6">{item.number}</span>
-                      <div className="clg-card-icon w-12 h-12 rounded-xl mb-6 flex items-center justify-center text-[#3F8BF9] border border-[#3F8BF9]/30 bg-[#3F8BF9]/10">
-                        <span className="w-2.5 h-2.5 rounded-full bg-[#3F8BF9] shadow-[0_0_8px_#3F8BF9]" />
-                      </div>
+                      <span className="text-xs font-mono font-bold text-[#3F8BF9] block mb-4">{item.number}</span>
                       <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#38BDF8] transition-colors">{item.title}</h3>
                       <p className="text-sm text-slate-400 leading-relaxed font-light">{item.text}</p>
                     </div>
@@ -355,10 +349,10 @@ export default function ConversionLedGrowthPage() {
           <section className="clg-section clg-signals-section py-24 px-6 lg:px-12 relative z-10" id="signals">
             <div className="max-w-[1240px] mx-auto w-full">
               <div className="text-center max-w-3xl mx-auto mb-16">
-                <div className="clg-eyebrow justify-center mb-4">
+                <div className="clg-eyebrow justify-center">
                   Read the journey as one system
                 </div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.12] text-white tracking-tight mb-6">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.12] text-white tracking-tight mb-6 m-0">
                   Connect the campaign promise to the quality of the outcome.
                 </h2>
                 <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-light">
@@ -427,12 +421,12 @@ export default function ConversionLedGrowthPage() {
               ================================================================= */}
           <section className="clg-section clg-approach-section py-24 px-6 lg:px-12 relative z-10" id="approach">
             <div className="max-w-[1240px] mx-auto w-full">
+              <div className="clg-eyebrow">
+                How AscendiaPrime works
+              </div>
               <div className="clg-approach-layout">
                 <div className="clg-approach-sticky">
-                  <div className="clg-eyebrow">
-                    How AscendiaPrime works
-                  </div>
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.12] text-white tracking-tight mb-6">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.12] text-white tracking-tight mb-6 m-0">
                     A clear route from observation to action.
                   </h2>
                   <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-light mb-6">
@@ -460,7 +454,7 @@ export default function ConversionLedGrowthPage() {
               ================================================================= */}
           <section className="clg-section clg-deliverables-section py-24 px-6 lg:px-12 relative z-10" id="deliverables">
             <div className="max-w-[1240px] mx-auto w-full">
-              <div className="clg-eyebrow mb-4">
+              <div className="clg-eyebrow">
                 A useful output—not a generic audit
               </div>
               <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
@@ -481,11 +475,11 @@ export default function ConversionLedGrowthPage() {
                 </div>
 
                 <div className="lg:col-span-7">
-                  <ol className="clg-deliverables-list space-y-4">
+                  <ol className="clg-deliverables-list">
                     {deliverables.map((item, index) => (
-                      <li key={item} className="clg-deliverable-item p-5 rounded-2xl flex items-start gap-4">
+                      <li key={item} className="clg-deliverable-item">
                         <span className="clg-deliverable-index">0{index + 1}</span>
-                        <span className="text-base text-slate-200 font-medium leading-relaxed">{item}</span>
+                        <span className="clg-deliverable-text">{item}</span>
                       </li>
                     ))}
                   </ol>
@@ -499,7 +493,7 @@ export default function ConversionLedGrowthPage() {
               ================================================================= */}
           <section className="clg-section py-24 px-6 lg:px-12 relative z-10" id="quality">
             <div className="max-w-[1240px] mx-auto w-full">
-              <div className="clg-eyebrow mb-4">
+              <div className="clg-eyebrow">
                 Measurement with commercial context
               </div>
               <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
@@ -547,10 +541,10 @@ export default function ConversionLedGrowthPage() {
           <section className="clg-section py-24 px-6 lg:px-12 relative z-10" id="fit">
             <div className="max-w-[1240px] mx-auto w-full">
               <div className="text-center max-w-3xl mx-auto mb-14">
-                <div className="clg-eyebrow justify-center mb-4">
+                <div className="clg-eyebrow justify-center">
                   When this is useful
                 </div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.12] text-white tracking-tight">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.12] text-white tracking-tight m-0">
                   Built for moments where traffic and outcomes stop moving together.
                 </h2>
               </div>
@@ -593,7 +587,7 @@ export default function ConversionLedGrowthPage() {
               ================================================================= */}
           <section className="clg-section clg-faq-section py-24 px-6 lg:px-12 relative z-10" id="faq">
             <div className="max-w-[1240px] mx-auto w-full">
-              <div className="clg-eyebrow mb-4">
+              <div className="clg-eyebrow">
                 Frequently asked questions
               </div>
               <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
@@ -646,11 +640,11 @@ export default function ConversionLedGrowthPage() {
               ================================================================= */}
           <section className="clg-final-cta-section relative py-24 sm:py-28 px-6 lg:px-12 overflow-hidden text-center" id="contact">
             <div className="max-w-[840px] mx-auto relative z-10">
-              <div className="clg-eyebrow justify-center mb-4">
+              <div className="clg-eyebrow justify-center">
                 Where intent becomes measurable growth
               </div>
 
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.15] tracking-tight mb-6">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.15] tracking-tight mb-6 m-0">
                 Find out where valuable campaign intent is being lost.
               </h2>
 

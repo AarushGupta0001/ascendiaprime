@@ -42,7 +42,7 @@ export default function RetargetingJourney() {
   return (
     <div
       className={`journey-panel phase-${phase}`}
-      aria-label="The AscendiaPrime intent recovery journey"
+      aria-label="The Ascendia Prime intent recovery journey"
       aria-describedby="journey-summary"
     >
       <p id="journey-summary" className="sr-only">
@@ -203,9 +203,9 @@ export default function RetargetingJourney() {
             <span className="stage-kicker">Signal capture</span>
             <strong>Behaviour becomes visible</strong>
             <div className="journey-details">
-              <span>Website and product activity</span>
-              <span>Cart and form events</span>
-              <span>CRM / first-party signals</span>
+              <span>Site &amp; product activity</span>
+              <span>Cart &amp; form events</span>
+              <span>CRM &amp; 1st-party data</span>
             </div>
           </article>
 
@@ -213,11 +213,11 @@ export default function RetargetingJourney() {
             className={`stage-card stage-two ${phase === 1 ? "active" : ""}`}
           >
             <span className="stage-number">02</span>
-            <span className="stage-kicker">Audience and intent</span>
+            <span className="stage-kicker">Audience &amp; intent</span>
             <strong>Signals become segments</strong>
             <div className="journey-details">
-              <span>Behaviour and engagement</span>
-              <span>Funnel stage and intent</span>
+              <span>Behaviour &amp; engagement</span>
+              <span>Funnel stage &amp; intent</span>
               <span>Audience rules applied</span>
             </div>
           </article>
@@ -226,12 +226,12 @@ export default function RetargetingJourney() {
             className={`stage-card stage-three ${phase === 2 ? "active" : ""}`}
           >
             <span className="stage-number">03</span>
-            <span className="stage-kicker">Eligibility and controls</span>
+            <span className="stage-kicker">Eligibility &amp; controls</span>
             <strong>Responsible delivery</strong>
             <div className="journey-details controls">
               <span>Consent alignment</span>
-              <span>Frequency caps and exclusions</span>
-              <span>Converted-user suppression</span>
+              <span>Frequency &amp; exclusions</span>
+              <span>Suppression rules</span>
             </div>
           </article>
 
@@ -242,9 +242,9 @@ export default function RetargetingJourney() {
             <span className="stage-kicker">Re-engagement delivery</span>
             <strong>Relevant message delivered</strong>
             <div className="journey-details">
-              <span>Message matched to intent</span>
-              <span>Channel and timing aligned</span>
-              <span>Sequential delivery where useful</span>
+              <span>Intent-matched message</span>
+              <span>Channel &amp; timing aligned</span>
+              <span>Sequential delivery</span>
             </div>
           </article>
 
@@ -255,9 +255,9 @@ export default function RetargetingJourney() {
             <span className="stage-kicker">Return experience</span>
             <strong>The journey resumes</strong>
             <div className="journey-details">
-              <span>Relevant landing experience</span>
-              <span>Product, checkout or form resumed</span>
-              <span>Campaign response connected</span>
+              <span>Tailored landing page</span>
+              <span>Cart or form resumed</span>
+              <span>Response connected</span>
             </div>
           </article>
 
@@ -265,12 +265,12 @@ export default function RetargetingJourney() {
             className={`stage-card stage-six ${phase === 5 ? "active" : ""}`}
           >
             <span className="stage-number">06</span>
-            <span className="stage-kicker">Measure and improve</span>
+            <span className="stage-kicker">Measure &amp; improve</span>
             <strong>The loop informs action</strong>
             <div className="journey-details success-list">
-              <span>Response or conversion event</span>
-              <span>Source and placement visibility</span>
-              <span>Optimise and refresh audiences</span>
+              <span>Conversion verification</span>
+              <span>Placement visibility</span>
+              <span>Audience optimisation</span>
             </div>
           </article>
         </div>

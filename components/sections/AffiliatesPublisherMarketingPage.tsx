@@ -402,7 +402,7 @@ export default function AffiliatesPublisherMarketingPage() {
 
       <section id="why-us" className="content-section why-section">
         <div className="why-intro">
-          <p className="section-kicker">Why AscendiaPrime</p>
+          <p className="section-kicker">Why Ascendia Prime</p>
           <h2>You should know who is driving each result and why</h2>
           <p>Our team and founders bring more than 20 years of advertising and digital-media experience. That experience shapes a deliberately hands-on approach: choose partners carefully, make the rules explicit and stay involved after the campaign goes live.</p>
           <div className="experience-card">

@@ -640,7 +640,7 @@ export default function ConversionLedGrowthPage() {
                 Start with one priority campaign, landing page or conversion path. We will help you establish what can be assessed, where the evidence points and what the next useful action should be.
               </p>
 
-              <div className="flex flex-wrap gap-4 items-center justify-center mb-8">
+              <div className="flex flex-wrap gap-4 items-center justify-center">
                 <button
                   type="button"
                   className="clg-btn-primary button button-primary inline-flex items-center justify-center gap-3 px-8 py-3.5 sm:py-4 rounded-full font-bold text-base text-white transition-all shadow-[0_10px_25px_-5px_rgba(116,105,248,0.5)] hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
@@ -650,10 +650,6 @@ export default function ConversionLedGrowthPage() {
                   <ArrowIcon />
                 </button>
               </div>
-
-              <small className="text-xs text-slate-400 block font-light">
-                No fixed uplift promises. No generic checklist. A focused, evidence-led conversation.
-              </small>
             </div>
           </section>
         </div>

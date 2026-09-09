@@ -541,7 +541,7 @@ export default function ConversionLedGrowthPage() {
               <div className="clg-use-cases-grid mb-10">
                 {useCases.map((item) => (
                   <div key={item} className="clg-use-case-card group">
-                    <span className="text-[#AB57F3] mt-1 shrink-0 group-hover:text-[#E057D8] group-hover:translate-x-0.5 transition-all">
+                    <span className="text-[#AB57F3] shrink-0 group-hover:text-[#E057D8] group-hover:translate-x-0.5 transition-all">
                       <ArrowIcon />
                     </span>
                     <span className="text-sm sm:text-[0.95rem] text-slate-300 leading-relaxed font-light group-hover:text-white transition-colors">

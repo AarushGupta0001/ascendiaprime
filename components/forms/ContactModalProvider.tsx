@@ -6,10 +6,7 @@ import dynamic from "next/dynamic";
 import ContactInteractions from "@/components/forms/ContactInteractions";
 import { FORMINATOR_FORMS } from "@/lib/forminator";
 
-const ContactModal = dynamic(() => import("@/components/forms/ContactModal"), {
-  ssr: false,
-  loading: () => null,
-});
+import ContactModal from "@/components/forms/ContactModal";
 
 type ContactModalContextValue = {
   openContactModal: (formId?: string) => void;
@@ -38,9 +35,7 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
     <ContactModalContext.Provider value={value}>
       <ContactInteractions />
       {children}
-      {isOpen ? (
-        <ContactModal isOpen={isOpen} onClose={closeContactModal} formId={modalFormId} />
-      ) : null}
+      <ContactModal isOpen={isOpen} onClose={closeContactModal} formId={modalFormId} />
     </ContactModalContext.Provider>
   );
 }

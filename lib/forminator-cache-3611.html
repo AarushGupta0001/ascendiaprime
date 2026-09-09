@@ -13,12 +13,11 @@
 	<link rel='stylesheet' id='forminator-forms-default-full-css' href='https://ascendiaprime.com/wp-content/plugins/forminator/assets/forminator-ui/css/src/form/forminator-form-default.full.min.css?ver=1.57.1' media='all' />
 </head>
 <body class="forminator-custom-form-3611">
-  <div class="forminator-ui forminator-custom-form forminator-custom-form-3611 forminator-design--default forminator_ajax" data-forminator-render="0" data-form="forminator-module-3611" data-uid="6a92793611retarget">
-    <br/>
-  </div>
   <form
     id="forminator-module-3611"
     class="forminator-ui forminator-custom-form forminator-custom-form-3611 forminator-design--default forminator_ajax"
+    action=""
+    onsubmit="return false;"
     method="post"
     data-forminator-render="0"
     data-form-id="3611"
@@ -175,6 +174,27 @@
           $customWrap.slideUp(200);
           $customInput.val("");
         }
+      });
+
+      function handleSuccess(msg) {
+        var $form = jQuery("#forminator-module-3611");
+        $form.find(".forminator-row").hide();
+        var $resp = $form.find(".forminator-response-message");
+        if ($resp.length) {
+          if (msg) $resp.text(msg);
+          $resp.addClass("forminator-success forminator-show").removeClass("forminator-error").show();
+        }
+      }
+
+      jQuery(document).ajaxSuccess(function(event, xhr, settings) {
+        try {
+          if (settings && settings.data && typeof settings.data === "string" && settings.data.indexOf("forminator_submit_form") !== -1) {
+            var res = typeof xhr.responseJSON !== "undefined" ? xhr.responseJSON : JSON.parse(xhr.responseText);
+            if (res && res.success && res.data && res.data.success) {
+              handleSuccess(res.data.message);
+            }
+          }
+        } catch(e) {}
       });
     });
   </script>

@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useContactModal } from "@/components/forms/ContactModalProvider";
 import "@/styles/about-us.css";
 
@@ -101,7 +100,7 @@ export default function AboutUsPage() {
           <p className="about-eyebrow">Who we are</p>
           <div className="editorial-grid grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             <div className="lg:col-span-5">
-              <h2 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-bold text-white tracking-tight leading-tight m-0">
+              <h2 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-bold text-white tracking-tight leading-[1.3] sm:leading-[1.32] m-0">
                 A coordinated growth partner across the customer journey.
               </h2>
             </div>
@@ -128,7 +127,7 @@ export default function AboutUsPage() {
         <div className="w-full max-w-[1536px] mx-auto px-6 sm:px-10 lg:px-16">
           <div className="max-w-4xl">
             <p className="about-eyebrow about-eyebrow-pink">Why we exist</p>
-            <h2 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-bold text-white tracking-tight leading-tight mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-bold text-white tracking-tight leading-[1.3] sm:leading-[1.32] mb-6">
               Addressing the gaps that limit performance and partnership growth.
             </h2>
             <p className="text-slate-300 text-[1.05rem] leading-relaxed font-light mb-4">
@@ -162,7 +161,7 @@ export default function AboutUsPage() {
       <section id="what-we-stand-for" className="py-20 lg:py-24 border-b border-white/[0.08] w-full">
         <div className="w-full max-w-[1536px] mx-auto px-6 sm:px-10 lg:px-16 text-center">
           <p className="about-eyebrow about-eyebrow-purple justify-center">What we stand for</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-bold text-white tracking-tight leading-tight mb-12">
+          <h2 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-bold text-white tracking-tight leading-[1.3] sm:leading-[1.32] mb-12">
             Principles that shape how we work.
           </h2>
 
@@ -206,7 +205,7 @@ export default function AboutUsPage() {
       <section id="stakeholders" className="py-20 lg:py-24 border-b border-white/[0.08] w-full">
         <div className="w-full max-w-[1536px] mx-auto px-6 sm:px-10 lg:px-16">
           <p className="about-eyebrow about-eyebrow-pink">How we support stakeholders</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-bold text-white tracking-tight leading-tight mb-12">
+          <h2 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-bold text-white tracking-tight leading-[1.3] sm:leading-[1.32] mb-12">
             Built around the people responsible for performance.
           </h2>
 
@@ -247,7 +246,7 @@ export default function AboutUsPage() {
         <div className="w-full max-w-[1536px] mx-auto px-6 sm:px-10 lg:px-16">
           <div className="max-w-4xl">
             <p className="about-eyebrow">Our growth ecosystem</p>
-            <h2 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-bold text-white tracking-tight leading-tight mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-bold text-white tracking-tight leading-[1.3] sm:leading-[1.32] mb-6">
               An integrated growth ecosystem built around three core capabilities.
             </h2>
             <p className="text-slate-300 text-[1.05rem] leading-relaxed font-light">
@@ -261,10 +260,7 @@ export default function AboutUsPage() {
               <div>
                 <h3 className="text-xl font-bold text-white mb-2">Performance Marketing &amp; Partner Growth</h3>
                 <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-                  <Link href="/affiliates-publisher-marketing" className="text-link">Affiliate &amp; Publisher Marketing</Link>,{" "}
-                  <Link href="/ppc" className="text-link">Google, Meta &amp; PPC Ads</Link>,{" "}
-                  <Link href="/retargeting-campaigns" className="text-link">Retargeting Campaigns</Link> and{" "}
-                  <Link href="/conversion-led-growth" className="text-link">Conversion-Led Growth</Link>.
+                  Affiliate &amp; Publisher Marketing, Google, Meta &amp; PPC Ads, Retargeting Campaigns and Conversion-Led Growth.
                 </p>
               </div>
             </article>
@@ -274,11 +270,7 @@ export default function AboutUsPage() {
               <div>
                 <h3 className="text-xl font-bold text-white mb-2">Programmatic Branding &amp; Awareness</h3>
                 <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-                  <Link href="/display-advertising" className="text-link">Display</Link>,{" "}
-                  <Link href="/video-native-ads" className="text-link">video</Link>,{" "}
-                  <Link href="/video-native-ads" className="text-link">native</Link>,{" "}
-                  <Link href="/connected-tv" className="text-link">connected TV</Link> and{" "}
-                  <Link href="/dsp" className="text-link">DSP-led media buying</Link> that build relevant reach and sustained visibility.
+                  Display, video, native, connected TV and DSP-led media buying that build relevant reach and sustained visibility.
                 </p>
               </div>
             </article>
@@ -288,10 +280,7 @@ export default function AboutUsPage() {
               <div>
                 <h3 className="text-xl font-bold text-white mb-2">Digital, Creative &amp; Web Solutions</h3>
                 <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-                  <Link href="/seo" className="text-link">SEO</Link>,{" "}
-                  <Link href="/influencer-marketing" className="text-link">social media &amp; influencer marketing</Link>,{" "}
-                  <Link href="/orm" className="text-link">reputation support</Link>, creative production and{" "}
-                  <Link href="/webdev" className="text-link">web experiences</Link> that strengthen the wider customer journey.
+                  SEO, social media &amp; influencer marketing, reputation support, creative production and web experiences that strengthen the wider customer journey.
                 </p>
               </div>
             </article>
@@ -303,7 +292,7 @@ export default function AboutUsPage() {
       <section id="our-approach" className="py-20 lg:py-24 border-b border-white/[0.08] w-full">
         <div className="w-full max-w-[1536px] mx-auto px-6 sm:px-10 lg:px-16 text-center">
           <p className="about-eyebrow about-eyebrow-purple justify-center">Our approach</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-bold text-white tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-bold text-white tracking-tight leading-[1.3] sm:leading-[1.32]">
             A clear route from objective to measurable action.
           </h2>
 
@@ -347,7 +336,7 @@ export default function AboutUsPage() {
       <section id="contact" className="py-20 lg:py-24 w-full">
         <div className="w-full max-w-[1536px] mx-auto px-6 sm:px-10 lg:px-16">
           <div className="about-cta-card">
-            <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-white leading-tight tracking-tight mb-6 max-w-4xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-white leading-[1.3] sm:leading-[1.32] tracking-tight mb-6 max-w-4xl mx-auto">
               Bring greater clarity and accountability to your{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3F8BF9] via-[#7469F8] to-[#AB57F3]">
                 growth strategy.

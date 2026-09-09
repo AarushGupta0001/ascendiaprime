@@ -23,6 +23,16 @@
   margin-top: 0;
 }
 
+#about-us-master h1 {
+  line-height: 1.22 !important;
+  letter-spacing: -0.025em;
+}
+
+#about-us-master h2 {
+  line-height: 1.32 !important;
+  letter-spacing: -0.02em;
+}
+
 #about-us-master * {
   box-sizing: border-box;
 }

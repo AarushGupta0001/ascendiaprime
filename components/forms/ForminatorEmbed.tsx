@@ -10,7 +10,7 @@ type ForminatorEmbedProps = {
   variant?: "default" | "modal" | "homepage";
 };
 
-const DEFAULT_FRAME_HEIGHT = 520;
+const DEFAULT_FRAME_HEIGHT = 440;
 
 export default function ForminatorEmbed({
   formId,
@@ -31,7 +31,7 @@ export default function ForminatorEmbed({
         typeof data.height === "number" &&
         data.height > 0
       ) {
-        setFrameHeight(Math.ceil(data.height) + 8);
+        setFrameHeight(Math.ceil(data.height));
       }
     }
 
@@ -67,14 +67,14 @@ export default function ForminatorEmbed({
       )}
       <iframe
         ref={iframeRef}
-        src={`/forminator-frame/${resolvedFormId}?v=3611-v7`}
+        src={`/forminator-frame/${resolvedFormId}?v=3611-v14`}
         title="Contact form"
         className={`forminator-embed-frame transition-opacity duration-300 ${status === "error" ? "hidden" : ""} ${status === "loading" ? "opacity-0 absolute top-0 left-0 pointer-events-none" : "opacity-100"}`.trim()}
         style={{
           width: "100%",
           border: "none",
           display: "block",
-          minHeight: DEFAULT_FRAME_HEIGHT,
+          minHeight: variant === "modal" ? 140 : DEFAULT_FRAME_HEIGHT,
           height: frameHeight,
           background: "transparent",
         }}

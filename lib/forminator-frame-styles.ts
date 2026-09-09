@@ -8,7 +8,7 @@ export const FORMINATOR_FRAME_STYLES = `
   }
 
   body {
-    padding: 6px 4px 14px !important;
+    padding: 2px 4px 6px !important;
     font-family: Poppins, system-ui, sans-serif !important;
     overflow-x: hidden !important;
   }
@@ -16,6 +16,7 @@ export const FORMINATOR_FRAME_STYLES = `
   .forminator-ui {
     background: transparent !important;
     color: #ffffff !important;
+    max-width: 100%;
   }
 
   .forminator-row {
@@ -23,7 +24,7 @@ export const FORMINATOR_FRAME_STYLES = `
     flex-wrap: wrap !important;
     margin-left: -8px !important;
     margin-right: -8px !important;
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 0.45rem !important;
     box-sizing: border-box !important;
   }
 
@@ -57,16 +58,7 @@ export const FORMINATOR_FRAME_STYLES = `
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
-  }
-
-  body {
-    padding: 4px 2px 12px;
-    font-family: Poppins, system-ui, sans-serif;
-  }
-
-  .forminator-ui {
-    max-width: 100%;
-    color: #ffffff !important;
+    margin-bottom: 0.45rem !important;
   }
 
   .forminator-label,
@@ -75,7 +67,8 @@ export const FORMINATOR_FRAME_STYLES = `
   legend {
     color: #ffffff !important;
     font-weight: 600 !important;
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 0.35rem !important;
+    font-size: 0.92rem !important;
   }
 
   .forminator-required {
@@ -94,12 +87,27 @@ export const FORMINATOR_FRAME_STYLES = `
     border: 1px solid rgba(63, 139, 249, 0.3) !important;
     color: #ffffff !important;
     border-radius: 0.75rem !important;
-    padding: 0.78rem 1rem !important;
-    min-height: 48px !important;
+    padding: 0.72rem 1rem !important;
+    min-height: 44px !important;
     box-sizing: border-box !important;
     box-shadow: inset 0 1px 0 rgba(255,255,255,.04), 0 8px 20px rgba(0,0,0,.16) !important;
     font-family: inherit !important;
     font-size: 0.92rem !important;
+  }
+
+  .forminator-input:focus,
+  .forminator-textarea:focus,
+  .forminator-select--field:focus,
+  .forminator-field--phone:focus,
+  .forminator-ui input:focus,
+  .forminator-ui textarea:focus,
+  .forminator-ui select:focus {
+    border-color: #3f8bf9 !important;
+    box-shadow: 0 0 0 3px rgba(63, 139, 249, 0.25) !important;
+  }
+
+  .forminator-textarea {
+    resize: vertical;
   }
 
   .forminator-input::placeholder,
@@ -108,19 +116,19 @@ export const FORMINATOR_FRAME_STYLES = `
     opacity: 1 !important;
   }
 
-  .forminator-description,
-  .forminator-error-message,
-  .forminator-response-message,
-  .forminator-field-description {
-    color: rgba(255, 255, 255, 0.72) !important;
+  .forminator-description {
+    color: rgba(255, 255, 255, 0.6) !important;
+    font-size: 0.75rem !important;
+    margin-top: 0.2rem !important;
+    margin-bottom: 0.2rem !important;
   }
 
   .forminator-button-submit,
   .forminator-ui button[type="submit"] {
     width: 100% !important;
     justify-content: center !important;
-    margin-top: 0.5rem !important;
-    padding: 1rem 1.5rem !important;
+    margin-top: 0.35rem !important;
+    padding: 0.85rem 1.5rem !important;
     border-radius: 999px !important;
     background: linear-gradient(135deg, #3f8bf9, #7469f8, #ab57f3, #e057d8) !important;
     color: #ffffff !important;
@@ -128,11 +136,13 @@ export const FORMINATOR_FRAME_STYLES = `
     box-shadow: 0 8px 25px rgba(116, 105, 248, 0.4) !important;
     font-weight: 600 !important;
     cursor: pointer !important;
+    transition: all 0.2s ease !important;
   }
 
   .forminator-button-submit:hover,
   .forminator-ui button[type="submit"]:hover {
     filter: brightness(1.08);
+    transform: translateY(-1px);
   }
 
   .forminator-button-submit:disabled,
@@ -142,17 +152,26 @@ export const FORMINATOR_FRAME_STYLES = `
   }
 
   .forminator-response-message.forminator-success {
-    margin-bottom: 0.78rem !important;
+    margin: 1rem auto !important;
     border: 1px solid rgba(63, 139, 249, 0.45) !important;
-    border-radius: 0.75rem !important;
-    background: rgba(63, 139, 249, 0.12) !important;
-    color: #dbeafe !important;
-    padding: 1rem 1.2rem !important;
+    border-radius: 0.85rem !important;
+    background: rgba(63, 139, 249, 0.14) !important;
+    color: #ffffff !important;
+    padding: 1.25rem 1.5rem !important;
+    text-align: center !important;
+    font-size: 1.05rem !important;
+    font-weight: 500 !important;
+    line-height: 1.6 !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3) !important;
   }
 
-  .forminator-row,
-  .forminator-field {
-    margin-bottom: 0.78rem !important;
+  /* When form is successfully submitted, hide all form rows and helper text */
+  form[data-forminator-submitted="true"] .forminator-row,
+  form.forminator-submitted .forminator-row,
+  form.form-submitted .forminator-row,
+  .forminator-ui:has(.forminator-response-message.forminator-success) .forminator-row,
+  .forminator-ui:has(.forminator-response-message.forminator-success) .form-submission-fallback {
+    display: none !important;
   }
 
   .iti__selected-dial-code,
@@ -171,12 +190,12 @@ export const FORMINATOR_FRAME_STYLES = `
     border: 1px solid rgba(63, 139, 249, 0.3) !important;
     color: #ffffff !important;
     border-radius: 0.75rem !important;
-    min-height: 3.25rem !important;
+    min-height: 2.9rem !important;
   }
 
   .select2-container--default .select2-selection--single .select2-selection__rendered {
     color: #ffffff !important;
-    line-height: 3rem !important;
+    line-height: 2.8rem !important;
     padding-left: 1rem !important;
   }
 
@@ -184,65 +203,62 @@ export const FORMINATOR_FRAME_STYLES = `
     background: #0b142f !important;
     border-color: rgba(63, 139, 249, 0.3) !important;
     color: #ffffff !important;
+    border-radius: 0.75rem !important;
+  }
+
+  .select2-results__option {
+    padding: 8px 12px !important;
+    color: #ffffff !important;
   }
 
   .select2-results__option--highlighted[aria-selected] {
     background: rgba(63, 139, 249, 0.35) !important;
   }
 
-
-/* Clean Forminator validation messages */
-.forminator-error-message,
-.forminator-error,
-.forminator-field .forminator-error-message {
+  /* Clean Forminator validation messages */
+  .forminator-error-message,
+  .forminator-error,
+  .forminator-field .forminator-error-message {
     background: transparent !important;
     background-color: transparent !important;
     border: none !important;
     box-shadow: none !important;
     color: #fda4af !important;
-    padding: 5px 0 !important;
-    margin: 4px 0 0 !important;
-    min-height: 0 !important;
-    height: auto !important;
-    width: auto !important;
-    border-radius: 0 !important;
+    padding: 3px 0 0 !important;
+    margin: 2px 0 0 !important;
     font-size: 12px !important;
     line-height: 1.4 !important;
-}
+  }
 
-/* Don't let validation create a large coloured block */
-.forminator-field {
+  .forminator-field {
     background: transparent !important;
-}
+  }
 
-.forminator-field.forminator-has_error .forminator-select--field,
-.forminator-field.forminator-has_error select {
+  .forminator-field.forminator-has_error .forminator-select--field,
+  .forminator-field.forminator-has_error select {
     border-color: rgba(253, 164, 175, 0.55) !important;
-}
-
-
+  }
 
   /* Form submission fallback */
   .form-submission-fallback {
-    margin: 1.25rem 0 0;
-    padding: 0.25rem 0 0.5rem;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.72);
-    font-size: 0.9rem;
-    line-height: 1.5;
-    font-style: italic;
+    margin: 0.65rem 0 0 !important;
+    padding: 0 0 0.15rem !important;
+    text-align: center !important;
+    color: rgba(255, 255, 255, 0.72) !important;
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+    font-style: italic !important;
   }
 
   .form-submission-fallback a {
-    color: #7fb3ff;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    font-weight: 600;
-    transition: color 0.2s ease;
+    color: #7fb3ff !important;
+    text-decoration: underline !important;
+    text-underline-offset: 3px !important;
+    font-weight: 600 !important;
+    transition: color 0.2s ease !important;
   }
 
   .form-submission-fallback a:hover {
-    color: #ab57f3;
+    color: #ab57f3 !important;
   }
-
 `;

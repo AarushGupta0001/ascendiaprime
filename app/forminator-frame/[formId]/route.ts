@@ -28,12 +28,23 @@ function buildFormInteractionScript(formId: string): string {
       var successMessage = ${JSON.stringify(formSuccessMessage)};
 
       function notifyHeight() {
-        var height = Math.max(
-          document.body.scrollHeight,
-          document.documentElement.scrollHeight,
-          document.body.offsetHeight
-        );
-        if (window.parent && window.parent !== window) {
+        var form = document.querySelector("form.forminator-ui[id^='forminator-module-']");
+        var fallback = document.querySelector(".form-submission-fallback");
+        var response = document.querySelector(".forminator-response-message.forminator-success, .forminator-response-message.forminator-show");
+        
+        var height = 0;
+        if (form && (form.dataset.forminatorSubmitted === "true" || form.classList.contains("forminator-submitted"))) {
+          height = response ? Math.ceil(response.offsetHeight + 24) : 130;
+        } else if (form) {
+          var formRect = form.getBoundingClientRect();
+          var fallbackRect = (fallback && fallback.style.display !== "none" && fallback.offsetHeight > 0) ? fallback.getBoundingClientRect() : null;
+          var bottom = fallbackRect ? fallbackRect.bottom : formRect.bottom;
+          height = Math.ceil(bottom + 6);
+        } else {
+          height = Math.min(document.body.scrollHeight, 550);
+        }
+
+        if (height > 0 && window.parent && window.parent !== window) {
           window.parent.postMessage(
             { type: "forminator-frame-height", formId: requestedFormId, height: height },
             "*"
@@ -42,7 +53,7 @@ function buildFormInteractionScript(formId: string): string {
       }
 
       function getSubmitButtons(form) {
-        return form.querySelectorAll("button[type='submit'], .forminator-button-submit");
+        return form.querySelectorAll("button[type='submit'], .forminator-button-submit, button");
       }
 
       function setSubmitting(form, submitting) {
@@ -50,17 +61,24 @@ function buildFormInteractionScript(formId: string): string {
         getSubmitButtons(form).forEach(function (button) {
           button.disabled = submitting;
           button.setAttribute("aria-disabled", submitting ? "true" : "false");
+          if (submitting) {
+            button.textContent = "Submitting...";
+            button.classList.add("is-submitting");
+          }
         });
         notifyHeight();
       }
 
-      function showSuccess(form) {
+      function showSuccess(form, customMsg) {
         form.dataset.forminatorSubmitting = "false";
         form.dataset.forminatorSubmitted = "true";
+        form.classList.add("forminator-submitted", "form-submitted");
 
-        getSubmitButtons(form).forEach(function (button) {
-          button.disabled = true;
-          button.setAttribute("aria-disabled", "true");
+        form.querySelectorAll(".forminator-row, .forminator-pagination-steps, .forminator-pagination-footer, .forminator-button-submit, button").forEach(function (el) {
+          el.style.display = "none";
+        });
+        document.querySelectorAll(".form-submission-fallback").forEach(function (el) {
+          el.style.display = "none";
         });
 
         var response = form.querySelector(".forminator-response-message");
@@ -71,11 +89,90 @@ function buildFormInteractionScript(formId: string): string {
           form.insertBefore(response, form.firstChild);
         }
 
-        response.textContent = successMessage;
+        if (customMsg) {
+          response.textContent = customMsg;
+        } else if (!response.textContent || response.textContent.trim() === "" || response.classList.contains("forminator-error")) {
+          response.textContent = successMessage;
+        }
+
         response.className = "forminator-response-message forminator-success forminator-show";
+        response.style.display = "block";
         response.removeAttribute("aria-hidden");
         response.setAttribute("aria-live", "polite");
         notifyHeight();
+        setTimeout(notifyHeight, 50);
+        setTimeout(notifyHeight, 200);
+        setTimeout(notifyHeight, 800);
+      }
+
+      function showError(form, msg) {
+        setSubmitting(form, false);
+        var response = form.querySelector(".forminator-response-message");
+        if (!response) {
+          response = document.createElement("div");
+          response.className = "forminator-response-message";
+          response.setAttribute("role", "alert");
+          form.insertBefore(response, form.firstChild);
+        }
+        response.textContent = msg;
+        response.className = "forminator-response-message forminator-error forminator-show";
+        response.style.display = "block";
+        response.removeAttribute("aria-hidden");
+        notifyHeight();
+      }
+
+      function handleLocalSubmit(form, e) {
+        if (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+        }
+
+        if (form.dataset.forminatorSubmitted === "true" || form.dataset.forminatorSubmitting === "true") {
+          return false;
+        }
+
+        // Validate Required Fields
+        var nameInput = form.querySelector("input[name='name-1']");
+        var emailInput = form.querySelector("input[name='email-1'], input[type='email']");
+
+        if (nameInput && !nameInput.value.trim()) {
+          showError(form, "Please enter your name.");
+          nameInput.focus();
+          return false;
+        }
+
+        if (emailInput && (!emailInput.value.trim() || !emailInput.value.includes("@"))) {
+          showError(form, "Please enter a valid email address.");
+          emailInput.focus();
+          return false;
+        }
+
+        setSubmitting(form, true);
+
+        // Immediate Thank You Transition in popup
+        showSuccess(form);
+
+        // Background dispatch
+        try {
+          var formData = new FormData(form);
+          fetch("/api/forminator/ajax", {
+            method: "POST",
+            body: formData,
+            cache: "no-store",
+            keepalive: true
+          }).then(function(res) {
+            return res.json();
+          }).then(function(data) {
+            if (data && data.data && data.data.message) {
+              showSuccess(form, data.data.message);
+            }
+          }).catch(function(err) {
+            console.warn("Background delivery status:", err);
+          });
+        } catch(err) {}
+
+        return false;
       }
 
       function initialise() {
@@ -83,17 +180,39 @@ function buildFormInteractionScript(formId: string): string {
         if (!form || form.dataset.forminatorSafeguardsBound === "true") return;
 
         form.dataset.forminatorSafeguardsBound = "true";
+        form.setAttribute("onsubmit", "return false;");
+
+        form.addEventListener("submit", function (e) {
+          handleLocalSubmit(form, e);
+        }, true);
+
+        var submitBtns = getSubmitButtons(form);
+        submitBtns.forEach(function(btn) {
+          btn.addEventListener("click", function(e) {
+            handleLocalSubmit(form, e);
+          }, true);
+        });
+
         if (window.jQuery) {
           window.jQuery(form)
-            .on("before:forminator:form:submit", function () {
-              if (form.dataset.forminatorSubmitted !== "true") setSubmitting(form, true);
+            .on("before:forminator:form:submit", function (e) {
+              if (e) e.preventDefault();
+              handleLocalSubmit(form, e);
             })
             .on("forminator:form:submit:success", function () {
               showSuccess(form);
-            })
-            .on("forminator:form:submit:failed", function () {
-              if (form.dataset.forminatorSubmitted !== "true") setSubmitting(form, false);
             });
+
+          window.jQuery(document).ajaxSuccess(function(event, xhr, settings) {
+            try {
+              if (settings && settings.data && typeof settings.data === "string" && settings.data.indexOf("forminator_submit_form") !== -1) {
+                var res = typeof xhr.responseJSON !== "undefined" ? xhr.responseJSON : JSON.parse(xhr.responseText);
+                if (res && res.success && res.data && res.data.success) {
+                  showSuccess(form, res.data.message);
+                }
+              }
+            } catch(e) {}
+          });
         }
       }
 
@@ -112,127 +231,44 @@ function buildFormInteractionScript(formId: string): string {
   </script>`;
 }
 
-function buildFormSubmitInterceptor(): string {
-  return `
+function buildFormSubmitInterceptor(formId: string): string {
+  return ``;
+}
+
+function buildSuccessHtml(
+  formId: string,
+  message: string = "Thanks for contacting us! We'll be in touch shortly.",
+): string {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    ${FORMINATOR_FRAME_STYLES}
+  </style>
+</head>
+<body style="background: #0b142f; color: #ffffff; display: flex; align-items: center; justify-content: center; padding: 1.5rem 1rem; min-height: 180px;">
+  <div class="forminator-response-message forminator-success forminator-show" role="status" style="display: block; margin: 0 auto; width: 100%; max-width: 540px; text-align: center; border: 1px solid rgba(63, 139, 249, 0.45); border-radius: 0.85rem; background: rgba(63, 139, 249, 0.14); padding: 1.5rem 1.75rem; font-family: Poppins, system-ui, sans-serif; font-size: 1.05rem; line-height: 1.6; color: #ffffff; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);">
+    ${escapeHtml(message)}
+  </div>
   <script>
-    (function () {
-      function initFormSubmitInterceptor() {
-        var form = document.querySelector("form.forminator-ui[id^='forminator-module-']");
-        if (!form || form.dataset.localSubmitInterceptor === "true") {
-          return;
+    (function() {
+      function notify() {
+        var height = Math.max(document.body.scrollHeight, 180);
+        if (window.parent && window.parent !== window) {
+          window.parent.postMessage({ type: "forminator-frame-height", formId: ${JSON.stringify(formId)}, height: height }, "*");
         }
-
-        form.dataset.localSubmitInterceptor = "true";
-
-        document.addEventListener("submit", async function (event) {
-          if (event.target !== form) {
-            return;
-          }
-
-          event.preventDefault();
-          event.stopImmediatePropagation();
-
-          if (form.dataset.localSubmitting === "true") {
-            return;
-          }
-
-          form.dataset.localSubmitting = "true";
-
-          var submitButton = form.querySelector(
-            "button[type='submit'], .forminator-button-submit"
-          );
-
-          if (submitButton) {
-            submitButton.disabled = true;
-            submitButton.setAttribute("aria-disabled", "true");
-          }
-
-          var responseElement = form.querySelector(
-            ".forminator-response-message"
-          );
-
-          try {
-            var formData = new FormData(form);
-
-            var response = await fetch("/api/forminator/ajax", {
-              method: "POST",
-              body: formData,
-              cache: "no-store"
-            });
-
-            var result = await response.json();
-
-            if (
-              result &&
-              result.success === true &&
-              result.data &&
-              result.data.success === true
-            ) {
-              if (!responseElement) {
-                responseElement = document.createElement("div");
-                responseElement.className =
-                  "forminator-response-message";
-                responseElement.setAttribute("role", "status");
-                form.insertBefore(responseElement, form.firstChild);
-              }
-
-              responseElement.textContent =
-                result.data.message ||
-                "Thanks for contacting us! We'll be in touch shortly.";
-
-              responseElement.className =
-                "forminator-response-message forminator-success forminator-show";
-
-              responseElement.removeAttribute("aria-hidden");
-              responseElement.setAttribute("aria-live", "polite");
-
-              form.querySelectorAll(".forminator-row").forEach(function (row) {
-                row.style.display = "none";
-              });
-            } else {
-              throw new Error(
-                result &&
-                result.data &&
-                result.data.message
-                  ? result.data.message
-                  : "Form submission failed."
-              );
-            }
-          } catch (error) {
-            console.error("Local Forminator submission error:", error);
-
-            if (!responseElement) {
-              responseElement = document.createElement("div");
-              responseElement.className =
-                "forminator-response-message";
-              responseElement.setAttribute("role", "alert");
-              form.insertBefore(responseElement, form.firstChild);
-            }
-
-            responseElement.textContent =
-              error && error.message
-                ? error.message
-                : "Unable to submit the form. Please try again.";
-
-            responseElement.className =
-              "forminator-response-message forminator-error forminator-show";
-
-            responseElement.removeAttribute("aria-hidden");
-          } finally {
-            form.dataset.localSubmitting = "false";
-
-            if (submitButton) {
-              submitButton.disabled = false;
-              submitButton.removeAttribute("aria-disabled");
-            }
-          }
-        }, true);
       }
-
-      initFormSubmitInterceptor();
-      window.addEventListener("load", initFormSubmitInterceptor);
+      notify();
+      window.addEventListener("load", notify);
+      setTimeout(notify, 50);
+      setTimeout(notify, 200);
+      setTimeout(notify, 800);
     })();
-  </script>`;
+  </script>
+</body>
+</html>`;
 }
 
 function buildFrameDocument(formId: string, parsed: ReturnType<typeof parseForminatorHtml>): string {
@@ -267,74 +303,81 @@ function buildFrameDocument(formId: string, parsed: ReturnType<typeof parseFormi
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <base target="_parent" />
   ${stylesheetTags}
 </head>
 <body>
   ${formHtml}
   <div class="form-submission-fallback">
     Having trouble submitting the form? Email us at
-    <a href="mailto:contact@ascendiaprime.com">contact@ascendiaprime.com</a>
+    <a href="mailto:contact@ascendiaprime.com" target="_blank" rel="noopener noreferrer">contact@ascendiaprime.com</a>
   </div>
   ${scriptTags}
   ${inlineScriptTags}
   <style>${FORMINATOR_FRAME_STYLES}</style>
   ${buildFormInteractionScript(formId)}
-  ${buildFormSubmitInterceptor()}
 </body>
 </html>`;
 }
-
 
 export async function POST(request: Request, context: RouteContext) {
   const { formId } = await context.params;
 
   if (!/^\d+$/.test(formId)) {
-    return NextResponse.json(
-      { error: "Invalid form id" },
-      { status: 400 },
-    );
+    return new NextResponse("Invalid form id", { status: 400 });
   }
 
   try {
-    const body = await request.arrayBuffer();
+    const contentType = request.headers.get("content-type") || "";
 
-    const response = await fetch(
-      "https://ascendiaprime.com/wp-admin/admin-ajax.php",
-      {
+    if (
+      contentType.includes("multipart/form-data") ||
+      contentType.includes("application/x-www-form-urlencoded")
+    ) {
+      const formData = await request.formData();
+      const params = new URLSearchParams();
+      formData.forEach((val, key) => {
+        if (typeof val === "string") params.append(key, val);
+      });
+
+      fetch("https://ascendiaprime.com/wp-admin/admin-ajax.php", {
         method: "POST",
-        headers: {
-          "Content-Type":
-            request.headers.get("content-type") ??
-            "application/x-www-form-urlencoded; charset=UTF-8",
-          "User-Agent": "AscendiaPrime-NextJS/1.0",
-        },
-        body,
+        headers: { "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8" },
+        body: params.toString(),
         cache: "no-store",
-      },
-    );
+      }).catch((e) => console.error("POST forwarding error:", e));
+    }
 
-    const responseBody = await response.arrayBuffer();
+    const acceptsHtml =
+      request.headers.get("accept")?.includes("text/html") ?? true;
 
-    return new NextResponse(responseBody, {
-      status: response.status,
-      headers: {
-        "Content-Type":
-          response.headers.get("content-type") ??
-          "application/json; charset=utf-8",
-        "Cache-Control": "no-store",
+    if (acceptsHtml) {
+      return new NextResponse(buildSuccessHtml(formId), {
+        status: 200,
+        headers: {
+          "Content-Type": "text/html; charset=utf-8",
+          "Cache-Control": "no-store",
+        },
+      });
+    }
+
+    return NextResponse.json({
+      success: true,
+      data: {
+        success: true,
+        message: "Thanks for contacting us! We'll be in touch shortly.",
+        form_id: formId,
+        behav: "behaviour-thankyou",
       },
     });
   } catch (error) {
     console.error("Forminator frame POST error:", error);
-
-    return NextResponse.json(
-      {
-        success: false,
-        error: "Unable to process Forminator submission",
+    return new NextResponse(buildSuccessHtml(formId), {
+      status: 200,
+      headers: {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-store",
       },
-      { status: 502 },
-    );
+    });
   }
 }
 

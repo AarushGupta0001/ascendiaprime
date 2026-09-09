@@ -345,18 +345,14 @@ export async function GET(_request: Request, context: RouteContext) {
     return new NextResponse("Invalid form id", { status: 400 });
   }
 
-  // 1. In-memory cache hit (< 1ms)
-  const cached = frameDocCache.get(formId);
-  if (cached && Date.now() - cached.timestamp < 3600000) {
-    return new NextResponse(cached.doc, {
-      headers: {
-        "Content-Type": "text/html; charset=utf-8",
-        "Cache-Control": "public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800",
-      },
-    });
-  }
+  const noCacheHeaders = {
+    "Content-Type": "text/html; charset=utf-8",
+    "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0",
+    Pragma: "no-cache",
+    Expires: "0",
+  };
 
-  // 2. Prebuilt local disk snapshot (< 2ms)
+  // 1. Prebuilt local disk snapshot (< 2ms)
   const diskCacheFile = path.join(process.cwd(), "lib", `forminator-cache-${formId}.html`);
   if (fs.existsSync(diskCacheFile)) {
     try {
@@ -367,15 +363,20 @@ export async function GET(_request: Request, context: RouteContext) {
         const doc = buildFrameDocument(formId, parsed);
         frameDocCache.set(formId, { doc, timestamp: Date.now() });
         return new NextResponse(doc, {
-          headers: {
-            "Content-Type": "text/html; charset=utf-8",
-            "Cache-Control": "public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800",
-          },
+          headers: noCacheHeaders,
         });
       }
     } catch (e) {
       console.warn(`Failed reading local form cache for ${formId}:`, e);
     }
+  }
+
+  // 2. In-memory cache hit
+  const cached = frameDocCache.get(formId);
+  if (cached && Date.now() - cached.timestamp < 30000) {
+    return new NextResponse(cached.doc, {
+      headers: noCacheHeaders,
+    });
   }
 
   // 3. Fallback: Network fetch with timeout
@@ -387,7 +388,7 @@ export async function GET(_request: Request, context: RouteContext) {
     const response = await fetch(sourceUrl, {
       headers: { "User-Agent": "AscendiaPrime-NextJS/1.0" },
       signal: controller.signal,
-      next: { revalidate: 3600 },
+      cache: "no-store",
     }).finally(() => clearTimeout(timeout));
 
     if (!response.ok) {
@@ -412,10 +413,7 @@ export async function GET(_request: Request, context: RouteContext) {
     }
 
     return new NextResponse(doc, {
-      headers: {
-        "Content-Type": "text/html; charset=utf-8",
-        "Cache-Control": "public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800",
-      },
+      headers: noCacheHeaders,
     });
   } catch {
     return new NextResponse("Failed to load form", { status: 500 });

@@ -175,27 +175,6 @@
           $customInput.val("");
         }
       });
-
-      function handleSuccess(msg) {
-        var $form = jQuery("#forminator-module-3611");
-        $form.find(".forminator-row").hide();
-        var $resp = $form.find(".forminator-response-message");
-        if ($resp.length) {
-          if (msg) $resp.text(msg);
-          $resp.addClass("forminator-success forminator-show").removeClass("forminator-error").show();
-        }
-      }
-
-      jQuery(document).ajaxSuccess(function(event, xhr, settings) {
-        try {
-          if (settings && settings.data && typeof settings.data === "string" && settings.data.indexOf("forminator_submit_form") !== -1) {
-            var res = typeof xhr.responseJSON !== "undefined" ? xhr.responseJSON : JSON.parse(xhr.responseText);
-            if (res && res.success && res.data && res.data.success) {
-              handleSuccess(res.data.message);
-            }
-          }
-        } catch(e) {}
-      });
     });
   </script>
 </body>

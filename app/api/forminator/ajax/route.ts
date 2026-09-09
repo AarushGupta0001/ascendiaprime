@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { formSuccessMessage } from "@/lib/navigation";
 
 const WORDPRESS_AJAX =
   "https://ascendiaprime.com/wp-admin/admin-ajax.php";
@@ -130,7 +131,7 @@ export async function POST(request: Request) {
             success: true,
             data: {
               success: true,
-              message: "Thanks for contacting us! We'll be in touch shortly.",
+              message: formSuccessMessage,
               form_id: formId,
               behav: "behaviour-thankyou",
             },
@@ -156,7 +157,7 @@ export async function POST(request: Request) {
           success: true,
           data: {
             success: true,
-            message: "Thanks for contacting us! We'll be in touch shortly.",
+            message: formSuccessMessage,
             form_id: "3611",
             behav: "behaviour-thankyou",
           },

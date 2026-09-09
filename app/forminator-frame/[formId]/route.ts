@@ -70,6 +70,7 @@ function buildFormInteractionScript(formId: string): string {
       }
 
       function showSuccess(form, customMsg) {
+        var alreadySubmitted = form.dataset.forminatorSubmitted === "true";
         form.dataset.forminatorSubmitting = "false";
         form.dataset.forminatorSubmitted = "true";
         form.classList.add("forminator-submitted", "form-submitted");
@@ -89,10 +90,8 @@ function buildFormInteractionScript(formId: string): string {
           form.insertBefore(response, form.firstChild);
         }
 
-        if (customMsg) {
-          response.textContent = customMsg;
-        } else if (!response.textContent || response.textContent.trim() === "" || response.classList.contains("forminator-error")) {
-          response.textContent = successMessage;
+        if (!alreadySubmitted || !response.textContent || response.textContent.trim() === "") {
+          response.textContent = customMsg || successMessage;
         }
 
         response.className = "forminator-response-message forminator-success forminator-show";
@@ -161,12 +160,6 @@ function buildFormInteractionScript(formId: string): string {
             body: formData,
             cache: "no-store",
             keepalive: true
-          }).then(function(res) {
-            return res.json();
-          }).then(function(data) {
-            if (data && data.data && data.data.message) {
-              showSuccess(form, data.data.message);
-            }
           }).catch(function(err) {
             console.warn("Background delivery status:", err);
           });
@@ -208,7 +201,7 @@ function buildFormInteractionScript(formId: string): string {
               if (settings && settings.data && typeof settings.data === "string" && settings.data.indexOf("forminator_submit_form") !== -1) {
                 var res = typeof xhr.responseJSON !== "undefined" ? xhr.responseJSON : JSON.parse(xhr.responseText);
                 if (res && res.success && res.data && res.data.success) {
-                  showSuccess(form, res.data.message);
+                  showSuccess(form);
                 }
               }
             } catch(e) {}

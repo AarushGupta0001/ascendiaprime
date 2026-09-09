@@ -974,6 +974,7 @@
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   transition: all 0.35s ease;
+  text-align: center;
 }
 
 #cro-master .timeline-content:hover {
@@ -985,12 +986,12 @@
 
 #cro-master .timeline-content.left {
   grid-column: 1;
-  text-align: left;
+  text-align: center;
 }
 
 #cro-master .timeline-content.right {
   grid-column: 3;
-  text-align: left;
+  text-align: center;
 }
 
 #cro-master .timeline-content h3 {

@@ -107,9 +107,9 @@
             How can we help you? <span class="forminator-required">*</span>
           </label>
           <span id="forminator-field-textarea-2_3611-description" class="forminator-description">
-            <span data-limit="180" data-type="characters" data-editor="">0 / 180</span>
+            <span data-limit="250" data-type="characters" data-editor="">0 / 250</span>
           </span>
-          <textarea name="textarea-2" placeholder="" id="forminator-field-textarea-2_3611" class="forminator-textarea" style="--forminator-textarea-min-height:120px;" maxlength="180"></textarea>
+          <textarea name="textarea-2" placeholder="" id="forminator-field-textarea-2_3611" class="forminator-textarea" style="--forminator-textarea-min-height:120px;" maxlength="250"></textarea>
         </div>
       </div>
     </div>
@@ -157,7 +157,7 @@
       if ($msgTextarea.length && $counter.length) {
         $msgTextarea.on("input keyup paste change", function() {
           var len = jQuery(this).val().length;
-          $counter.text(len + " / 180");
+          $counter.text(len + " / 250");
         });
       }
 

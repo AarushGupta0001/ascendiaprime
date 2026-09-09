@@ -186,6 +186,36 @@ function buildFormInteractionScript(formId: string): string {
           }, true);
         });
 
+        // Enforce 250 max character limit on all message/help textareas
+        form.querySelectorAll("textarea").forEach(function(ta) {
+          if (ta.name === "textarea-1" || ta.name === "textarea-2" || ta.hasAttribute("maxlength") || ta.id.indexOf("textarea") !== -1) {
+            ta.setAttribute("maxlength", "250");
+          }
+        });
+
+        form.querySelectorAll("span[data-limit], .forminator-description span").forEach(function(cnt) {
+          if (cnt.getAttribute("data-limit") || (cnt.textContent && cnt.textContent.indexOf("/") !== -1)) {
+            cnt.setAttribute("data-limit", "250");
+            var parent = cnt.closest(".forminator-field");
+            var ta = parent ? parent.querySelector("textarea") : null;
+            var currentLen = ta ? ta.value.length : 0;
+            cnt.textContent = currentLen + " / 250";
+          }
+        });
+
+        form.querySelectorAll("textarea").forEach(function(ta) {
+          ta.addEventListener("input", function() {
+            var parent = ta.closest(".forminator-field");
+            if (parent) {
+              var cnt = parent.querySelector("span[data-limit], .forminator-description span");
+              if (cnt) {
+                var len = ta.value.length;
+                cnt.textContent = len + " / 250";
+              }
+            }
+          });
+        });
+
         if (window.jQuery) {
           window.jQuery(form)
             .on("before:forminator:form:submit", function (e) {

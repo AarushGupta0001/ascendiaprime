@@ -139,7 +139,16 @@ function ArrowIcon() {
 
 function CheckIcon() {
   return (
-    <svg aria-hidden="true" viewBox="0 0 20 20">
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 20 20"
+      className="w-3.5 h-3.5 shrink-0"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <path d="m4 10 4 4 8-9" />
     </svg>
   );
@@ -185,25 +194,27 @@ export default function RetargetingPage() {
               </div>
               <ul className="micro-trust" aria-label="Retargeting principles">
                 <li>
-                  <CheckIcon />
+                  <span className="retargeting-trust-icon">
+                    <CheckIcon />
+                  </span>
                   Intent-based
                 </li>
                 <li>
-                  <CheckIcon />
+                  <span className="retargeting-trust-icon">
+                    <CheckIcon />
+                  </span>
                   Frequency-controlled
                 </li>
                 <li>
-                  <CheckIcon />
+                  <span className="retargeting-trust-icon">
+                    <CheckIcon />
+                  </span>
                   Transparently measured
                 </li>
               </ul>
             </div>
             <div className="hero-visual reveal delay">
               <RetargetingJourney />
-              <p className="visual-note">
-                The sequence is illustrative. Campaign setup and outcomes vary by
-                advertiser.
-              </p>
             </div>
           </div>
           <div className="scroll-cue">
